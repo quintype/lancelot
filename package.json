@@ -20,6 +20,7 @@
   "homepage": "https://github.com/quintype/lancelot#readme",
   "devDependencies": {
     "@babel/core": "^7.4.5",
+    "@quintype/build": "^3.9.0",
     "@storybook/addon-actions": "^5.1.3",
     "@storybook/addon-links": "^5.1.3",
     "@storybook/addons": "^5.1.3",
@@ -27,6 +28,7 @@
     "babel-loader": "^8.0.6"
   },
   "dependencies": {
-    "@quintype/components": "^2.6.0"
+    "@quintype/components": "^2.6.0",
+    "prop-types": "^15.7.2"
   }
 }
