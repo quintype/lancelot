@@ -4,9 +4,14 @@
   "description": "component library for QT apps",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "BABEL_TARGET=browser start-storybook -p 6006",
-    "build-storybook": "BABEL_TARGET=browser build-storybook -c .storybook -o .out"
+    "build-storybook": "BABEL_TARGET=browser build-storybook -c .storybook -o .out",
+    "test": "BABEL_TARGET=node jest",
+    "lint:ci": "npm run lint:js:ci && npm run lint:css:ci",
+    "lint:css": "npx stylelint './app/**/*.{scss,css}'",
+    "lint:css:ci": "npx stylelint $(git diff --pretty='' --diff-filter=d --name-only origin/master..HEAD -- '*.css' '*.scss') ./app/assets/stylesheets/app.scss",
+    "lint:js": "npx eslint './app/**/*.{js,jsx}'",
+    "lint:js:ci": "npx eslint $(git diff --pretty='' --diff-filter=d --name-only origin/master..HEAD -- '*.js' '*.jsx') ./start.js"
   },
   "repository": {
     "type": "git",
@@ -28,7 +33,34 @@
     "@storybook/addon-viewport": "^5.1.3",
     "@storybook/addons": "^5.1.3",
     "@storybook/react": "^5.1.3",
-    "babel-loader": "^8.0.6"
+    "babel-loader": "^8.0.6",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-cypress": "^2.2.1",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-jest": "^22.6.4",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-react": "^7.13.0",
+    "eslint-plugin-react-hooks": "^1.6.0",
+    "eslint-plugin-standard": "^4.0.0",
+    "husky": "^2.4.0",
+    "immer": "^3.1.3",
+    "jest": "^24.8.0",
+    "jest-image-snapshot": "^2.8.2",
+    "lint-staged": "^8.2.0",
+    "prettier": "1.18.2",
+    "react-test-renderer": "^16.8.6",
+    "stylelint": "^10.1.0",
+    "stylelint-config-css-modules": "^1.4.0",
+    "stylelint-config-recommended-scss": "^3.3.0",
+    "stylelint-scss": "^3.8.0"
+  },
+  "jest": {
+    "verbose": true,
+    "testURL": "http://localhost/"
   },
   "dependencies": {
     "@quintype/components": "^2.6.0",
