@@ -1,0 +1,32 @@
+{
+  "name": "lancelot",
+  "version": "1.0.0",
+  "description": "component library for QT apps",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "BABEL_TARGET=browser start-storybook -p 6006",
+    "build-storybook": "BABEL_TARGET=browser build-storybook -c .storybook -o .out"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quintype/lancelot.git"
+  },
+  "author": "dev-core@quintype.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/quintype/lancelot/issues"
+  },
+  "homepage": "https://github.com/quintype/lancelot#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@storybook/addon-actions": "^5.1.3",
+    "@storybook/addon-links": "^5.1.3",
+    "@storybook/addons": "^5.1.3",
+    "@storybook/react": "^5.1.3",
+    "babel-loader": "^8.0.6"
+  },
+  "dependencies": {
+    "@quintype/components": "^2.6.0"
+  }
+}
