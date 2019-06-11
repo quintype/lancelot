@@ -22,7 +22,10 @@
     "@babel/core": "^7.4.5",
     "@quintype/build": "^3.9.0",
     "@storybook/addon-actions": "^5.1.3",
+    "@storybook/addon-console": "^1.1.0",
+    "@storybook/addon-knobs": "^5.1.3",
     "@storybook/addon-links": "^5.1.3",
+    "@storybook/addon-viewport": "^5.1.3",
     "@storybook/addons": "^5.1.3",
     "@storybook/react": "^5.1.3",
     "babel-loader": "^8.0.6"
