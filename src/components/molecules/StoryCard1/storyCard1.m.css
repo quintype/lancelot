@@ -1,0 +1,11 @@
+.story-card {
+  border: 1px solid #dedede;
+}
+
+.story-grid-item-image img {
+  width: 100%;
+}
+
+.story-content {
+  padding: 10px 12px 20px;
+}

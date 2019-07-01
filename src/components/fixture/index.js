@@ -44,7 +44,7 @@ export const generateStory = () => {
       },
       "published-at": 1550215257177,
       id: "2db54a0f-690e-4e95-9201-317ecfdc9fd3",
-      "hero-image-s3-key": "fortune_local/2017-06/15d9065f-e81f-4c35-9ce0-b8de73cb5a02/image.jpg",
+      "hero-image-s3-key": "freepressjournal/2019-05/d0781bc0-520b-4685-b8b2-d42048456727/World_Cup_2019.jpg",
       "author-id": 457012,
       "first-published-at": 1550212036948,
       "hero-image-caption":
