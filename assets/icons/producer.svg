@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 19.2">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_902" data-name="Rectangle 902" className="cls-1" />
+    </clipPath>
+  </defs>
+  <g id="Producer" className="cls-2">
+    <g id="cinema" transform="translate(5.844 1.41)">
+      <path
+        id="Path_250"
+        data-name="Path 250"
+        className="cls-3"
+        d="M-.068,2.976l.713,3.9L16.923,3.9,16.21,0ZM8.283,2.5,10.1,2.169,8.572,4.375l-1.812.331ZM4.841,5.058l-1.812.331L4.553,3.183l1.812-.331Zm7.173-3.239,1.812-.331L12.3,3.693l-1.812.331ZM2.635,3.533,1.409,5.307l-.274-1.5ZM14.22,3.343l1.226-1.774.274,1.5Z"
+      />
+      <path
+        id="Path_251"
+        data-name="Path 251"
+        className="cls-3"
+        d="M4.062,39.836v9.653h20.4V39.836ZM23.086,45.18H5.454V41.215H23.086Z"
+        transform="translate(-3.417 -32.96)"
+      />
+    </g>
+  </g>
+</svg>

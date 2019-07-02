@@ -1,0 +1,36 @@
+.base {
+  background: var(--background-color);
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  @media (min-width: 768px) {
+    display: block;
+  }
+}
+
+.image-wrapper {
+  /* @include image-aspect-ratio(4, 3); */
+  @media (min-width: 768px) {
+    /* @include image-aspect-ratio(16, 9); */
+  }
+}
+
+.text-wrapper {
+  padding-left: var(--space2);
+  @media (min-width: 768px) {
+    padding: var(--space1) 0;
+  }
+}
+
+.headline {
+  /* @include font-styles(h5); */
+  margin: var(--space-2) 0 0;
+  color: var(--title-color);
+  @media (min-width: 768px) {
+    /* margin-top: var(--space1); */
+  }
+}
+
+.truncated {
+  /* @include number-of-lines(h5, 2); */
+}

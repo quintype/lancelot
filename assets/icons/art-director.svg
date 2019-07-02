@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 19.2">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_910" data-name="Rectangle 910" className="cls-1" />
+    </clipPath>
+  </defs>
+  <g id="Art_director" data-name="Art director" className="cls-2">
+    <g id="_24-Artwork" data-name="24-Artwork" transform="translate(6 -.006)">
+      <path
+        id="Path_1013"
+        data-name="Path 1013"
+        className="cls-3"
+        d="M3.29,27.941l.789.789L7.8,25H6.236Z"
+        transform="translate(-.489 -10.659)"
+      />
+      <path
+        id="Path_1014"
+        data-name="Path 1014"
+        className="cls-3"
+        d="M-1,21.112a.556.556,0,0,0,.556.556H20.177a.556.556,0,0,0,.556-.556V20H-1Z"
+        transform="translate(0 -8.438)"
+      />
+      <rect
+        id="Rectangle_914"
+        data-name="Rectangle 914"
+        className="cls-3"
+        width="1.112"
+        height="3.891"
+        transform="translate(9.31 14.341)"
+      />
+      <path
+        id="Path_1015"
+        data-name="Path 1015"
+        className="cls-3"
+        d="M20.733,2.668a.556.556,0,0,0-.556-.556H12.09V1.556A.556.556,0,0,0,11.534,1H8.2a.556.556,0,0,0-.556.556v.556H-.444A.556.556,0,0,0-1,2.668V10.45H20.733Z"
+      />
+      <path
+        id="Path_1016"
+        data-name="Path 1016"
+        className="cls-3"
+        d="M24.314,28.73l.789-.789L22.158,25H20.59Z"
+        transform="translate(-8.172 -10.659)"
+      />
+    </g>
+  </g>
+</svg>

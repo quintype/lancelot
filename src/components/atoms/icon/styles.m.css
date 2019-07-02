@@ -1,0 +1,179 @@
+.base {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  svg {
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+  }
+}
+
+.android,
+.ios {
+  svg {
+    width: 3.26em;
+    height: 1em;
+  }
+}
+
+.comm-vikatan-plus {
+  svg {
+    width: 9.301em;
+    height: 1em;
+  }
+}
+
+.comm-entertainment {
+  svg {
+    width: 5.689em;
+    height: 1em;
+  }
+}
+
+.comm-album {
+  svg {
+    width: 4.261em;
+    height: 1em;
+  }
+}
+
+.comm-automobile {
+  svg {
+    width: 5.993em;
+    height: 1em;
+  }
+}
+
+.comm-children {
+  svg {
+    width: 5.603em;
+    height: 1em;
+  }
+}
+
+.comm-cinema {
+  svg {
+    width: 8.349em;
+    height: 1em;
+  }
+}
+
+.comm-environment {
+  svg {
+    width: 5.869em;
+    height: 1em;
+  }
+}
+
+.comm-finance {
+  svg {
+    width: 8.219em;
+    height: 1em;
+  }
+}
+
+.comm-health {
+  svg {
+    width: 6.332em;
+    height: 1em;
+  }
+}
+
+.comm-news {
+  svg {
+    width: 5.754em;
+    height: 1em;
+  }
+}
+
+.comm-science {
+  svg {
+    width: 7.347em;
+    height: 1em;
+  }
+}
+
+.comm-spiritual {
+  svg {
+    width: 4.625em;
+    height: 1em;
+  }
+}
+
+.comm-sports {
+  svg {
+    width: 8.059em;
+    height: 1em;
+  }
+}
+
+.comm-technology {
+  svg {
+    width: 7.347em;
+    height: 1em;
+  }
+}
+
+.comm-video {
+  svg {
+    width: 6.575em;
+    height: 1em;
+  }
+}
+
+.comm-women {
+  svg {
+    width: 4.532em;
+    height: 1em;
+  }
+}
+
+.comm-world-cup {
+  svg {
+    width: 8.059em;
+    height: 1em;
+  }
+}
+
+.vikatan-tv {
+  svg {
+    width: 4.953em;
+    height: 1em;
+  }
+}
+
+.show-on-hover {
+  display: none;
+}
+
+.base:hover .show-on-hover {
+  display: block;
+}
+
+.zodiac {
+  .background {
+    fill: var(--white);
+  }
+
+  .form {
+    fill: url(#linearGradientA);
+  }
+}
+
+.hover,
+.zodiac:hover {
+  .background {
+    fill: url(#linearGradientB);
+  }
+  .form {
+    fill: var(--white);
+  }
+}
+
+.video {
+  svg {
+    width: 1.3em;
+    height: 1em;
+  }
+}

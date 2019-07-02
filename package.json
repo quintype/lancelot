@@ -67,7 +67,10 @@
     "stylelint": "^10.1.0",
     "stylelint-config-css-modules": "^1.4.0",
     "stylelint-config-recommended-scss": "^3.3.0",
-    "stylelint-scss": "^3.8.0"
+    "stylelint-scss": "^3.8.0",
+    "@quintype/components": "^2.8.2",
+    "@quintype/framework": "^3.9.0",
+    "react-redux": "7.0.3"
   },
   "jest": {
     "verbose": true,
@@ -82,9 +85,7 @@
     "rollup-plugin-postcss": "^2.0.3"
   },
   "peerDependencies": {
-    "@quintype/components": "^2.8.2",
-    "react": "16.8.6",
-    "react-redux": "7.0.3"
+    "react": "16.8.6"
   },
   "husky": {
     "hooks": {

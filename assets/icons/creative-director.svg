@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 19.2">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_907" data-name="Rectangle 907" className="cls-1" />
+    </clipPath>
+  </defs>
+  <g id="Creative_director" data-name="Creative director" className="cls-2">
+    <g id="noun_creative_1871582" transform="translate(-.618 -11.931)">
+      <g id="Group_2185" data-name="Group 2185" transform="rotate(-90 17.18 12.713)">
+        <rect
+          id="Rectangle_912"
+          data-name="Rectangle 912"
+          className="cls-3"
+          width="0.96"
+          height="9.835"
+          transform="translate(8.728 9.349)"
+        />
+        <path
+          id="Path_992"
+          data-name="Path 992"
+          className="cls-3"
+          d="M1.159,0,0,2.279H2.319Z"
+          transform="translate(7.169 6.27)"
+        />
+        <rect
+          id="Rectangle_913"
+          data-name="Rectangle 913"
+          className="cls-3"
+          width="0.96"
+          height="9.835"
+          transform="translate(6.969 9.349)"
+        />
+        <path
+          id="Path_993"
+          data-name="Path 993"
+          className="cls-3"
+          d="M8.165,0A7.092,7.092,0,0,0,4.81.753a8.325,8.325,0,0,0-4.8,7.076,8.233,8.233,0,0,0,2.2,6.117A6.948,6.948,0,0,1,4.09,18.624V22.7a.378.378,0,0,0,.4.4H6.209c0,.04-.04.08-.04.12,0,.8.92,1.4,2.159,1.4s2.159-.6,2.159-1.4a.147.147,0,0,0-.04-.12h1.719a.378.378,0,0,0,.4-.4V18.584a6.543,6.543,0,0,1,1.8-4.558,8.309,8.309,0,0,0-.28-11.714,8.032,8.032,0,0,0-2.2-1.519A10.56,10.56,0,0,0,8.165,0Zm2.722,19.141-6.037.64v-.64H6.169V8.829a.36.36,0,0,1,.04-.2l1.759-3.4a.424.424,0,0,1,.72,0l1.759,3.4a.3.3,0,0,1,.04.2V19.184h.4Zm.92,3.158H4.85v-.08l6.956-.76v.84Zm0-1.639-6.956.76v-.8l6.956-.76Z"
+        />
+      </g>
+    </g>
+  </g>
+</svg>
