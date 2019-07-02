@@ -57,7 +57,7 @@ const SmallStoryCardDesktopMedium16x9 = ({
               styleName="contributor"
             />
           )}
-          <h3 styleName={`"headline" ${hasTruncatedHeadline ? "truncated" : ""} `}>{storyData.headline}</h3>
+          <h3 styleName={`headline ${hasTruncatedHeadline ? "truncated" : ""} `}>{storyData.headline}</h3>
         </div>
       </div>
     </Link>

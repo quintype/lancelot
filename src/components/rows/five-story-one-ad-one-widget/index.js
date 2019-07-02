@@ -30,18 +30,18 @@ const FiveStoryOneAdOneWidget = ({ collection, metadata, accentColor, showReadmo
       <div className={`container`}>
         <div className="row">
           <div styleName="main-content">
-            <StoryCardBig story={items[0].story} styleName="story-card story-card-big" eager={index === 0} />
+            <StoryCardBig story={items[0].story} className={"story-card story-card-big"} eager={index === 0} />
             {!!items[1] && (
               <SmallStoryCardDesktopMedium16x9
                 story={items[1].story}
-                styleName="story-card story-card-medium story-card-medium-scm"
+                className={"story-card story-card-medium story-card-medium-scm"}
                 eager={index === 0}
               />
             )}
             {!!items[2] && (
               <SmallStoryCardDesktopMedium16x9
                 story={items[2].story}
-                styleName="story-card story-card-medium story-card-medium-scm2"
+                className={"story-card story-card-medium story-card-medium-scm2"}
                 eager={index === 0}
               />
             )}
@@ -49,13 +49,13 @@ const FiveStoryOneAdOneWidget = ({ collection, metadata, accentColor, showReadmo
             {!!items[3] && (
               <SmallStoryCardDesktopVertical
                 story={items[3].story}
-                styleName="story-card story-card-small story-card-small-scs"
+                className={"story-card story-card-small story-card-small-scs"}
               />
             )}
             {!!items[4] && (
               <SmallStoryCardDesktopVertical
                 story={items[4].story}
-                styleName="story-card story-card-small story-card-small-scs2"
+                className={"story-card story-card-small story-card-small-scs2"}
               />
             )}
             <div styleName="read-more-wrapper">
