@@ -1,9 +1,10 @@
-@import "./spacing.scss";
-@import "./z-index.scss";
-@import "./helper.scss";
-@import "./colors.scss";
-@import "./typography.scss";
-@import "./normalize.scss";
+@import "./generics/spacing.scss";
+@import "./generics/z-index.scss";
+@import "./generics/colors.scss";
+@import "./generics/typography.scss";
+@import "./generics/normalize.scss";
+
+@import "./helper/helper.scss";
 
 *,
 *::after,

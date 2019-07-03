@@ -78,9 +78,6 @@
   }
 }
 
-.story-card {
-}
-
 .read-more-wrapper {
   grid-column: 1 / -1;
   display: flex;

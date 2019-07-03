@@ -13,7 +13,7 @@
   padding-top: 75%;
 
   @media (min-width: 768px) {
-    padding-top: 56.25%
+    padding-top: 56.25%;
   }
 }
 
