@@ -1,7 +1,4 @@
 .read-more-link {
-  --background-color: var(--gallery);
-  --title-color: var(--tundora);
-
   display: inline-flex;
   align-items: center;
   justify-content: center;

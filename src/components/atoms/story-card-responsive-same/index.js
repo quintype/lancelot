@@ -30,7 +30,8 @@ const StoryCardResponsiveSame = ({
   return (
     <Link
       aria-label={`${"Read full story: "} ${storyData.headline}`}
-      className={`${className} ${styles["base"]} ${cardWithImageZoom ? "card-with-image-zoom" : ""}`}
+      className={`${className} ${cardWithImageZoom ? "card-with-image-zoom" : ""}`}
+      styleName="base"
       href={externalLink || story.url}
       externalLink={externalLink}
     >

@@ -14,9 +14,10 @@
   }
 }
 .image-wrapper {
-  /* @include image-aspect-ratio(4, 3); */
+  position: relative;
+  padding-top: 75%;
   @media (min-width: 768px) {
-    /* @include image-aspect-ratio(16, 9); */
+    padding-top: 56.25%;
   }
 }
 
@@ -41,13 +42,15 @@
     /* @include number-of-lines(h3, 3); */
   }
 }
-
-.image-container {
+.story-card {
 }
-
-.story-card {}
-.story-card-medium{}
-.story-card-medium-scm{}
-.story-card-medium-scm2{}
-.card-with-image-zoom{}
-.headline{}
+.story-card-medium {
+}
+.story-card-medium-scm {
+}
+.story-card-medium-scm2 {
+}
+.card-with-image-zoom {
+}
+.headline {
+}

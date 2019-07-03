@@ -9,9 +9,11 @@
 }
 
 .image-wrapper {
-  /* @include image-aspect-ratio(4, 3); */
+  position: relative;
+  padding-top: 75%;
+
   @media (min-width: 768px) {
-    /* @include image-aspect-ratio(16, 9); */
+    padding-top: 56.25%
   }
 }
 

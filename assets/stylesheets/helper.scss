@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: var(--space2);
-  @media screen and (max-width: 767px) {
+  @media (min-width: 768px) {
     grid-template-columns: repeat(12, 1fr);
     grid-gap: var(--space3);
   }
@@ -19,7 +19,7 @@
 .container-full-mobile {
   margin-right: calc(-1 * var(--space2));
   margin-left: calc(-1 * var(--space2));
-  @media screen and (max-width: 767px) {
+  @media (min-width: 768px) {
     margin-right: 0;
     margin-left: 0;
   }
@@ -53,27 +53,27 @@
   background-color: var(--fallback-image-bg);
 }
 
-// .qt-figure .qt-image {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   bottom: 0;
-//   right: 0;
-//   height: 100%;
-//   width: 100%;
-//   object-fit: cover;
-//   object-position: 0 15%;
-// }
+.qt-figure .qt-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: 0 15%;
+}
 
 .zoom-desktop {
-  @media screen and (max-width: 767px) {
+  @media (min-width: 768px) {
     transform: none;
     transition: transform 0.3s ease-out;
   }
 }
 .card-with-image-zoom:hover {
   .zoom-desktop {
-    @media screen and (max-width: 767px) {
+    @media (min-width: 768px) {
       transform: scale(1.1);
     }
   }
@@ -99,7 +99,7 @@
 }
 
 .hidden-desktop {
-  @media screen and (max-width: 767px) {
+  @media (min-width: 768px) {
     display: none !important;
   }
 }

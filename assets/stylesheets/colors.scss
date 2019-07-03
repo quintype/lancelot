@@ -1,0 +1,20 @@
+// http://chir.ag/projects/name-that-color/#2F81CD
+:root {
+  --primary-color: #000;
+  --secondary-color: #ddd;
+  
+  --greyish-brown: #404040;
+  --white: #ffffff;
+  --alto: #dadada;
+  --gray: #929292;
+  --mariner: #2f81cd;
+
+  --fallback-image-bg: var(--alto);
+
+  --title-color: var(--greyish-brown);
+  --content-color: var(--greyish-brown);
+  --background-color: var(--white);
+  --meta-color: var(--gray);
+  --border-color: var(--alto);
+  --accent-color: var(--mariner);
+}

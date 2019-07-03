@@ -29,11 +29,12 @@ const SmallStoryCardDesktopMedium16x9 = ({
     <Link
       aria-label={`${"Read full story: "} ${storyData.headline}`}
       styleName={`read-more-link ${className} ${cardWithImageZoom ? "card-with-image-zoom" : ""}`}
+      className={`${className} ${cardWithImageZoom ? "card-with-image-zoom" : ""}`}
       href={externalLink || story.url}
       externalLink={externalLink}
     >
       <div styleName="base">
-        <div styleName="image-container">
+        <div>
           <ResponsiveImageWithFallback
             styleName="image-wrapper"
             slug={storyData.imageS3Key}

@@ -1,0 +1,42 @@
+html {
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-size: 62.5%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+figure,
+img {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol,
+dl {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  outline: none;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+$headingStyles: "h1", "h2", "h3", "h4", "h5", "body";
+
+// @each $styles in $headingStyles {
+//   #{$styles} {
+//     @include font-styles(mobile-#{$styles});
+//     @include tablet {
+//       @include font-styles(#{$styles});
+//     }
+//   }
+// }

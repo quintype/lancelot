@@ -21,7 +21,7 @@
       border-bottom: 2px solid var(--accent-color);
     }
   }
-  
+
   :global .story-card-medium-scm {
     @media (min-width: 768px) {
       grid-area: scm;
@@ -50,7 +50,7 @@
     @media (min-width: 768px) {
       grid-area: scs2;
     }
-  }  
+  }
 }
 
 .main-content {
@@ -82,7 +82,7 @@
 }
 
 .read-more-wrapper {
-  grid-column: 1/9;
+  grid-column: 1 / -1;
   display: flex;
   justify-content: center;
   align-items: center;

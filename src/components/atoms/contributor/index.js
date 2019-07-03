@@ -10,20 +10,9 @@ const Contributor = ({ path, type, name, imgUrl, className = "", config = {} }) 
     return null;
   }
   const ContributorRoles = {
-    "art-director": "art-director",
-    author: "author",
-    anchor: "anchor",
-    cartoonist: "cartoonist",
-    illustrator: "illustrator",
-    "food-stylist": "food-stylist",
-    infographer: "infographer",
-    photographer: "photographer",
-    videographer: "videographer",
-    "published-by": "published-by",
-    producer: "producer",
-    "script-writer": "script-writer",
-    stylist: "stylist",
-    "video-editor": "video-editor"
+    // Mapping for the contributor roles and the icons is done here.
+    // Comma separated key value pairs
+    // "art-director": "art-director"
   };
   type = type && type.replace(" ", "-").toLowerCase();
   const iconType = type && ContributorRoles[type] ? ContributorRoles[type] : "author";
