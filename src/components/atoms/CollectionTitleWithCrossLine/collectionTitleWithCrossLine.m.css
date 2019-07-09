@@ -1,13 +1,14 @@
 .title {
   --border-color: var(--title-color);
-  /* @include font-styles(h4); */
+  font-size: var(--base-larger);
+  line-height: 1.2;
   color: var(--title-color);
   margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   @media (min-width: 768px) {
-    /* @include font-styles(h2); */
+    font-size: var(--large);
   }
 
   &::after,
