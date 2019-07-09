@@ -17,7 +17,7 @@ const types = [
 
 const contributorArray = types.map(elt => ({
   type: elt,
-  name: "தினேஷ் ராமையா",
+  name: "John Doe",
   iconColor: "#000000"
 }));
 

@@ -28,8 +28,6 @@ const Contributor = ({ path, type, name, imgUrl, className = "", config = {} }) 
     </WithHostUrl>
   ) : (
     <div className={`${styles["base"]} ${className}`}>
-      {imgUrl && <img src={imgUrl} />}
-      {iconType && <Icon type={iconType} className={styles["icon"]} />}
       <span className={styles["contributor-name"]}>{name}</span>
     </div>
   );

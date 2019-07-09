@@ -11,6 +11,6 @@ export default {
     ]
   }),
   metadata: {
-    read_more_text: "மேலும் படிக்க"
+    read_more_text: "Read More"
   }
 };

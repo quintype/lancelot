@@ -11,6 +11,7 @@
   }
   .contributor {
     margin-bottom: var(--space-2);
+    font-size: var(--base-smaller);
   }
 }
 .image-wrapper {
@@ -31,7 +32,9 @@
   /* @include font-styles(h5); */
   margin: 0px;
   color: var(--title-color);
+  font-size: var(--base-small);
   @media (min-width: 768px) {
+    font-size: var(--base-medium);
     /* @include font-styles(h3); */
   }
 }

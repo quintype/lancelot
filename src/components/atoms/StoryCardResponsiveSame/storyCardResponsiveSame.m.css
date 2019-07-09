@@ -5,15 +5,17 @@
   @media (min-width: 768px) {
     border-bottom: 4px solid var(--accent-color);
   }
-  .contributor {
-    margin: 0 0 var(--space-2);
-    white-space: nowrap;
-    overflow: hidden;
-    @media (min-width: 768px) {
-      margin: 0 0 var(--space1);
-    }
+}
+
+.base .contributor {
+  margin: 0 0 var(--space-2);
+  white-space: nowrap;
+  overflow: hidden;
+  @media (min-width: 768px) {
+    margin: 0 0 var(--space1);
   }
 }
+
 .image-wrapper {
   position: relative;
   padding-top: 62.5%;
@@ -31,17 +33,14 @@
   @media (min-width: 768px) {
     padding: 0 var(--space2);
     margin: 0 0 var(--space3);
+    font-size: var(--base-smaller);
   }
 }
 
 .headline {
-  /* @include font-styles(mobile-h3); */
   margin: 0px;
   color: var(--title-color);
-
-  @media (min-width: 768px) {
-    /* @include font-styles(h3); */
-  }
+  font-size: var(--base-large);
 
   &.truncated {
     /* @include number-of-lines(mobile-h3, 2); */
