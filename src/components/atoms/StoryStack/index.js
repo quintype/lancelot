@@ -4,9 +4,9 @@ import PropTypes from "prop-types";
 import BigStoryCard from "../BigStoryCard/index";
 import SmallStoryCard from "../SmallStoryCard";
 
-import styles from "./storyStack.m.css";
+import "./storyStack.m.css";
 
-const StoryStack = ({ bigStory, mobileStoryCount, stories, className }) => {
+const StoryStack = ({ bigStory, mobileStoryCount, stories, className = "" }) => {
   if (stories.length < 1) {
     return null;
   }
@@ -14,22 +14,22 @@ const StoryStack = ({ bigStory, mobileStoryCount, stories, className }) => {
     bigStory ? (
       <BigStoryCard story={stories[0]} key={stories[0].id} />
     ) : (
-      <SmallStoryCard story={stories[0]} className={`${styles["line-separater"]}`} key={stories[0].id} />
+      <SmallStoryCard story={stories[0]} className={"line-separater"} key={stories[0].id} />
     )
   ].concat(
     stories.slice(1).map((story, index) => (
       <SmallStoryCard
         story={story}
         className={`
-          ${styles[index + 1 >= mobileStoryCount ? "mobile-hide" : ""]}
-          ${styles["line-separater"]}
-          ${styles[index + 2 === mobileStoryCount ? "skip-line" : ""]}
+          ${[index + 1 >= mobileStoryCount ? "mobile-hide" : ""]}
+          line-separater
+          ${[index + 2 === mobileStoryCount ? "skip-line" : ""]}
         `}
         key={story.id}
       />
     ))
   );
-  return <div className={`${styles["base"]} ${className}`}>{stack}</div>;
+  return <div styleName={`base ${className}`}>{stack}</div>;
 };
 
 StoryStack.propTypes = {

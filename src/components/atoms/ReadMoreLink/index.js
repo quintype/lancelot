@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Link } from "@quintype/components";
 
 import Icon from "../Icon";
-import styles from "./readMoreLink.m.css";
+import "./readMoreLink.m.css";
 
 export const ReadMoreLink = ({ className = "", href, text = "Read More" }) => {
   if (!href) {
@@ -11,9 +11,9 @@ export const ReadMoreLink = ({ className = "", href, text = "Read More" }) => {
   }
 
   return (
-    <Link aria-label="Read More" className={`${className} ${styles["read-more-link"]}`} href={href}>
-      <span className={styles["text"]}>{text}</span>
-      <Icon type={"arrow-right"} className={styles["arrow-right"]} />
+    <Link aria-label="Read More" className={`${className} read-more-link`} href={href}>
+      <span styleName="text">{text}</span>
+      <Icon type={"arrow-right"} className={"arrow-right"} />
     </Link>
   );
 };
@@ -36,12 +36,12 @@ export const LoadMoreButton = ({ className = "", text = "Load More", onClick, di
       title="load More"
       aria-label="load More"
       role="button"
-      className={`${className} ${styles["read-more-link"]}`}
+      styleName={`${className} read-more-link}`}
       onClick={onClick}
       disabled={disabled}
     >
-      <span className={styles["text"]}>{text}</span>
-      <Icon type={"arrow-right"} className={styles["arrow-right"]} />
+      <span styleName="text">{text}</span>
+      <Icon type={"arrow-right"} className={"arrow-right"} />
     </button>
   );
 };

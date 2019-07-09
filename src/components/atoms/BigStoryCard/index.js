@@ -6,7 +6,7 @@ import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
 import Contributor from "../Contributor/index";
 // import { isPremium } from "../../../../isomorphic/data/story";
 
-import styles from "./bigStoryCard.m.css";
+import "./bigStoryCard.m.css";
 import { getStoryData, generateImageSources } from "../../utils/utils";
 
 const BigStoryCard = ({ story, cardWithImageZoom = true, className = "", hasTruncatedHeadline = true }) => {
@@ -23,13 +23,13 @@ const BigStoryCard = ({ story, cardWithImageZoom = true, className = "", hasTrun
   return (
     <Link
       aria-label={`${"Read full story: "} ${storyData.headline}`}
-      className={`${styles["read-more-link"]} ${className} ${cardWithImageZoom ? "card-with-image-zoom" : ""}`}
+      className={`read-more-link ${className} ${cardWithImageZoom ? "card-with-image-zoom" : ""}`}
       href={externalLink || story.url}
       externalLink={externalLink}
     >
-      <div className={styles["base"]}>
+      <div styleName="base">
         <ResponsiveImageWithFallback
-          className={styles["image-wrapper"]}
+          styleName="image-wrapper"
           slug={storyData.imageS3Key}
           metadata={storyData.imageMetadata}
           // isPremium={isPremium(story)}
@@ -40,18 +40,16 @@ const BigStoryCard = ({ story, cardWithImageZoom = true, className = "", hasTrun
             { aspectRatio: [9, 6], screenWidthCoverage: 0.25 }
           )}
         />
-        <div className={styles["text-wrapper"]}>
+        <div styleName="text-wrapper">
           {contributor && (
             <Contributor
               name={contributor["name"]}
               type={contributorRole}
               iconColor="#4a4a4a"
-              className={styles["contributor"]}
+              className={"contributor"}
             />
           )}
-          <h3 className={`${styles["headline"]} ${hasTruncatedHeadline ? styles["truncated"] : ""} `}>
-            {storyData.headline}
-          </h3>
+          <h3 styleName={`headline ${hasTruncatedHeadline ? "truncated" : ""} `}>{storyData.headline}</h3>
         </div>
       </div>
     </Link>

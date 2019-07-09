@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Link, WithHostUrl } from "@quintype/components";
 import { Icon } from "../Icon";
 
-import styles from "./contributor.m.css";
+import "./contributor.m.css";
 
 const Contributor = ({ path, type, name, imgUrl, className = "", config = {} }) => {
   if (!name) {
@@ -19,16 +19,16 @@ const Contributor = ({ path, type, name, imgUrl, className = "", config = {} }) 
   return path && !config.cinemaMode ? (
     <WithHostUrl>
       {({ primaryHostUrl }) => (
-        <Link aria-label="Author" href={`${primaryHostUrl}${path}`} className={`${styles["base"]} ${className}`}>
+        <Link aria-label="Author" href={`${primaryHostUrl}${path}`} className={`base ${className}`}>
           {imgUrl && <img src={imgUrl} />}
-          {iconType && <Icon type={iconType} className={styles["icon"]} />}
-          <span className={styles["contributor-name"]}>{name}</span>
+          {iconType && <Icon type={iconType} className={"icon"} />}
+          <span styleName="contributor-name">{name}</span>
         </Link>
       )}
     </WithHostUrl>
   ) : (
-    <div className={`${styles["base"]} ${className}`}>
-      <span className={styles["contributor-name"]}>{name}</span>
+    <div styleName={`base ${className}`}>
+      <span styleName={"contributor-name"}>{name}</span>
     </div>
   );
 };

@@ -55,7 +55,7 @@ const SmallStoryCardDesktopMedium16x9 = ({
               name={contributor["name"]}
               type={contributorRole}
               iconColor="#4a4a4a"
-              styleName="contributor"
+              className="contributor"
             />
           )}
           <h3 styleName={`headline ${hasTruncatedHeadline ? "truncated" : ""} `}>{storyData.headline}</h3>

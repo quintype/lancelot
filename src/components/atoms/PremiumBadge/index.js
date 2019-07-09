@@ -2,15 +2,15 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Icon } from "../Icon";
 
-import styles from "./premiumBadge.m.css";
+import "./premiumBadge.m.css";
 
 const PremiumBadge = ({ isPremium = false, className = "", positionClass = "bottomRight" }) => {
   if (!isPremium) {
     return null;
   } else {
     return (
-      <span className={`${styles.premium} ${positionClass} ${className} ${"premium-badge"}`}>
-        <Icon className={styles["premium-icon"]} type="premium" />
+      <span styleName={`premium ${positionClass} ${className} premium-badge`}>
+        <Icon className={"premium-icon"} type="premium" />
       </span>
     );
   }
@@ -23,8 +23,8 @@ PremiumBadge.propTypes = {
 
 const PremiumBadgeHeadline = ({ isPremium = false, className = "", headline = "" }) => {
   return (
-    <span className={`${styles["premium-headline-wrap"]} ${className}`}>
-      {isPremium && <Icon className={styles["headline-premium-icon"]} type="premium" />}
+    <span styleName={`premium-headline-wrap ${className}`}>
+      {isPremium && <Icon className={"headline-premium-icon"} type="premium" />}
       {headline || null}
     </span>
   );

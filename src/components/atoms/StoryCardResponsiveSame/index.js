@@ -8,7 +8,7 @@ import Contributor from "../Contributor/index";
 import { getStoryData, generateImageSources } from "../../utils/utils";
 // import { isPremium } from "../../../../isomorphic/data/story";
 
-import styles from "./storyCardResponsiveSame.m.css";
+import "./storyCardResponsiveSame.m.css";
 
 const StoryCardResponsiveSame = ({
   story,
@@ -49,12 +49,8 @@ const StoryCardResponsiveSame = ({
         )}
       />
       <div styleName="text-wrapper">
-        {contributor && (
-          <Contributor name={contributor["name"]} type={contributorRole} className={styles["contributor"]} />
-        )}
-        <h3 className={`${styles["headline"]} ${hasTruncatedHeadline ? styles["truncated"] : ""} `}>
-          {storyData.headline}
-        </h3>
+        {contributor && <Contributor name={contributor["name"]} type={contributorRole} className={"contributor"} />}
+        <h3 styleName={`headline ${hasTruncatedHeadline ? "truncated" : ""} `}>{storyData.headline}</h3>
       </div>
     </Link>
   );

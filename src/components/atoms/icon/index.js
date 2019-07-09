@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import get from "lodash/get";
-import styles from "./icon.m.css";
+import "./icon.m.css";
 
 if (require.context) {
   const req = require.context("../../../../assets/icons/", true, /\.svg$/);
@@ -12,7 +12,7 @@ if (require.context) {
 const IconBase = ({ type, className, iconSpritePath }) => {
   if (!type) return null;
   return (
-    <span className={`${styles.base} ${className} ${styles[type]}`}>
+    <span styleName="base" className={`${className} ${type}`}>
       <svg>
         <use xlinkHref={`${iconSpritePath}#${String(type).toLowerCase()}`} />
       </svg>
@@ -22,11 +22,11 @@ const IconBase = ({ type, className, iconSpritePath }) => {
 
 const ZodiacIconBase = ({ type, className = "", hoverDefault = false, iconSpritePath }) => {
   return (
-    <span className={`${styles.base} ${className} ${hoverDefault ? styles["hover"] : ""}`}>
-      <svg className={styles["zodiac"]}>
+    <span styleName={`base ${className} ${hoverDefault ? "hover" : ""}`}>
+      <svg styleName={"zodiac"}>
         <g>
-          <use href={`${iconSpritePath}#hexbackground`} className={styles["background"]} />
-          <use href={`${iconSpritePath}#${type}`} className={styles["form"]} />
+          <use href={`${iconSpritePath}#hexbackground`} styleName={"background"} />
+          <use href={`${iconSpritePath}#${type}`} styleName={"form"} />
         </g>
       </svg>
     </span>
