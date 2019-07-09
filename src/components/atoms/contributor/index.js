@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Link, WithHostUrl } from "@quintype/components";
 import { Icon } from "../../atoms/icon";
 
-import styles from "./styles.m.css";
+import styles from "./contributor.m.css";
 
 const Contributor = ({ path, type, name, imgUrl, className = "", config = {} }) => {
   if (!name) {

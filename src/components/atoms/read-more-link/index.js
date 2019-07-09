@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Link } from "@quintype/components";
 
 import Icon from "../../atoms/icon";
-import styles from "./styles.m.css";
+import styles from "./read-more-link.m.css";
 
 export const ReadMoreLink = ({ className = "", href, text = "Read More" }) => {
   if (!href) {

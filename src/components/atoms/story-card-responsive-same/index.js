@@ -8,7 +8,7 @@ import Contributor from "../contributor/index";
 import { getStoryData, generateImageSources } from "../../utils/utils";
 // import { isPremium } from "../../../../isomorphic/data/story";
 
-import styles from "./styles.m.css";
+import styles from "./story-card-responsive-same.m.css";
 
 const StoryCardResponsiveSame = ({
   story,
@@ -36,7 +36,7 @@ const StoryCardResponsiveSame = ({
       externalLink={externalLink}
     >
       <ResponsiveImageWithFallback
-        className={styles["image-wrapper"]}
+        styleName={"image-wrapper"}
         slug={storyData.imageS3Key}
         metadata={storyData.imageMetadata}
         alt={storyData.imageCaption}
@@ -48,7 +48,7 @@ const StoryCardResponsiveSame = ({
           { aspectRatio: [2, 1], screenWidthCoverage: 0.5 }
         )}
       />
-      <div className={styles["text-wrapper"]}>
+      <div styleName="text-wrapper">
         {contributor && (
           <Contributor name={contributor["name"]} type={contributorRole} className={styles["contributor"]} />
         )}

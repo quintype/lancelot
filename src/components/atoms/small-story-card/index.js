@@ -4,18 +4,13 @@ import { get } from "lodash";
 import { Link } from "@quintype/components";
 
 import Contributor from "../contributor/index";
-import "./small-story-card-desktop-medium-16x9.m.css";
 import ResponsiveImageWithFallback from "../responsive-image-with-fallback";
 import { getStoryData, generateImageSources } from "../../utils/utils";
 // import { isPremium } from "../../../../isomorphic/data/story";
 
-const SmallStoryCardDesktopMedium16x9 = ({
-  story,
-  className = "",
-  cardWithImageZoom = true,
-  hasTruncatedHeadline = true,
-  eager
-}) => {
+import "./small-story-card.m.css";
+
+const SmallStoryCard = ({ story, className = "", cardWithImageZoom = true, hasTruncatedHeadline = true }) => {
   const storyData = getStoryData(story);
   const contributor = get(story, ["authors", 0]);
   const contributorRole = get(story, ["authors", 0, "contributor-role", "name"], "");
@@ -28,27 +23,23 @@ const SmallStoryCardDesktopMedium16x9 = ({
   return (
     <Link
       aria-label={`${"Read full story: "} ${storyData.headline}`}
-      styleName={`read-more-link ${className} ${cardWithImageZoom ? "card-with-image-zoom" : ""}`}
-      className={`${className} ${cardWithImageZoom ? "card-with-image-zoom" : ""}`}
+      className={`read-more-link" ${className} ${cardWithImageZoom ? "card-with-image-zoom" : ""}`}
       href={externalLink || story.url}
       externalLink={externalLink}
     >
       <div styleName="base">
-        <div>
-          <ResponsiveImageWithFallback
-            styleName="image-wrapper"
-            slug={storyData.imageS3Key}
-            metadata={storyData.imageMetadata}
-            alt={storyData.imageCaption}
-            // isPremium={isPremium(story)}
-            imgParams={{ auto: ["format", "compress"] }}
-            eager={eager}
-            sources={generateImageSources(
-              { aspectRatio: [16, 9], screenWidthCoverage: 0.34 },
-              { aspectRatio: [4, 3], screenWidthCoverage: 0.34 }
-            )}
-          />
-        </div>
+        <ResponsiveImageWithFallback
+          styleName="image-wrapper"
+          slug={storyData.imageS3Key}
+          metadata={storyData.imageMetadata}
+          // isPremium={isPremium(story)}
+          alt={storyData.imageCaption}
+          imgParams={{ auto: ["format", "compress"] }}
+          sources={generateImageSources(
+            { aspectRatio: [4, 3], screenWidthCoverage: 0.34 },
+            { aspectRatio: [4, 3], screenWidthCoverage: 0.12 }
+          )}
+        />
         <div styleName="text-wrapper">
           {contributor && (
             <Contributor
@@ -65,7 +56,7 @@ const SmallStoryCardDesktopMedium16x9 = ({
   );
 };
 
-SmallStoryCardDesktopMedium16x9.propTypes = {
+SmallStoryCard.propTypes = {
   hasTruncatedHeadline: PropTypes.bool,
   className: PropTypes.string,
   cardWithImageZoom: PropTypes.bool,
@@ -98,8 +89,7 @@ SmallStoryCardDesktopMedium16x9.propTypes = {
     }),
     "hero-image-s3-key": PropTypes.string,
     "hero-image-caption": PropTypes.string
-  }),
-  eager: PropTypes.bool
+  })
 };
 
-export default SmallStoryCardDesktopMedium16x9;
+export default SmallStoryCard;

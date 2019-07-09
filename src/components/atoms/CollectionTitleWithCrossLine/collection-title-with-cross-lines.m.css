@@ -1,0 +1,28 @@
+.title {
+  --border-color: var(--title-color);
+  /* @include font-styles(h4); */
+  color: var(--title-color);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media (min-width: 768px) {
+    /* @include font-styles(h2); */
+  }
+
+  &::after,
+  &::before {
+    content: "";
+    display: block;
+    border-top: 2px solid var(--border-color);
+    flex-grow: 1;
+    opacity: 0.3;
+  }
+}
+
+.text {
+  padding: 0 var(--space1);
+  @media (min-width: 768px) {
+    padding: 0 var(--space3);
+  }
+}
