@@ -1,0 +1,50 @@
+.four-story-4s {
+  --background-color: var(--greyish-brown);
+  background-color: var(--background-color);
+  padding: var(--space1_5) 0 var(--space3);
+  @media (min-width: 768px) {
+    padding: var(--space3) 0;
+  }
+  :global .title {
+    --title-color: var(--white);
+    margin: 0 0 var(--space2);
+    @media (min-width: 768px) {
+      margin: 0 0 var(--space4);
+    }
+  }
+}
+
+.story-card {
+  flex: 1 0 75vw;
+  margin-right: var(--space2);
+  @media (min-width: 768px) {
+    flex: 0 1 25%;
+    margin-right: var(--space3);
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.story-container {
+  display: flex;
+  overflow-x: auto;
+  position: relative;
+  @media (min-width: 768px) {
+    justify-content: center;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(100vw - var(--space6));
+    width: var(--space6);
+    background: linear-gradient(to right, transparent, #000);
+
+    @media (min-width: 768px) {
+      content: none;
+    }
+  }
+}
