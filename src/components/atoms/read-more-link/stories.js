@@ -4,7 +4,7 @@ import "../../../../assets/stylesheets/app.scss";
 import ReadMoreLink from "./index";
 import { withStore } from "../../../../storybook/index";
 
-const LinkText = " மேலும் படிக்க";
+const LinkText = " Click Here";
 
 withStore("Atoms/ReadMoreLink")
   .add("default", () => <ReadMoreLink text={LinkText} href="#" />)

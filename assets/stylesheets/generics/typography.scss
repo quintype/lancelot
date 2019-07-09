@@ -1,7 +1,23 @@
-html {
-  overflow-x: hidden;
-  overflow-y: auto;
-  font-size: 62.5%;
+:root {
+  //Font Families
+  --primaryTypeface: "Helvetica", "Arial", sans-serif;
+
+  // Font sizes
+  --base-smallest: 1.2rem;
+  --base-smaller: 1.4rem;
+  --base-small: 1.5rem;
+  --base: 1.6rem;
+  --base-medium: 1.8rem;
+  --base-large: 2rem;
+  --base-larger: 2.4rem;
+  --medium: 2.6rem;
+  --large: 3.2rem;
+  --jumbo: 5.4rem;
+
+  // Font Weights
+  --regular: 400;
+  --semi-bold: 600;
+  --bold: 700;
 }
 
 a {
@@ -9,34 +25,40 @@ a {
   color: inherit;
 }
 
-figure,
-img {
-  max-width: 100%;
-  margin: 0;
-  padding: 0;
+html {
+  font-size: 62.5%;
 }
 
+body {
+  font-family: var(--primaryTypeface);
+  font-weight: var(--regular);
+  font-size: var(--base);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: "liga" on;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
 ul,
-ol,
-dl {
+ol {
   margin: 0;
   padding: 0;
-  list-style: none;
+  font-family: var(--primaryTypeface);
 }
 
-button {
-  outline: none;
-  box-shadow: none;
-  cursor: pointer;
+p,
+li {
+  font-size: var(--base);
+  line-height: 1.6;
 }
-
-// $headingStyles: "h1", "h2", "h3", "h4", "h5", "body";
-
-// @each $styles in $headingStyles {
-//   #{$styles} {
-//     @include font-styles(mobile-#{$styles});
-//     @include tablet {
-//       @include font-styles(#{$styles});
-//     }
-//   }
-// }
+small {
+  font-size: var(--smaller);
+  line-height: 1.6;
+}
