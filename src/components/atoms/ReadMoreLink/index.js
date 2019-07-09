@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "@quintype/components";
 
-import Icon from "../../atoms/icon";
-import styles from "./read-more-link.m.css";
+import Icon from "../Icon";
+import styles from "./readMoreLink.m.css";
 
 export const ReadMoreLink = ({ className = "", href, text = "Read More" }) => {
   if (!href) {

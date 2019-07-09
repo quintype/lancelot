@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import BigStoryCard from "../../atoms/big-story-card/index";
-import SmallStoryCard from "../../atoms/small-story-card/index";
+import BigStoryCard from "../BigStoryCard/index";
+import SmallStoryCard from "../SmallStoryCard";
 
-import styles from "./story-stack.m.css";
+import styles from "./storyStack.m.css";
 
 const StoryStack = ({ bigStory, mobileStoryCount, stories, className }) => {
   if (stories.length < 1) {

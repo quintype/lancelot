@@ -2,14 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 import { get } from "lodash";
 
-import StoryCardBig from "../../atoms/story-card-responsive-same";
-import SmallStoryCardDesktopMedium16x9 from "../../atoms/small-story-card-desktop-medium-16x9";
-import SmallStoryCardDesktopVertical from "../../atoms/small-story-card-desktop-vertical";
+import StoryCardBig from "../../atoms/StoryCardResponsiveSame";
+import SmallStoryCardDesktopMedium16x9 from "../../atoms/SmallStoryCardDesktopMedium16x9";
+import SmallStoryCardDesktopVertical from "../../atoms/SmallStoryCardDesktopVertical";
 // import { DfpAd } from "../../atoms/dfp-ad";
 // import { getPagePath } from "../../../data/collection";
-import ReadMoreLink from "../../atoms/read-more-link/index";
+import ReadMoreLink from "../../atoms/ReadMoreLink";
 
-import "./five-story-one-ad-one-widget.m.css";
+import "./fiveStoryOneAdOneWidget.m.css";
 
 const getStoryHeadline = story => {
   return get(story, ["alternative", "home", "default", "headline"]) || story.headline;

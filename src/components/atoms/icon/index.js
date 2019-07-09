@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { get } from "lodash";
-import styles from "./styles.m.css";
+import get from "lodash/get";
+import styles from "./icon.m.css";
 
 if (require.context) {
   const req = require.context("../../../../assets/icons/", true, /\.svg$/);

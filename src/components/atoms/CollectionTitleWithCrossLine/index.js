@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import "./collection-title-with-cross-lines.m.css";
+import "./collectionTitleWithCrossLine.m.css";
 
 const CollectionTitleWithCrossLine = ({ title, className = "" }) => {
   if (!title) {

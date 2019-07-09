@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { ResponsiveImage, ResponsiveSource } from "@quintype/components";
 import VikatanStoryFallback from "../../shared/icons/fallbackImage";
-import { PremiumBadge } from "../../atoms/premium-badge";
+import { PremiumBadge } from "../PremiumBadge";
 import { omit } from "lodash";
 
 const ResponsiveImageWithFallback = ({ className, children, sources, zoom = true, style, isPremium, ...props }) => {

@@ -2,16 +2,20 @@ import React from "react";
 import PropTypes from "prop-types";
 import { get } from "lodash";
 import { Link } from "@quintype/components";
-import ResponsiveImageWithFallback from "../responsive-image-with-fallback";
-import Contributor from "../contributor/index";
+
+import Contributor from "../Contributor/index";
+import "./smallStoryCardDesktopVertical.m.css";
+import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
+import { getStoryData, generateImageSources } from "../../utils/utils";
 // import { isPremium } from "../../../../isomorphic/data/story";
 
-import styles from "./big-story-card.m.css";
-import { getStoryData, generateImageSources } from "../../utils/utils";
-
-const BigStoryCard = ({ story, cardWithImageZoom = true, className = "", hasTruncatedHeadline = true }) => {
-  const storyData = getStoryData(story, false);
-
+const SmallStoryCardDesktopVertical = ({
+  story,
+  className = "",
+  cardWithImageZoom = true,
+  hasTruncatedHeadline = true
+}) => {
+  const storyData = getStoryData(story);
   const contributor = get(story, ["authors", 0]);
   const contributorRole = get(story, ["authors", 0, "contributor-role", "name"], "");
   const externalLink = get(story, ["metadata", "reference-url"]);
@@ -23,45 +27,45 @@ const BigStoryCard = ({ story, cardWithImageZoom = true, className = "", hasTrun
   return (
     <Link
       aria-label={`${"Read full story: "} ${storyData.headline}`}
-      className={`${styles["read-more-link"]} ${className} ${cardWithImageZoom ? "card-with-image-zoom" : ""}`}
+      className={`read-more-link ${className} ${cardWithImageZoom ? "card-with-image-zoom" : ""}`}
       href={externalLink || story.url}
       externalLink={externalLink}
     >
-      <div className={styles["base"]}>
-        <ResponsiveImageWithFallback
-          className={styles["image-wrapper"]}
-          slug={storyData.imageS3Key}
-          metadata={storyData.imageMetadata}
-          // isPremium={isPremium(story)}
-          alt={storyData.imageCaption}
-          imgParams={{ auto: ["format", "compress"] }}
-          sources={generateImageSources(
-            { aspectRatio: [9, 6], screenWidthCoverage: 0.5 },
-            { aspectRatio: [9, 6], screenWidthCoverage: 0.25 }
-          )}
-        />
-        <div className={styles["text-wrapper"]}>
+      <div styleName="base">
+        <div className="image-container">
+          <ResponsiveImageWithFallback
+            styleName="image-wrapper"
+            slug={storyData.imageS3Key}
+            metadata={storyData.imageMetadata}
+            alt={storyData.imageCaption}
+            // isPremium={isPremium(story)}
+            imgParams={{ auto: ["format", "compress"] }}
+            sources={generateImageSources(
+              { aspectRatio: [4, 3], screenWidthCoverage: 0.34 },
+              { aspectRatio: [16, 9], screenWidthCoverage: 0.18 }
+            )}
+          />
+        </div>
+        <div styleName="text-wrapper">
           {contributor && (
             <Contributor
               name={contributor["name"]}
               type={contributorRole}
               iconColor="#4a4a4a"
-              className={styles["contributor"]}
+              className="contributor"
             />
           )}
-          <h3 className={`${styles["headline"]} ${hasTruncatedHeadline ? styles["truncated"] : ""} `}>
-            {storyData.headline}
-          </h3>
+          <h3 styleName={`headline ${hasTruncatedHeadline ? "truncated" : ""} `}>{storyData.headline}</h3>
         </div>
       </div>
     </Link>
   );
 };
 
-BigStoryCard.propTypes = {
-  cardWithImageZoom: PropTypes.bool,
-  className: PropTypes.string,
+SmallStoryCardDesktopVertical.propTypes = {
   hasTruncatedHeadline: PropTypes.bool,
+  className: PropTypes.string,
+  cardWithImageZoom: PropTypes.bool,
   story: PropTypes.shape({
     id: PropTypes.string,
     authors: PropTypes.arrayOf(
@@ -94,4 +98,4 @@ BigStoryCard.propTypes = {
   })
 };
 
-export default BigStoryCard;
+export default SmallStoryCardDesktopVertical;

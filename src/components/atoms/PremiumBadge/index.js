@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Icon } from "../../atoms/icon";
+import { Icon } from "../Icon";
 
-import styles from "./premium-badge.m.css";
+import styles from "./premiumBadge.m.css";
 
 const PremiumBadge = ({ isPremium = false, className = "", positionClass = "bottomRight" }) => {
   if (!isPremium) {

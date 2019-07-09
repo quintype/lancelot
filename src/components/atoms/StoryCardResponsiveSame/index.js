@@ -2,13 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import { get } from "lodash";
 import { Link } from "@quintype/components";
-import ResponsiveImageWithFallback from "../responsive-image-with-fallback";
-import Contributor from "../contributor/index";
+import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
+import Contributor from "../Contributor/index";
 
 import { getStoryData, generateImageSources } from "../../utils/utils";
 // import { isPremium } from "../../../../isomorphic/data/story";
 
-import styles from "./story-card-responsive-same.m.css";
+import styles from "./storyCardResponsiveSame.m.css";
 
 const StoryCardResponsiveSame = ({
   story,

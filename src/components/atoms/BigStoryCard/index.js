@@ -2,21 +2,16 @@ import React from "react";
 import PropTypes from "prop-types";
 import { get } from "lodash";
 import { Link } from "@quintype/components";
-
-import Contributor from "../contributor/index";
-import "./small-story-card-desktop-medium-16x9.m.css";
-import ResponsiveImageWithFallback from "../responsive-image-with-fallback";
-import { getStoryData, generateImageSources } from "../../utils/utils";
+import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
+import Contributor from "../Contributor/index";
 // import { isPremium } from "../../../../isomorphic/data/story";
 
-const SmallStoryCardDesktopMedium16x9 = ({
-  story,
-  className = "",
-  cardWithImageZoom = true,
-  hasTruncatedHeadline = true,
-  eager
-}) => {
-  const storyData = getStoryData(story);
+import styles from "./bigStoryCard.m.css";
+import { getStoryData, generateImageSources } from "../../utils/utils";
+
+const BigStoryCard = ({ story, cardWithImageZoom = true, className = "", hasTruncatedHeadline = true }) => {
+  const storyData = getStoryData(story, false);
+
   const contributor = get(story, ["authors", 0]);
   const contributorRole = get(story, ["authors", 0, "contributor-role", "name"], "");
   const externalLink = get(story, ["metadata", "reference-url"]);
@@ -28,47 +23,45 @@ const SmallStoryCardDesktopMedium16x9 = ({
   return (
     <Link
       aria-label={`${"Read full story: "} ${storyData.headline}`}
-      styleName={`read-more-link ${className} ${cardWithImageZoom ? "card-with-image-zoom" : ""}`}
-      className={`${className} ${cardWithImageZoom ? "card-with-image-zoom" : ""}`}
+      className={`${styles["read-more-link"]} ${className} ${cardWithImageZoom ? "card-with-image-zoom" : ""}`}
       href={externalLink || story.url}
       externalLink={externalLink}
     >
-      <div styleName="base">
-        <div>
-          <ResponsiveImageWithFallback
-            styleName="image-wrapper"
-            slug={storyData.imageS3Key}
-            metadata={storyData.imageMetadata}
-            alt={storyData.imageCaption}
-            // isPremium={isPremium(story)}
-            imgParams={{ auto: ["format", "compress"] }}
-            eager={eager}
-            sources={generateImageSources(
-              { aspectRatio: [16, 9], screenWidthCoverage: 0.34 },
-              { aspectRatio: [4, 3], screenWidthCoverage: 0.34 }
-            )}
-          />
-        </div>
-        <div styleName="text-wrapper">
+      <div className={styles["base"]}>
+        <ResponsiveImageWithFallback
+          className={styles["image-wrapper"]}
+          slug={storyData.imageS3Key}
+          metadata={storyData.imageMetadata}
+          // isPremium={isPremium(story)}
+          alt={storyData.imageCaption}
+          imgParams={{ auto: ["format", "compress"] }}
+          sources={generateImageSources(
+            { aspectRatio: [9, 6], screenWidthCoverage: 0.5 },
+            { aspectRatio: [9, 6], screenWidthCoverage: 0.25 }
+          )}
+        />
+        <div className={styles["text-wrapper"]}>
           {contributor && (
             <Contributor
               name={contributor["name"]}
               type={contributorRole}
               iconColor="#4a4a4a"
-              styleName="contributor"
+              className={styles["contributor"]}
             />
           )}
-          <h3 styleName={`headline ${hasTruncatedHeadline ? "truncated" : ""} `}>{storyData.headline}</h3>
+          <h3 className={`${styles["headline"]} ${hasTruncatedHeadline ? styles["truncated"] : ""} `}>
+            {storyData.headline}
+          </h3>
         </div>
       </div>
     </Link>
   );
 };
 
-SmallStoryCardDesktopMedium16x9.propTypes = {
-  hasTruncatedHeadline: PropTypes.bool,
-  className: PropTypes.string,
+BigStoryCard.propTypes = {
   cardWithImageZoom: PropTypes.bool,
+  className: PropTypes.string,
+  hasTruncatedHeadline: PropTypes.bool,
   story: PropTypes.shape({
     id: PropTypes.string,
     authors: PropTypes.arrayOf(
@@ -98,8 +91,7 @@ SmallStoryCardDesktopMedium16x9.propTypes = {
     }),
     "hero-image-s3-key": PropTypes.string,
     "hero-image-caption": PropTypes.string
-  }),
-  eager: PropTypes.bool
+  })
 };
 
-export default SmallStoryCardDesktopMedium16x9;
+export default BigStoryCard;

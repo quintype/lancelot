@@ -1,6 +1,6 @@
 import React from "react";
 import { ResponsiveHeroImage } from "@quintype/components";
-import { Headline } from "../../atoms/headline/index";
+import { Headline } from "../../atoms/Headline/index";
 import { SectionTitle1 } from "../../atoms/SectionTitle1/SectionTitle1";
 import { AuthorName1 } from "../../atoms/AuthorName1/AuthorName1";
 import PropTypes from "prop-types";

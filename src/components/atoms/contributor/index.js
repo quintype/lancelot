@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link, WithHostUrl } from "@quintype/components";
-import { Icon } from "../../atoms/icon";
+import { Icon } from "../Icon";
 
 import styles from "./contributor.m.css";
 

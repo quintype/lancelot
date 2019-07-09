@@ -5,10 +5,10 @@ import { getPagePath } from "../../utils/collection";
 import CollectionLink from "../../utils/generate-collection-link";
 import CollectionTitleWithCrossLine from "../../atoms/CollectionTitleWithCrossLine";
 
-import BigStoryCard from "../../atoms/big-story-card/index";
-import StoryStack from "../../atoms/story-stack/index";
-import ReadMoreLink from "../../atoms/read-more-link/index";
-import "./sixteen-story-4c.m.css";
+import BigStoryCard from "../../atoms/BigStoryCard";
+import StoryStack from "../../atoms/StoryStack";
+import ReadMoreLink from "../../atoms/ReadMoreLink";
+import "./sixteenStory4c.m.css";
 
 import { wrapCollectionLayout } from "@quintype/components";
 import { getStoryHeadline } from "../../utils/utils";

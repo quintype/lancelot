@@ -3,14 +3,19 @@ import PropTypes from "prop-types";
 import { get } from "lodash";
 import { Link } from "@quintype/components";
 
-import Contributor from "../contributor/index";
-import ResponsiveImageWithFallback from "../responsive-image-with-fallback";
+import Contributor from "../Contributor/index";
+import "./smallStoryCardDesktopMedium16x9.m.css";
+import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
 import { getStoryData, generateImageSources } from "../../utils/utils";
 // import { isPremium } from "../../../../isomorphic/data/story";
 
-import "./small-story-card.m.css";
-
-const SmallStoryCard = ({ story, className = "", cardWithImageZoom = true, hasTruncatedHeadline = true }) => {
+const SmallStoryCardDesktopMedium16x9 = ({
+  story,
+  className = "",
+  cardWithImageZoom = true,
+  hasTruncatedHeadline = true,
+  eager
+}) => {
   const storyData = getStoryData(story);
   const contributor = get(story, ["authors", 0]);
   const contributorRole = get(story, ["authors", 0, "contributor-role", "name"], "");
@@ -23,23 +28,27 @@ const SmallStoryCard = ({ story, className = "", cardWithImageZoom = true, hasTr
   return (
     <Link
       aria-label={`${"Read full story: "} ${storyData.headline}`}
-      className={`read-more-link" ${className} ${cardWithImageZoom ? "card-with-image-zoom" : ""}`}
+      styleName={`read-more-link ${className} ${cardWithImageZoom ? "card-with-image-zoom" : ""}`}
+      className={`${className} ${cardWithImageZoom ? "card-with-image-zoom" : ""}`}
       href={externalLink || story.url}
       externalLink={externalLink}
     >
       <div styleName="base">
-        <ResponsiveImageWithFallback
-          styleName="image-wrapper"
-          slug={storyData.imageS3Key}
-          metadata={storyData.imageMetadata}
-          // isPremium={isPremium(story)}
-          alt={storyData.imageCaption}
-          imgParams={{ auto: ["format", "compress"] }}
-          sources={generateImageSources(
-            { aspectRatio: [4, 3], screenWidthCoverage: 0.34 },
-            { aspectRatio: [4, 3], screenWidthCoverage: 0.12 }
-          )}
-        />
+        <div>
+          <ResponsiveImageWithFallback
+            styleName="image-wrapper"
+            slug={storyData.imageS3Key}
+            metadata={storyData.imageMetadata}
+            alt={storyData.imageCaption}
+            // isPremium={isPremium(story)}
+            imgParams={{ auto: ["format", "compress"] }}
+            eager={eager}
+            sources={generateImageSources(
+              { aspectRatio: [16, 9], screenWidthCoverage: 0.34 },
+              { aspectRatio: [4, 3], screenWidthCoverage: 0.34 }
+            )}
+          />
+        </div>
         <div styleName="text-wrapper">
           {contributor && (
             <Contributor
@@ -56,7 +65,7 @@ const SmallStoryCard = ({ story, className = "", cardWithImageZoom = true, hasTr
   );
 };
 
-SmallStoryCard.propTypes = {
+SmallStoryCardDesktopMedium16x9.propTypes = {
   hasTruncatedHeadline: PropTypes.bool,
   className: PropTypes.string,
   cardWithImageZoom: PropTypes.bool,
@@ -89,7 +98,8 @@ SmallStoryCard.propTypes = {
     }),
     "hero-image-s3-key": PropTypes.string,
     "hero-image-caption": PropTypes.string
-  })
+  }),
+  eager: PropTypes.bool
 };
 
-export default SmallStoryCard;
+export default SmallStoryCardDesktopMedium16x9;
