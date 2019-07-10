@@ -17,17 +17,17 @@ const StoryStack = ({ bigStory, mobileStoryCount, stories, className = "" }) => 
       <SmallStoryCard story={stories[0]} className={"line-separater"} key={stories[0].id} />
     )
   ].concat(
-    stories.slice(1).map((story, index) => (
-      <SmallStoryCard
-        story={story}
-        className={`
-          ${[index + 1 >= mobileStoryCount ? "mobile-hide" : ""]}
-          line-separater
-          ${[index + 2 === mobileStoryCount ? "skip-line" : ""]}
-        `}
-        key={story.id}
-      />
-    ))
+    stories
+      .slice(1)
+      .map((story, index) => (
+        <SmallStoryCard
+          story={story}
+          className={`${[index + 1 >= mobileStoryCount ? "mobile-hide" : ""]} ${[
+            index + 2 === mobileStoryCount ? "skip-line " : ""
+          ]} line-separater`}
+          key={story.id}
+        />
+      ))
   );
   return <div styleName={`base ${className}`}>{stack}</div>;
 };

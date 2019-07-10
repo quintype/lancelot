@@ -5,20 +5,20 @@
   @media (min-width: 768px) {
     grid-row-gap: var(--space2);
   }
+
+  :global .line-separater {
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: var(--space1);
+    @media (min-width: 768px) {
+      padding-bottom: var(--space2);
+    }
+  }
 }
 
 .mobile-hide {
   display: none;
   @media (min-width: 768px) {
     display: block;
-  }
-}
-
-.line-separater {
-  border-bottom: 2px solid var(--border-color);
-  padding-bottom: var(--space1);
-  @media (min-width: 768px) {
-    padding-bottom: var(--space2);
   }
 }
 

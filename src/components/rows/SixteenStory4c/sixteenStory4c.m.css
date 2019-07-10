@@ -4,11 +4,11 @@
   @media (min-width: 768px) {
     padding: var(--space3) 0;
   }
-  .title {
-    margin: 0 0 var(--space2);
-    @media (min-width: 768px) {
-      margin: 0 0 var(--space4);
-    }
+
+  :global .sub-collection-headline {
+    margin: 0px;
+    align-self: end;
+    color: var(--content-color);
   }
 }
 
@@ -23,13 +23,6 @@
     grid-auto-flow: column;
   }
   align-items: flex-start;
-}
-
-.sub-collection-headline {
-  /* @include font-styles(h4); */
-  margin: 0px;
-  align-self: end;
-  color: var(--content-color);
 }
 
 .read-more-wrapper {

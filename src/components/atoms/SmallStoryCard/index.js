@@ -7,6 +7,7 @@ import Contributor from "../Contributor/index";
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
 import { getStoryData, generateImageSources } from "../../utils/utils";
 // import { isPremium } from "../../../../isomorphic/data/story";
+import Headline from "../Headline";
 
 import "./smallStoryCard.m.css";
 
@@ -23,7 +24,7 @@ const SmallStoryCard = ({ story, className = "", cardWithImageZoom = true, hasTr
   return (
     <Link
       aria-label={`${"Read full story: "} ${storyData.headline}`}
-      className={`read-more-link" ${className} ${cardWithImageZoom ? "card-with-image-zoom" : ""}`}
+      className={`read-more-link ${className} ${cardWithImageZoom ? "card-with-image-zoom" : ""}`}
       href={externalLink || story.url}
       externalLink={externalLink}
     >
@@ -49,7 +50,12 @@ const SmallStoryCard = ({ story, className = "", cardWithImageZoom = true, hasTr
               className="contributor"
             />
           )}
-          <h3 styleName={`headline ${hasTruncatedHeadline ? "truncated" : ""} `}>{storyData.headline}</h3>
+          <Headline
+            text={storyData.headline}
+            headerType={3}
+            headerLevel={3}
+            className={`${hasTruncatedHeadline ? "truncated" : ""}`}
+          />
         </div>
       </div>
     </Link>
