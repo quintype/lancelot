@@ -30,7 +30,7 @@ html {
 }
 
 body {
-  font-family: var(--primaryTypeface);
+  font-family: var(--sansTypeface);
   font-weight: var(--regular);
   font-size: var(--base);
   text-rendering: optimizeLegibility;
@@ -50,7 +50,7 @@ ul,
 ol {
   margin: 0;
   padding: 0;
-  font-family: var(--primaryTypeface);
+  font-family: var(--sansTypeface);
 }
 
 p,
