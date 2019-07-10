@@ -5,6 +5,14 @@
   .contributor {
     white-space: nowrap;
   }
+
+  :global .line-separater {
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: var(--space1);
+    @media (min-width: 768px) {
+      padding-bottom: var(--space2);
+    }
+  }
 }
 
 .image-wrapper {

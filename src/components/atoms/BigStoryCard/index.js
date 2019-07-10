@@ -5,6 +5,7 @@ import { Link } from "@quintype/components";
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
 import Contributor from "../Contributor/index";
 // import { isPremium } from "../../../../isomorphic/data/story";
+import Headline from "../Headline";
 
 import "./bigStoryCard.m.css";
 import { getStoryData, generateImageSources } from "../../utils/utils";
@@ -49,7 +50,12 @@ const BigStoryCard = ({ story, cardWithImageZoom = true, className = "", hasTrun
               className={"contributor"}
             />
           )}
-          <h3 styleName={`headline ${hasTruncatedHeadline ? "truncated" : ""} `}>{storyData.headline}</h3>
+          <Headline
+            text={storyData.headline}
+            headerType={3}
+            headerLevel={3}
+            className={`${hasTruncatedHeadline ? "truncated" : ""}`}
+          />
         </div>
       </div>
     </Link>

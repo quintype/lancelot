@@ -27,8 +27,8 @@ const Contributor = ({ path, type, name, imgUrl, className = "", config = {} }) 
       )}
     </WithHostUrl>
   ) : (
-    <div styleName={`base ${className}`}>
-      <span styleName={"contributor-name"}>{name}</span>
+    <div styleName="base" className={`${className}`}>
+      <span styleName="contributor-name">{name}</span>
     </div>
   );
 };

@@ -3,11 +3,12 @@ import PropTypes from "prop-types";
 import produce from "immer";
 import { getPagePath } from "../../utils/collection";
 import CollectionLink from "../../utils/generate-collection-link";
-import CollectionTitleWithCrossLine from "../../atoms/CollectionTitleWithCrossLine";
 
 import BigStoryCard from "../../atoms/BigStoryCard";
 import StoryStack from "../../atoms/StoryStack";
 import ReadMoreLink from "../../atoms/ReadMoreLink";
+import Headline from "../../atoms/Headline";
+
 import "./sixteenStory4c.m.css";
 
 import { wrapCollectionLayout } from "@quintype/components";
@@ -37,7 +38,7 @@ const SixteenStory4C = ({ collection, metadata, accentColor }) => {
       return (
         <React.Fragment key={collection.id}>
           <CollectionLink collection={collection}>
-            <h2 styleName="sub-collection-headline">{collection.name}</h2>
+            <Headline text={collection.name} headerType={2} headerLevel={2} className={"sub-collection-headline"} />
           </CollectionLink>
           <WrappedStoryStack bigStory={index % 2 === 0} mobileStoryCount={mobileStoryCount} collection={collection} />
           <div styleName="read-more-wrapper">
@@ -58,7 +59,13 @@ const SixteenStory4C = ({ collection, metadata, accentColor }) => {
       <div className="container">
         {name && (
           <CollectionLink collection={collection}>
-            <CollectionTitleWithCrossLine className={"title"} title={name} />
+            <Headline
+              text={name}
+              headerType={1}
+              headerLevel={2}
+              headlineDesign={"crossline"}
+              className={"collection-title"}
+            />
           </CollectionLink>
         )}
         <div styleName="stack-grid">{stacks}</div>

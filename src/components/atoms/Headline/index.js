@@ -1,30 +1,35 @@
 import React from "react";
-import get from "lodash/get";
-import isNull from "lodash/isNull";
-import isEmpty from "lodash/isEmpty";
-import cx from "classnames";
-import { string, number, func, object } from "prop-types";
+import { string, number } from "prop-types";
 
 import "./headline.m.css";
 
-const Headline = ({ text, story, headerType = 1, headerLevel = 1, onClick, active = "", headlineLimit = 140 }) => {
+const Headline = ({ text, headerType = 1, headerLevel = 1, headlineDesign = "", className = "" }) => {
   const HeaderTag = "h" + headerLevel;
-  const isClosed = get(story, ["metadata", "is-closed"], false);
-  const template = get(story, ["story-template"], null);
-  const getLiveIcon = cx("", { "live-icon": template === "live-blog" && !isClosed });
-  const storyHeadline = story && story.headline;
-  const altHeadline = get(story, ["alternative", "home", "default", "headline"], null);
-  const alternativeHeadline = isNull(altHeadline) || isEmpty(altHeadline) ? storyHeadline : altHeadline;
+
+  const crossLineDom = () => {
+    return <span className="text">{text}</span>;
+  };
+
+  const simpleDom = () => {
+    return text;
+  };
+
+  const headlineDom = () => {
+    switch (headlineDesign) {
+      case "crossline":
+        return crossLineDom();
+      default:
+        return simpleDom();
+    }
+  };
 
   return (
     <React.Fragment>
       <HeaderTag
-        onClick={onClick}
-        styleName={`headline headline-type-${headerType}`}
-        className={`headline headline-type-${headerType} ${active}`}
+        styleName={`headline headline-type-${headerType} ${headlineDesign}`}
+        className={`headline headline-type-${headerType} ${headlineDesign} ${className}`}
       >
-        {template === "live-blog" && !isClosed && <span styleName={`${getLiveIcon}`}>LIVE</span>}
-        {alternativeHeadline || text}
+        {headlineDom()}
       </HeaderTag>
     </React.Fragment>
   );
@@ -36,8 +41,6 @@ Headline.propTypes = {
   text: string,
   headerType: number,
   headerLevel: number,
-  onClick: func,
-  active: string,
-  headlineLimit: number,
-  story: object
+  headlineDesign: string,
+  className: string
 };
