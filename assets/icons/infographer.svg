@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 19.2">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_904" data-name="Rectangle 904" className="cls-1" />
+    </clipPath>
+  </defs>
+  <g id="Infographer" className="cls-2">
+    <g id="Group_2189" data-name="Group 2189" transform="translate(-711.671 -844.055)">
+      <path
+        id="Path_1002"
+        data-name="Path 1002"
+        className="cls-3"
+        d="M6.878,3.667,9.464,6.26l-6.878,6.9H0V10.567ZM10.535,0l2.586,2.593L10.745,4.976,8.158,2.383Z"
+        transform="rotate(135 194.385 581.088)"
+      />
+      <path
+        id="Path_1003"
+        data-name="Path 1003"
+        className="cls-3"
+        d="M8.936,0l2.586,2.593L2.586,11.529,0,8.936Z"
+        transform="rotate(135 190.201 580.017)"
+      />
+      <path
+        id="Path_1004"
+        data-name="Path 1004"
+        className="cls-3"
+        d="M6.763,0,9.349,2.593,2.586,9.356,0,6.763Z"
+        transform="rotate(135 185.73 579.066)"
+      />
+    </g>
+  </g>
+</svg>

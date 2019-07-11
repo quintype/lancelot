@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 19.2">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_900" data-name="Rectangle 900" className="cls-1" />
+    </clipPath>
+  </defs>
+  <g id="Photographer" className="cls-2">
+    <g id="Group_2190" data-name="Group 2190" transform="translate(3 -6.666)">
+      <path
+        id="Path_1005"
+        data-name="Path 1005"
+        className="cls-3"
+        d="M22.833,10.778H17.138L16.3,8.324A.445.445,0,0,0,15.888,8H10.333a.557.557,0,0,0-.463.324l-.787,2.454H7.555V9.852a.929.929,0,0,0-.926-.926H5.241a.929.929,0,0,0-.926.926v.926H3.389A1.364,1.364,0,0,0,2,12.167v5.092H8.528a4.63,4.63,0,1,1,0,.926H2v5.092a1.393,1.393,0,0,0,1.389,1.389H22.833a1.424,1.424,0,0,0,1.389-1.389V12.167A1.393,1.393,0,0,0,22.833,10.778Zm-.463,4.167a.5.5,0,0,1-.463.463H19.129a.464.464,0,0,1-.463-.463V13.092a.437.437,0,0,1,.463-.463h2.778a.464.464,0,0,1,.463.463Z"
+      />
+      <circle
+        id="Ellipse_57"
+        data-name="Ellipse 57"
+        className="cls-3"
+        cx="2.315"
+        cy="2.315"
+        r="2.315"
+        transform="translate(10.796 15.407)"
+      />
+    </g>
+  </g>
+</svg>

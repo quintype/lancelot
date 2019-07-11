@@ -1,0 +1,25 @@
+.base {
+  --content-color: var(--gray);
+  --icon-color: var(--greyish-brown);
+
+  font-family: var(--serifTypeface);
+  font-size: 11px;
+  font-weight: 400;
+  display: grid;
+  grid-template-columns: 2.2em 1fr;
+  grid-column-gap: var(--space-2);
+  align-items: center;
+  svg {
+    font-size: 2.2em;
+  }
+}
+
+.contributor-name {
+  color: var(--content-color);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.icon {
+  color: var(--icon-color);
+}

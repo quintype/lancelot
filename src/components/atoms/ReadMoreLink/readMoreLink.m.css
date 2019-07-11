@@ -1,0 +1,31 @@
+.read-more-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  padding: 0 var(--space2);
+  height: var(--space4);
+  border-radius: var(--space2);
+  background-color: var(--background-color);
+  color: var(--title-color);
+  min-width: 110px;
+  /* @include hover-transition(background-color, var(--alto)); */
+  svg {
+    transform: none;
+    transition: transform 0.2s ease-in-out;
+  }
+  &:hover {
+    svg {
+      transform: translateX(var(--space-4));
+    }
+  }
+}
+
+.arrow-right {
+  font-size: 9px;
+}
+
+.text {
+  /* @include font-styles(footer); */
+  margin-right: var(--space1);
+}

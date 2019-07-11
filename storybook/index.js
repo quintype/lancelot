@@ -1,0 +1,33 @@
+import React from "react";
+import { Provider } from "react-redux";
+import * as storybook from "@storybook/react";
+import { action } from "@storybook/addon-actions";
+import assetify from "@quintype/framework/assetify/client";
+import "../assets/stylesheets/app.scss";
+
+assetify();
+global.userPromise = Promise.reject(new Error("no user in storybook"));
+
+export default function storiesOf(componentName) {
+  return storybook.storiesOf(componentName, module).addDecorator(story => (
+    <React.Fragment>
+      <style>
+        {
+          "@font-face{font-family:'PT Serif';font-style:normal;font-weight:400;font-display:swap;src:local('PT Serif'),local('PTSerif-Regular'),url(https://fonts.gstatic.com/s/ptserif/v10/EJRVQgYoZZY2vCFuvAFWzrk.woff) format('woff')}@font-face{font-family:'PT Serif';font-style:normal;font-weight:700;font-display:swap;src:local('PT Serif Bold'),local('PTSerif-Bold'),url(https://fonts.gstatic.com/s/ptserif/v10/EJRSQgYoZZY2vCFuvAnt66qSVy0.woff) format('woff')}@font-face{font-family:Roboto;font-style:normal;font-weight:400;font-display:swap;src:local('Roboto'),local('Roboto-Regular'),url(https://fonts.gstatic.com/s/roboto/v19/KFOmCnqEu92Fr1Mu4mxM.woff) format('woff')}@font-face{font-family:Roboto;font-style:normal;font-weight:700;font-display:swap;src:local('Roboto Bold'),local('Roboto-Bold'),url(https://fonts.gstatic.com/s/roboto/v19/KFOlCnqEu92Fr1MmWUlfBBc-.woff) format('woff')}"
+        }
+        {`:root {--sansTypeface: 'Roboto', sans-serif;--serifTypeface: PT Serif, sans-serif;}`}
+      </style>
+      {story()}
+    </React.Fragment>
+  ));
+}
+
+export function withStore(componentName, state) {
+  const store = {
+    getState: () => state || { qt: { config: { iconSpritePath: "/sprite.svg" } } },
+    subscribe: () => 0,
+    dispatch: action("some action")
+  };
+
+  return storiesOf(componentName).addDecorator(story => <Provider store={store}>{story()}</Provider>);
+}

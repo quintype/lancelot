@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 19.2">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_903" data-name="Rectangle 903" className="cls-1" />
+    </clipPath>
+  </defs>
+  <g id="Video_editor" data-name="Video editor" className="cls-2">
+    <g id="Group_2188" data-name="Group 2188" transform="translate(-6 -13.699)">
+      <g id="Group_2187" data-name="Group 2187" transform="translate(13 15.223)">
+        <path
+          id="Path_999"
+          data-name="Path 999"
+          className="cls-3"
+          d="M36.107,64.488a1.291,1.291,0,0,1,1.323,1.256h0A1.293,1.293,0,0,1,36.107,67H14.323A1.292,1.292,0,0,1,13,65.744h0a1.291,1.291,0,0,1,1.323-1.256Z"
+          transform="translate(-16.026 -52.575)"
+        />
+        <path
+          id="Path_1000"
+          data-name="Path 1000"
+          className="cls-4"
+          d="M40.8,20.3l-7.228,3.974L26.34,20.3V15.94a.8.8,0,0,1,.86-.717H39.936a.8.8,0,0,1,.86.717V20.3Z"
+          transform="translate(-24.379 -15.223)"
+        />
+        <path
+          id="Path_1001"
+          data-name="Path 1001"
+          className="cls-4"
+          d="M49.183,62.686a.836.836,0,0,1-.851.82h0a.836.836,0,0,1-.851-.82V58.179a.837.837,0,0,1,.851-.82h0a.837.837,0,0,1,.851.82Z"
+          transform="translate(-39.144 -47.17)"
+        />
+      </g>
+    </g>
+  </g>
+</svg>

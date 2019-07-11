@@ -1,0 +1,18 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlnsXlink="http://www.w3.org/1999/xlink"
+  viewBox="0 0 84 64"
+>
+  <defs>
+    <filter id="a" width="135.2%" height="150%" x="-17.6%" y="-25%" filterUnits="objectBoundingBox">
+      <feOffset in="SourceAlpha" result="shadowOffsetOuter1" />
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="4" />
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.171931612 0" />
+    </filter>
+  </defs>
+  <g fill="#FFF" fillRule="evenodd" transform="translate(-402 -318)">
+    <path fill="#FFF"
+      d="M476.75 333.5c.583 2.25 1 5.667 1.25 10.25l.125 6.25-.125 6.25c-.25 4.667-.667 8.125-1.25 10.375-.417 1.417-1.167 2.667-2.25 3.75a8.665 8.665 0 0 1-3.875 2.25c-2.167.583-7.25 1-15.25 1.25L444 374l-11.375-.125c-8-.25-13.083-.667-15.25-1.25a8.665 8.665 0 0 1-3.875-2.25c-1.083-1.083-1.833-2.333-2.25-3.75-.583-2.25-1-5.708-1.25-10.375l-.125-6.25c0-1.833.042-3.917.125-6.25.25-4.583.667-8 1.25-10.25a8.665 8.665 0 0 1 2.25-3.875 8.665 8.665 0 0 1 3.875-2.25c2.167-.583 7.25-1 15.25-1.25L444 326l11.375.125c8 .25 13.083.667 15.25 1.25a8.665 8.665 0 0 1 3.875 2.25 8.665 8.665 0 0 1 2.25 3.875zM437 360.25L454.875 350 437 339.875v20.375z"
+    />
+  </g>
+</svg>
