@@ -8,6 +8,7 @@ import "./smallStoryCardDesktopMedium16x9.m.css";
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
 import { getStoryData, generateImageSources } from "../../utils/utils";
 // import { isPremium } from "../../../../isomorphic/data/story";
+import Headline from "../Headline";
 
 const SmallStoryCardDesktopMedium16x9 = ({
   story,
@@ -58,7 +59,12 @@ const SmallStoryCardDesktopMedium16x9 = ({
               className="contributor"
             />
           )}
-          <h3 styleName={`headline ${hasTruncatedHeadline ? "truncated" : ""} `}>{storyData.headline}</h3>
+          <Headline
+            text={storyData.headline}
+            headerType={5}
+            headerLevel={3}
+            className={`${hasTruncatedHeadline ? "truncated" : ""}`}
+          />
         </div>
       </div>
     </Link>

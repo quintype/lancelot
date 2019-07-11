@@ -5,6 +5,10 @@
   @media (min-width: 768px) {
     border-bottom: 4px solid var(--accent-color);
   }
+
+  :global .contributor {
+    margin: 0 0 var(--space1);
+  }
 }
 
 .base .contributor {

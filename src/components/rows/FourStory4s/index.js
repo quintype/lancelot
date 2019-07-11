@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import CollectionLink from "../../utils/generate-collection-link";
 import CollectionTitleWithCrossLine from "../../atoms/CollectionTitleWithCrossLine";
-import StoryCard from "../../atoms/story-card-gradient-background";
+import StoryCard from "../../atoms/StoryCardGradientBackground";
 import "./styles.m.css";
 import { getStoryHeadline } from "../../utils/utils";
 
@@ -12,7 +12,7 @@ const FourStory4s = ({ collection, accentColor }) => {
     items
       .filter(({ story = {} }) => getStoryHeadline(story) && story.url)
       .slice(0, 4)
-      .map(({ story }) => <StoryCard styleName="story-card" key={story.id} story={story} />) || [];
+      .map(({ story }) => <StoryCard className="story-card" key={story.id} story={story} />) || [];
 
   if (!stories.length) {
     return null;

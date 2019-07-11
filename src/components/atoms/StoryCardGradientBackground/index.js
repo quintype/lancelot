@@ -2,13 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import { get } from "lodash";
 import { Link } from "@quintype/components";
-import Contributor from "../../atoms/Contributor";
+import Contributor from "../Contributor";
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
+import Headline from "../Headline";
 
 import { getStoryData, generateImageSources } from "../../utils/utils";
-// import { isPremium } from "../../../../isomorphic/data/story";
 
-import styles from "./styles.m.css";
+import "./storyCardGradientBackground.m.css";
 
 export default function StoryCardGradientBackground({
   story,
@@ -28,18 +28,17 @@ export default function StoryCardGradientBackground({
   const externalLink = get(story, ["metadata", "reference-url"]);
 
   return (
-    <div className={`${styles["base"]} ${className} ${cardWithImageZoom ? "card-with-image-zoom" : ""}`}>
+    <div styleName="base" className={`${className} ${cardWithImageZoom ? "card-with-image-zoom" : ""}`}>
       <Link
         aria-label={`${"Read full story: "} ${storyData.headline}`}
-        className={styles["link"]}
+        className={"link"}
         href={externalLink || story.url}
         externalLink={externalLink}
       >
         <ResponsiveImageWithFallback
-          className={styles["image-container"]}
+          styleName="image-container"
           slug={storyData.imageS3Key}
           metadata={storyData.imageMetadata}
-          // isPremium={isPremium(story)}
           alt={storyData.imageCaption}
           imgParams={{ auto: ["format", "compress"] }}
           sources={generateImageSources(
@@ -47,13 +46,14 @@ export default function StoryCardGradientBackground({
             { aspectRatio: [9, 8], screenWidthCoverage: 0.25 }
           )}
         />
-        <div className={styles["content"]} style={sectionColor && { "--accent-color": sectionColor }}>
-          <h3 className={`${styles["headline"]} ${hasTruncatedHeadline ? styles["truncated"] : ""} `}>
-            {storyData.headline}
-          </h3>
-          {contributor && (
-            <Contributor name={contributor["name"]} type={contributorRole} className={styles["contributor"]} />
-          )}
+        <div styleName="content" style={sectionColor && { "--accent-color": sectionColor }}>
+          <Headline
+            text={storyData.headline}
+            headerType={6}
+            headerLevel={3}
+            className={`${hasTruncatedHeadline ? "truncated" : ""}`}
+          />
+          {contributor && <Contributor name={contributor["name"]} type={contributorRole} className={"contributor"} />}
         </div>
       </Link>
     </div>
