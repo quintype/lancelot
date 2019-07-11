@@ -8,14 +8,9 @@ import Headline from "../Headline";
 
 import { getStoryData, generateImageSources } from "../../utils/utils";
 
-import "./storyCardFeaturedSmall.m.css";
+import "./storyCardFeaturedBigHalfImg.m.css";
 
-export default function StoryCardFeaturedSmall({
-  story,
-  className = "",
-  cardWithImageZoom = true,
-  hasTruncatedHeadline = true
-}) {
+export default function StoryCardFeaturedBigHalfImg({ story, className = "", cardWithImageZoom = true }) {
   const storyData = getStoryData(story);
 
   if (!(storyData.headline && story.url)) {
@@ -44,33 +39,39 @@ export default function StoryCardFeaturedSmall({
           alt={storyData.imageCaption}
           imgParams={{ auto: ["format", "compress"] }}
           sources={generateImageSources(
-            { aspectRatio: [4, 3], screenWidthCoverage: 0.25 },
-            { aspectRatio: [4, 3], screenWidthCoverage: 0.17 }
+            { aspectRatio: [8, 5], screenWidthCoverage: 0.5 },
+            { aspectRatio: [1, 1], screenWidthCoverage: 0.25 }
           )}
         />
         {section && (
-          <span styleName="badge" style={sectionColor && { "--accent-color": sectionColor }} className="hidden-mobile">
-            <span styleName={"badge-text"}>{section["display-name"]}</span>
+          <span className="hidden-desktop" styleName="badge" style={sectionColor && { "--accent-color": sectionColor }}>
+            <span className="badge-text">{section["display-name"]}</span>
           </span>
         )}
       </div>
-      <div styleName={"content"}>
-        {contributor && <Contributor name={contributor["name"]} type={contributorRole} className={"contributor"} />}
-        <Headline
-          text={storyData.headline}
-          headerType={3}
-          headerLevel={3}
-          className={`${hasTruncatedHeadline ? "truncated" : ""}`}
-        />
+      <div styleName="content">
+        {contributor && (
+          <Contributor
+            name={contributor["name"]}
+            type={contributorRole}
+            iconColor="#404040"
+            className={"contributor"}
+          />
+        )}
+        <Headline text={storyData.headline} headerType={6} headerLevel={3} />
+        {section && (
+          <span styleName="badge" className="hidden-mobile" style={sectionColor && { "--accent-color": sectionColor }}>
+            <span className="badge-text">{section["display-name"]}</span>
+          </span>
+        )}
       </div>
     </Link>
   );
 }
 
-StoryCardFeaturedSmall.propTypes = {
+StoryCardFeaturedBigHalfImg.propTypes = {
   className: PropTypes.string,
   cardWithImageZoom: PropTypes.bool,
-  hasTruncatedHeadline: PropTypes.bool,
   story: PropTypes.shape({
     section: PropTypes.arrayOf(
       PropTypes.shape({
