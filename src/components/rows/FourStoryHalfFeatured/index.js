@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import CollectionLink from "../../utils/generate-collection-link";
 import StoryCardFeaturedBig from "../../atoms/StoryCardFeaturedBig";
 import StoryCardFeaturedSmall from "../../atoms/StoryCardFeaturedSmall";
-import CollectionTitleWithCrossLine from "../../atoms/CollectionTitleWithCrossLine";
+import Headline from "../../atoms/Headline";
 import "./fourStoryHalfFeatured.m.css";
 
 const FourStoryHalfFeatured = ({ collection, accentColor }) => {
@@ -12,7 +12,13 @@ const FourStoryHalfFeatured = ({ collection, accentColor }) => {
     <div styleName="four-story-half-featured" style={accentColor && { "--accent-color": accentColor }}>
       <div className={`container`}>
         <CollectionLink collection={collection}>
-          <CollectionTitleWithCrossLine className={"title"} title={name} />
+          <Headline
+            text={name}
+            headerType={1}
+            headerLevel={2}
+            headlineDesign={"crossline"}
+            className={"collection-title"}
+          />
         </CollectionLink>
         <div className="row">
           {items && items.length > 0 && (

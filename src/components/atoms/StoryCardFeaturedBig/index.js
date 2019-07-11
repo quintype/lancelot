@@ -3,11 +3,10 @@ import PropTypes from "prop-types";
 import { get } from "lodash";
 import { Link } from "@quintype/components";
 import Contributor from "../../atoms/Contributor";
-import Icon from "../../atoms/Icon";
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
+import Headline from "../Headline";
 
 import { getStoryData, generateImageSources } from "../../utils/utils";
-// import { isPremium } from "../../../../isomorphic/data/story";
 
 import "./storyCardFeaturedBig.m.css";
 
@@ -32,7 +31,7 @@ export default function StoryCardFeaturedBig({
   return (
     <Link
       aria-label={`${"Read full story: "} ${storyData.headline}`}
-      styleName={`base ${className} ${cardWithImageZoom ? "card-with-image-zoom" : ""}`}
+      styleName="base"
       className={`${className} ${cardWithImageZoom ? "card-with-image-zoom" : ""}`}
       href={externalLink || story.url}
       externalLink={externalLink}
@@ -49,16 +48,9 @@ export default function StoryCardFeaturedBig({
             { aspectRatio: [2, 1], screenWidthCoverage: 0.5 }
           )}
         />
-        {/* {section && (
-          <span styleName="badge hidden-desktop" style={sectionColor && { "--accent-color": sectionColor }}>
-            {isPremium(story) && <Icon type="premium" styleName="badge-icon" />}
-            <span styleName="badge-text">{section["display-name"]}</span>
-          </span>
-        )} */}
         {section && (
-          <span styleName="badge" style={sectionColor && { "--accent-color": sectionColor }}>
-            <Icon type="premium" styleName="badge-icon" />
-            <span styleName="badge-text">{section["display-name"]}</span>
+          <span styleName="badge" className="hidden-desktop" style={sectionColor && { "--accent-color": sectionColor }}>
+            <span className="badge-text">{section["display-name"]}</span>
           </span>
         )}
       </div>
@@ -66,17 +58,15 @@ export default function StoryCardFeaturedBig({
         {contributor && (
           <Contributor name={contributor["name"]} type={contributorRole} iconColor="#404040" className="contributor" />
         )}
-        <h3 styleName={`headline ${hasTruncatedHeadline ? "truncated" : ""} `}>{storyData.headline}</h3>
-        {/* {section && (
-          <span styleName="badge hidden-mobile" style={sectionColor && { "--accent-color": sectionColor }}>
-            {isPremium(story) && <Icon type="premium" className={"badge-icon"} />}
-            <span styleName="badge-text">{section["display-name"]}</span>
-          </span>
-        )} */}
+        <Headline
+          text={storyData.headline}
+          headerType={6}
+          headerLevel={3}
+          className={`${hasTruncatedHeadline ? "truncated" : ""}`}
+        />
         {section && (
-          <span styleName="badge" style={sectionColor && { "--accent-color": sectionColor }}>
-            <Icon type="premium" className={"badge-icon"} />
-            <span styleName="badge-text">{section["display-name"]}</span>
+          <span styleName="badge" className="hidden-mobile" style={sectionColor && { "--accent-color": sectionColor }}>
+            <span className="badge-text">{section["display-name"]}</span>
           </span>
         )}
       </div>

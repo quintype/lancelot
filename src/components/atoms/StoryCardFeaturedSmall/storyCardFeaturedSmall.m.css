@@ -4,7 +4,7 @@
     flex-direction: column;
     align-self: flex-start;
   }
-  .contributor {
+  :global .contributor {
     margin-bottom: var(--space-4);
     @media (min-width: 768px) {
       order: 2;
@@ -13,6 +13,13 @@
   :global(.premium-badge) {
     left: 5%;
     right: auto;
+  }
+
+  :global .headline {
+    margin: 0;
+    @media (min-width: 768px) {
+      margin: var(--space2) 0 var(--space1);
+    }
   }
 }
 
@@ -78,25 +85,9 @@
   }
 }
 
-.headline {
-  /* @include font-styles(h5); */
-  color: var(--title-color);
-  margin: 0;
-  @media (min-width: 768px) {
-    margin: var(--space2) 0 var(--space1);
-  }
-}
-
 .truncated {
   /* @include number-of-lines(h5, 2); */
   @media (min-width: 768px) {
     /* @include number-of-lines(h5, 4, 2); */
   }
-}
-
-.badge-text {
-}
-.story-card-featured-small {
-}
-.card-with-image-zoom {
 }

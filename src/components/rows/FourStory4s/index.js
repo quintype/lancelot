@@ -3,8 +3,9 @@ import PropTypes from "prop-types";
 import CollectionLink from "../../utils/generate-collection-link";
 import CollectionTitleWithCrossLine from "../../atoms/CollectionTitleWithCrossLine";
 import StoryCard from "../../atoms/StoryCardGradientBackground";
-import "./styles.m.css";
 import { getStoryHeadline } from "../../utils/utils";
+
+import "./fourStory4s.m.css";
 
 const FourStory4s = ({ collection, accentColor }) => {
   const { name, items } = collection;
