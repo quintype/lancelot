@@ -2,7 +2,7 @@ import React from "react";
 import { withStore } from "../../../../storybook";
 import produce from "immer";
 
-import StoryCardGradientBackground from "./";
+import StoryCardGradientBackground from ".";
 import props from "./fixture.js";
 
 withStore("Cards/StoryCardGradientBackground", {

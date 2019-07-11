@@ -2,12 +2,20 @@
   --title-color: var(--white);
   position: relative;
 
-  .contributor {
-    --content-color: var(--title-color);
-    --icon-color: var(--title-color);
-    color: var(--content-color);
-    position: relative;
+  :global .headline {
+    --title-color: var(--white);
+
     z-index: 1;
+    color: var(--title-color);
+    margin: 0 0 var(--space-2);
+    @media (min-width: 768px) {
+      line-height: 1.25;
+    }
+  }
+
+  :global .contributor {
+    --content-color: var(--title-color);
+    position: relative;
   }
 }
 
@@ -39,20 +47,6 @@
     left: 0;
     background-image: linear-gradient(to bottom, transparent, var(--accent-color) 37%, var(--accent-color));
     opacity: 0.7;
-  }
-}
-
-.headline {
-  /* @include font-styles(mobile-h4); */
-  font-size: var(--base-medium);
-  position: relative;
-  z-index: 1;
-  color: var(--title-color);
-  margin: 0 0 var(--space-2);
-  @media (min-width: 768px) {
-    /* @include font-styles(h4); */
-    font-size: var(--base-large);
-    line-height: 1.25;
   }
 }
 

@@ -7,7 +7,7 @@ import Contributor from "../Contributor/index";
 import "./smallStoryCardDesktopVertical.m.css";
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
 import { getStoryData, generateImageSources } from "../../utils/utils";
-// import { isPremium } from "../../../../isomorphic/data/story";
+import Headline from "../Headline";
 
 const SmallStoryCardDesktopVertical = ({
   story,
@@ -38,7 +38,6 @@ const SmallStoryCardDesktopVertical = ({
             slug={storyData.imageS3Key}
             metadata={storyData.imageMetadata}
             alt={storyData.imageCaption}
-            // isPremium={isPremium(story)}
             imgParams={{ auto: ["format", "compress"] }}
             sources={generateImageSources(
               { aspectRatio: [4, 3], screenWidthCoverage: 0.34 },
@@ -55,7 +54,12 @@ const SmallStoryCardDesktopVertical = ({
               className="contributor"
             />
           )}
-          <h3 styleName={`headline ${hasTruncatedHeadline ? "truncated" : ""} `}>{storyData.headline}</h3>
+          <Headline
+            text={storyData.headline}
+            headerType={3}
+            headerLevel={3}
+            className={`${hasTruncatedHeadline ? "truncated" : ""}`}
+          />
         </div>
       </div>
     </Link>

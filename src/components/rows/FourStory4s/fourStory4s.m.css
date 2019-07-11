@@ -12,17 +12,17 @@
       margin: 0 0 var(--space4);
     }
   }
-}
 
-.story-card {
-  flex: 1 0 75vw;
-  margin-right: var(--space2);
-  @media (min-width: 768px) {
-    flex: 0 1 25%;
-    margin-right: var(--space3);
-  }
-  &:last-child {
-    margin-right: 0;
+  :global .story-card {
+    flex: 1 0 75vw;
+    margin-right: var(--space2);
+    @media (min-width: 768px) {
+      flex: 0 1 25%;
+      margin-right: var(--space3);
+    }
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
 

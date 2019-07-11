@@ -3,11 +3,10 @@ import PropTypes from "prop-types";
 import { get } from "lodash";
 import { Link } from "@quintype/components";
 import Contributor from "../../atoms/Contributor";
-import Icon from "../../atoms/Icon";
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
+import Headline from "../Headline";
 
 import { getStoryData, generateImageSources } from "../../utils/utils";
-// import { isPremium } from "../../../../isomorphic/data/story";
 
 import "./storyCardFeaturedSmall.m.css";
 
@@ -32,7 +31,7 @@ export default function StoryCardFeaturedSmall({
   return (
     <Link
       aria-label={`${"Read full story: "} ${storyData.headline}`}
-      styleName={`base ${className} ${cardWithImageZoom ? "card-with-image-zoom" : ""}`}
+      styleName="base"
       className={`${className} ${cardWithImageZoom ? "card-with-image-zoom" : ""}`}
       href={externalLink || story.url}
       externalLink={externalLink}
@@ -60,14 +59,18 @@ export default function StoryCardFeaturedSmall({
         )} */}
         {section && (
           <span styleName="badge" style={sectionColor && { "--accent-color": sectionColor }}>
-            <Icon type="premium" className={"badge-icon"} />
             <span styleName={"badge-text"}>{section["display-name"]}</span>
           </span>
         )}
       </div>
       <div styleName={"content"}>
         {contributor && <Contributor name={contributor["name"]} type={contributorRole} className={"contributor"} />}
-        <h3 styleName={`headline ${hasTruncatedHeadline ? "truncated" : ""} `}>{storyData.headline}</h3>
+        <Headline
+          text={storyData.headline}
+          headerType={3}
+          headerLevel={3}
+          className={`${hasTruncatedHeadline ? "truncated" : ""}`}
+        />
       </div>
     </Link>
   );

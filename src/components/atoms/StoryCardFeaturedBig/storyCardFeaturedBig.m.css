@@ -4,7 +4,7 @@
   @media (min-width: 768px) {
     flex-direction: column;
   }
-  .contributor {
+  :global .contributor {
     margin-bottom: var(--space-4);
     @media (min-width: 768px) {
       order: 2;
@@ -85,11 +85,4 @@
   @media (min-width: 768px) {
     /* @include number-of-lines(h4, 3); */
   }
-}
-
-.badge-text {
-}
-.story-card-featured-big {
-}
-.card-with-image-zoom {
 }
