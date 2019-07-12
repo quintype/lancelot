@@ -4,7 +4,6 @@ import { get } from "lodash";
 import { Link } from "@quintype/components";
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
 import Contributor from "../Contributor/index";
-// import { isPremium } from "../../../../isomorphic/data/story";
 import Headline from "../Headline";
 
 import "./bigStoryCard.m.css";
@@ -33,7 +32,6 @@ const BigStoryCard = ({ story, cardWithImageZoom = true, className = "", hasTrun
           styleName="image-wrapper"
           slug={storyData.imageS3Key}
           metadata={storyData.imageMetadata}
-          // isPremium={isPremium(story)}
           alt={storyData.imageCaption}
           imgParams={{ auto: ["format", "compress"] }}
           sources={generateImageSources(

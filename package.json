@@ -80,6 +80,7 @@
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
     "prop-types": "^15.7.2",
+    "react-media": "^1.9.2",
     "rollup": "^1.15.6",
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-postcss": "^2.0.3"
