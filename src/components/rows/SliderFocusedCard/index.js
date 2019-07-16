@@ -60,13 +60,13 @@ const SliderFocusedCard = ({
           }}
           renderCenterLeftControls={({ previousSlide, currentSlide }) =>
             currentSlide > 0 ? (
-              <button aria-label="previous slide" role="button" onClick={previousSlide} className="slider-nav-button">
+              <button aria-label="previous slide" role="button" onClick={previousSlide} styleName="slider-nav-button">
                 <Icon type="angle-left" />
               </button>
             ) : null
           }
           renderCenterRightControls={({ nextSlide }) => (
-            <button aria-label="next slide" role="button" onClick={nextSlide} className="slider-nav-button">
+            <button aria-label="next slide" role="button" onClick={nextSlide} styleName="slider-nav-button">
               <Icon type="angle-right" />
             </button>
           )}
