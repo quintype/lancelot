@@ -43,6 +43,7 @@
   position: absolute;
   bottom: 0;
   padding: 0 var(--space2) 0 var(--space3);
+  white-space: normal;
 }
 
 .headline {
