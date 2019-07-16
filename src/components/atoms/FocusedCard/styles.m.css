@@ -55,8 +55,10 @@
   /* z-index: map-get($zindex, image-overlay); */
   z-index: 1;
   position: relative;
+  font-size: var(--base-smaller);
   @media (min-width: 768px) {
     margin-bottom: var(--space1_5);
+    font-size: var(--base-large);
   }
 }
 
