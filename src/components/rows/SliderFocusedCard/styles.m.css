@@ -77,3 +77,11 @@
     font-size: calc(var(--button-size) / 2);
   }
 }
+.nav-left {
+  transform: rotate(-90deg);
+  padding-top: 1rem;
+}
+.nav-right {
+  transform: rotate(90deg);
+  padding-top: 1rem;
+}

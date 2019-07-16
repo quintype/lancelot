@@ -65,13 +65,13 @@ export default class Carousel extends Component {
       return null;
     }
     return (
-      <div ref={ref => (this.ref = ref)} className={`glide ${"glide"} ${this.props.className}`}>
-        <div className={`${"glide__track"}`} data-glide-el="track">
-          <ul className={`${"glide__slides"}`} styleName="glide__slides">
+      <div ref={ref => (this.ref = ref)} className={`glide ${this.props.className}`}>
+        <div className="glide__track" data-glide-el="track">
+          <ul className="glide__slides" styleName="glide__slides">
             {this.renderChildren()}
           </ul>
         </div>
-        <div className={`${"glide__arrows"}`}>
+        <div className="glide__arrows">
           {this.props.renderCenterLeftControls ? (
             <div className="slider-control-centerleft" styleName="center-left-controls">
               {this.props.renderCenterLeftControls({
@@ -96,7 +96,7 @@ export default class Carousel extends Component {
           ) : null}
         </div>
         {this.props.renderBottomCenterControls ? (
-          <div className={`${"glide__bullets"} slider-control-bottomcenter`} styleName="bottom-center-controls">
+          <div className="glide__bullets slider-control-bottomcenter" styleName="bottom-center-controls">
             {this.props.renderBottomCenterControls({
               previousSlide: this.previousSlide,
               nextSlide: this.nextSlide,

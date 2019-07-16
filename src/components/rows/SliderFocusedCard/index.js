@@ -4,7 +4,6 @@ import CollectionLink from "../../utils/generate-collection-link";
 import Carousel from "../../atoms/Carousel";
 import CollectionTitleWithCrossLine from "../../atoms/CollectionTitleWithCrossLine";
 import FocusedCard from "../../atoms/FocusedCard";
-import Icon from "../../atoms/Icon";
 import { getStoryHeadline } from "../../utils/utils";
 import "./styles.m.css";
 
@@ -60,14 +59,19 @@ const SliderFocusedCard = ({
           }}
           renderCenterLeftControls={({ previousSlide, currentSlide }) =>
             currentSlide > 0 ? (
-              <button aria-label="previous slide" role="button" onClick={previousSlide} styleName="slider-nav-button">
-                <Icon type="angle-left" />
+              <button
+                aria-label="previous slide"
+                role="button"
+                onClick={previousSlide}
+                styleName="slider-nav-button nav-left"
+              >
+                ⌃
               </button>
             ) : null
           }
           renderCenterRightControls={({ nextSlide }) => (
-            <button aria-label="next slide" role="button" onClick={nextSlide} styleName="slider-nav-button">
-              <Icon type="angle-right" />
+            <button aria-label="next slide" role="button" onClick={nextSlide} styleName="slider-nav-button nav-right">
+              ⌃
             </button>
           )}
         >
