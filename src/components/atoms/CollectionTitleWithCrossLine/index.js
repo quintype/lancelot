@@ -9,7 +9,7 @@ const CollectionTitleWithCrossLine = ({ title, className = "" }) => {
   }
 
   return (
-    <h2 styleName={`title ${className}`} className={className}>
+    <h2 styleName="title" className={className}>
       <span styleName="text">{title}</span>
     </h2>
   );

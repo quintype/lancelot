@@ -19,9 +19,9 @@ const Contributor = ({ path, type, name, imgUrl, className = "", config = {} }) 
   return path && !config.cinemaMode ? (
     <WithHostUrl>
       {({ primaryHostUrl }) => (
-        <Link aria-label="Author" href={`${primaryHostUrl}${path}`} className={`base ${className}`}>
+        <Link aria-label="Author" href={`${primaryHostUrl}${path}`} className={className} styleName="base">
           {imgUrl && <img src={imgUrl} />}
-          {iconType && <Icon type={iconType} className={"icon"} />}
+          {iconType && <Icon type={iconType} styleName="icon" />}
           <span styleName="contributor-name">{name}</span>
         </Link>
       )}
