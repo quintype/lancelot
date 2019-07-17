@@ -3,6 +3,7 @@
   background-color: var(--background-color);
   padding: var(--space1_5) 0 var(--space3);
   --gutter-width: var(--space3);
+  --seven-story-7s-bg-line-color: var(--mine-shaft);
 }
 
 @media (min-width: 768px) {
@@ -90,4 +91,33 @@
 
 .icon {
   font-size: 3.6rem;
+}
+
+.bg-diamond-dark {
+  background-image: linear-gradient(
+      135deg,
+      transparent 24%,
+      var(--seven-story-7s-bg-line-color) 25%,
+      var(--seven-story-7s-bg-line-color) 26%,
+      transparent 27%,
+      transparent 74%,
+      var(--seven-story-7s-bg-line-color) 75%,
+      var(--seven-story-7s-bg-line-color) 76%,
+      transparent 77%,
+      transparent
+    ),
+    linear-gradient(
+      45deg,
+      transparent 24%,
+      var(--seven-story-7s-bg-line-color) 25%,
+      var(--seven-story-7s-bg-line-color) 26%,
+      transparent 27%,
+      transparent 74%,
+      var(--seven-story-7s-bg-line-color) 75%,
+      var(--seven-story-7s-bg-line-color) 76%,
+      transparent 77%,
+      transparent
+    );
+  height: 100%;
+  background-size: 30px 30px;
 }

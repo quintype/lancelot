@@ -9,7 +9,7 @@ export const SevenStory7s = ({ collection, Icon, BgPattern = "bg-diamond-dark" }
   const { name, items } = collection;
   const MaxNumberOfThumbnailStories = 6;
   return (
-    <div styleName="seven-story-7s" className={BgPattern}>
+    <div styleName={`seven-story-7s ${BgPattern}`}>
       <div className="container">
         <CollectionLink collection={collection}>
           <h2 styleName="title"> {Icon ? <Icon /> : name}</h2>
