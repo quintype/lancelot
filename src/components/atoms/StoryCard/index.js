@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { get } from "lodash";
 import { Link } from "@quintype/components";
+import Headline from "../Headline";
 import Contributor from "../../atoms/Contributor";
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
 import Icon from "../Icon";
@@ -9,9 +10,9 @@ import Icon from "../Icon";
 import { getStoryData, generateImageSources } from "../../utils/utils";
 // import { isPremium } from "../../../../isomorphic/data/story";
 
-import "./styles.m.css";
+import "./storyCard.m.css";
 
-export default function StoryCard({ story, className = "", cardWithImageZoom = true, hasTruncatedHeadline = true }) {
+export default function StoryCard({ story, className = "", cardWithImageZoom = true }) {
   const storyData = getStoryData(story);
 
   if (!storyData.headline || !story["url"]) {
@@ -60,7 +61,7 @@ export default function StoryCard({ story, className = "", cardWithImageZoom = t
       </ResponsiveImageWithFallback>
       <div styleName="content">
         {contributor && <Contributor name={contributor["name"]} type={contributorRole} styleName="contributor" />}
-        <h3 styleName={`headline ${hasTruncatedHeadline ? "truncated" : ""} `}>{storyData.headline}</h3>
+        <Headline headerLevel={3} headerType={3} text={storyData.headline} />
       </div>
     </Link>
   );
@@ -69,7 +70,6 @@ export default function StoryCard({ story, className = "", cardWithImageZoom = t
 StoryCard.propTypes = {
   className: PropTypes.string,
   cardWithImageZoom: PropTypes.bool,
-  hasTruncatedHeadline: PropTypes.bool,
   story: PropTypes.shape({
     "author-name": PropTypes.string,
     "contributor-role": PropTypes.shape({

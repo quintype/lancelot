@@ -53,26 +53,6 @@
   }
 }
 
-.headline {
-  font-family: var(--h4-font-family);
-  font-size: var(--h4-font-size);
-  font-weight: var(--h4-font-weight);
-  line-height: var(--h4-line-height);
-  letter-spacing: var(--h4-letter-spacing);
-  color: var(--title-color);
-  margin: 0 0 var(--space1);
-}
-
-@media (min-width: 768px) {
-  .headline {
-    font-family: var(--h2-font-family);
-    font-size: var(--h2-font-size);
-    font-weight: var(--h2-font-weight);
-    line-height: var(--h2-line-height);
-    letter-spacing: var(--h2-letter-spacing);
-  }
-}
-
 .story-byline {
   display: grid;
   grid-template-areas: "a b";

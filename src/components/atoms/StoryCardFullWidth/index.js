@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { get } from "lodash";
-
+import Headline from "../Headline";
 import { Link } from "@quintype/components";
 import Contributor from "../../atoms/Contributor";
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
@@ -10,7 +10,7 @@ import Icon from "../Icon";
 import { getMonthDayString } from "../../utils/time-format";
 // import { isPremium } from "../../../../isomorphic/data/story";
 
-import "./styles.m.css";
+import "./storyCardFullWidth.m.css";
 
 export default function StoryCardFullWidth({ story, className = "", cardWithImageZoom = true }) {
   const storyData = getStoryData(story);
@@ -70,7 +70,7 @@ export default function StoryCardFullWidth({ story, className = "", cardWithImag
               styleName="contributor"
             />
           )}
-          <h3 styleName="headline">{storyData.headline}</h3>
+          <Headline headerLevel={3} headerType={3} text={storyData.headline} />
           <div styleName="story-byline">
             {story.engagement && story.engagement.total && (
               <div styleName="engagement">

@@ -3,8 +3,9 @@ import PropTypes from "prop-types";
 import CollectionLink from "../../utils/generate-collection-link";
 import StoryCardFullWidth from "../../atoms/StoryCardFullWidth";
 import StoryCard from "../../atoms/StoryCard";
+import Headline from "../../atoms/Headline";
 import Icon from "../../atoms/Icon";
-import "./styles.m.css";
+import "./sevenStory7s.m.css";
 export const SevenStory7s = ({ collection, Icon, BgPattern = "bg-diamond-dark" }) => {
   const { name, items } = collection;
   const MaxNumberOfThumbnailStories = 6;
@@ -12,7 +13,7 @@ export const SevenStory7s = ({ collection, Icon, BgPattern = "bg-diamond-dark" }
     <div styleName={`seven-story-7s ${BgPattern}`}>
       <div className="container">
         <CollectionLink collection={collection}>
-          <h2 styleName="title"> {Icon ? <Icon /> : name}</h2>
+          <Headline headerLevel={2} headerType={2} text={Icon ? <Icon /> : name} styleName="title" />
         </CollectionLink>
         <div className="row">
           {items && items.length > 0 && (

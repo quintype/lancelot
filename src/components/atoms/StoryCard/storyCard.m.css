@@ -78,8 +78,3 @@
 .template-icon {
   font-size: 21px;
 }
-
-.truncated {
-  overflow: hidden;
-  max-height: calc(3 * var(--h5-line-height) * 1em - 0 * 1px);
-}
