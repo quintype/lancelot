@@ -1,0 +1,10 @@
+.ad {
+  display: flex;
+  justify-content: center;
+  margin: var(--space-2) 0;
+}
+
+.out-of-page-ad {
+  height: 1px;
+  width: 1px;
+}
