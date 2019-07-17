@@ -1,0 +1,26 @@
+.base {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  background-color: var(--white);
+}
+
+.image-wrapper {
+  position: relative;
+  padding-top: 100%;
+}
+
+.text-wrapper {
+  padding-left: var(--space2);
+  padding-top: var(--space1);
+  background-color: var(--background-color, --white);
+}
+
+.headline {
+  /* @include font-styles(h5); */
+  padding-top: var(--space-1);
+  margin: 0px;
+  color: var(--title-color);
+  &.truncated {
+    /* @include number-of-lines(h5, 2); */
+  }
+}

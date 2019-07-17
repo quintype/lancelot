@@ -1,0 +1,37 @@
+.base {
+  display: block;
+}
+
+.image-wrapper {
+  position: relative;
+  padding-top: 62.5%;
+  @media (min-width: 768px) {
+    padding-top: 71.43%;
+  }
+}
+
+.image-container {
+  margin-bottom: -40px;
+}
+
+.text-wrapper {
+  padding: var(--space2);
+  color: var(--greyish-brown);
+  background-color: var(--white);
+  width: 95%;
+  z-index: 1;
+  position: relative;
+  @media (min-width: 768px) {
+    padding: var(--space1);
+  }
+  border-top: 4px solid var(--accent-color);
+}
+
+.headline {
+  /* @include font-styles(h5); */
+  margin: 0;
+  color: var(--title-color);
+  &.truncated {
+    /* @include number-of-lines(h5, 2); */
+  }
+}
