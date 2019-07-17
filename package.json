@@ -11,7 +11,7 @@
     "prebuild": "rimraf dist",
     "build": "npx rollup -c",
     "storybook": "BABEL_TARGET=browser start-storybook -p 6006",
-    "build-storybook": "BABEL_TARGET=browser build-storybook -c .storybook -o .out",
+    "build-storybook": "BABEL_TARGET=browser build-storybook -c .storybook -o ./storybook/exported/$(git rev-parse HEAD)",
     "test": "BABEL_TARGET=node jest",
     "lint:ci": "npm run lint:js:ci && npm run lint:css:ci",
     "lint:css": "npx stylelint './app/**/*.{scss,css}'",
