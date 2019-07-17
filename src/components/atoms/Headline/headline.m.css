@@ -33,6 +33,10 @@
   font-size: 20px;
 }
 
+.headline-type-8 {
+  font-size: 18px;
+}
+
 @media (min-width: 768px) {
   .headline-type-1 {
     font-size: 32px;
@@ -52,6 +56,10 @@
 
   .headline-type-7 {
     font-size: 24px;
+  }
+
+  .headline-type-8 {
+    font-size: 20px;
   }
 }
 
