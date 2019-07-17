@@ -1,14 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { get } from "lodash";
+import get from "lodash/get";
 import Carousel from "../../atoms/Carousel";
 import SmallStoryCardDesktopBigNoBorder from "../../atoms/SmallStoryDesktopBigNoBorder";
 import "./oneCarouselTwoStoriesOneAdOneWidget.m.css";
 import SlideBigStoryCard from "../../atoms/SlideBigStoryCard";
-import { DfpAd } from "../../atoms/DfpAd";
 import { getStoryHeadline } from "../../utils/utils";
 
-const OneCarouselTwoStoriesOneAdOneWidget = ({ collection, accentColor, pagetype = "" }) => {
+const OneCarouselTwoStoriesOneAdOneWidget = ({ collection, accentColor }) => {
   const items = get(collection, ["items"], []);
   let resizeDone = false;
   const stories = items
@@ -73,13 +72,6 @@ const OneCarouselTwoStoriesOneAdOneWidget = ({ collection, accentColor, pagetype
         {carousel}
         {stories[0] && <SmallStoryCardDesktopBigNoBorder story={stories[0]} styleName="story-1" />}
         {stories[1] && <SmallStoryCardDesktopBigNoBorder story={stories[1]} styleName="story-2" />}
-        <div styleName="sidebar">
-          <DfpAd styleName="ad" adtype="Rectangle" placement={pagetype} />
-          <DfpAd styleName="ad" adtype="Rectangle" placement={pagetype} />
-          {/* <div className="hidden-mobile" styleName="widget">
-            <DfpAd className="hidden-mobile" styleName="ad" adtype="Rectangle" placement={pagetype} />
-          </div> */}
-        </div>
       </div>
     </div>
   );

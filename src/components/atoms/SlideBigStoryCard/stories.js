@@ -71,7 +71,7 @@ withStore("Cards/SlideBigStoryCard", {
     const newProps = produce(story, draft => {
       draft.story.alternative = null;
       draft.story.headline =
-        "கமலே கவலைப்படும் அளவுக்கு இருக்கிறதா கமலே கவலைப்படும் அளவுக்கு இருக்கிறதா கமலே கவலைப்படும் அளவுக்கு இருக்கிறதா";
+        "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit";
     });
     return <SlideBigStoryCard {...newProps} />;
   })

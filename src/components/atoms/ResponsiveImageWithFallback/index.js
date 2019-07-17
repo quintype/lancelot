@@ -2,10 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import { ResponsiveImage, ResponsiveSource } from "@quintype/components";
 import VikatanStoryFallback from "../../shared/icons/fallbackImage";
-import { PremiumBadge } from "../PremiumBadge";
 import { omit } from "lodash";
 
-const ResponsiveImageWithFallback = ({ className, children, sources, zoom = true, style, isPremium, ...props }) => {
+const ResponsiveImageWithFallback = ({ className, children, sources, zoom = true, style, ...props }) => {
   let responsiveSources = [];
   let image = null;
   let originalSources = [...sources];
@@ -28,7 +27,6 @@ const ResponsiveImageWithFallback = ({ className, children, sources, zoom = true
         </picture>
       )}
       {children}
-      <PremiumBadge isPremium={isPremium} />
     </figure>
   );
 };
@@ -37,7 +35,9 @@ ResponsiveImageWithFallback.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
   zoom: PropTypes.bool,
-  sources: PropTypes.arrayOf(PropTypes.object)
+  sources: PropTypes.arrayOf(PropTypes.object),
+  slug: PropTypes.string,
+  children: PropTypes.object
 };
 
 export default ResponsiveImageWithFallback;

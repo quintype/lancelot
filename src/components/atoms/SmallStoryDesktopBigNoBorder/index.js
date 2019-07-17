@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { get } from "lodash";
+import get from "lodash/get";
 import { Link } from "@quintype/components";
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
 import Contributor from "../Contributor/index";
