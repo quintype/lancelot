@@ -1,6 +1,5 @@
 import React from "react";
 import { withStore } from "../../../../storybook";
-import "../../../../assets/stylesheets/app.scss";
 import produce from "immer";
 
 import StoryStack from "./index";

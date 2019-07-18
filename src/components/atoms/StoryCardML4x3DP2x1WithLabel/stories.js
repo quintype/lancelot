@@ -1,6 +1,5 @@
 import React from "react";
 import { withStore } from "../../../../storybook";
-import "../../../../assets/stylesheets/app.scss";
 
 import { StoryCardML4x3DP2x1WithLabel } from "./index";
 import produce, { setAutoFreeze } from "immer";

@@ -1,5 +1,5 @@
 import { generateCollection } from "../../fixture";
-import { get } from "lodash";
+import get from "lodash/get";
 
 const items = generateCollection({
   stories: 7,
