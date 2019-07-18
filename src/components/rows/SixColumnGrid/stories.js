@@ -7,8 +7,7 @@ import props from "./fixture.js";
 withStore("Rows/SixColumnGrid", {
   qt: {
     config: {
-      "cdn-image": "thumbor-stg.assettype.com",
-      iconSpritePath: "/sprite.svg"
+      "cdn-image": "thumbor-stg.assettype.com"
     }
   }
 }).add("Default", () => <SixColumnGrid {...props} />);

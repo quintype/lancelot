@@ -11,8 +11,7 @@ setAutoFreeze(false);
 withStore("Cards/StoryCardML4x3DP2x1WithLabel", {
   qt: {
     config: {
-      "cdn-image": "thumbor-stg.assettype.com",
-      iconSpritePath: "/sprite.svg"
+      "cdn-image": "thumbor-stg.assettype.com"
     }
   }
 })

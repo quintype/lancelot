@@ -5,7 +5,7 @@ const items = generateCollection({
   stories: 7,
   itemMeta: {
     "associated-metadata": {
-      label: "டெக்னோ",
+      label: "Sports",
       "page-no": "5"
     }
   }
@@ -15,7 +15,7 @@ const items = generateCollection({
       stories: 3,
       itemMeta: {
         "associated-metadata": {
-          label: "க்ரைம்",
+          label: "Politics",
           "page-no": "5"
         }
       }
@@ -26,7 +26,7 @@ const items = generateCollection({
       stories: 2,
       itemMeta: {
         "associated-metadata": {
-          label: "டெக்னோ2",
+          label: "News",
           "page-no": "5"
         }
       }
@@ -37,7 +37,7 @@ const items = generateCollection({
       stories: 3,
       itemMeta: {
         "associated-metadata": {
-          label: "க்ரைம்1",
+          label: "Entertainment",
           "page-no": "5"
         }
       }

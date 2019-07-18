@@ -9,7 +9,7 @@ const SixColumnGrid = ({ stories }) => {
     <div styleName="base">
       <div className="container row">
         {stories.map(story => (
-          <StoryCardML4x3DP2x1WithLabel defaultLabel="மற்றவை" key={story.id} story={story} className={"label-story"} />
+          <StoryCardML4x3DP2x1WithLabel defaultLabel="News" key={story.id} story={story} className={"label-story"} />
         ))}
       </div>
     </div>
