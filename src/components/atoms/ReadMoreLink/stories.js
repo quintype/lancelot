@@ -1,6 +1,5 @@
 import React from "react";
 
-import "../../../../assets/stylesheets/app.scss";
 import ReadMoreLink from "./index";
 import { withStore } from "../../../../storybook/index";
 

@@ -1,8 +1,6 @@
 import React from "react";
 import storybook from "../../../../storybook/index";
 
-import "../../../../assets/stylesheets/app.scss";
-
 import Carousel from "./index";
 
 function slides() {

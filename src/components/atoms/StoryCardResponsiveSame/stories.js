@@ -1,7 +1,6 @@
 import React from "react";
 import { withStore } from "../../../../storybook/index";
 import produce from "immer";
-import "../../../../assets/stylesheets/app.scss";
 
 import StoryCardResponsiveSame from "./index";
 

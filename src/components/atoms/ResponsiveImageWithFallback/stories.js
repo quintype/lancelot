@@ -1,6 +1,5 @@
 import React from "react";
 import { withStore } from "../../../../storybook/index";
-import "../../../../assets/stylesheets/app.scss";
 
 import fixture from "./fixture";
 
