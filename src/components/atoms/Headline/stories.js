@@ -1,11 +1,10 @@
-
 import Headline from "./index";
 import story from "./fixture";
 
 import React from "react";
 import storiesOf from "../../../../storybook";
 import { withKnobs, select, text } from "@storybook/addon-knobs";
-import { withInfo } from '@storybook/addon-info';
+import { withInfo } from "@storybook/addon-info";
 
 function optionalSelect() {
   return select.apply(null, arguments) || undefined;
