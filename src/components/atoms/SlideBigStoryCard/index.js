@@ -5,7 +5,7 @@ import { Link } from "@quintype/components";
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
 import Contributor from "../Contributor/index";
 import { getStoryData, generateImageSources } from "../../utils/utils";
-
+import Headline from "../Headline";
 import "./slideBigStoryCard.m.css";
 
 const SlideBigStoryCard = ({ story, className = "", cardWithImageZoom = true, hasTruncatedHeadline = true }) => {
@@ -48,7 +48,13 @@ const SlideBigStoryCard = ({ story, className = "", cardWithImageZoom = true, ha
               className="contributor"
             />
           )}
-          <h3 styleName={`${"headline"} ${hasTruncatedHeadline ? "truncated" : ""} `}>{storyData.headline}</h3>
+          <Headline
+            text={storyData.headline}
+            headerType={1}
+            headerLevel={3}
+            styleName="headline"
+            className={`${hasTruncatedHeadline ? "truncated" : ""}`}
+          />
         </div>
       </div>
     </Link>

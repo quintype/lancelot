@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { ResponsiveImage, ResponsiveSource } from "@quintype/components";
 import VikatanStoryFallback from "../../shared/icons/fallbackImage";
-import { omit } from "lodash";
+import omit from "lodash/omit";
 
 const ResponsiveImageWithFallback = ({ className, children, sources, zoom = true, style, ...props }) => {
   let responsiveSources = [];
