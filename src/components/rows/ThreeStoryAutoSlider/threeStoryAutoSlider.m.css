@@ -1,6 +1,6 @@
 .base {
   --title-color: var(--white);
-  --background-color: var(--off-white);
+  --background-color: var(--alto);
   --meta-color: var(--white);
   background: var(--background-color);
   overflow: auto;
@@ -43,6 +43,7 @@
     border: 0px solid transparent;
   }
 }
+
 .carousal-holder ul li:not(.card-active) .story-card-small {
   border-color: transparent;
 }

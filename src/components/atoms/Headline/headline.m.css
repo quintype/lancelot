@@ -36,9 +36,7 @@
 .headline-type-8 {
   font-size: 18px;
 }
-.headline-type-9 {
-  font-size: 32px;
-}
+
 @media (min-width: 768px) {
   .headline-type-1 {
     font-size: 32px;

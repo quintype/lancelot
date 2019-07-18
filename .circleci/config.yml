@@ -4,34 +4,71 @@
 #
 version: 2
 jobs:
-  build:
-    docker:
-      # specify the version you desire here
-      - image: circleci/node:7.10
+  #build:
+  #  docker:
+  #    - image: circleci/node:10.15
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
       # - image: circleci/mongo:3.4.4
-
-    working_directory: ~/repo
-
+  #  steps:
+  #    - checkout
+  #    - restore_cache:
+  #        keys:
+  #          - app-node10.15-npmcache-v3-{{ checksum "package-lock.json" }}
+  #    - run: npm ci --prefer-offline
+  #    - save_cache:
+  #        paths:
+  #          - node_modules
+  #        key: app-node10.15-npmcache-v3-{{ checksum "package-lock.json" }}
+  #    - run:
+  #        name: Run Storybook
+  #        command: npm run storybook
+  export_storybook:
+    docker:
+      - image: circleci/node:10.15
     steps:
       - checkout
-
-      # Download and cache dependencies
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
-
-      - run: yarn install
-
+            - app-node10.15-npmcache-v3-{{ checksum "package-lock.json" }}
+      - run: npm ci --prefer-offline
       - save_cache:
+          key: app-node10.15-npmcache-v3-{{ checksum "package-lock.json" }}
           paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
+            - /home/circleci/.npm
+      - run: npm run build-storybook
+      - persist_to_workspace:
+          root: storybook/exported
+          paths:
+            - .
+      - store_artifacts:
+          path: storybook/exported
+          destination: storybook
 
-      # run tests!
-      - run: yarn test
+  upload_storybook_s3:
+    docker:
+      - image: python:3.7-slim-stretch
+    steps:
+      - attach_workspace:
+          at: /tmp/storybook
+      - run: pip install --no-cache-dir awscli==1.16.52
+      - run:
+          name: Upload storybook to S3
+          command: |
+            aws s3 --region us-east-1 sync /tmp/storybook/ s3://stg-qt-storybook/$CIRCLE_PROJECT_REPONAME/ --acl=public-read --cache-control='public, max-age=3600'
+workflows:
+  version: 2
+  build_and_test:
+      jobs:
+      - export_storybook
+      - upload_storybook_s3:
+          context: circleci-stg-aws-bot
+          requires:
+            - export_storybook
+          filters:
+            branches:
+              only:
+                - master
+                - circle-ci-setup

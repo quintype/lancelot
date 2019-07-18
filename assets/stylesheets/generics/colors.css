@@ -1,8 +1,6 @@
-// http://chir.ag/projects/name-that-color/#2F81CD
 :root {
   --primary-color: #000;
   --secondary-color: #ddd;
-
   --greyish-brown: #404040;
   --white: #ffffff;
   --black: #000000;
@@ -10,7 +8,6 @@
   --gray: #929292;
   --mariner: #2f81cd;
   --fallback-image-bg: var(--alto);
-
   --title-color: var(--greyish-brown);
   --content-color: var(--greyish-brown);
   --background-color: var(--white);

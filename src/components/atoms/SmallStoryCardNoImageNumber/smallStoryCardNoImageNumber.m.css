@@ -10,11 +10,8 @@
   align-self: flex-start;
 }
 .contributor {
-  display: none;
-  @media (min-width: 768px) {
-    display: inline-flex;
-    color: var(--meta-color);
-  }
+  display: inline-flex;
+  color: var(--meta-color);
 }
 
 .text-wrapper {
@@ -46,7 +43,7 @@
   vertical-align: top;
   /* @include font-styles(h2); */
   font-size: var(--large);
-  color: var(--dusty-grey);
+  color: var(--gray);
   padding-left: var(--space2);
   padding-right: var(--space2);
   align-self: flex-start;
