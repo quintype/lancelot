@@ -25,9 +25,9 @@ class SliderComponent extends React.Component {
   render() {
     const { index, slides } = this.props;
     const slidesWithClasses = slides.map((slide, idx) => {
-      const className = idx === index ? "card-active" : "card-not-active";
+      const className = idx === index ? "card-active" : "";
       return (
-        <div className={`${className}`} styleName="flex-element" key={"slide-" + idx}>
+        <div styleName={`${className} ${"flex-element"}`} key={"slide-" + idx}>
           {slide}
         </div>
       );

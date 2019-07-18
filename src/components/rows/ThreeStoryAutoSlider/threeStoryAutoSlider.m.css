@@ -31,9 +31,29 @@
 .carousal-holder ul {
   align-items: stretch;
 }
-.carousal-holder li {
+
+.carousal-holder ul li {
   height: auto;
   display: flex;
+}
+
+.carousal-holder ul li.card-active .story-card-small {
+  border-color: var(--accent-color);
+  @media (min-width: 768px) {
+    border: 0px solid transparent;
+  }
+}
+.carousal-holder ul li:not(.card-active) .story-card-small {
+  border-color: transparent;
+}
+
+@keyframes border-slide {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
 }
 
 .card-active {
@@ -51,28 +71,6 @@
     animation: border-slide 1s;
     position: absolute;
     bottom: 0;
-  }
-}
-
-.carousal-holder .card-active,
-.story-card-small {
-  border-color: var(--accent-color);
-  @media (min-width: 768px) {
-    border: 0px solid transparent;
-  }
-}
-
-.carousal-holder:not(.card-active),
-.story-card-small {
-  border-color: transparent;
-}
-
-@keyframes border-slide {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(0%);
   }
 }
 

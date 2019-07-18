@@ -6,6 +6,7 @@ import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
 import Contributor from "../Contributor/index";
 import { getStoryData, generateImageSources } from "../../utils/utils";
 import "./bigStoryCardAutoSlider.m.css";
+import Headline from "../Headline";
 
 const BigStoryCardAutoSlider = ({ story, cardWithImageZoom = true, className = "" }) => {
   const storyData = getStoryData(story);
@@ -39,9 +40,7 @@ const BigStoryCardAutoSlider = ({ story, cardWithImageZoom = true, className = "
         <div styleName="text-area">
           <div styleName="text-wrapper">
             {contributorName && <Contributor name={contributorName} type={contributorRole} styleName="contributor" />}
-            <h3 styleName="headline">
-              <span styleName="highlight">{storyData.headline}</span>
-            </h3>
+            <Headline text={storyData.headline} headerType={9} headerLevel={3} styleName="headline highlight" />
             <div styleName="content mobile-hide">{story.subheadline}</div>
           </div>
         </div>

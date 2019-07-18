@@ -5,7 +5,7 @@ import { Link } from "@quintype/components";
 import Contributor from "../Contributor/index";
 import "./smallStoryCardNoImageNumber.m.css";
 import { getStoryHeadline } from "../../utils/utils";
-
+import Headline from "../Headline";
 const SmallStoryCardNoImageNumber = ({ story, className = "", index }) => {
   const headline = getStoryHeadline(story);
 
@@ -38,7 +38,7 @@ const SmallStoryCardNoImageNumber = ({ story, className = "", index }) => {
               styleName="contributor"
             />
           )}
-          <h3 styleName="headline">Lorem Ipsum is simply dummy text of the printing and typesetting industry</h3>
+          <Headline text={headline} headerType={6} headerLevel={3} styleName="headline" />
         </div>
       </div>
     </Link>
