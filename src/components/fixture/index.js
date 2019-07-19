@@ -45,7 +45,15 @@ export const generateCollection = ({ stories = 0, subCollections = [], type = nu
         id: 2,
         name: "Junior Vikatan"
       },
-      type: typeArr
+      type: typeArr,
+      snapshot: {
+        body:
+          "<p>This is the snapshot body</p>" +
+          "<p>This is the snapshot body - This is the snapshot body description1</p>" +
+          "<p>This is the snapshot body - This is the snapshot body description2</p>" +
+          "<p>This is the snapshot body - This is the snapshot body description3</p>" +
+          "<p>This is the snapshot body - This is the snapshot body description4</p>"
+      }
     },
     summary: "This is a collection concerned with politics",
     items: items
