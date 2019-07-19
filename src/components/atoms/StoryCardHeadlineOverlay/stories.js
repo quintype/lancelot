@@ -1,6 +1,5 @@
 import React from "react";
 import { withStore } from "../../../../storybook";
-import "../../../../assets/stylesheets/app.scss";
 
 import StoryCardHeadlineOverlay from "./index";
 import produce from "immer";

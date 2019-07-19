@@ -1,0 +1,32 @@
+.base {
+  --background-color: var(--white);
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-gap: var(--space1);
+  background-color: var(--background-color);
+
+  @media (min-width: 768px) {
+    --background-color: var(--white);
+  }
+}
+
+.image-wrapper {
+  /* @include image-aspect-ratio(4, 3); */
+  position: relative;
+  padding-top: 75%;
+  @media (min-width: 768px) {
+    padding-top: 100%;
+  }
+}
+.text-wrapper {
+  padding: var(--space-2) var(--space1) var(--space-2) var(--space-2);
+}
+
+.headline {
+  /* @include font-styles(mobile-h4); */
+  margin: 0;
+  color: var(--title-color);
+  @media (min-width: 768px) {
+    /* @include font-styles(h5); */
+  }
+}

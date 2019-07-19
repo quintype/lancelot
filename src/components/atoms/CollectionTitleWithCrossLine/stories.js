@@ -1,6 +1,5 @@
 import React from "react";
 
-import "../../../../assets/stylesheets/app.scss";
 import CollectionTitleWithCrossLine from "./";
 import props from "./fixture.js";
 import { withStore } from "../../../../storybook";

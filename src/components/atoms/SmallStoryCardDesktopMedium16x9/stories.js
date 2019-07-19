@@ -1,6 +1,5 @@
 import React from "react";
 import { withStore } from "../../../../storybook/index";
-import "../../../../assets/stylesheets/app.scss";
 
 import SmallStoryCardDesktopMedium16x9 from "./index";
 import produce from "immer";

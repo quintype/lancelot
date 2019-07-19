@@ -1,5 +1,4 @@
 import React from "react";
-import "../../../../assets/stylesheets/app.scss";
 import Contributor from "./index";
 import { withStore } from "../../../../storybook/index";
 import iconsArray from "./fixture";
