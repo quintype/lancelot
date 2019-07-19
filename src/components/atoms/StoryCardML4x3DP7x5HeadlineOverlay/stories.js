@@ -9,8 +9,7 @@ import story from "./fixture";
 withStore("Cards/StoryCardML4x3DP7x5HeadlineOverlay", {
   qt: {
     config: {
-      "cdn-image": "thumbor-stg.assettype.com",
-      iconSpritePath: "/sprite.svg"
+      "cdn-image": "thumbor-stg.assettype.com"
     }
   }
 })

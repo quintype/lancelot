@@ -1,5 +1,5 @@
 .base {
-  --background-color: var(--off-white);
+  --background-color: var(--white);
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: var(--space1);
@@ -13,6 +13,7 @@
 }
 
 .image-wrapper {
+  position: relative;
   padding-top: 62.5%;
   @media (min-width: 768px) {
     /* @include image-aspect-ratio(7, 5); */

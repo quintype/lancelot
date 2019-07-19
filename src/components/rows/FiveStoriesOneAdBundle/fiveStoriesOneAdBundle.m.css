@@ -1,6 +1,6 @@
 .base {
   --meta-color: var(--tundora);
-  --background-color: var(--off-white);
+  --background-color: var(--white);
   background-color: var(--background-color);
   padding: var(--space1_5) 0 var(--space3);
   @media (min-width: 768px) {

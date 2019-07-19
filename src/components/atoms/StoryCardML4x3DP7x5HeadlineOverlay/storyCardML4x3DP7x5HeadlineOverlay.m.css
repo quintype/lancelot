@@ -1,5 +1,5 @@
 .base {
-  --background-color: var(--off-white);
+  --background-color: var(--white);
   display: grid;
   grid-template-columns: 1fr 3fr;
   grid-gap: var(--space1);

@@ -9,8 +9,7 @@ import FiveStoriesOneAdBundle from ".";
 withStore("Rows/FiveStoriesOneAdBundle", {
   qt: {
     config: {
-      "cdn-image": "thumbor-stg.assettype.com",
-      iconSpritePath: "/sprite.svg"
+      "cdn-image": "thumbor-stg.assettype.com"
     }
   }
 })
