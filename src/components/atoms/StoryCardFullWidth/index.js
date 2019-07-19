@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { get } from "lodash";
+import get from "lodash/get";
 import Headline from "../Headline";
 import { Link } from "@quintype/components";
 import Contributor from "../../atoms/Contributor";
@@ -115,8 +115,12 @@ StoryCardFullWidth.propTypes = {
     "story-template": PropTypes.string,
     "hero-image-s3-key": PropTypes.string,
     "hero-image-caption": PropTypes.string,
+    url: PropTypes.string,
+    "published-at": PropTypes.string,
     engagement: PropTypes.shape({
-      total: PropTypes.number
+      total: PropTypes.number,
+      comments: PropTypes.string,
+      shares: PropTypes.string
     })
   })
 };

@@ -1,0 +1,82 @@
+.base {
+  --title-color: var(--white);
+  --background-color: var(--alto);
+  --meta-color: var(--white);
+  background: var(--background-color);
+  overflow: auto;
+  padding: var(--space1_5) 0 var(--space3);
+  @media (min-width: 768px) {
+    padding: var(--space3) 0;
+  }
+}
+.contributor {
+  color: var(--meta-color);
+}
+
+.container {
+  margin: 0;
+}
+
+.carousel {
+  padding: 0 0 var(--space2);
+}
+
+.carousal-holder {
+  background-color: var(--white);
+  overflow: hidden;
+  @media (min-width: 768px) {
+    display: flex;
+  }
+}
+.carousal-holder ul {
+  align-items: stretch;
+}
+
+.carousal-holder ul li {
+  height: auto;
+  display: flex;
+}
+
+.carousal-holder ul li.card-active .story-card-small {
+  border-color: var(--accent-color);
+  @media (min-width: 768px) {
+    border: 0px solid transparent;
+  }
+}
+
+.carousal-holder ul li:not(.card-active) .story-card-small {
+  border-color: transparent;
+}
+
+@keyframes border-slide {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+.card-active {
+  position: relative;
+}
+
+.card-active::after {
+  @media (min-width: 768px) {
+    content: "";
+    margin-top: var(--space2);
+    height: 6px;
+    width: 100%;
+    display: block;
+    background: var(--accent-color);
+    animation: border-slide 1s;
+    position: absolute;
+    bottom: 0;
+  }
+}
+
+.flex-element {
+  @media (min-width: 768px) {
+    flex: 1 1 100%;
+  }
+}

@@ -2,7 +2,7 @@ import React from "react";
 import { withStore } from "../../../../storybook";
 import produce from "immer";
 
-import StoryCard from "./";
+import StoryCard from "./index";
 import props from "./fixture.js";
 
 withStore("Cards/StoryCard", {

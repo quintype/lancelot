@@ -1,16 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { get } from "lodash";
+import get from "lodash/get";
 import { Link } from "@quintype/components";
-import Headline from "../Headline";
 import Contributor from "../../atoms/Contributor";
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
 import Icon from "../Icon";
-
 import { getStoryData, generateImageSources } from "../../utils/utils";
-// import { isPremium } from "../../../../isomorphic/data/story";
-
 import "./storyCard.m.css";
+import Headline from "../Headline";
 
 export default function StoryCard({ story, className = "", cardWithImageZoom = true }) {
   const storyData = getStoryData(story);
@@ -32,7 +29,8 @@ export default function StoryCard({ story, className = "", cardWithImageZoom = t
   return (
     <Link
       aria-label={`${"Read full story: "} ${storyData.headline}`}
-      className={`base ${className} ${cardWithImageZoom ? "card-with-image-zoom" : ""}`}
+      className={`${className} ${cardWithImageZoom ? "card-with-image-zoom" : ""}`}
+      styleName="base"
       href={externalLink || story.url}
       externalLink={externalLink}
     >
@@ -61,7 +59,7 @@ export default function StoryCard({ story, className = "", cardWithImageZoom = t
       </ResponsiveImageWithFallback>
       <div styleName="content">
         {contributor && <Contributor name={contributor["name"]} type={contributorRole} styleName="contributor" />}
-        <Headline headerLevel={3} headerType={3} text={storyData.headline} />
+        <Headline styleName="headline" headerLevel={3} headerType={3} text={storyData.headline} />
       </div>
     </Link>
   );
@@ -88,6 +86,7 @@ StoryCard.propTypes = {
     "story-template": PropTypes.string,
     "hero-image-s3-key": PropTypes.string,
     "hero-image-caption": PropTypes.string,
+    url: PropTypes.string,
     engagement: PropTypes.shape({
       total: PropTypes.number
     })

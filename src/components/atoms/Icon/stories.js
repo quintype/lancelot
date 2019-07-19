@@ -11,7 +11,7 @@ withStore("Atoms/Icon", {
   }
 })
   .addDecorator(story => (
-    <div style={{ fontSize: "50px", backgroundColor: "var(--off-white)" }}>
+    <div style={{ fontSize: "50px", backgroundColor: "var(--alto)" }}>
       <style>{".icon {color: #4a4a4a}"}</style>
       {story()}
     </div>

@@ -4,7 +4,7 @@
   padding: var(--space1_5) 0 var(--space3);
   @media (min-width: 768px) {
     padding: var(--space3) 0;
-    --background-color: var(--off-white);
+    --background-color: var(--alto);
   }
   background-color: var(--background-color);
 }
