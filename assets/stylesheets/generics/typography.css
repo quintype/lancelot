@@ -1,8 +1,5 @@
 :root {
-  //Font Families
   --primaryTypeface: "Helvetica", "Arial", sans-serif;
-
-  // Font sizes
   --base-smallest: 1.2rem;
   --base-smaller: 1.4rem;
   --base-small: 1.5rem;
@@ -14,22 +11,17 @@
   --large: 3.2rem;
   --larger: 3.4rem;
   --jumbo: 5.4rem;
-
-  // Font Weights
   --regular: 400;
   --semi-bold: 600;
   --bold: 700;
 }
-
 a {
   text-decoration: none;
   color: inherit;
 }
-
 html {
   font-size: 62.5%;
 }
-
 body {
   font-family: var(--sansTypeface);
   font-weight: var(--regular);
@@ -39,7 +31,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -moz-font-feature-settings: "liga" on;
 }
-
 h1,
 h2,
 h3,
@@ -53,7 +44,6 @@ ol {
   padding: 0;
   font-family: var(--sansTypeface);
 }
-
 p,
 li {
   font-size: var(--base);
