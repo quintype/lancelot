@@ -1,5 +1,6 @@
 .slider-image-wrapper {
   /* @include image-aspect-ratio(5, 2); */
+  position: relative;
   padding-top: 40%;
   overflow: hidden;
 }
@@ -11,7 +12,6 @@
   --content-color: var(--white);
   --font-size: 1em;
 }
-
 .text-area {
   height: 100%;
   background: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75));
@@ -39,7 +39,7 @@
 }
 
 .highlight {
-  background-color: transparent !important;
+  background-color: transparent;
   box-shadow: none;
 }
 

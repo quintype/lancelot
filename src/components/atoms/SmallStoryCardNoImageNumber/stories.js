@@ -1,7 +1,5 @@
 import React from "react";
-import { withStore } from "../../../../storybook/index";
-import "../../../../assets/stylesheets/app.scss";
-
+import { withStore } from "../../../../storybook";
 import SmallStoryCardNoImageNumber from "./index";
 import produce from "immer";
 
@@ -10,8 +8,7 @@ import story from "./fixture";
 withStore("Cards/SmallStoryCardNoImageNumber", {
   qt: {
     config: {
-      "cdn-image": "thumbor-stg.assettype.com",
-      iconSpritePath: "/sprite.svg"
+      "cdn-image": "thumbor-stg.assettype.com"
     }
   }
 })

@@ -9,6 +9,7 @@
 
 .image-container {
   /* @include image-aspect-ratio(3, 2); */
+  position: relative;
   padding-top: 66.66%;
 }
 .image-container::before {

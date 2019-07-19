@@ -1,17 +1,13 @@
 import React from "react";
-import { withStore } from "../../../../storybook/index";
-import "../../../../assets/stylesheets/app.scss";
-
+import { withStore } from "../../../../storybook";
 import story from "./fixture";
-
 import BigStoryCardAutoSlider from "./index";
 import produce from "immer";
 
 withStore("Cards/BigStoryCardAutoSlider", {
   qt: {
     config: {
-      "cdn-image": "thumbor-stg.assettype.com",
-      iconSpritePath: "/sprite.svg"
+      "cdn-image": "thumbor-stg.assettype.com"
     }
   }
 })
