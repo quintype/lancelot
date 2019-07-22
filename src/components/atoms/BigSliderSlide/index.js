@@ -7,6 +7,7 @@ import get from "lodash/get";
 import "./bigSliderSlide.m.css";
 import { getStoryData, generateImageSources } from "../../utils/utils";
 import hexToRgba from "hex-to-rgba";
+import Headline from "../Headline";
 
 const BigSliderSlide = ({
   story,
@@ -61,11 +62,12 @@ const BigSliderSlide = ({
             externalLink={externalLink}
             styleName="flex-headline"
           >
-            <h3 styleName="headline" headerLevel={3} headerType={1}>
-              <span style={sectionColor} styleName="highlight">
-                {storyData.headline}
-              </span>
-            </h3>
+            <Headline
+              text={storyData.headline}
+              styleName="headline highlight"
+              style={sectionColor}
+              headlineDesign={"withbackground"}
+            />
           </Link>
           {contributorName && <Contributor name={contributorName} type={contributorRole} styleName="contributor" />}
           <p styleName="mobile-hide content">{story.subheadline}</p>

@@ -70,7 +70,7 @@
   }
 }
 
-.highlight {
+.highlight span {
   background-color: var(--accent-color);
   box-shadow: 10px 0 0 var(--accent-color), -10px 0 0 var(--accent-color);
   line-height: 1.3;
