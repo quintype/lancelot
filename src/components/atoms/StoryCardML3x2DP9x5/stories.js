@@ -79,7 +79,8 @@ withStore("Cards/StoryCardML3x2DP9x5", {
   .add("long headline", () => {
     const newProps = produce(story, draft => {
       draft.story.alternative = null;
-      draft.story.headline = "போன்ற திரைப்படங்களுக்கு ஒளிப்பதிவு செய்ததன் மூலம் தமிழ் சினிமாவில் கவித்துவமான";
+      draft.story.headline =
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua";
     });
     return <StoryCardML3x2DP9x5 {...newProps} />;
   })

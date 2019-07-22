@@ -8,8 +8,7 @@ import story from "./fixture.js";
 withStore("Cards/StoryCardML5x4DP4x3", {
   qt: {
     config: {
-      "cdn-image": "thumbor-stg.assettype.com",
-      iconSpritePath: "/sprite.svg"
+      "cdn-image": "thumbor-stg.assettype.com"
     }
   }
 })
@@ -80,7 +79,8 @@ withStore("Cards/StoryCardML5x4DP4x3", {
   .add("long headline", () => {
     const newProps = produce(story, draft => {
       draft.story.alternative = null;
-      draft.story.headline = "போன்ற திரைப்படங்களுக்கு ஒளிப்பதிவு செய்ததன் மூலம் தமிழ் சினிமாவில் கவித்துவமான";
+      draft.story.headline =
+        "பLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua";
     });
     return <StoryCardML5x4DP4x3 {...newProps} />;
   })

@@ -1,6 +1,6 @@
 .base {
   --background-color: transparent;
-  --accent-color: var(--yellowish-orange);
+  /* --accent-color: var(--yellowish-orange); */
   background-color: var(--background-color);
   margin-bottom: 0;
 }
