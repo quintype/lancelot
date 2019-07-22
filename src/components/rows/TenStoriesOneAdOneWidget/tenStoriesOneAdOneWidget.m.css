@@ -1,0 +1,58 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: var(--space3);
+  --background-color: var(--secondary-color);
+  padding: var(--space3);
+}
+@mixin centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.headline-span2 {
+  /* grid-column: span 2;*/
+  grid-row: span 2;
+}
+
+.base {
+  background-color: #faf9f1;
+}
+
+:global .align-left {
+  justify-content: flex-start;
+}
+.col-3 {
+  grid-column: 4;
+}
+.col-2 {
+  grid-column: 3;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.col-1 {
+  grid-column: span 2;
+}
+.widget {
+  height: calc(100% - 300px);
+  background: yellowgreen;
+  @include centered;
+}
+
+.ad {
+  background: yellow;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include centered;
+  height: 300px;
+}
+
+.card-holder {
+  margin-top: var(--space4);
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-row-gap: var(--space2);
+}

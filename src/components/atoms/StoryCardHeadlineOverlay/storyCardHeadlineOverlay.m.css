@@ -21,6 +21,7 @@
   width: 95%;
   z-index: 1;
   position: relative;
+  min-height: 80px;
   @media (min-width: 768px) {
     padding: var(--space1);
   }

@@ -15,4 +15,5 @@ const storeState = {
 
 withStore("Atoms/CollectionTitleWithCrossLine", storeState)
   .add("default", () => <CollectionTitleWithCrossLine title={props.title} />)
+  .add("left-offset", () => <CollectionTitleWithCrossLine title={props.title} placement={"1fr 1fr 5fr"} />)
   .add("when title is not present, dont show the component", () => <CollectionTitleWithCrossLine />);
