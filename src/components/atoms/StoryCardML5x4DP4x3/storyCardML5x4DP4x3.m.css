@@ -1,0 +1,32 @@
+.base {
+  --background-color: transparent;
+  --accent-color: var(--yellowish-orange);
+  background-color: var(--background-color);
+  margin-bottom: 0;
+}
+
+.image-wrapper {
+  /* @include image-aspect-ratio(5, 4); */
+  position: relative;
+  padding-top: 80%;
+  @media (min-width: 768px) {
+    /* @include image-aspect-ratio(4, 3); */
+    padding-top: 75%;
+  }
+}
+
+.text-wrapper {
+  padding-top: 0;
+}
+
+.headline {
+  /* @include font-styles(h5); */
+  color: var(--title-color);
+  margin: 0;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 30% 67%;
+  grid-column-gap: var(--space1_5);
+}
