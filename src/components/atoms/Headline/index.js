@@ -10,6 +10,10 @@ const Headline = ({ text, headerType = 1, headerLevel = 1, headlineDesign = "", 
     return <span className="text">{text}</span>;
   };
 
+  const withbackgroundDom = () => {
+    return <span className="text">{text}</span>;
+  };
+
   const simpleDom = () => {
     return text;
   };
@@ -18,6 +22,8 @@ const Headline = ({ text, headerType = 1, headerLevel = 1, headlineDesign = "", 
     switch (headlineDesign) {
       case "crossline":
         return crossLineDom();
+      case "withbackground":
+        return withbackgroundDom();
       default:
         return simpleDom();
     }
