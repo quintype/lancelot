@@ -1,0 +1,31 @@
+.base {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  background-color: transparent;
+  @media (min-width: 768px) {
+    grid-template-columns: 80px auto;
+  }
+}
+
+.image-wrapper {
+  /* @include image-aspect-ratio(5, 4); */
+  position: relative;
+  padding-top: 80%;
+  @media (min-width: 768px) {
+    padding-top: 100%;
+    /* @include image-aspect-ratio(1, 1); */
+  }
+}
+
+.text-wrapper {
+  padding-left: var(--space2);
+  padding-top: var(--space-2);
+  @media (min-width: 768px) {
+    padding-top: var(--space1);
+  }
+}
+
+.headline {
+  margin: 0;
+  color: var(--title-color);
+}
