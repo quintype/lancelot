@@ -7,10 +7,8 @@ import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
 import Contributor from "../Contributor";
 
 import { getStoryData, generateImageSources } from "../../utils/utils";
-// import { PremiumBadge } from "../../atoms/premium-badge";
-// import { isPremium } from "../../../../isomorphic/data/story";
-
-import "./styles.m.css";
+import Headline from "../Headline";
+import "./focusedCard.m.css";
 
 export const FocusedCard = ({ story, className = "", cardWithImageZoom = true }) => {
   const storyData = getStoryData(story);
@@ -44,15 +42,19 @@ export const FocusedCard = ({ story, className = "", cardWithImageZoom = true })
           )}
         />
         <div styleName="text-wrapper">
-          <h3 styleName="headline">
-            <span styleName="highlight">{storyData.headline}</span>
-          </h3>
+          <Headline
+            text={storyData.headline}
+            headerLevel={3}
+            headerType={8}
+            className="headline highlight"
+            headlineDesign={"withbackground"}
+          />
           {contributor && (
             <Contributor
               name={contributor["name"]}
               type={contributorRole}
               iconColor="#4a4a4a"
-              styleName="contributor"
+              className="contributor"
             />
           )}
           {/* <PremiumBadge isPremium={isPremium(story)} positionClass="bottomLeft" /> */}
@@ -67,6 +69,7 @@ FocusedCard.propTypes = {
   cardWithImageZoom: PropTypes.bool,
   story: PropTypes.shape({
     id: PropTypes.string,
+    url: PropTypes.string,
     authors: PropTypes.arrayOf(
       PropTypes.shape({
         "contributor-role": PropTypes.shape({

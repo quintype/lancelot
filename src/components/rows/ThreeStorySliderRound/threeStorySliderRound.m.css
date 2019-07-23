@@ -10,7 +10,7 @@
     padding: var(--space3) 0;
   }
 }
-.contributor {
+.base :global .contributor {
   --content-color: var(--meta-color);
   --icon-color: var(--meta-color);
   white-space: nowrap;
@@ -83,7 +83,7 @@
   padding-top: 100%;
 }
 
-.headline {
+.base :global .headline {
   /* @include font-styles(mobile-h4); */
   font-size: var(--base-medium);
   color: var(--title-color);
@@ -169,7 +169,7 @@
     height: 320px;
     border: 0;
   }
-  .story-card-big .headline {
+  .story-card-big :global .headline {
     /* @include font-styles(h1); */
     font-size: var(--larger);
     color: var(--title-color);
@@ -181,7 +181,7 @@
     color: var(--content-color);
     margin: var(--space2) 0 0;
   }
-  .story-card-big .contributor {
+  .story-card-big :global .contributor {
     --icon-color: var(--greyish-brown);
     white-space: nowrap;
   }

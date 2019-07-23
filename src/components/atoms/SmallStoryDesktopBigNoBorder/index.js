@@ -7,6 +7,7 @@ import Contributor from "../Contributor/index";
 
 import { getStoryData, generateImageSources } from "../../utils/utils";
 import "./smallStoryDesktopBigNoBorder.m.css";
+import Headline from "../Headline";
 
 const SmallStoryCardDesktopBigNoBorder = ({
   story,
@@ -47,7 +48,7 @@ const SmallStoryCardDesktopBigNoBorder = ({
         {contributor && (
           <Contributor name={contributor["name"]} type={contributorRole} iconColor="#4a4a4a" className="contributor" />
         )}
-        <h3 styleName={`${hasTruncatedHeadline ? "truncated" : ""} ${"headline"}`}>{storyData.headline}</h3>
+        <Headline className="headline" text={storyData.headline} headerLevel={1} headerType={1} />
       </div>
     </Link>
   );

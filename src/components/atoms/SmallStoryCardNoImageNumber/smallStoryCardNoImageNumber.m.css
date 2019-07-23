@@ -10,7 +10,7 @@
   padding-top: 75%;
   align-self: flex-start;
 }
-.contributor {
+.base :global .contributor {
   display: inline-flex;
   color: var(--meta-color);
 }
@@ -26,7 +26,7 @@
 .card-content {
   line-height: 1.25;
 }
-.headline {
+.base :global .headline {
   padding-top: var(--space-2);
   /* @include font-styles(h5); */
   margin: 0px;

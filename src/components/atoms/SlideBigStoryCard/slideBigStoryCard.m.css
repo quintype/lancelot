@@ -15,14 +15,8 @@
   padding: 0 var(--space1_5) var(--space1_5);
 }
 
-.headline {
+.base :global .headline {
   margin: 0px;
   margin-top: var(--space-2);
   color: var(--title-color);
-}
-.truncated {
-  /* @include number-of-lines(mobile-h3, 2); */
-  @media (min-width: 768px) {
-    /* @include number-of-lines(h3, 2); */
-  }
 }

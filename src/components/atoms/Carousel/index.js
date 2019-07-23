@@ -4,7 +4,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Glide from "@glidejs/glide";
-import "./styles.m.css";
+import "./carousel.m.css";
 export default class Carousel extends Component {
   constructor(props) {
     super(props);

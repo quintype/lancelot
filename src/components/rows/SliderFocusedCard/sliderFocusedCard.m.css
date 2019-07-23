@@ -23,13 +23,15 @@
 
 .card {
   margin-right: var(--space2);
-  @media (min-width: 768px) {
+}
+@media (min-width: 768px) {
+  .card {
     margin: var(--space1) 0;
     transition: all 0.2s;
-    &:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.4);
-    }
+  }
+  .card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.4);
   }
 }
 

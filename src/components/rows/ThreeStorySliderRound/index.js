@@ -49,13 +49,13 @@ const StoryCard = ({ story, className = "", type = "small", hasTruncatedHeadline
         />
       </div>
       <div styleName="content">
-        <Headline styleName="headline" text={storyData.headline} headerLevel={3} headerType={11} />
+        <Headline className="headline" text={storyData.headline} headerLevel={3} headerType={11} />
         {contributor && (
           <Contributor
             name={contributor["name"]}
             type={contributorRole}
             iconColor={type === "big" ? "#404040" : "#fff"}
-            styleName="contributor"
+            className="contributor"
           />
         )}
         {type === "big" && <h4 styleName="subheadline">{story["subheadline"]}</h4>}

@@ -64,12 +64,12 @@ const BigSliderSlide = ({
           >
             <Headline
               text={storyData.headline}
-              styleName="headline highlight"
+              className="headline highlight"
               style={sectionColor}
               headlineDesign={"withbackground"}
             />
           </Link>
-          {contributorName && <Contributor name={contributorName} type={contributorRole} styleName="contributor" />}
+          {contributorName && <Contributor name={contributorName} type={contributorRole} className="contributor" />}
           <p styleName="mobile-hide content">{story.subheadline}</p>
         </div>
       </div>
