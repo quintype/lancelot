@@ -7,8 +7,7 @@ import breakingNews from "./fixture";
 withStore("Rows/BreakingNews", {
   qt: {
     config: {
-      "cdn-image": "thumbor-stg.assettype.com",
-      iconSpritePath: "/sprite.svg"
+      "cdn-image": "thumbor-stg.assettype.com"
     }
   }
 })
