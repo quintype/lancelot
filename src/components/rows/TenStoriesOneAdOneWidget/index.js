@@ -8,7 +8,7 @@ import "./tenStoriesOneAdOneWidget.m.css";
 import CollectionTitleWithCrossLine from "../../atoms/CollectionTitleWithCrossLine";
 
 function TenStoriesOneAdOneWidget({ items, name }) {
-  const firstStory = items.splice(0, 1)[0].story;
+  const firstStory = items.slice(0, 1)[0].story;
   return (
     <div styleName="base">
       <CollectionTitleWithCrossLine title={name} placement={"1fr 1fr 5fr"} opacity={0.3} />
@@ -22,13 +22,13 @@ function TenStoriesOneAdOneWidget({ items, name }) {
           <div styleName="card-holder">
             {items &&
               items.length > 0 &&
-              items.splice(0, 6).map(item => <SmallStoryCard story={item.story} key={item.story.id} />)}
+              items.slice(1, 7).map(item => <SmallStoryCard story={item.story} key={item.story.id} />)}
           </div>
         </div>
         <div styleName="col-2">
           {items &&
             items.length > 0 &&
-            items.splice(0, 3).map(item => <StoryCardDesktop16IsTo9 story={item.story} key={item.story.id} />)}
+            items.slice(7, 10).map(item => <StoryCardDesktop16IsTo9 story={item.story} key={item.story.id} />)}
         </div>
         <div styleName="col-3">
           <div styleName="ad">Ad Placeholder</div>

@@ -21,12 +21,7 @@ withStore("Rows/10-stories-collection", {
     });
     return <TenStoriesOneAdOneWidget {...newProps} />;
   })
-  .add("1 story", () => {
-    const newProps = produce(collection, draft => {
-      draft.items = draft.items.slice(0, 1);
-    });
-    return <TenStoriesOneAdOneWidget {...newProps} />;
-  })
+
   .add("7 stories", () => {
     const newProps = produce(collection, draft => {
       draft.items = draft.items.slice(0, 7);
