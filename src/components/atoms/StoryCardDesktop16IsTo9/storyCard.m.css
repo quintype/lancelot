@@ -1,0 +1,39 @@
+.base {
+  display: block;
+}
+
+.base .contributor {
+  --content-color: var(--meta-color);
+  --icon-color: var(--title-color);
+  margin-bottom: var(--space-4);
+}
+
+.image-container {
+  padding-top: 56.2%;
+}
+
+.image-container::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.5;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000000);
+  z-index: 1;
+}
+
+.content {
+  padding: var(--space1) 0;
+}
+
+.headline {
+  font-family: var(--h5-font-family);
+  font-size: var(--h5-font-size);
+  font-weight: var(--h5-font-weight);
+  line-height: var(--h5-line-height);
+  letter-spacing: var(--h5-letter-spacing);
+  color: var(--title-color);
+  margin: 0 0 var(--space1);
+}

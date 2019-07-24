@@ -21,13 +21,13 @@ function TenStoriesOneAdOneWidget({ items, name }) {
           ></StoryCardHeadlineOverlay>
           <div styleName="card-holder">
             {items &&
-              items.length > 0 &&
+              items instanceof Array > 0 &&
               items.slice(1, 7).map(item => <SmallStoryCard story={item.story} key={item.story.id} />)}
           </div>
         </div>
         <div styleName="col-2">
           {items &&
-            items.length > 0 &&
+            items instanceof Array &&
             items.slice(7, 10).map(item => <StoryCardDesktop16IsTo9 story={item.story} key={item.story.id} />)}
         </div>
         <div styleName="col-3">

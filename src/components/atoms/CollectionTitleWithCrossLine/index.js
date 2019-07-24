@@ -12,7 +12,7 @@ const CollectionTitleWithCrossLine = ({ title, className = "", placement = "midd
     <h2
       styleName={`title ${placement === "middle" ? "aligned-center" : "customised-offset"}`}
       className={className}
-      style={{ "--left-offset": placement, "--opacity": opacity || "1" }}
+      style={{ "--custom-offset": placement, "--opacity": opacity || "1" }}
     >
       <span styleName="text">{title}</span>
     </h2>

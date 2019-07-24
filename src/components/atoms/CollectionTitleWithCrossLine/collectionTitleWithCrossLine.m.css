@@ -25,7 +25,7 @@
 
   &.customised-offset {
     display: grid;
-    grid-template-columns: var(--left-offset);
+    grid-template-columns: var(--custom-offset);
     &::after,
     &::before {
       transform: translateY(50%);
