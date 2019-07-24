@@ -38,7 +38,7 @@ const headerDesigns = {
 };
 
 const stories = storiesOf("Headline", module);
-stories.addDecorator(withKnobs);
+stories.addDecorator(withInfo).addDecorator(withKnobs);
 stories.add("default", () => (
   <Headline
     text={text("Headline Text", story.story.headline)}
