@@ -49,7 +49,12 @@ const StoryCard = ({ story, className = "", type = "small", hasTruncatedHeadline
         />
       </div>
       <div styleName="content">
-        <Headline className="headline" text={storyData.headline} headerLevel={3} headerType={11} />
+        <Headline
+          text={storyData.headline}
+          headerLevel={3}
+          headerType={11}
+          className={`${"headline"} ${hasTruncatedHeadline ? "truncated" : ""}`}
+        />
         {contributor && (
           <Contributor
             name={contributor["name"]}
@@ -58,7 +63,9 @@ const StoryCard = ({ story, className = "", type = "small", hasTruncatedHeadline
             className="contributor"
           />
         )}
-        {type === "big" && <h4 styleName="subheadline">{story["subheadline"]}</h4>}
+        {type === "big" && (
+          <h4 className={`${"subheadline"} ${hasTruncatedHeadline ? "truncated" : ""}`}>{story["subheadline"]}</h4>
+        )}
       </div>
     </Link>
   );

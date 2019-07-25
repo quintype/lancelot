@@ -149,7 +149,7 @@
     margin: 0 0 var(--space5);
   }
 }
-.story-card-big .subheadline {
+.story-card-big :global .subheadline {
   display: none;
 }
 @media (min-width: 768px) {
@@ -174,7 +174,7 @@
     font-size: var(--larger);
     color: var(--title-color);
   }
-  .story-card-big .subheadline {
+  .story-card-big :global .subheadline {
     /* @include font-styles(body-sm); */
     font-size: var(--base-smallest);
     display: block;

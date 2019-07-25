@@ -46,3 +46,9 @@
     font-size: var(--base-larger);
   }
 }
+
+/* .truncated {
+  @include number-of-lines(mobile-h4, 2, 2);
+  @media (min-width: 768px) {
+    @include number-of-lines(h4, 3);
+  } */

@@ -48,7 +48,12 @@ const SmallStoryCardDesktopBigNoBorder = ({
         {contributor && (
           <Contributor name={contributor["name"]} type={contributorRole} iconColor="#4a4a4a" className="contributor" />
         )}
-        <Headline className="headline" text={storyData.headline} headerLevel={1} headerType={1} />
+        <Headline
+          text={storyData.headline}
+          headerLevel={1}
+          headerType={1}
+          className={`${"headline"} ${hasTruncatedHeadline ? "truncated" : ""}`}
+        />
       </div>
     </Link>
   );

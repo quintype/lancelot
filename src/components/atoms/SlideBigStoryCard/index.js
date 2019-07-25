@@ -48,7 +48,12 @@ const SlideBigStoryCard = ({ story, className = "", cardWithImageZoom = true, ha
               className="contributor"
             />
           )}
-          <Headline text={storyData.headline} headerType={1} headerLevel={3} className="headline" />
+          <Headline
+            text={storyData.headline}
+            headerType={1}
+            headerLevel={3}
+            className={`${"headline"} ${hasTruncatedHeadline ? "truncated" : ""}`}
+          />
         </div>
       </div>
     </Link>
