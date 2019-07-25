@@ -5,7 +5,7 @@ import Carousel from "../../atoms/Carousel";
 import CollectionTitleWithCrossLine from "../../atoms/CollectionTitleWithCrossLine";
 import FocusedCard from "../../atoms/FocusedCard";
 import { getStoryHeadline } from "../../utils/utils";
-import "./styles.m.css";
+import "./sliderFocusedCard.m.css";
 
 const SliderFocusedCard = ({
   collection,

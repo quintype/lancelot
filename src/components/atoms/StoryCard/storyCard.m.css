@@ -1,7 +1,7 @@
 .base {
   display: block;
 }
-.contributor {
+.base :global .contributor {
   --content-color: var(--meta-color);
   --icon-color: var(--title-color);
   margin-bottom: var(--space-4);
@@ -28,7 +28,7 @@
   padding: var(--space1) 0;
 }
 
-.headline {
+.base :global .headline {
   /* @include font-styles(h5); */
   font-size: var(--base-medium);
   color: var(--title-color);

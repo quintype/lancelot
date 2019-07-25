@@ -33,22 +33,22 @@
   }
 }
 
-.headline {
+.base :global .headline {
   /* @include font-styles(mobile-h4); */
   font-size: var(--base-medium);
-  @media (min-width: 768px) {
-    /* @include font-styles(h4); */
-    font-size: var(--base-larger);
-  }
-
   margin: 0px;
   margin-top: var(--space-2);
   color: var(--title-color);
 }
-
-.truncated {
-  /* @include number-of-lines(mobile-h4, 2, 2); */
-  @media (min-width: 768px) {
-    /* @include number-of-lines(h4, 3); */
+@media (min-width: 768px) {
+  .base :global .headline {
+    /* @include font-styles(h4); */
+    font-size: var(--base-larger);
   }
 }
+
+/* .truncated {
+  @include number-of-lines(mobile-h4, 2, 2);
+  @media (min-width: 768px) {
+    @include number-of-lines(h4, 3);
+  } */

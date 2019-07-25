@@ -35,10 +35,10 @@ const SmallStoryCardNoImageNumber = ({ story, className = "", index }) => {
               iconHeight={13}
               iconWidth={13}
               iconColor="#4a4a4a"
-              styleName="contributor"
+              className="contributor"
             />
           )}
-          <Headline text={headline} headerType={6} headerLevel={3} styleName="headline" />
+          <Headline text={headline} headerType={6} headerLevel={3} className="headline" />
         </div>
       </div>
     </Link>
