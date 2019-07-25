@@ -4,7 +4,6 @@ import story from "./fixture";
 import React from "react";
 import storiesOf from "../../../../storybook";
 import { withKnobs, select, text } from "@storybook/addon-knobs";
-import { withInfo } from "@storybook/addon-info";
 
 function optionalSelect() {
   return select.apply(null, arguments) || undefined;
@@ -37,8 +36,9 @@ const headerDesigns = {
   "Cross Line Design": "crossline"
 };
 
-const stories = storiesOf("Headline", module);
-stories.addDecorator(withInfo).addDecorator(withKnobs);
+const stories = storiesOf("Atoms/Headline", module);
+
+stories.addDecorator(withKnobs);
 stories.add("default", () => (
   <Headline
     text={text("Headline Text", story.story.headline)}

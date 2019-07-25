@@ -1,0 +1,109 @@
+.base {
+  --border-color: var(--alto);
+  --background-color: var(--white);
+  padding: var(--space1_5) 0 var(--space3);
+  @media (min-width: 768px) {
+    padding: var(--space3) 0;
+    --background-color: var(--alto);
+  }
+  background-color: var(--background-color);
+}
+
+.row {
+  grid-gap: var(--space1);
+  @media (min-width: 768px) {
+    grid-gap: var(--space2);
+    grid-template-areas:
+      "crsl crsl crsl crsl crsl crsl crsl crsl sb sb sb sb"
+      "crsl crsl crsl crsl crsl crsl crsl crsl sb sb sb sb"
+      "ssb1 ssb1 ssb1 ssb1 ssb2 ssb2 ssb2 ssb2 sb sb sb sb";
+  }
+}
+
+.carousel {
+  grid-column: span 4;
+  @media (min-width: 768px) {
+    grid-area: crsl;
+  }
+  :global .slider-control-centerleft,
+  :global .slider-control-centerright {
+    top: 0;
+    margin-top: 33.33%;
+  }
+}
+
+.story-1 {
+  grid-column: span 4;
+  padding-bottom: var(--space1);
+  border-bottom: 2px solid var(--border-color);
+  @media (min-width: 768px) {
+    padding-bottom: 0;
+    border-bottom: none;
+    grid-area: ssb1;
+  }
+}
+
+.story-2 {
+  grid-column: span 4;
+  @media (min-width: 768px) {
+    grid-area: ssb2;
+  }
+}
+
+.sidebar {
+  grid-column: span 4;
+  @media (min-width: 768px) {
+    grid-area: sb;
+  }
+}
+
+.ad {
+  margin-bottom: var(--space3);
+}
+
+.slider-nav-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.16);
+  background-image: linear-gradient(to top, #e1e1e1, var(--white));
+  border-radius: 50%;
+
+  width: 25px;
+  height: 25px;
+  margin: 0 var(--space1);
+  @media (min-width: 768px) {
+    width: 50px;
+    height: 50px;
+    margin: 0 var(--space2);
+  }
+}
+
+svg {
+  width: 6px;
+  height: 15px;
+  @media (min-width: 768px) {
+    width: 11px;
+    height: 29px;
+  }
+}
+
+.nav-left {
+  transform: rotate(-90deg);
+  padding-top: 0.7rem;
+  @media (min-width: 768px) {
+    padding-top: 1rem;
+    font-size: var(--medium);
+  }
+}
+.nav-right {
+  transform: rotate(90deg);
+  padding-top: 0.7rem;
+  @media (min-width: 768px) {
+    padding-top: 1rem;
+    font-size: var(--medium);
+  }
+}

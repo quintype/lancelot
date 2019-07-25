@@ -2,7 +2,6 @@ import React from "react";
 import produce from "immer";
 import { withStore } from "../../../../storybook/index";
 
-import "../../../../assets/stylesheets/app.scss";
 import FiveStoryOneAdOneWidget from "./index";
 
 import collection from "./fixture";

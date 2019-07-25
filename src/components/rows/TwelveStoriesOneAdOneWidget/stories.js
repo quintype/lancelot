@@ -1,7 +1,6 @@
 import React from "react";
 import produce from "immer";
 import { withStore } from "../../../../storybook";
-import "../../../../assets/stylesheets/app.scss";
 import TwelveStoriesOneAdOneWidget from "./index";
 
 import fixture from "./fixture";

@@ -1,6 +1,5 @@
 import React from "react";
 import { withStore } from "../../../../storybook/index";
-import "../../../../assets/stylesheets/app.scss";
 import { Icon, ZodiacIcon } from "./index";
 import menuIcons from "./fixture";
 
@@ -12,7 +11,7 @@ withStore("Atoms/Icon", {
   }
 })
   .addDecorator(story => (
-    <div style={{ fontSize: "50px", backgroundColor: "var(--off-white)" }}>
+    <div style={{ fontSize: "50px", backgroundColor: "var(--alto)" }}>
       <style>{".icon {color: #4a4a4a}"}</style>
       {story()}
     </div>
