@@ -54,7 +54,7 @@ const SmallStoryCard = ({ story, className = "", cardWithImageZoom = true, hasTr
             text={storyData.headline}
             headerType={3}
             headerLevel={3}
-            className={`${hasTruncatedHeadline ? "truncated" : ""}`}
+            className={`${"headline"} ${hasTruncatedHeadline ? "truncated" : ""}`}
           />
         </div>
       </div>
@@ -68,6 +68,7 @@ SmallStoryCard.propTypes = {
   cardWithImageZoom: PropTypes.bool,
   story: PropTypes.shape({
     id: PropTypes.string,
+    url: PropTypes.string,
     authors: PropTypes.arrayOf(
       PropTypes.shape({
         "contributor-role": PropTypes.shape({

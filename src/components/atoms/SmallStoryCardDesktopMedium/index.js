@@ -2,19 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import get from "lodash/get";
 import { Link } from "@quintype/components";
-
 import Contributor from "../Contributor";
-import "./smallStoryCardDesktopVertical.m.css";
+import "./smallStoryCardDesktopMedium.m.css";
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
 import { getStoryData, generateImageSources } from "../../utils/utils";
 import Headline from "../Headline";
 
-const SmallStoryCardDesktopVertical = ({
-  story,
-  className = "",
-  cardWithImageZoom = true,
-  hasTruncatedHeadline = true
-}) => {
+const SmallStoryCardDesktopMedium = ({ story, className = "", cardWithImageZoom = true }) => {
   const storyData = getStoryData(story);
   const contributor = get(story, ["authors", 0]);
   const contributorRole = get(story, ["authors", 0, "contributor-role", "name"], "");
@@ -27,7 +21,8 @@ const SmallStoryCardDesktopVertical = ({
   return (
     <Link
       aria-label={`${"Read full story: "} ${storyData.headline}`}
-      className={`read-more-link ${className} ${cardWithImageZoom ? "card-with-image-zoom" : ""}`}
+      className={`${className} ${cardWithImageZoom ? "card-with-image-zoom" : ""}`}
+      styleName="read-more-link"
       href={externalLink || story.url}
       externalLink={externalLink}
     >
@@ -41,7 +36,7 @@ const SmallStoryCardDesktopVertical = ({
             imgParams={{ auto: ["format", "compress"] }}
             sources={generateImageSources(
               { aspectRatio: [4, 3], screenWidthCoverage: 0.34 },
-              { aspectRatio: [16, 9], screenWidthCoverage: 0.18 }
+              { aspectRatio: [4, 3], screenWidthCoverage: 0.34 }
             )}
           />
         </div>
@@ -54,20 +49,14 @@ const SmallStoryCardDesktopVertical = ({
               className="contributor"
             />
           )}
-          <Headline
-            text={storyData.headline}
-            headerType={8}
-            headerLevel={3}
-            className={` ${"headline"} ${hasTruncatedHeadline ? "truncated" : ""}`}
-          />
+          <Headline text={storyData.headline} headerLevel={3} headerType={5} className="headline" />
         </div>
       </div>
     </Link>
   );
 };
 
-SmallStoryCardDesktopVertical.propTypes = {
-  hasTruncatedHeadline: PropTypes.bool,
+SmallStoryCardDesktopMedium.propTypes = {
   className: PropTypes.string,
   cardWithImageZoom: PropTypes.bool,
   story: PropTypes.shape({
@@ -103,4 +92,4 @@ SmallStoryCardDesktopVertical.propTypes = {
   })
 };
 
-export default SmallStoryCardDesktopVertical;
+export default SmallStoryCardDesktopMedium;

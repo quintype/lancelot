@@ -7,14 +7,22 @@
   @media (min-width: 768px) {
     display: block;
   }
-}
+  :global .image-wrapper {
+    position: relative;
+    padding-top: 75%;
 
-.image-wrapper {
-  position: relative;
-  padding-top: 75%;
+    @media (min-width: 768px) {
+      padding-top: 56.25%;
+    }
+  }
 
-  @media (min-width: 768px) {
-    padding-top: 56.25%;
+  :global .headline {
+    /* @include font-styles(h5); */
+    margin: var(--space-2) 0 0;
+    color: var(--title-color);
+    @media (min-width: 768px) {
+      /* margin-top: var(--space1); */
+    }
   }
 }
 
@@ -25,16 +33,6 @@
   }
 }
 
-.headline {
-  /* @include font-styles(h5); */
-  font-size: var(--base-small);
-  margin: var(--space-2) 0 0;
-  color: var(--title-color);
-  @media (min-width: 768px) {
-    /* margin-top: var(--space1); */
-  }
-}
-
-.truncated {
-  /* @include number-of-lines(h5, 2); */
-}
+/* .truncated {
+  @include number-of-lines(h5, 2);
+} */
