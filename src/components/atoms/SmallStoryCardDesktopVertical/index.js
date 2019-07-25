@@ -1,20 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { get } from "lodash";
+import get from "lodash/get";
 import { Link } from "@quintype/components";
 
-import Contributor from "../Contributor/index";
+import Contributor from "../Contributor";
 import "./smallStoryCardDesktopVertical.m.css";
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
 import { getStoryData, generateImageSources } from "../../utils/utils";
 import Headline from "../Headline";
 
-const SmallStoryCardDesktopVertical = ({
-  story,
-  className = "",
-  cardWithImageZoom = true,
-  hasTruncatedHeadline = true
-}) => {
+const SmallStoryCardDesktopVertical = ({ story, className = "", cardWithImageZoom = true }) => {
   const storyData = getStoryData(story);
   const contributor = get(story, ["authors", 0]);
   const contributorRole = get(story, ["authors", 0, "contributor-role", "name"], "");
@@ -34,7 +29,7 @@ const SmallStoryCardDesktopVertical = ({
       <div styleName="base">
         <div className="image-container">
           <ResponsiveImageWithFallback
-            styleName="image-wrapper"
+            className="image-wrapper"
             slug={storyData.imageS3Key}
             metadata={storyData.imageMetadata}
             alt={storyData.imageCaption}
@@ -54,12 +49,7 @@ const SmallStoryCardDesktopVertical = ({
               className="contributor"
             />
           )}
-          <Headline
-            text={storyData.headline}
-            headerType={3}
-            headerLevel={3}
-            className={`${hasTruncatedHeadline ? "truncated" : ""}`}
-          />
+          <Headline text={storyData.headline} headerType={8} headerLevel={3} className="headline" />
         </div>
       </div>
     </Link>
@@ -67,11 +57,11 @@ const SmallStoryCardDesktopVertical = ({
 };
 
 SmallStoryCardDesktopVertical.propTypes = {
-  hasTruncatedHeadline: PropTypes.bool,
   className: PropTypes.string,
   cardWithImageZoom: PropTypes.bool,
   story: PropTypes.shape({
     id: PropTypes.string,
+    url: PropTypes.string,
     authors: PropTypes.arrayOf(
       PropTypes.shape({
         "contributor-role": PropTypes.shape({

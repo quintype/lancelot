@@ -1,35 +1,32 @@
+.read-more-link {
+  --background-color: var(--white);
+  background-color: var(--background-color);
+}
 .base {
-  background: var(--background-color);
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 2fr;
-  font-size: var(--base-smaller);
   @media (min-width: 768px) {
     display: block;
   }
 }
-
+.base :global .contributor {
+  margin-bottom: var(--space-2);
+}
 .base :global .image-wrapper {
+  /* @include image-aspect-ratio(4, 3); */
   position: relative;
   padding-top: 75%;
-
-  @media (min-width: 768px) {
-    padding-top: 56.25%;
-  }
 }
 
 .text-wrapper {
   padding-left: var(--space2);
   @media (min-width: 768px) {
-    padding: var(--space1) 0;
+    padding: var(--space2);
   }
 }
 
 .base :global .headline {
-  /* @include font-styles(h5); */
-  margin: var(--space-2) 0 0;
+  margin: 0px;
   color: var(--title-color);
-  @media (min-width: 768px) {
-    /* margin-top: var(--space1); */
-  }
 }

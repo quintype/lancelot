@@ -1,0 +1,68 @@
+.numbered-items-wrap {
+  --background-color: var(--white);
+  padding: var(--space1_5) var(--space3);
+  background-color: var(--background-color);
+  @media (min-width: 768px) {
+    padding: var(--space1_5);
+  }
+}
+.numbered-items-title {
+  /* @include font-styles(mobile-h3); */
+  font-size: var(--base-large);
+  color: var(--accent-color);
+  margin: 0 0 var(--space1);
+  text-align: center;
+  @media (min-width: 768px) {
+    /* @include font-styles(h3); */
+    font-size: var(--medium);
+  }
+}
+.numbered-items {
+  counter-reset: stories;
+}
+.numbered-item {
+  display: flex;
+  padding: var(--space-2) var(--space1);
+  margin-bottom: var(--space-2);
+  background-color: var(--white);
+}
+@media (min-width: 768px) {
+  .numbered-item {
+    background-color: var(--alto);
+  }
+}
+.numbered-item:last-child {
+  margin-bottom: 0;
+}
+.numbered-item::before {
+  /* @include font-styles(h3); */
+  font-size: var(--medium);
+  background-color: var(--title-color);
+  color: var(--white);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  margin-right: var(--space2);
+  border-radius: 50%;
+  counter-increment: stories;
+  content: counter(stories);
+}
+@media (min-width: 768px) {
+  .numbered-item::before {
+    /* @include font-styles(h2); */
+    font-size: var(--large);
+  }
+}
+
+.numbered-item-link {
+  /* @include font-styles(h5); */
+  font-size: var(--base-medium);
+  color: var(--title-color);
+}
+
+/* .truncated {
+  @include number-of-lines(h5, 2);
+} */

@@ -1,17 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { get } from "lodash";
+import get from "lodash/get";
 import { Link } from "@quintype/components";
-
-import Contributor from "../Contributor/index";
+import Contributor from "../Contributor";
+import "./smallStoryCardDesktopMedium.m.css";
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
 import { getStoryData, generateImageSources } from "../../utils/utils";
-// import { isPremium } from "../../../../isomorphic/data/story";
 import Headline from "../Headline";
 
-import "./smallStoryCard.m.css";
-
-const SmallStoryCard = ({ story, className = "", cardWithImageZoom = true, hasTruncatedHeadline = true }) => {
+const SmallStoryCardDesktopMedium = ({ story, className = "", cardWithImageZoom = true }) => {
   const storyData = getStoryData(story);
   const contributor = get(story, ["authors", 0]);
   const contributorRole = get(story, ["authors", 0, "contributor-role", "name"], "");
@@ -24,23 +21,25 @@ const SmallStoryCard = ({ story, className = "", cardWithImageZoom = true, hasTr
   return (
     <Link
       aria-label={`${"Read full story: "} ${storyData.headline}`}
-      className={`read-more-link ${className} ${cardWithImageZoom ? "card-with-image-zoom" : ""}`}
+      className={`${className} ${cardWithImageZoom ? "card-with-image-zoom" : ""}`}
+      styleName="read-more-link"
       href={externalLink || story.url}
       externalLink={externalLink}
     >
       <div styleName="base">
-        <ResponsiveImageWithFallback
-          styleName="image-wrapper"
-          slug={storyData.imageS3Key}
-          metadata={storyData.imageMetadata}
-          // isPremium={isPremium(story)}
-          alt={storyData.imageCaption}
-          imgParams={{ auto: ["format", "compress"] }}
-          sources={generateImageSources(
-            { aspectRatio: [4, 3], screenWidthCoverage: 0.34 },
-            { aspectRatio: [4, 3], screenWidthCoverage: 0.12 }
-          )}
-        />
+        <div className="image-container">
+          <ResponsiveImageWithFallback
+            className="image-wrapper"
+            slug={storyData.imageS3Key}
+            metadata={storyData.imageMetadata}
+            alt={storyData.imageCaption}
+            imgParams={{ auto: ["format", "compress"] }}
+            sources={generateImageSources(
+              { aspectRatio: [4, 3], screenWidthCoverage: 0.34 },
+              { aspectRatio: [4, 3], screenWidthCoverage: 0.34 }
+            )}
+          />
+        </div>
         <div styleName="text-wrapper">
           {contributor && (
             <Contributor
@@ -50,15 +49,14 @@ const SmallStoryCard = ({ story, className = "", cardWithImageZoom = true, hasTr
               className="contributor"
             />
           )}
-          <Headline text={storyData.headline} headerType={3} headerLevel={3} className="headline" />
+          <Headline text={storyData.headline} headerLevel={3} headerType={5} className="headline" />
         </div>
       </div>
     </Link>
   );
 };
 
-SmallStoryCard.propTypes = {
-  hasTruncatedHeadline: PropTypes.bool,
+SmallStoryCardDesktopMedium.propTypes = {
   className: PropTypes.string,
   cardWithImageZoom: PropTypes.bool,
   story: PropTypes.shape({
@@ -94,4 +92,4 @@ SmallStoryCard.propTypes = {
   })
 };
 
-export default SmallStoryCard;
+export default SmallStoryCardDesktopMedium;
