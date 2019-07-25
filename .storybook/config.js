@@ -1,4 +1,4 @@
-import { configure, addParameters } from '@storybook/react';
+import { configure } from '@storybook/react';
 import "../assets/stylesheets/app.scss";
 
 // automatically import all files ending in *.stories.js
