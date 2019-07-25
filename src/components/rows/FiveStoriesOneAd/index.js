@@ -44,9 +44,7 @@ const FiveStoryOneAd = ({ collection, accentColor, pagetype = "" }) => {
 
 FiveStoryOneAd.propTypes = {
   accentColor: PropTypes.string,
-  collection: PropTypes.shape({
-    items: PropTypes.array
-  }),
+  collection: PropTypes.object,
   pagetype: PropTypes.string
 };
 

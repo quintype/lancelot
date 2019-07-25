@@ -44,7 +44,7 @@ const Headline = ({ text, headerType = 1, headerLevel = 1, headlineDesign = "", 
 export default Headline;
 
 Headline.propTypes = {
-  text: string,
+  text: string.isRequired,
   headerType: number,
   headerLevel: number,
   headlineDesign: string,
