@@ -50,7 +50,12 @@ const SmallStoryCard = ({ story, className = "", cardWithImageZoom = true, hasTr
               className="contributor"
             />
           )}
-          <Headline text={storyData.headline} headerType={3} headerLevel={3} className="headline" />
+          <Headline
+            text={storyData.headline}
+            headerType={3}
+            headerLevel={3}
+            className={`${"headline"} ${hasTruncatedHeadline ? "truncated" : ""}`}
+          />
         </div>
       </div>
     </Link>

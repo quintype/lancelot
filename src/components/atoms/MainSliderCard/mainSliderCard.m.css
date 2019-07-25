@@ -2,42 +2,44 @@
   --background-color: var(--white);
   --accent-color: var(--yellowish-orange);
   background-color: var(--background-color);
-}
-.base :global .contributor {
-  margin-bottom: var(--space1);
-}
 
-.base :global .image-wrapper {
-  /* @include image-aspect-ratio(5, 3); */
-  position: relative;
-  padding-top: 60%;
-}
-.base :global .image-wrapper:before {
-  --background-color: var(--black);
-  z-index: 1;
-  display: block;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  content: "";
-  height: 70px;
-  opacity: 0.5;
-  background-image: linear-gradient(to bottom, transparent, var(--black));
+  :global .contributor {
+    margin-bottom: var(--space1);
+  }
+
+  :global .image-wrapper {
+    /* @include image-aspect-ratio(5, 3); */
+    position: relative;
+    padding-top: 60%;
+  }
+
+  :global .image-wrapper:before {
+    --background-color: var(--black);
+    z-index: 1;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: "";
+    height: 70px;
+    opacity: 0.5;
+    background-image: linear-gradient(to bottom, transparent, var(--black));
+  }
+
+  :global .headline {
+    color: var(--title-color);
+    margin: 0;
+    @media (min-width: 768px) {
+      margin: 0 0 var(--space2);
+    }
+  }
 }
 
 .content {
   padding: var(--space1) var(--space1_5);
   @media (min-width: 768px) {
     padding: var(--space1) var(--space2);
-  }
-}
-
-.base :global .headline {
-  color: var(--title-color);
-  margin: 0;
-  @media (min-width: 768px) {
-    margin: 0 0 var(--space2);
   }
 }
 

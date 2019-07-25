@@ -9,7 +9,12 @@ import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
 import { getStoryData, generateImageSources } from "../../utils/utils";
 import Headline from "../Headline";
 
-const SmallStoryCardDesktopVertical = ({ story, className = "", cardWithImageZoom = true }) => {
+const SmallStoryCardDesktopVertical = ({
+  story,
+  className = "",
+  cardWithImageZoom = true,
+  hasTruncatedHeadline = true
+}) => {
   const storyData = getStoryData(story);
   const contributor = get(story, ["authors", 0]);
   const contributorRole = get(story, ["authors", 0, "contributor-role", "name"], "");
@@ -49,7 +54,12 @@ const SmallStoryCardDesktopVertical = ({ story, className = "", cardWithImageZoo
               className="contributor"
             />
           )}
-          <Headline text={storyData.headline} headerType={8} headerLevel={3} className="headline" />
+          <Headline
+            text={storyData.headline}
+            headerType={8}
+            headerLevel={3}
+            className={` ${"headline"} ${hasTruncatedHeadline ? "truncated" : ""}`}
+          />
         </div>
       </div>
     </Link>
@@ -57,6 +67,7 @@ const SmallStoryCardDesktopVertical = ({ story, className = "", cardWithImageZoo
 };
 
 SmallStoryCardDesktopVertical.propTypes = {
+  hasTruncatedHeadline: PropTypes.bool,
   className: PropTypes.string,
   cardWithImageZoom: PropTypes.bool,
   story: PropTypes.shape({

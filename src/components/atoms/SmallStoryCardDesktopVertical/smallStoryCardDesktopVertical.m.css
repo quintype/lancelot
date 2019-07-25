@@ -7,14 +7,22 @@
   @media (min-width: 768px) {
     display: block;
   }
-}
+  :global .image-wrapper {
+    position: relative;
+    padding-top: 75%;
 
-.base :global .image-wrapper {
-  position: relative;
-  padding-top: 75%;
+    @media (min-width: 768px) {
+      padding-top: 56.25%;
+    }
+  }
 
-  @media (min-width: 768px) {
-    padding-top: 56.25%;
+  :global .headline {
+    /* @include font-styles(h5); */
+    margin: var(--space-2) 0 0;
+    color: var(--title-color);
+    @media (min-width: 768px) {
+      /* margin-top: var(--space1); */
+    }
   }
 }
 
@@ -25,11 +33,6 @@
   }
 }
 
-.base :global .headline {
-  /* @include font-styles(h5); */
-  margin: var(--space-2) 0 0;
-  color: var(--title-color);
-  @media (min-width: 768px) {
-    /* margin-top: var(--space1); */
-  }
-}
+/* .truncated {
+  @include number-of-lines(h5, 2);
+} */
