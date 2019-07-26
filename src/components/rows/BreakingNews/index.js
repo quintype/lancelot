@@ -54,15 +54,7 @@ const BreakingNews = ({ className = "", breakingNews = [] }) => {
 };
 
 BreakingNews.propTypes = {
-  breakingNews: PropTypes.arrayOf(
-    PropTypes.shape({
-      headline: PropTypes.string,
-      id: PropTypes.string,
-      metadata: PropTypes.shape({
-        "linked-story-slug": PropTypes.string
-      })
-    })
-  ),
+  breakingNews: PropTypes.array.isRequired,
   className: PropTypes.string
 };
 

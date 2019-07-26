@@ -22,7 +22,10 @@ const storiesOf = componentName => {
         inline: true,
         header: false,
         source: true,
-        maxPropsIntoLine: 1
+        maxPropsIntoLine: 1,
+        maxPropObjectKeys: Infinity,
+        maxPropArrayLength: Infinity,
+        maxPropStringLength: Infinity
       })
     )
     .addDecorator(withKnobs)
