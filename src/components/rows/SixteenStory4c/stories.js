@@ -5,7 +5,7 @@ import SixteenStory4C from "./index";
 
 import collection from "./fixture";
 
-withStore("Rows/16-story-4-collection", {
+withStore("Rows/Sixteen Stories/16-story-4-collection", {
   qt: {
     config: {
       "cdn-image": "thumbor-stg.assettype.com",

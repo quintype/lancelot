@@ -5,7 +5,7 @@ import FourStoryPhotoGallery from "./index";
 
 import collection from "./fixture";
 
-withStore("Rows/FourStoryPhotoGallery", {
+withStore("Rows/Four Stories/PhotoGallery", {
   qt: {
     config: {
       "cdn-image": "thumbor-stg.assettype.com",

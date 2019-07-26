@@ -5,7 +5,7 @@ import ThreeStorySliderRound from "./index";
 
 import collection from "./fixture";
 
-withStore("Rows/ThreeStorySliderRound", {
+withStore("Rows/Four Stories/ThreeStorySliderRound", {
   qt: {
     config: {
       "cdn-image": "thumbor-stg.assettype.com"

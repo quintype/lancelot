@@ -4,7 +4,7 @@ import { withStore } from "../../../../storybook";
 import BreakingNews from "./index";
 import breakingNews from "./fixture";
 
-withStore("Rows/BreakingNews", {
+withStore("Rows/Three Stories/BreakingNews", {
   qt: {
     config: {
       "cdn-image": "thumbor-stg.assettype.com"

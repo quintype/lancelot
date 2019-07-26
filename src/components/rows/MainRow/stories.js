@@ -6,7 +6,7 @@ import MainRow from "./index";
 
 import fixture from "./fixture";
 
-withStore("Rows/MainRow", {
+withStore("Rows/Fifteen Stories/MainRow", {
   qt: {
     config: {
       "cdn-image": "thumbor-stg.assettype.com",

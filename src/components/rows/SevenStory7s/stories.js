@@ -6,7 +6,7 @@ import { withStore } from "../../../../storybook";
 import SevenStory7s, { VikatanTV } from "./";
 import SevenStory7sProps from "./fixture.js";
 import "../../../../assets/stylesheets/app.scss";
-withStore("Rows/SevenStory7s", {
+withStore("Rows/Seven Stories/SevenStory7s", {
   qt: {
     config: {
       "cdn-image": "thumbor-stg.assettype.com"

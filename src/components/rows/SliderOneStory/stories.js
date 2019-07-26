@@ -4,7 +4,7 @@ import produce from "immer";
 import SliderOneStory from "./index";
 import fixture from "./fixture";
 
-withStore("Rows/SliderOneStory", {
+withStore("Rows/One Story/SliderOneStory", {
   qt: {
     config: {
       "cdn-image": "thumbor-stg.assettype.com"

@@ -5,7 +5,7 @@ import FiveStoryOneAd from "./index";
 
 import collection from "./fixture";
 
-withStore("Rows/FiveStoryOneAd", {
+withStore("Rows/Five Stories/FiveStoryOneAd", {
   qt: {
     config: {
       "cdn-image": "thumbor-stg.assettype.com"

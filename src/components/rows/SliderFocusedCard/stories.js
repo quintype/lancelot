@@ -5,7 +5,7 @@ import SliderFocusedCard from "./index";
 
 import fixture from "./fixture";
 
-withStore("Rows/SliderFocusedCard", {
+withStore("Rows/Four Stories/SliderFocusedCard", {
   qt: {
     config: {
       "cdn-image": "thumbor-stg.assettype.com",

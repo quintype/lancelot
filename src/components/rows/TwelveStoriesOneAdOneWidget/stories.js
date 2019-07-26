@@ -5,7 +5,7 @@ import TwelveStoriesOneAdOneWidget from "./index";
 
 import fixture from "./fixture";
 
-withStore("Rows/TwelveStoriesOneAdOneWidget", {
+withStore("Rows/Twelve Stories/TwelveStoriesOneAdOneWidget", {
   qt: {
     config: {
       "cdn-image": "thumbor-stg.assettype.com",

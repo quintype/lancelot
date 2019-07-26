@@ -6,7 +6,7 @@ import props from "./fixture.js";
 
 import TwelveStoriesOneAd from ".";
 
-withStore("Rows/TwelveStoriesOneAd", {
+withStore("Rows/Twelve Stories/TwelveStoriesOneAd", {
   qt: {
     config: {
       "cdn-image": "thumbor-stg.assettype.com",

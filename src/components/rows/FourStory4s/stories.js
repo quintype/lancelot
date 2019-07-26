@@ -5,7 +5,7 @@ import { withStore } from "../../../../storybook";
 import FourStory4s from "./";
 import FourStory4sProps from "./fixture.js";
 
-withStore("Rows/FourStory4s", {
+withStore("Rows/Four Stories/FourStory4s", {
   qt: {
     config: {
       "cdn-image": "thumbor-stg.assettype.com",

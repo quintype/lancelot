@@ -6,7 +6,7 @@ import OneCarouselTwoStoriesOneAdOneWidget from "./index";
 
 import fixture from "./fixture";
 
-withStore("Rows/OneCarouselTwoStoriesOneAdOneWidget", {
+withStore("Rows/Three Stories/OneCarouselTwoStoriesOneAdOneWidget", {
   qt: {
     config: {
       "cdn-image": "thumbor-stg.assettype.com",

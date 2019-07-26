@@ -5,7 +5,7 @@ import { withStore } from "../../../../storybook";
 import InvertedFourStoryHalfFeatured from ".";
 import props from "./fixture.js";
 
-withStore("Rows/InvertedFourStoryHalfFeatured", {
+withStore("Rows/Four Stories/InvertedFourStoryHalfFeatured", {
   qt: {
     config: {
       "cdn-image": "thumbor-stg.assettype.com",
