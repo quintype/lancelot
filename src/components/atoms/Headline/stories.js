@@ -2,12 +2,8 @@ import Headline from "./index";
 import story from "./fixture";
 
 import React from "react";
-import storiesOf from "../../../../storybook";
-import { withKnobs, select, text } from "@storybook/addon-knobs";
-
-function optionalSelect() {
-  return select.apply(null, arguments) || undefined;
-}
+import storiesOf, { optionalSelect } from "../../../../storybook";
+import { text } from "@storybook/addon-knobs";
 
 const headerTypeOptions = {
   "No Value": "",
@@ -18,7 +14,10 @@ const headerTypeOptions = {
   "type-5": 5,
   "type-6": 6,
   "type-7": 7,
-  "type-8": 8
+  "type-8": 8,
+  "type-9": 9,
+  "type-10": 10,
+  "type-11": 11
 };
 
 const headerLevelOptions = {
@@ -33,12 +32,12 @@ const headerLevelOptions = {
 
 const headerDesigns = {
   "Default design": "",
-  "Cross Line Design": "crossline"
+  "Cross Line Design": "crossline",
+  "With Background Design": "withbackground"
 };
 
 const stories = storiesOf("Atoms/Headline", module);
 
-stories.addDecorator(withKnobs);
 stories.add("default", () => (
   <Headline
     text={text("Headline Text", story.story.headline)}

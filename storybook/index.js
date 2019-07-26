@@ -5,9 +5,14 @@ import { action } from "@storybook/addon-actions";
 import assetify from "@quintype/framework/assetify/client";
 import "../assets/stylesheets/app.scss";
 import { withInfo } from "@storybook/addon-info";
+import { withKnobs, select } from "@storybook/addon-knobs";
 
 assetify();
 global.userPromise = Promise.reject(new Error("no user in storybook"));
+
+export function optionalSelect() {
+  return select.apply(null, arguments) || undefined;
+}
 
 const storiesOf = componentName => {
   return storybook
@@ -20,6 +25,7 @@ const storiesOf = componentName => {
         maxPropsIntoLine: 1
       })
     )
+    .addDecorator(withKnobs)
     .addDecorator(story => (
       <React.Fragment>
         <style>
