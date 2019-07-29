@@ -17,13 +17,7 @@
     transform: translateY(50%);
   }
 
-  &.aligned-center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  &.customised-offset {
+  &.customised-alignment {
     display: grid;
     grid-template-columns: var(--custom-offset);
     &::after,
