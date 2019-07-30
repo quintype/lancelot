@@ -15,7 +15,6 @@
   }
   :global .headline {
     /* @include font-styles(h5); */
-    margin: var(--space-2) 0px 0;
     color: var(--title-color);
     @media (min-width: 768px) {
       margin: 0;
@@ -31,7 +30,7 @@
 
 .text-wrapper {
   display: block;
-  padding-left: var(--space2);
+  padding-left: var(--space1_5);
   overflow: hidden;
 }
 

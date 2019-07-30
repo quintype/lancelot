@@ -1,11 +1,15 @@
 .base {
   width: 100%;
   display: grid;
-
-  grid-template-columns: 1fr 1fr;
-
+  grid-template-rows: 1fr;
   @media (min-width: 768px) {
     grid-template-columns: 1fr;
+  }
+  :global .headline {
+    /* @include font-styles(h5); */
+    margin: 0px;
+    margin-top: var(--space1);
+    color: var(--title-color);
   }
 }
 
@@ -17,18 +21,10 @@
 
 .text-wrapper {
   display: block;
-  margin-left: var(--space1);
   @media (min-width: 768px) {
     margin-left: 0;
     margin-top: var(--space1);
   }
-}
-
-.headline {
-  /* @include font-styles(h5); */
-  margin: 0px;
-  margin-top: var(--space-2);
-  color: var(--title-color);
 }
 
 .truncated {

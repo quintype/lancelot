@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "@quintype/components";
 
-import Icon from "../Icon";
 import "./readMoreLink.m.css";
 
 export const ReadMoreLink = ({ className = "", href, text = "Read More" }) => {
@@ -11,9 +10,8 @@ export const ReadMoreLink = ({ className = "", href, text = "Read More" }) => {
   }
 
   return (
-    <Link aria-label="Read More" className={`${className} read-more-link`} href={href}>
-      <span styleName="text">{text}</span>
-      <Icon type={"arrow-right"} className={"arrow-right"} />
+    <Link aria-label="Read More" className={`${className} read-more-link`} styleName="read-more-link" href={href}>
+      <span>{text}</span>
     </Link>
   );
 };
@@ -36,12 +34,12 @@ export const LoadMoreButton = ({ className = "", text = "Load More", onClick, di
       title="load More"
       aria-label="load More"
       role="button"
-      styleName={`${className} read-more-link}`}
+      className={`${className} read-more-link`}
+      styleName="read-more-link"
       onClick={onClick}
       disabled={disabled}
     >
-      <span styleName="text">{text}</span>
-      <Icon type={"arrow-right"} className={"arrow-right"} />
+      <span>{text}</span>
     </button>
   );
 };

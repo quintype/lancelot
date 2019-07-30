@@ -5,7 +5,7 @@ import { Icon } from "../Icon";
 
 import "./contributor.m.css";
 
-const Contributor = ({ path, type, name, imgUrl, className = "", config = {} }) => {
+const Contributor = ({ path, type, name, imgUrl, className = "", contributorType = 1, config = {} }) => {
   if (!name) {
     return null;
   }
@@ -27,7 +27,10 @@ const Contributor = ({ path, type, name, imgUrl, className = "", config = {} }) 
       )}
     </WithHostUrl>
   ) : (
-    <div styleName="base" className={`${className}`}>
+    <div
+      styleName={` base contributor-type-${contributorType}`}
+      className={`${className} contributor-type-${contributorType}`}
+    >
       <span styleName="contributor-name">{name}</span>
     </div>
   );
@@ -38,6 +41,7 @@ Contributor.propTypes = {
   path: PropTypes.string,
   imgUrl: PropTypes.string,
   className: PropTypes.string,
+  contributorType: PropTypes.number,
   type: PropTypes.string,
   config: PropTypes.shape({
     cinemaMode: PropTypes.bool

@@ -40,20 +40,22 @@ const BigStoryCard = ({ story, cardWithImageZoom = true, className = "", hasTrun
           )}
         />
         <div styleName="text-wrapper">
+          <Headline
+            text={storyData.headline}
+            headlineType={3}
+            headerLevel={3}
+            className={`${"headline"} ${hasTruncatedHeadline ? "truncated" : ""}`}
+          />
+
           {contributor && (
             <Contributor
               name={contributor["name"]}
+              contributorType={3}
               type={contributorRole}
               iconColor="#4a4a4a"
               className={"contributor"}
             />
           )}
-          <Headline
-            text={storyData.headline}
-            headerType={3}
-            headerLevel={3}
-            className={`${hasTruncatedHeadline ? "truncated" : ""}`}
-          />
         </div>
       </div>
     </Link>
