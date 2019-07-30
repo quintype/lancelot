@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { get } from "lodash";
 import { Link } from "@quintype/components";
+
 import Contributor from "../Contributor";
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
 import Headline from "../Headline";
@@ -49,11 +50,18 @@ export default function StoryCardGradientBackground({
         <div styleName="content" style={sectionColor && { "--accent-color": sectionColor }}>
           <Headline
             text={storyData.headline}
-            headerType={6}
+            headlineType={5}
             headerLevel={3}
             className={`${hasTruncatedHeadline ? "truncated" : ""}`}
           />
-          {contributor && <Contributor name={contributor["name"]} type={contributorRole} className={"contributor"} />}
+          {contributor && (
+            <Contributor
+              name={contributor["name"]}
+              type={contributorRole}
+              className={"contributor"}
+              contributorType={3}
+            />
+          )}
         </div>
       </Link>
     </div>

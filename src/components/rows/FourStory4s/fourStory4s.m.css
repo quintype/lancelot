@@ -1,12 +1,10 @@
 .four-story-4s {
-  --background-color: var(--greyish-brown);
-  background-color: var(--background-color);
   padding: var(--space1_5) 0 var(--space3);
   @media (min-width: 768px) {
     padding: var(--space3) 0;
   }
   :global .title {
-    --title-color: var(--white);
+    --title-color: var(--greyish-brown);
     margin: 0 0 var(--space2);
     @media (min-width: 768px) {
       margin: 0 0 var(--space4);

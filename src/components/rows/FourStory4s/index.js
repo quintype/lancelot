@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+
 import CollectionLink from "../../utils/generate-collection-link";
 import CollectionTitleWithCrossLine from "../../atoms/CollectionTitleWithCrossLine";
 import StoryCard from "../../atoms/StoryCardGradientBackground";
