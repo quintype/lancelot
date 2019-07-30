@@ -13,7 +13,7 @@ export const SevenStory7s = ({ collection, Icon, BgPattern = "bg-diamond-dark" }
     <div styleName={`seven-story-7s ${BgPattern}`}>
       <div className="container">
         <CollectionLink collection={collection}>
-          <Headline headerLevel={2} headerType={2} text={Icon ? <Icon /> : name} styleName="title" />
+          <Headline headerLevel={1} headlineType={2} headlineDesign={"crossline"} text={Icon ? <Icon /> : name} />
         </CollectionLink>
         <div className="row">
           {items && items.length > 0 && (
