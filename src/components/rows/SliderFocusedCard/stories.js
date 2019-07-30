@@ -1,6 +1,7 @@
 import React from "react";
-import { withStore } from "../../../../storybook/index";
 import produce from "immer";
+
+import { withStore } from "../../../../storybook/index";
 import SliderFocusedCard from "./index";
 
 import fixture from "./fixture";
@@ -8,8 +9,7 @@ import fixture from "./fixture";
 withStore("Rows/Four Stories/SliderFocusedCard", {
   qt: {
     config: {
-      "cdn-image": "thumbor-stg.assettype.com",
-      iconSpritePath: "/sprite.svg"
+      "cdn-image": "thumbor-stg.assettype.com"
     }
   }
 })

@@ -17,6 +17,7 @@
   color: var(--content-color);
   white-space: nowrap;
   overflow: hidden;
+  z-index: 1;
 }
 
 .icon {

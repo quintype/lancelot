@@ -31,7 +31,9 @@ const Contributor = ({ path, type, name, imgUrl, className = "", contributorType
       styleName={` base contributor-type-${contributorType}`}
       className={`${className} contributor-type-${contributorType}`}
     >
-      <span styleName="contributor-name">{name}</span>
+      <span styleName="contributor-name" className="contributor-name">
+        {name}
+      </span>
     </div>
   );
 };

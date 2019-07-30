@@ -8,6 +8,7 @@ import Contributor from "../Contributor";
 
 import { getStoryData, generateImageSources } from "../../utils/utils";
 import Headline from "../Headline";
+
 import "./focusedCard.m.css";
 
 export const FocusedCard = ({ story, className = "", cardWithImageZoom = true }) => {
@@ -42,19 +43,14 @@ export const FocusedCard = ({ story, className = "", cardWithImageZoom = true })
           )}
         />
         <div styleName="text-wrapper">
-          <Headline
-            text={storyData.headline}
-            headerLevel={3}
-            headerType={8}
-            className="headline highlight"
-            headlineDesign={"withbackground"}
-          />
+          <Headline text={storyData.headline} headerLevel={3} headlineType={5} className="headline highlight" />
           {contributor && (
             <Contributor
               name={contributor["name"]}
               type={contributorRole}
               iconColor="#4a4a4a"
               className="contributor"
+              contributorType={3}
             />
           )}
           {/* <PremiumBadge isPremium={isPremium(story)} positionClass="bottomLeft" /> */}

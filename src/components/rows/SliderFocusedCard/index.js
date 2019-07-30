@@ -1,10 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
+
 import CollectionLink from "../../utils/generate-collection-link";
 import Carousel from "../../atoms/Carousel";
 import CollectionTitleWithCrossLine from "../../atoms/CollectionTitleWithCrossLine";
 import FocusedCard from "../../atoms/FocusedCard";
 import { getStoryHeadline } from "../../utils/utils";
+
 import "./sliderFocusedCard.m.css";
 
 const SliderFocusedCard = ({
@@ -14,7 +16,7 @@ const SliderFocusedCard = ({
   numberOfCardsInViewMobile = 1,
   accentColor
 }) => {
-  const desktopGap = 30;
+  const desktopGap = 24;
   const mobileGap = 0;
   const slides = collection.items
     .filter(({ story = {} }) => getStoryHeadline(story) && story.url)
