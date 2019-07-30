@@ -29,7 +29,6 @@
   position: static;
   @media (min-width: 768px) {
     position: absolute;
-    bottom: var(--space3);
     margin-top: 0;
   }
 }

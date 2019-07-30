@@ -19,10 +19,6 @@
 
 .text-wrapper {
   padding-left: var(--space2);
-  padding-top: var(--space-2);
-  @media (min-width: 768px) {
-    padding-top: var(--space1);
-  }
 }
 
 .headline {

@@ -2,6 +2,7 @@
   --background-color: transparent;
   /* --accent-color: var(--yellowish-orange); */
   background-color: var(--background-color);
+  margin-bottom: var(--space2);
 }
 
 .image-wrapper {

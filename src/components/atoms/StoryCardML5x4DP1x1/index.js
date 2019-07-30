@@ -43,10 +43,16 @@ const StoryCardML5x4DP1x1 = ({ story, className = "", cardWithImageZoom = true }
         />
       </div>
       <div styleName="text-wrapper">
+        <Headline text={storyData.headline} headlineType={6} headerLevel={3} styleName="headline" />
         {contributor && (
-          <Contributor name={contributor["name"]} type={contributorRole} iconColor="#4a4a4a" className="contributor" />
+          <Contributor
+            name={contributor["name"]}
+            contributorType={3}
+            type={contributorRole}
+            iconColor="#4a4a4a"
+            className="contributor"
+          />
         )}
-        <Headline text={storyData.headline} headerType={3} headerLevel={3} styleName="headline" />
       </div>
     </Link>
   );

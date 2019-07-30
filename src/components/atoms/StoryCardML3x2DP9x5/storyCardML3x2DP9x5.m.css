@@ -1,10 +1,6 @@
 .base {
   --background-color: var(--white);
   background-color: var(--background-color);
-  .contributor {
-    padding-top: var(--space3);
-    padding-bottom: var(--space1);
-  }
 }
 
 .image-wrapper {
@@ -24,19 +20,7 @@
   }
 }
 
-.text-wrapper {
-  border-bottom: 4px solid var(--accent-color);
-  padding-left: var(--space1);
-  @media (min-width: 768px) {
-    padding-left: var(--space2);
-  }
-}
-
 .headline {
-  /* @include font-styles(mobile-h2); */
   color: var(--title-color);
   margin: 0;
-  @media (min-width: 768px) {
-    padding-bottom: 28px;
-  }
 }
