@@ -5,6 +5,7 @@ import { withStore } from "../../../../storybook";
 import props from "./fixture.js";
 
 import TwelveStoriesOneAd from ".";
+import ThemeContext from "./theme";
 
 withStore("Rows/Twelve Stories/TwelveStoriesOneAd", {
   qt: {
@@ -14,6 +15,11 @@ withStore("Rows/Twelve Stories/TwelveStoriesOneAd", {
     }
   }
 })
+  .add("foobar", () => (
+    <ThemeContext.Provider>
+      <TwelveStoriesOneAd {...props} />
+    </ThemeContext.Provider>
+  ))
   .add("Default", () => <TwelveStoriesOneAd {...props} />)
   .add("when less stories(14) are present", () => {
     const newProps = produce(props, draft => {
