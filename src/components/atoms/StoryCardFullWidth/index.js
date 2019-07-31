@@ -6,15 +6,12 @@ import { Link } from "@quintype/components";
 import Contributor from "../../atoms/Contributor";
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
 import { getStoryData, generateImageSources } from "../../utils/utils";
-// import Icon from "../Icon";
 // import { getMonthDayString } from "../../utils/time-format";
-// import { isPremium } from "../../../../isomorphic/data/story";
 
 import "./storyCardFullWidth.m.css";
 
 export default function StoryCardFullWidth({ story, className = "", cardWithImageZoom = true }) {
   const storyData = getStoryData(story);
-  console.log(story);
   if (!(storyData.headline && story.url)) {
     return null;
   }
@@ -23,13 +20,6 @@ export default function StoryCardFullWidth({ story, className = "", cardWithImag
   const contributorRole = get(story, ["authors", 0, "contributor-role", "name"], "");
   const externalLink = get(story, ["metadata", "reference-url"]);
 
-  // const icons = {
-  //   "photo-album": "gallery",
-  //   photo: "photostory",
-  //   video: "video"
-  // };
-
-  // const iconType = get(icons, [story["story-template"]], null);
   return (
     <div styleName="base" className={`${className} ${cardWithImageZoom ? "card-with-image-zoom" : ""}`}>
       <Link
@@ -48,19 +38,7 @@ export default function StoryCardFullWidth({ story, className = "", cardWithImag
             { aspectRatio: [16, 9], screenWidthCoverage: 1 },
             { aspectRatio: [16, 9], screenWidthCoverage: 0.66 }
           )}
-        >
-          {/* {iconType && (
-            <span styleName="story-template-icon">
-              <Icon type={iconType} styleName="template-icon" />
-            </span>
-          )}
-          {story.engagement && story.engagement.total && (
-            <span styleName="engagement-total">
-              <Icon type={"speaker"} styleName="speaker-icon" />
-              {story.engagement.total}
-            </span>
-          )} */}
-        </ResponsiveImageWithFallback>
+        ></ResponsiveImageWithFallback>
 
         <div styleName="content">
           <Headline headerLevel={3} headlineType={2} text={storyData.headline} />

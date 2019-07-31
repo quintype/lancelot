@@ -27,18 +27,6 @@
   order: unset;
 }
 
-/* .image-container::before {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  z-index: 1;
-  content: "";
-  display: block;
-  width: 200px;
-  height: 150px;
-  background-image: linear-gradient(225deg, rgba(0, 0, 0, 0) 60%, var(--primary-color));
-} */
-
 .content {
   position: relative;
   padding: var(--space1) 0;
@@ -53,76 +41,6 @@
     justify-content: center;
   }
 }
-
-/* .story-byline {
-  display: grid;
-  grid-template-areas: "a b";
-  color: var(--meta-color);
-} */
-
-/* @media (min-width: 768px) {
-  .story-byline {
-    margin-top: auto;
-  }
-} */
-/* 
-.engagement-total {
-  --accent-color: var(--yellowish-orange);
-  --title-color: var(--white);
-  font-family: var(--meta-font-family);
-  font-size: var(--meta-font-size);
-  font-weight: var(--meta-font-weight);
-  line-height: var(--meta-line-height);
-  letter-spacing: var(--meta-letter-spacing);
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 2;
-  padding: var(--space-2);
-  background: var(--accent-color);
-  color: var(--title-color);
-  display: flex;
-  align-items: center;
-}
-
-.engagement-total .speaker-icon {
-  margin-right: var(--space-4);
-  font-size: 14px;
-  color: var(--white);
-}
-
-.engagement {
-  grid-area: a;
-  font-family: var(--meta-font-family);
-  font-size: var(--meta-font-size);
-  font-weight: var(--meta-font-weight);
-  line-height: var(--meta-line-height);
-  letter-spacing: var(--meta-letter-spacing);
-}
-
-.engagement-item {
-  margin: 0 var(--space1) 0 0;
-  display: inline-flex;
-  margin-right: var(--space1);
-  align-items: center;
-}
-
-.engagement-item .engagement-icon {
-  margin-right: var(--space-2);
-  font-size: 14px;
-  color: var(--boulder);
-}
-
-.published-date {
-  font-family: var(--meta-font-family);
-  font-size: var(--meta-font-size);
-  font-weight: var(--meta-font-weight);
-  line-height: var(--meta-line-height);
-  letter-spacing: var(--meta-letter-spacing);
-  color: var(--meta-color);
-  grid-area: b;
-  text-align: right;
-} */
 
 .story-template-icon {
   z-index: 2;

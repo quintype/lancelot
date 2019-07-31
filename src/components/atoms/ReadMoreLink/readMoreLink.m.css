@@ -5,14 +5,14 @@
   font-stretch: normal;
   line-height: 2.5;
   letter-spacing: normal;
-  color: #333333;
+  color: var(--black);
   height: 40px;
   border-radius: 3px;
-  border: solid 1px #797979;
+  border: solid 1px var(--gray);
   text-align: center;
   padding: 0 var(--space3);
 }
 
 .read-more-link:hover {
-  border: solid 1px #ff5079;
+  border: solid 1px var(--primary-color);
 }
