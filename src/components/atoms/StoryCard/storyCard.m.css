@@ -29,10 +29,7 @@
 }
 
 .base :global .headline {
-  /* @include font-styles(h5); */
-  font-size: var(--base-medium);
   color: var(--title-color);
-  margin: 0 0 var(--space1);
 }
 
 .engagement {
