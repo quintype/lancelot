@@ -3,7 +3,7 @@ import { string, number } from "prop-types";
 
 import "./headline.m.css";
 
-const Headline = ({ text, headerType = 1, headerLevel = 1, headlineDesign = "", className = "" }) => {
+const Headline = ({ text, headlineType = 1, headerLevel = 1, headlineDesign = "", className = "" }) => {
   const HeaderTag = "h" + headerLevel;
 
   const crossLineDom = () => {
@@ -32,8 +32,8 @@ const Headline = ({ text, headerType = 1, headerLevel = 1, headlineDesign = "", 
   return (
     <React.Fragment>
       <HeaderTag
-        styleName={`headline headline-type-${headerType} ${headlineDesign}`}
-        className={`headline headline-type-${headerType} ${headlineDesign} ${className}`}
+        styleName={`headline headline-type-${headlineType} ${headlineDesign}`}
+        className={`headline headline-type-${headlineType} ${headlineDesign} ${className}`}
       >
         {headlineDom()}
       </HeaderTag>
@@ -45,7 +45,7 @@ export default Headline;
 
 Headline.propTypes = {
   text: string.isRequired,
-  headerType: number,
+  headlineType: number,
   headerLevel: number,
   headlineDesign: string,
   className: string

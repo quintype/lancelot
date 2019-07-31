@@ -12,7 +12,7 @@ const StoryStack = ({ bigStory, mobileStoryCount, stories, className = "" }) => 
   }
   const stack = [
     bigStory ? (
-      <BigStoryCard story={stories[0]} key={stories[0].id} />
+      <BigStoryCard story={stories[0]} className={"line-separater"} key={stories[0].id} />
     ) : (
       <SmallStoryCard story={stories[0]} className={"line-separater"} key={stories[0].id} />
     )

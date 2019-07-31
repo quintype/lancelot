@@ -58,8 +58,10 @@ export default function StoryCard({ story, className = "", cardWithImageZoom = t
         )}
       </ResponsiveImageWithFallback>
       <div styleName="content">
-        {contributor && <Contributor name={contributor["name"]} type={contributorRole} className="contributor" />}
-        <Headline className="headline" headerLevel={3} headerType={3} text={storyData.headline} />
+        <Headline className="headline" headerLevel={3} headlineType={6} text={storyData.headline} />
+        {contributor && (
+          <Contributor contributorType={3} name={contributor["name"]} type={contributorRole} className="contributor" />
+        )}
       </div>
     </Link>
   );

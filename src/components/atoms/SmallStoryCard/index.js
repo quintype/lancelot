@@ -42,20 +42,21 @@ const SmallStoryCard = ({ story, className = "", cardWithImageZoom = true, hasTr
           )}
         />
         <div styleName="text-wrapper">
+          <Headline
+            text={storyData.headline}
+            headlineType={6}
+            headerLevel={3}
+            className={`${"headline"} ${hasTruncatedHeadline ? "truncated" : ""}`}
+          />
           {contributor && (
             <Contributor
+              contributorType={3}
               name={contributor["name"]}
               type={contributorRole}
               iconColor="#4a4a4a"
               className="contributor"
             />
           )}
-          <Headline
-            text={storyData.headline}
-            headerType={3}
-            headerLevel={3}
-            className={`${"headline"} ${hasTruncatedHeadline ? "truncated" : ""}`}
-          />
         </div>
       </div>
     </Link>

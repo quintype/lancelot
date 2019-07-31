@@ -3,7 +3,6 @@
   --icon-color: var(--greyish-brown);
 
   font-family: var(--serifTypeface);
-  font-size: 11px;
   font-weight: 400;
   display: grid;
   grid-template-columns: 2.2em 1fr;
@@ -22,4 +21,28 @@
 
 .icon {
   color: var(--icon-color);
+}
+
+.contributor-type-1 {
+  font-size: 18px;
+}
+.contributor-type-2 {
+  font-size: 16px;
+}
+
+.contributor-type-3 {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  .contributor-type-1 {
+    font-size: 20px;
+  }
+  .contributor-type-2 {
+    font-size: 18px;
+  }
+
+  .contributor-type-3 {
+    font-size: 14px;
+  }
 }
