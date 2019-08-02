@@ -30,7 +30,7 @@ const StoryCardML3x2DP9x5 = ({ story, className = "", cardWithImageZoom = true }
         href={externalLink || story.url}
         externalLink={externalLink}
       >
-        <div styleName="image-container">
+        <div styleName="image-container" className="image-container">
           <ResponsiveImageWithFallback
             styleName="image-wrapper"
             slug={storyData.imageS3Key}
