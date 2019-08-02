@@ -6,13 +6,11 @@
     padding: var(--space3) 0;
     --background-color: var(--alto);
   }
-  background-color: var(--background-color);
 }
 
 .row {
-  grid-gap: var(--space1);
+  grid-gap: var(--space2);
   @media (min-width: 768px) {
-    grid-gap: var(--space2);
     grid-template-areas:
       "crsl crsl crsl crsl crsl crsl crsl crsl sb sb sb sb"
       "crsl crsl crsl crsl crsl crsl crsl crsl sb sb sb sb"
@@ -28,7 +26,7 @@
   :global .slider-control-centerleft,
   :global .slider-control-centerright {
     top: 0;
-    margin-top: 33.33%;
+    margin-top: 28.33%;
   }
 }
 

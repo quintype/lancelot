@@ -1,7 +1,7 @@
 import React from "react";
 import produce from "immer";
+
 import { withStore } from "../../../../storybook/index";
-import "../../../../assets/stylesheets/app.scss";
 import OneCarouselTwoStoriesOneAdOneWidget from "./index";
 
 import fixture from "./fixture";
@@ -9,8 +9,7 @@ import fixture from "./fixture";
 withStore("Rows/Three Stories/OneCarouselTwoStoriesOneAdOneWidget", {
   qt: {
     config: {
-      "cdn-image": "thumbor-stg.assettype.com",
-      iconSpritePath: "/sprite.svg"
+      "cdn-image": "thumbor-stg.assettype.com"
     }
   }
 })

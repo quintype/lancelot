@@ -17,6 +17,7 @@
   /* @include image-aspect-ratio(4, 3); */
   padding-top: 75%;
   @media (min-width: 768px) {
+    margin-bottom: var(--space1);
     /* @include image-aspect-ratio(2, 1); */
     padding-top: 50%;
   }
@@ -26,25 +27,14 @@
 .text-wrapper {
   display: block;
   margin-left: var(--space1);
+
   @media (min-width: 768px) {
-    padding: 0 var(--space1_5) var(--space1_5);
     margin-left: 0;
-    margin-top: var(--space1);
   }
 }
 
 .base :global .headline {
-  /* @include font-styles(mobile-h4); */
-  font-size: var(--base-medium);
-  margin: 0px;
-  margin-top: var(--space-2);
   color: var(--title-color);
-}
-@media (min-width: 768px) {
-  .base :global .headline {
-    /* @include font-styles(h4); */
-    font-size: var(--base-larger);
-  }
 }
 
 /* .truncated {

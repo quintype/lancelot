@@ -5,19 +5,12 @@
 }
 
 .image-wrapper {
-  /* @include image-aspect-ratio(3, 2); */
-  padding-top: 66.66%;
+  padding-top: 56.25%;
+  margin-bottom: var(--space1);
   align-self: flex-start;
 }
 
-.text-wrapper {
-  margin-top: var(--space1);
-  padding: 0 var(--space1_5) var(--space1_5);
-}
-
 .base :global .headline {
-  margin: 0px;
-  margin-top: var(--space-2);
   color: var(--title-color);
 }
 
