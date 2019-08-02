@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+
 import SliderMain from "../../atoms/SliderMain";
 import SmallStoryCard from "../../atoms/SmallStoryCard";
 import CollectionBundleItem from "../../atoms/CollectionBundleItem";

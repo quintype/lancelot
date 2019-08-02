@@ -6,23 +6,23 @@
   @media (min-width: 768px) {
     padding: var(--space3) 0;
   }
-}
-.main-row :global .widget300xauto {
-  background: none;
-  border: 1px solid #ccc;
-  margin: var(--space2) auto;
-  display: grid;
-  margin-top: var(--space2);
-  grid-row: 1;
-  @media (min-width: 768px) {
-    grid-row: 3;
+  :global .widget300xauto {
+    background: none;
+    border: 1px solid #ccc;
+    margin: var(--space2) auto;
+    display: grid;
+    margin-top: var(--space2);
+    grid-row: 1;
+    @media (min-width: 768px) {
+      grid-row: 3;
+    }
   }
-}
 
-.main-row :global .row {
-  grid-template-rows: repeat(6, auto);
-  grid-row-gap: var(--space2);
-  grid-auto-flow: column;
+  :global .row {
+    grid-template-rows: repeat(6, auto);
+    grid-row-gap: var(--space2);
+    grid-auto-flow: column;
+  }
 }
 
 .slider-collection-stories-bundle {
