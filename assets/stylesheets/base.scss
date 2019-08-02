@@ -17,6 +17,11 @@ html {
   -webkit-text-size-adjust: 100%;
   overflow-x: hidden;
   overflow-y: auto;
+  margin: 0 16px;
+  @media (min-width: 768px) {
+    max-width: 1140px;
+    margin: 0 auto;
+  }
 }
 
 a {
