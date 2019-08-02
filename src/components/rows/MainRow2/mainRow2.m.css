@@ -1,0 +1,73 @@
+.main-row {
+  --background-color: var(--off-white);
+  --accent-color: var(--ecstasy);
+  background-color: var(--background-color);
+  padding: var(--space1_5) 0 var(--space3);
+  @media (min-width: 768px) {
+    padding: var(--space3) 0;
+  }
+  :global .widget300xauto {
+    background: none;
+    border: 1px solid #ccc;
+    margin: var(--space2) auto;
+    display: grid;
+    margin-top: var(--space2);
+    grid-row: 1;
+    @media (min-width: 768px) {
+      grid-row: 3;
+    }
+  }
+
+  :global .row {
+    grid-template-rows: repeat(6, auto);
+    grid-row-gap: var(--space2);
+    grid-auto-flow: column;
+  }
+}
+
+.slider-collection-stories-bundle {
+  --collection-item-width: 220px;
+  --gutter-width: var(--space3);
+  @media (min-width: 1024px) {
+    --collection-item-width: 270px;
+  }
+  grid-column: span 4;
+  max-width: 100%;
+  @media (min-width: 768px) {
+    order: 1;
+    grid-row: span 3;
+    grid-column: 1/9;
+    display: grid;
+    grid-template-columns:
+      minmax(calc(100% - (var(--collection-item-width) + var(--gutter-width))), 1fr)
+      minmax(var(--collection-item-width), 1fr)
+      minmax(var(--collection-item-width), 1fr);
+    grid-template-rows: max-content;
+    grid-gap: var(--space2) var(--space3);
+  }
+}
+
+.slider-stories-wrap {
+  width: 100%;
+  background-color: var(--white);
+  @media (min-width: 768px) {
+    grid-column: span 1;
+    grid-row: span 2;
+  }
+}
+.four-stories-wrap {
+  display: grid;
+  grid-row-gap: var(--space2);
+}
+
+.story-card {
+  display: block;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: var(--space2);
+}
+
+.two-stories {
+  display: grid;
+  grid-row-gap: var(--space2);
+  margin: 0;
+}
