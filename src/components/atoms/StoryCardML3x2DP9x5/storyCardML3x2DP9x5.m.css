@@ -3,6 +3,13 @@
   background-color: var(--background-color);
 }
 
+.image-container {
+  padding-bottom: var(--space1);
+  @media (min-width: 768px) {
+    padding-bottom: var(--space2);
+  }
+}
+
 .image-wrapper {
   /* @include image-aspect-ratio(3, 2); */
   position: relative;

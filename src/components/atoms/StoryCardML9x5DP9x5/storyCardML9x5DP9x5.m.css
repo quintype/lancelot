@@ -2,7 +2,6 @@
   --background-color: transparent;
   /* --accent-color: var(--yellowish-orange); */
   background-color: var(--background-color);
-  margin-bottom: var(--space2);
 }
 
 .image-wrapper {
@@ -25,4 +24,8 @@
   @media (min-width: 768px) {
     margin: 0 0 var(--space2);
   }
+}
+
+.image-container {
+  padding-bottom: var(--space1);
 }
