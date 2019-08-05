@@ -39,8 +39,10 @@ const BigStoryCardAutoSlider = ({ story, cardWithImageZoom = true, className = "
       >
         <div styleName="text-area">
           <div styleName="text-wrapper">
-            {contributorName && <Contributor name={contributorName} type={contributorRole} className="contributor" />}
-            <Headline text={storyData.headline} headerType={9} headerLevel={3} className="headline highlight" />
+            <Headline text={storyData.headline} headlineType={2} headerLevel={3} className="headline highlight" />
+            {contributorName && (
+              <Contributor name={contributorName} contributorType={3} type={contributorRole} className="contributor" />
+            )}
             <div styleName="content mobile-hide">{story.subheadline}</div>
           </div>
         </div>

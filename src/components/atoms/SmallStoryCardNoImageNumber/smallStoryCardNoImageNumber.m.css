@@ -43,7 +43,6 @@
   /* @include font-styles(h2); */
   font-size: var(--large);
   color: var(--gray);
-  padding-left: var(--space2);
   padding-right: var(--space2);
   align-self: flex-start;
   display: flex;
@@ -51,7 +50,6 @@
   @media (min-width: 768px) {
     /* @include font-styles(jumbo); */
     font-size: var(--jumbo);
-    padding-left: var(--space3);
     line-height: 1;
   }
 }

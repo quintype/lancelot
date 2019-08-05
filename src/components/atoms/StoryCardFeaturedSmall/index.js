@@ -55,13 +55,20 @@ export default function StoryCardFeaturedSmall({
         )}
       </div>
       <div styleName={"content"}>
-        {contributor && <Contributor name={contributor["name"]} type={contributorRole} className={"contributor"} />}
         <Headline
           text={storyData.headline}
-          headerType={3}
+          headlineType={5}
           headerLevel={3}
           className={`${hasTruncatedHeadline ? "truncated" : ""}`}
         />
+        {contributor && (
+          <Contributor
+            name={contributor["name"]}
+            contributorType={3}
+            type={contributorRole}
+            className={"contributor"}
+          />
+        )}
       </div>
     </Link>
   );

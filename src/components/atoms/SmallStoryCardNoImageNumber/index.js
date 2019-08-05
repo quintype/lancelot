@@ -28,17 +28,18 @@ const SmallStoryCardNoImageNumber = ({ story, className = "", index }) => {
       <div styleName="text-wrapper">
         <div styleName="number-frmt">{index}</div>
         <div styleName="card-content">
+          <Headline text={headline} headlineType={4} headerLevel={3} className="headline" />
           {contributor && (
             <Contributor
               name={contributor["name"]}
               type={contributorRole}
+              contributorType={3}
               iconHeight={13}
               iconWidth={13}
               iconColor="#4a4a4a"
               className="contributor"
             />
           )}
-          <Headline text={headline} headerType={6} headerLevel={3} className="headline" />
         </div>
       </div>
     </Link>

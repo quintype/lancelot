@@ -55,15 +55,21 @@ export default function StoryCardFeaturedBig({
         )}
       </div>
       <div styleName="content">
-        {contributor && (
-          <Contributor name={contributor["name"]} type={contributorRole} iconColor="#404040" className="contributor" />
-        )}
         <Headline
           text={storyData.headline}
-          headerType={6}
+          headlineType={3}
           headerLevel={3}
           className={`${hasTruncatedHeadline ? "truncated" : ""}`}
         />
+        {contributor && (
+          <Contributor
+            name={contributor["name"]}
+            contributorType={3}
+            type={contributorRole}
+            iconColor="#404040"
+            className="contributor"
+          />
+        )}
         {section && (
           <span styleName="badge" className="hidden-mobile" style={sectionColor && { "--accent-color": sectionColor }}>
             <span className="badge-text">{section["display-name"]}</span>

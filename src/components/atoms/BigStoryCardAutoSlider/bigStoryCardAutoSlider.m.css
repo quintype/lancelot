@@ -1,8 +1,11 @@
 .slider-image-wrapper {
   /* @include image-aspect-ratio(5, 2); */
   position: relative;
-  padding-top: 40%;
+  padding-top: 100%;
   overflow: hidden;
+  @media (min-width: 768px) {
+    padding-top: 40%;
+  }
 }
 
 .text-area {
@@ -36,8 +39,8 @@
 .text-area :global .headline {
   background: transparent;
   color: var(--white);
-  margin-top: 0px;
-  margin-bottom: 0px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .text-area :global .highlight {
@@ -46,8 +49,9 @@
 }
 
 .content {
-  margin: 0px;
+  margin: var(--space2) 0;
   color: var(--white);
+  font-size: var(--space2);
 }
 
 .mobile-hide {
