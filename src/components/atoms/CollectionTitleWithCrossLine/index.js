@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import "./collectionTitleWithCrossLine.m.css";
 
-const CollectionTitleWithCrossLine = ({ title, className = "", placement = "1fr 1fr 1fr", opacity }) => {
+const CollectionTitleWithCrossLine = ({ title, className = "", placement = "1fr auto 1fr", opacity }) => {
   if (!title) {
     return null;
   }
