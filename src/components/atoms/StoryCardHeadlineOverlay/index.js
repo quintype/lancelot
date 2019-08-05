@@ -48,14 +48,15 @@ const StoryCardHeadlineOverlay = ({ story, className = "", cardWithImageZoom = t
           <Contributor
             name={contributor["name"]}
             type={contributorRole}
+            contributorType={3}
             iconColor="#4a4a4a"
             className={"contributor"}
           />
         )}
         <Headline
           text={storyData.headline}
-          headerType={3}
-          headerLevel={4}
+          headlineType={3}
+          headerLevel={3}
           className={`headline ${hasTruncatedHeadline ? "truncated" : ""}`}
         />
       </div>

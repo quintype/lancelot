@@ -41,8 +41,10 @@ export default function StoryCardDesktop16IsTo9({ story, className = "", cardWit
         )}
       ></ResponsiveImageWithFallback>
       <div styleName="content">
-        {contributor && <Contributor name={contributor["name"]} type={contributorRole} styleName="contributor" />}
-        <Headline headerLevel={3} headerType={3} text={storyData.headline} />
+        {contributor && (
+          <Contributor name={contributor["name"]} type={contributorRole} contributorType={3} styleName="contributor" />
+        )}
+        <Headline headerLevel={3} headlineType={6} text={storyData.headline} />
       </div>
     </Link>
   );
