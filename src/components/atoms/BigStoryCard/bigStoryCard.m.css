@@ -7,8 +7,6 @@
   }
   :global .headline {
     margin: 0;
-    margin-top: var(--space1);
-    color: var(--title-color);
   }
 }
 
