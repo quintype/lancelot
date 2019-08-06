@@ -4,10 +4,6 @@
   --meta-color: var(--white);
   background: var(--background-color);
   overflow: auto;
-  padding: var(--space1_5) 0 var(--space3);
-  @media (min-width: 768px) {
-    padding: var(--space3) 0;
-  }
 }
 .contributor {
   color: var(--meta-color);
