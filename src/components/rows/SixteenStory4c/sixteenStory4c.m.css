@@ -9,7 +9,7 @@
   margin: 0px;
   align-self: end;
   color: var(--content-color);
-  font-size: var(--space3);
+  font-size: var(--base-larger);
 }
 
 .stack-grid {

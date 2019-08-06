@@ -51,7 +51,7 @@
 .content {
   margin: var(--space2) 0;
   color: var(--white);
-  font-size: var(--space2);
+  font-size: var(--base);
 }
 
 .mobile-hide {

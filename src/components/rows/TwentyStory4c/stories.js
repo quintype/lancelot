@@ -1,8 +1,8 @@
 import React from "react";
-import { withStore } from "../../../../storybook/index";
 import produce from "immer";
-import TwentyStory4C from "./index";
 
+import { withStore } from "../../../../storybook/index";
+import TwentyStory4C from "./index";
 import collection from "./fixture";
 
 withStore("Rows/Twenty Stories/20-story-4-collection", {

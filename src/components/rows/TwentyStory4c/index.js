@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import produce from "immer";
+
 import { getPagePath } from "../../utils/collection";
 import CollectionLink from "../../utils/generate-collection-link";
-
 import BigStoryCard from "../../atoms/BigStoryCard";
 import StoryStack from "../../atoms/StoryStack";
 import ReadMoreLink from "../../atoms/ReadMoreLink";

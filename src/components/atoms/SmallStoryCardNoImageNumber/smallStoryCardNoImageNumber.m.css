@@ -40,7 +40,6 @@
 .number-frmt {
   text-align: center;
   vertical-align: top;
-  /* @include font-styles(h2); */
   font-size: var(--large);
   color: var(--gray);
   padding-right: var(--space2);
