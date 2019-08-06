@@ -9,6 +9,7 @@ import Contributor from "../../atoms/Contributor";
 import { getStoryData, getStoryHeadline } from "../../utils/utils";
 
 import "./customizedStoryCard.m.css";
+import Headline from "../../atoms/Headline/index";
 
 const CustomizableStoryCard = ({ story, mobile, desktop, className = "", style, hasTruncatedHeadline = true }) => {
   const headline = getStoryHeadline(story);
@@ -87,16 +88,7 @@ const StoryCard = ({
           styleName="text-wrapper"
           style={{ padding: cardStyle.textWrapperPadding || 0, borderBottom: cardStyle.borderBottom || "none" }}
         >
-          {contributor && cardStyle.contributor.position !== "after" && (
-            <Contributor
-              name={contributor["name"]}
-              type={contributorRole}
-              iconColor={cardStyle.contributor.iconColor || "#4a4a4a"}
-              className={"contributor"}
-            />
-          )}
-
-          <h3
+          {/* <h3
             styleName={` headline ${hasTruncatedHeadline ? "truncated" : ""} `}
             style={{
               fontFamily: "var(--" + cardStyle.headline.fontStyle + "-font-family)",
@@ -108,13 +100,15 @@ const StoryCard = ({
             }}
           >
             {storyData.headline || ""}
-          </h3>
-          {contributor && cardStyle.contributor.position === "after" && (
+          </h3> */}
+          <Headline text={storyData.headline} className="headline" headlineType={5} headerLevel={3} />
+          {contributor && (
             <Contributor
               name={contributor["name"]}
               type={contributorRole}
               iconColor={cardStyle.contributor.iconColor || "#4a4a4a"}
               className={"contributor"}
+              contributorType={3}
             />
           )}
         </div>
