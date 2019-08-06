@@ -3,13 +3,14 @@ import PropTypes from "prop-types";
 import { get } from "lodash";
 import { Link } from "@quintype/components";
 import Contributor from "../Contributor";
+import Headline from "../Headline";
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
 
 import { getStoryData, generateImageSources } from "../../utils/utils";
 
-import "./styles.m.css";
+import "./storyCardBig.m.css";
 
-const StoryCardDark = ({ story, className = "", cardWithImageZoom = true }) => {
+const StoryCardBig = ({ story, className = "", cardWithImageZoom = true }) => {
   const storyData = getStoryData(story);
 
   if (!(storyData.headline && story.url)) {
@@ -40,14 +41,14 @@ const StoryCardDark = ({ story, className = "", cardWithImageZoom = true }) => {
         )}
       />
       <div styleName="text-wrapper">
-        {contributor && <Contributor name={contributor["name"]} type={contributorRole} styleName="contributor" />}
-        <h3 styleName="headline">{storyData.headline}</h3>
+        <Headline styleName="headline" headerLevel={3} headlineType={2} text={storyData.headline} />
+        {contributor && <Contributor name={contributor["name"]} type={contributorRole} contributorType={3} />}
       </div>
     </Link>
   );
 };
 
-StoryCardDark.propTypes = {
+StoryCardBig.propTypes = {
   className: PropTypes.string,
   cardWithImageZoom: PropTypes.bool,
   story: PropTypes.shape({
@@ -82,4 +83,4 @@ StoryCardDark.propTypes = {
   })
 };
 
-export default StoryCardDark;
+export default StoryCardBig;

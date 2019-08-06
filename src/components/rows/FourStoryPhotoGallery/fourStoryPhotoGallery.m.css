@@ -1,10 +1,13 @@
 .base {
-  --title-color: var(--white);
-  --background-color: var(--greyish-brown);
+  --title-color: var(--greyish-brown);
+  --background-color: var();
   background: var(--background-color);
   padding: var(--space1_5) 0 var(--space3);
   @media (min-width: 768px) {
     padding: var(--space3) 0;
+  }
+  :global .container {
+    padding: 0;
   }
 }
 .collection-name-wrap {

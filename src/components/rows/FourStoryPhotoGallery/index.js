@@ -2,10 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import CollectionLink from "../../utils/generate-collection-link";
 import ReadMoreLink from "../../atoms/ReadMoreLink/index";
-import StoryCardDark from "../../atoms/StoryCardDark";
+import StoryCardBig from "../../atoms/StoryCardBig";
 import StoryCardDesktopHover from "../../atoms/StoryCardDesktopHover";
 
-import styles from "./styles.m.css";
+import styles from "./fourStoryPhotoGallery.m.css";
 import { getStoryHeadline } from "../../utils/utils";
 
 const FourStoryPhotoGallery = ({ collection, metadata, accentColor }) => {
@@ -30,7 +30,7 @@ const FourStoryPhotoGallery = ({ collection, metadata, accentColor }) => {
             </CollectionLink>
           )}
           {stories.splice(0, 1).map(story => (
-            <StoryCardDark className={styles["main-story"]} key={story.id} story={story} />
+            <StoryCardBig className={styles["main-story"]} key={story.id} story={story} />
           ))}
           <div className={styles["small-stories-wrapper"]}>
             {stories.splice(0, 3).map(story => (
@@ -53,7 +53,7 @@ const FourStoryPhotoGallery = ({ collection, metadata, accentColor }) => {
 FourStoryPhotoGallery.propTypes = {
   accentColor: PropTypes.string,
   collection: PropTypes.shape({
-    items: PropTypes.arrayOf(PropTypes.shape({ type: PropTypes.string, story: StoryCardDark.propTypes.story }))
+    items: PropTypes.arrayOf(PropTypes.shape({ type: PropTypes.string, story: StoryCardBig.propTypes.story }))
   }),
   metadata: PropTypes.shape({
     read_more_text: PropTypes.string
