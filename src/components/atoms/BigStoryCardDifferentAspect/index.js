@@ -2,12 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 import { get } from "lodash";
 import { Link } from "@quintype/components";
+
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
 import Contributor from "../Contributor";
 import Headline from "../Headline";
 
-import "./bigStoryCardDifferentAspect.m.css";
 import { getStoryData, generateImageSources } from "../../utils/utils";
+
+import "./bigStoryCardDifferentAspect.m.css";
 
 const BigStoryCardDifferentAspect = ({
   story,
@@ -45,20 +47,21 @@ const BigStoryCardDifferentAspect = ({
           )}
         />
         <div styleName="text-wrapper">
+          <Headline
+            text={storyData.headline}
+            headlineType={3}
+            headerLevel={3}
+            className={`headline ${hasTruncatedHeadline ? "truncated" : ""} `}
+          />
           {contributor && (
             <Contributor
               name={contributor["name"]}
               type={contributorRole}
               iconColor="#4a4a4a"
+              contributorType={3}
               className={"contributor"}
             />
           )}
-          <Headline
-            text={storyData.headline}
-            headerType={7}
-            headerLevel={3}
-            className={`headline ${hasTruncatedHeadline ? "truncated" : ""} `}
-          />
         </div>
       </div>
     </Link>

@@ -1,11 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
+
 import CollectionLink from "../../utils/generate-collection-link";
 import ReadMoreLink from "../../atoms/ReadMoreLink/index";
 import StoryCardBig from "../../atoms/StoryCardBig";
 import StoryCardDesktopHover from "../../atoms/StoryCardDesktopHover";
 
-import styles from "./fourStoryPhotoGallery.m.css";
+import "./fourStoryPhotoGallery.m.css";
 import { getStoryHeadline } from "../../utils/utils";
 
 const FourStoryPhotoGallery = ({ collection, metadata, accentColor }) => {
@@ -21,30 +22,28 @@ const FourStoryPhotoGallery = ({ collection, metadata, accentColor }) => {
   }
 
   return (
-    <div className={`${styles["base"]}`} style={accentColor && { "--accent-color": accentColor }}>
-      <div className={`container`}>
-        <div className="row">
-          {collection.name && (
-            <CollectionLink collection={collection} className={styles["collection-name-wrap"]}>
-              <h2 className={styles["collection-name"]}>{collection.name}</h2>
-            </CollectionLink>
-          )}
-          {stories.splice(0, 1).map(story => (
-            <StoryCardBig className={styles["main-story"]} key={story.id} story={story} />
+    <div styleName="base" style={accentColor && { "--accent-color": accentColor }}>
+      <div className="row">
+        {collection.name && (
+          <CollectionLink collection={collection} styleName="collection-name-wrap">
+            <h2 styleName="collection-name">{collection.name}</h2>
+          </CollectionLink>
+        )}
+        {stories.splice(0, 1).map(story => (
+          <StoryCardBig styleName="main-story" key={story.id} story={story} />
+        ))}
+        <div styleName="small-stories-wrapper">
+          {stories.splice(0, 3).map(story => (
+            <StoryCardDesktopHover styleName="small-story" key={story.id} story={story} />
           ))}
-          <div className={styles["small-stories-wrapper"]}>
-            {stories.splice(0, 3).map(story => (
-              <StoryCardDesktopHover className={styles["small-story"]} key={story.id} story={story} />
-            ))}
-          </div>
-          {collection.pagePath && (
-            <ReadMoreLink
-              className={styles["read-more"]}
-              href={`/collection/${collection.slug}`}
-              text={metadata && metadata["read_more_text"]}
-            />
-          )}
         </div>
+        {collection.pagePath && (
+          <ReadMoreLink
+            styleName="read-more"
+            href={`/collection/${collection.slug}`}
+            text={metadata && metadata["read_more_text"]}
+          />
+        )}
       </div>
     </div>
   );
