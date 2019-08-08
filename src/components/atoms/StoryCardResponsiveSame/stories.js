@@ -16,7 +16,7 @@ withStore("Cards/StoryCardResponsiveSame", {
     }
   }
 })
-  .addDecorator(story => <div style={{ width: "360px" }}>{story()}</div>)
+  .addDecorator(story => <div style={{ maxWidth: "360px" }}>{story()}</div>)
   .add("default", () => <StoryCardResponsiveSame story={story} />)
   .add("missing-contributor", () => {
     const newStory = produce(story, draft => {

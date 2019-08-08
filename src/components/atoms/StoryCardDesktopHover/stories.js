@@ -14,9 +14,7 @@ withStore("Cards/StoryCardDesktopHover", {
     }
   }
 })
-  .addDecorator(story => (
-    <div style={{ maxWidth: "360px", width: "100%", backgroundColor: "var(--greyish-brown)" }}>{story()}</div>
-  ))
+  .addDecorator(story => <div style={{ maxWidth: "360px" }}>{story()}</div>)
   .add("default", () => <StoryCardDesktopHover {...story} />)
   .add("missing hero image", () => {
     const newProps = produce(story, draft => {

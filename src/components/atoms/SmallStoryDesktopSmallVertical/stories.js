@@ -14,7 +14,7 @@ withStore("Cards/SmallStoryCardDesktopSmallVertical", {
     }
   }
 })
-  .addDecorator(story => <div style={{ width: "360px" }}>{story()}</div>)
+  .addDecorator(story => <div style={{ maxWidth: "360px" }}>{story()}</div>)
   .add("default", () => <SmallStoryCardDesktopSmallVertical {...story} />)
   .add("missing-author", () => {
     const newProps = produce(story, draft => {

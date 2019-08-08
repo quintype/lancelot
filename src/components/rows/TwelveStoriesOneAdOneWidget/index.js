@@ -1,12 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { get } from "lodash";
+
 import StoryStack from "../../atoms/StoryStack";
 import BigStoryCardDifferentAspect from "../../atoms/BigStoryCardDifferentAspect";
 import SmallStoryCardDesktopBig from "../../atoms/SmallStoryDesktopBig";
 import SmallStoryCardDesktopSmallVertical from "../../atoms/SmallStoryDesktopSmallVertical";
 // import { DfpAd } from "../../atoms/dfp-ad";
-import Headline from "../../atoms/Headline";
 
 import "./twelveStoriesOneAdOneWidget.m.css";
 import { getStoryHeadline } from "../../utils/utils";
@@ -23,7 +23,6 @@ const TwelveStoriesOneAdOneWidget = ({ collection, accentColor, pagetype = "" })
     .slice(0, 2)
     .map((subCollection, index) => (
       <div key={subCollection.id} styleName={`story-stack-${index + 1}`}>
-        <Headline text={subCollection.name} headerType={7} headerLevel={2} className={`sub-collection-headline`} />
         <StoryStack
           bigStory={false}
           mobileStoryCount={4}
@@ -37,17 +36,19 @@ const TwelveStoriesOneAdOneWidget = ({ collection, accentColor, pagetype = "" })
 
   return (
     <div styleName="base" style={accentColor && { "--accent-color": accentColor }}>
-      <div styleName="row" className="container row">
+      <div styleName="row" className="row">
         {stories[0] && <BigStoryCardDifferentAspect story={stories[0]} className={"story-1"} />}
         {stories[1] && <SmallStoryCardDesktopBig story={stories[1]} className={"story-2"} />}
         {stories[2] && <SmallStoryCardDesktopSmallVertical story={stories[2]} className={"story-3"} />}
         {stories[3] && <SmallStoryCardDesktopSmallVertical story={stories[3]} className={"story-4"} />}
         <div styleName="sidebar">
-          {/* <div className={styles["ad"]}>
-            <DfpAd className="hidden-mobile" adtype="Rectangle" placement={pagetype} />
-          </div> */}
+          <div className="ad">
+            {/* <DfpAd className="hidden-mobile" adtype="Rectangle" placement={pagetype} /> */}
+            DFPAD
+          </div>
           {/* <div className="widget hidden-mobile">
             <DfpAd className="hidden-mobile" adtype="Rectangle" placement={pagetype} />
+            DFPAD
           </div> */}
         </div>
         {subCollections}

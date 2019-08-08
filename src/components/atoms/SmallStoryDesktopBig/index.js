@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { get } from "lodash";
 import { Link } from "@quintype/components";
+
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
 import Contributor from "../Contributor";
 import Headline from "../Headline";
@@ -41,15 +42,16 @@ const SmallStoryCardDesktopBig = ({ story, className = "", cardWithImageZoom = t
           )}
         />
         <div styleName="text-wrapper">
+          <Headline text={storyData.headline} headlineType={3} headerLevel={3} className="headline" />
           {contributor && (
             <Contributor
               name={contributor["name"]}
               type={contributorRole}
+              contributorType={3}
               iconColor="#4a4a4a"
               className={"contributor"}
             />
           )}
-          <Headline text={storyData.headline} headerType={6} headerLevel={3} className={"headline"} />
         </div>
       </div>
     </Link>

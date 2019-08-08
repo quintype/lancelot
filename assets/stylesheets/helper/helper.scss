@@ -4,7 +4,6 @@
   grid-gap: var(--space2);
   @media (min-width: 768px) {
     grid-template-columns: repeat(12, 1fr);
-    grid-gap: var(--space3);
   }
 }
 .container {

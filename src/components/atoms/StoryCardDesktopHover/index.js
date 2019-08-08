@@ -4,10 +4,11 @@ import { get } from "lodash";
 import { Link } from "@quintype/components";
 import Contributor from "../Contributor";
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
+import Headline from "../Headline";
 
 import { getStoryData, generateImageSources } from "../../utils/utils";
 
-import "./styles.m.css";
+import "./storyCardDesktopHover.m.css";
 
 const StoryCardDesktopHover = ({ story, className = "", cardWithImageZoom = true }) => {
   const storyData = getStoryData(story);
@@ -41,8 +42,15 @@ const StoryCardDesktopHover = ({ story, className = "", cardWithImageZoom = true
           )}
         />
         <div styleName="text-wrapper">
-          {contributor && <Contributor name={contributor["name"]} type={contributorRole} styleName="contributor" />}
-          <h3 styleName="headline">{storyData.headline}</h3>
+          <Headline styleName="headline" headerLevel={3} headlineType={4} text={storyData.headline} />
+          {contributor && (
+            <Contributor
+              name={contributor["name"]}
+              contributorType={3}
+              type={contributorRole}
+              className="contributor contributor-name"
+            />
+          )}
         </div>
       </div>
     </Link>

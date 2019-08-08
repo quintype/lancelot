@@ -14,7 +14,7 @@ withStore("Cards/FocusedCard", {
     }
   }
 })
-  .addDecorator(story => <div style={{ width: "360px" }}>{story()}</div>)
+  .addDecorator(story => <div style={{ maxWidth: "360px" }}>{story()}</div>)
   .add("default", () => <FocusedCard {...item} />)
   .add("missing-author", () => {
     const newProps = produce(item, draft => {

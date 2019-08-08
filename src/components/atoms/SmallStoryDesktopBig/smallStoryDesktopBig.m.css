@@ -1,17 +1,22 @@
 .base {
-  width: 100%;
-  height: 100%;
   display: grid;
 
-  --border-color: var(--accent-color);
+  --border-color: var(--alto);
   --background-color: var(--white);
 
   grid-template-columns: 1fr 2fr;
 
   @media (min-width: 768px) {
     display: block;
-    border-bottom: 2px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
     background-color: var(--background-color);
+  }
+  :global .headline {
+    font-size: var(--base-medium);
+    margin: 0px;
+    @media (min-width: 768px) {
+      font-size: var(--base-larger);
+    }
   }
 }
 
@@ -28,19 +33,8 @@
   display: block;
   margin-left: var(--space1);
   @media (min-width: 768px) {
-    padding: 0 var(--space1_5) var(--space1_5);
+    padding: var(--space2) 0;
     margin-left: 0;
-    margin-top: var(--space1);
+    /* margin-top: var(--space1); */
   }
-}
-
-.headline {
-  /* @include font-styles(mobile-h4); */
-  @media (min-width: 768px) {
-    /* @include font-styles(h4); */
-  }
-
-  margin: 0px;
-  margin-top: var(--space-2);
-  color: var(--title-color);
 }
