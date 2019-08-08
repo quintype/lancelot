@@ -14,7 +14,7 @@ withStore("Cards/CustomizableStoryCard", {
     }
   }
 })
-  .addDecorator(story => <div style={{ width: "360px" }}>{story()}</div>)
+  .addDecorator(story => <div style={{ maxWidth: "360px" }}>{story()}</div>)
   .add("mobile [4,3] horizontal, desktop [2,1] vertical", () => <CustomizableStoryCard {...props} />)
   .add("mobile [4,3] horizontal, desktop [3,2] horizontal", () => {
     const newProps = produce(props, draft => {

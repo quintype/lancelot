@@ -15,7 +15,7 @@ withStore("Cards/SlideBigStoryCard", {
     }
   }
 })
-  .addDecorator(story => <div style={{ width: "360px" }}>{story()}</div>)
+  .addDecorator(story => <div style={{ maxWidth: "360px" }}>{story()}</div>)
   .add("default", () => <SlideBigStoryCard {...story} />)
   .add("missing-author", () => {
     const newProps = produce(story, draft => {

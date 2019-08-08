@@ -14,7 +14,7 @@ withStore("Components/StoryStack", {
     }
   }
 })
-  .addDecorator(story => <div style={{ width: "360px" }}>{story()}</div>)
+  .addDecorator(story => <div style={{ maxWidth: "360px" }}>{story()}</div>)
   .add("default", () => <StoryStack {...collection} />)
   .add("show 5 small stories in desktop and 3 mobile", () => (
     <StoryStack

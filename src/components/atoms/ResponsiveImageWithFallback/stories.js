@@ -17,7 +17,7 @@ withStore("Atoms/ResponsiveImageWithFallback", {
   .addDecorator(story => (
     <div>
       <style>{".figure-storybook {padding-top: 100%}"}</style>
-      <div style={{ width: "360px" }}>{story()}</div>
+      <div style={{ maxWidth: "360px" }}>{story()}</div>
     </div>
   ))
   .add("default", () => (
