@@ -17,7 +17,8 @@
     "lint:css": "npx stylelint './app/**/*.{scss,css}'",
     "lint:css:ci": "npx stylelint $(git diff --pretty='' --diff-filter=d --name-only origin/master..HEAD -- '*.css' '*.scss') ./app/assets/stylesheets/app.scss",
     "lint:js": "npx eslint './app/**/*.{js,jsx}'",
-    "lint:js:ci": "npx eslint $(git diff --pretty='' --diff-filter=d --name-only origin/master..HEAD -- '*.js' '*.jsx') ./start.js"
+    "lint:js:ci": "npx eslint $(git diff --pretty='' --diff-filter=d --name-only origin/master..HEAD -- '*.js' '*.jsx') ./start.js",
+    "cpp": "node copypaste"
   },
   "repository": {
     "type": "git",
