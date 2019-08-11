@@ -1,25 +1,36 @@
 .base {
   display: flex;
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .base {
     flex-direction: column;
     align-self: flex-start;
   }
-  :global .contributor {
-    margin-bottom: var(--space-4);
-    @media (min-width: 768px) {
-      order: 2;
-    }
-  }
-  :global(.premium-badge) {
-    left: 5%;
-    right: auto;
-  }
+}
 
-  :global .headline {
-    margin: 0;
-    @media (min-width: 768px) {
-      margin: var(--space2) 0 var(--space1);
-    }
+.base :global .contributor {
+  margin-bottom: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .base :global .contributor {
+    order: 2;
+  }
+}
+
+.base :global(.premium-badge) {
+  left: 5%;
+  right: auto;
+}
+
+.base :global .headline {
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .base :global .headline {
+    margin: var(--space2) 0 var(--space1);
   }
 }
 
@@ -27,7 +38,10 @@
   flex: 1 0 25%;
   position: relative;
   align-self: flex-start;
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .image-container {
     align-self: unset;
   }
 }
@@ -44,8 +58,10 @@
   color: var(--white);
   min-height: var(--space2);
   line-height: 1;
+}
 
-  @media (min-width: 768px) {
+@media (min-width: 768px) {
+  .badge {
     transform: translateY(-50%);
     right: var(--space1);
     left: unset;
@@ -54,17 +70,24 @@
     padding: var(--space1);
   }
 }
+
 .badge-icon {
   font-size: 12px;
   line-height: 1;
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .badge-icon {
     margin: 0 var(--space-2) 0 0;
   }
 }
 
 .badge-text {
   display: none;
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .badge-text {
     display: unset;
     white-space: nowrap;
   }
@@ -78,7 +101,10 @@
 .content {
   flex-grow: 1;
   margin-left: var(--space2);
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .content {
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -87,7 +113,10 @@
 
 .truncated {
   /* @include number-of-lines(h5, 2); */
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .truncated {
     /* @include number-of-lines(h5, 4, 2); */
   }
 }

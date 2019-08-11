@@ -2,7 +2,10 @@
   display: grid;
   grid-template-columns: 1fr 2fr;
   background-color: transparent;
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .base {
     grid-template-columns: 80px auto;
   }
 }
@@ -11,8 +14,12 @@
   /* @include image-aspect-ratio(5, 4); */
   position: relative;
   padding-top: 80%;
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .image-wrapper {
     padding-top: 100%;
+
     /* @include image-aspect-ratio(1, 1); */
   }
 }

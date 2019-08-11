@@ -2,12 +2,16 @@
   width: 100%;
   display: grid;
   grid-template-rows: 1fr;
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .base {
     grid-template-columns: 1fr;
   }
-  :global .headline {
-    margin: 0;
-  }
+}
+
+.base :global .headline {
+  margin: 0;
 }
 
 .image-wrapper {
@@ -18,7 +22,10 @@
 
 .text-wrapper {
   display: block;
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .text-wrapper {
     margin-left: 0;
     margin-top: var(--space1);
   }
@@ -26,7 +33,10 @@
 
 .truncated {
   /* @include number-of-lines(h3, 3); */
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .truncated {
     /* @include number-of-lines(h3, 2); */
   }
 }

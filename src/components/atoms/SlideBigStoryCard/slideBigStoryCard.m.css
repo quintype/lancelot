@@ -1,6 +1,8 @@
 .base {
   width: 100%;
+
   --background-color: var(--white);
+
   background-color: var(--background-color);
 }
 
@@ -16,7 +18,7 @@
 }
 
 .base :global .headline {
-  margin: 0px;
+  margin: 0;
   margin-top: var(--space-2);
   color: var(--title-color);
 }

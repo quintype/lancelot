@@ -1,11 +1,16 @@
 .base {
   --background-color: var(--white);
+
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: var(--space1);
   background-color: var(--background-color);
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .base {
     --background-color: var(--white);
+
     display: block;
     margin-bottom: var(--space2);
     position: relative;
@@ -15,7 +20,10 @@
 .image-wrapper {
   position: relative;
   padding-top: 62.5%;
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .image-wrapper {
     /* @include image-aspect-ratio(7, 5); */
     padding-top: 71.43%;
   }
@@ -25,8 +33,8 @@
   position: relative;
 }
 
-.text-wrapper {
-  @media (min-width: 768px) {
+@media (min-width: 768px) {
+  .text-wrapper {
     background-color: var(--background-color);
     width: 95%;
     z-index: 1;
@@ -42,7 +50,10 @@
   padding-top: var(--space-2);
   margin: 0;
   color: var(--title-color);
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .headline {
     /* @include font-styles(h4); */
     padding-top: var(--space1);
   }

@@ -1,10 +1,11 @@
 .base {
   width: 100%;
   display: grid;
-
   grid-template-columns: 1fr 2fr;
+}
 
-  @media (min-width: 768px) {
+@media (min-width: 768px) {
+  .base {
     grid-template-columns: 1fr;
   }
 }
@@ -12,16 +13,22 @@
 .image-wrapper {
   position: relative;
   padding-top: 75%;
-  @media (min-width: 768px) {
+  align-self: flex-start;
+}
+
+@media (min-width: 768px) {
+  .image-wrapper {
     padding-top: 66.67%;
   }
-  align-self: flex-start;
 }
 
 .text-wrapper {
   display: block;
   margin-left: var(--space1);
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .text-wrapper {
     margin-left: 0;
     margin-top: var(--space1);
   }
@@ -29,17 +36,23 @@
 
 .headline {
   /* @include font-styles(mobile-h4); */
-  @media (min-width: 768px) {
-    /* @include font-styles(mobile-h3); */
-  }
-  margin: 0px;
+  margin: 0;
   margin-top: var(--space-2);
   color: var(--title-color);
+}
 
-  &.truncated {
-    /* @include number-of-lines(mobile-h4, 2); */
-    @media (min-width: 768px) {
-      /* @include number-of-lines(mobile-h3, 2); */
-    }
+@media (min-width: 768px) {
+  .headline {
+    /* @include font-styles(mobile-h3); */
+  }
+}
+
+.headline.truncated {
+  /* @include number-of-lines(mobile-h4, 2); */
+}
+
+@media (min-width: 768px) {
+  .headline.truncated {
+    /* @include number-of-lines(mobile-h3, 2); */
   }
 }

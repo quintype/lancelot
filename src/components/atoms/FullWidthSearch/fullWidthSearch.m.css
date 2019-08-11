@@ -2,6 +2,7 @@
   --gallery: #eaeaea;
   --background-color: var(--gallery);
   --title-color: var(--greyish-brown);
+
   display: none;
   background-color: var(--background-color);
   padding: var(--space1_5) 0;
@@ -16,6 +17,7 @@
 .base.is-open {
   display: block;
 }
+
 .base form {
   font-family: var(--button-font-family);
   font-size: var(--button-font-size);
@@ -25,6 +27,7 @@
   flex: 1;
   display: flex;
 }
+
 @media (min-width: 768px) {
   .base form {
     font-family: var(--h3-font-family);
@@ -39,6 +42,7 @@
   flex: 1;
   width: 100%;
 }
+
 .base input {
   width: 100%;
   color: var(--title-color);
@@ -50,6 +54,7 @@
   border: 0;
   box-shadow: none;
 }
+
 .base input::placeholder {
   color: inherit;
 }

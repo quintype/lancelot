@@ -1,15 +1,21 @@
 .base {
   position: relative;
+}
 
-  @media (min-width: 768px) {
+@media (min-width: 768px) {
+  .base {
     flex-direction: column;
     display: flex;
   }
-  :global .contributor {
-    margin-bottom: var(--space-4);
-    @media (min-width: 768px) {
-      order: 2;
-    }
+}
+
+.base :global .contributor {
+  margin-bottom: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .base :global .contributor {
+    order: 2;
   }
 }
 
@@ -18,7 +24,10 @@
   position: relative;
   align-self: flex-start;
   margin-right: var(--space1);
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .image-container {
     align-self: unset;
     margin-right: 0;
   }
@@ -36,8 +45,10 @@
   background-color: var(--accent-color);
   border-radius: 3px;
   color: var(--white);
+}
 
-  @media (min-width: 768px) {
+@media (min-width: 768px) {
+  .badge {
     left: var(--space2);
     padding: var(--space1);
   }
@@ -51,7 +62,10 @@
 .figure {
   position: relative;
   padding-top: 75%;
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .figure {
     padding-top: 50%;
   }
 }
@@ -59,7 +73,10 @@
 .content {
   flex-grow: 1;
   padding-top: var(--space2);
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .content {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -76,7 +93,10 @@
   /* @include font-styles(mobile-h3); */
   color: var(--title-color);
   margin: var(--space-2) 0;
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .headline {
     /* @include font-styles(h4); */
     margin: var(--space-2) 0;
   }
@@ -84,7 +104,10 @@
 
 .truncated {
   /* @include number-of-lines(mobile-h3, 4); */
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .truncated {
     /* @include number-of-lines(h4, 3); */
   }
 }

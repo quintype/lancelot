@@ -1,48 +1,65 @@
 .four-story-4s {
   padding: var(--space1_5) 0 var(--space3);
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .four-story-4s {
     padding: var(--space3) 0;
   }
-  :global .title {
-    --title-color: var(--greyish-brown);
-    margin: 0 0 var(--space2);
-    @media (min-width: 768px) {
-      margin: 0 0 var(--space4);
-    }
-  }
+}
 
-  :global .story-card {
-    flex: 1 0 75vw;
-    margin-right: var(--space2);
-    @media (min-width: 768px) {
-      flex: 0 1 25%;
-      margin-right: var(--space3);
-    }
-    &:last-child {
-      margin-right: 0;
-    }
+.four-story-4s :global .title {
+  --title-color: var(--greyish-brown);
+
+  margin: 0 0 var(--space2);
+}
+
+@media (min-width: 768px) {
+  .four-story-4s :global .title {
+    margin: 0 0 var(--space4);
   }
+}
+
+.four-story-4s :global .story-card {
+  flex: 1 0 75vw;
+  margin-right: var(--space2);
+}
+
+@media (min-width: 768px) {
+  .four-story-4s :global .story-card {
+    flex: 0 1 25%;
+    margin-right: var(--space3);
+  }
+}
+
+.four-story-4s :global .story-card:last-child {
+  margin-right: 0;
 }
 
 .story-container {
   display: flex;
   overflow-x: auto;
   position: relative;
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .story-container {
     justify-content: center;
   }
+}
 
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: calc(100vw - var(--space6));
-    width: var(--space6);
-    background: linear-gradient(to right, transparent, #000);
+.story-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(100vw - var(--space6));
+  width: var(--space6);
+  background: linear-gradient(to right, transparent, #000);
+}
 
-    @media (min-width: 768px) {
-      content: none;
-    }
+@media (min-width: 768px) {
+  .story-container::after {
+    content: none;
   }
 }

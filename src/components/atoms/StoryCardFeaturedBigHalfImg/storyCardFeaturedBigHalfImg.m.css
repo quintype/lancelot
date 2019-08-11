@@ -1,17 +1,25 @@
 .base {
   --background-color: var(--white);
+
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: "image content";
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .base {
     grid-template-areas: "content image";
     background-color: var(--background-color);
   }
-  .contributor {
-    margin-bottom: var(--space-4);
-    @media (min-width: 768px) {
-      order: 2;
-    }
+}
+
+.base .contributor {
+  margin-bottom: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .base .contributor {
+    order: 2;
   }
 }
 
@@ -20,7 +28,10 @@
   grid-area: image;
   align-self: flex-start;
   margin-right: var(--space1);
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .image-container {
     margin-right: 0;
   }
 }
@@ -36,8 +47,10 @@
   background-color: var(--accent-color);
   border-radius: 3px;
   color: var(--white);
+}
 
-  @media (min-width: 768px) {
+@media (min-width: 768px) {
+  .badge {
     left: var(--space2);
     padding: var(--space1);
   }
@@ -51,8 +64,10 @@
 .figure {
   position: relative;
   padding-top: 62.5%;
+}
 
-  @media (min-width: 768px) {
+@media (min-width: 768px) {
+  .figure {
     padding-top: 100%;
   }
 }
@@ -60,7 +75,10 @@
 .content {
   position: relative;
   grid-area: content;
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .content {
     background: var(--background-color);
     padding: var(--space2) var(--space3);
   }
@@ -69,7 +87,10 @@
 .headline {
   color: var(--title-color);
   margin: var(--space-2) 0;
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .headline {
     margin: var(--space-2) 0;
   }
 }

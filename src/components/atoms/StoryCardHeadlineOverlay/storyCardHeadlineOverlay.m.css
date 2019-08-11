@@ -5,7 +5,10 @@
 .image-wrapper {
   position: relative;
   padding-top: 62.5%;
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .image-wrapper {
     padding-top: 71.43%;
   }
 }
@@ -21,17 +24,21 @@
   width: 95%;
   z-index: 1;
   position: relative;
-  @media (min-width: 768px) {
+  border-top: 4px solid var(--accent-color);
+}
+
+@media (min-width: 768px) {
+  .text-wrapper {
     padding: var(--space1);
   }
-  border-top: 4px solid var(--accent-color);
 }
 
 .headline {
   /* @include font-styles(h5); */
   margin: 0;
   color: var(--title-color);
-  &.truncated {
-    /* @include number-of-lines(h5, 2); */
-  }
+}
+
+.headline.truncated {
+  /* @include number-of-lines(h5, 2); */
 }

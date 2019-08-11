@@ -1,18 +1,25 @@
 .read-more-link {
   --background-color: var(--white);
+
   background-color: var(--background-color);
 }
+
 .base {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 2fr;
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .base {
     display: block;
   }
 }
+
 .base :global .contributor {
   margin-bottom: var(--space-2);
 }
+
 .base :global .image-wrapper {
   /* @include image-aspect-ratio(4, 3); */
   position: relative;
@@ -21,12 +28,15 @@
 
 .text-wrapper {
   padding-left: var(--space2);
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .text-wrapper {
     padding: var(--space2);
   }
 }
 
 .base :global .headline {
-  margin: 0px;
+  margin: 0;
   color: var(--title-color);
 }

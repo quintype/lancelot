@@ -5,36 +5,49 @@
   --background-color: var(--white);
 
   grid-template-columns: 1fr 2fr;
+}
 
-  @media (min-width: 768px) {
+@media (min-width: 768px) {
+  .base {
     display: block;
     border-bottom: 1px solid var(--border-color);
     background-color: var(--background-color);
   }
-  :global .headline {
-    font-size: var(--base-medium);
-    margin: 0px;
-    @media (min-width: 768px) {
-      font-size: var(--base-larger);
-    }
+}
+
+.base :global .headline {
+  font-size: var(--base-medium);
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .base :global .headline {
+    font-size: var(--base-larger);
   }
 }
 
 .image-wrapper {
   position: relative;
   padding-top: 75%;
-  @media (min-width: 768px) {
+  align-self: flex-start;
+}
+
+@media (min-width: 768px) {
+  .image-wrapper {
     padding-top: 50%;
   }
-  align-self: flex-start;
 }
 
 .text-wrapper {
   display: block;
   margin-left: var(--space1);
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .text-wrapper {
     padding: var(--space2) 0;
     margin-left: 0;
+
     /* margin-top: var(--space1); */
   }
 }

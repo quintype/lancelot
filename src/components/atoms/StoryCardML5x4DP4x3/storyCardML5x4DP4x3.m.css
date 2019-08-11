@@ -1,5 +1,6 @@
 .base {
   --background-color: transparent;
+
   /* --accent-color: var(--yellowish-orange); */
   background-color: var(--background-color);
   margin-bottom: 0;
@@ -9,7 +10,10 @@
   /* @include image-aspect-ratio(5, 4); */
   position: relative;
   padding-top: 80%;
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .image-wrapper {
     /* @include image-aspect-ratio(4, 3); */
     padding-top: 75%;
   }

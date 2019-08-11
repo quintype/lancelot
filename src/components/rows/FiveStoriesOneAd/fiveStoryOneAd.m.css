@@ -1,8 +1,12 @@
 .base {
   --background-color: var(--white);
+
   background: var(--background-color);
   padding: var(--space1_5) 0 var(--space3);
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .base {
     padding: var(--space3) 0;
   }
 }
@@ -11,21 +15,27 @@
   display: grid;
   grid-template-columns: 100%;
   grid-row-gap: var(--space2);
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .row {
     grid-template-columns: 5fr 3fr 4fr;
     grid-column-gap: var(--space3);
   }
 }
 
-.third-column {
-  @media (min-width: 768px) {
+@media (min-width: 768px) {
+  .third-column {
     position: relative;
   }
 }
 
 .bottom-aligned {
   position: static;
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .bottom-aligned {
     position: absolute;
     margin-top: 0;
   }

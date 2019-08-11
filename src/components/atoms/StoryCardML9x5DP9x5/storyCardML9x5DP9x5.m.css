@@ -1,5 +1,6 @@
 .base {
   --background-color: transparent;
+
   /* --accent-color: var(--yellowish-orange); */
   background-color: var(--background-color);
 }
@@ -12,7 +13,10 @@
 
 .content {
   padding: var(--space1) var(--space1_5);
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .content {
     padding: var(--space1) var(--space2);
   }
 }
@@ -21,7 +25,10 @@
   /* @include font-styles(h5); */
   color: var(--title-color);
   margin: 0;
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .headline {
     margin: 0 0 var(--space2);
   }
 }

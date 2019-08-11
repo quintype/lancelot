@@ -1,30 +1,42 @@
 .base {
   --background-color: var(--white);
-  background-color: var(--background-color);
 
+  background-color: var(--background-color);
   padding: var(--space1_5) 0 var(--space3);
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .base {
     padding: var(--space3) 0;
   }
 }
 
 .row {
   grid-gap: 0;
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .row {
     grid-gap: var(--space2);
   }
 }
 
 .desktop-col-2 {
   grid-column: span 4;
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .desktop-col-2 {
     grid-column: span 2;
   }
 }
 
 .desktop-col-3 {
   grid-column: span 4;
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .desktop-col-3 {
     grid-column: span 3;
   }
 }
@@ -34,7 +46,8 @@
   display: grid;
   grid-gap: var(--space2);
 }
-/* 
+
+/*
 .ad {
   padding: var(--space3);
   padding-top: 0;
@@ -43,13 +56,15 @@
 /* .ad-row-3 {
   display: block;
 } */
-
 .story-1x1 {
   display: block;
   border-bottom: 1px solid var(--alto);
   padding-bottom: var(--space1);
   margin-bottom: var(--space1);
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .story-1x1 {
     padding-bottom: 0;
     margin-bottom: var(--space2);
     border-bottom: none;
@@ -61,28 +76,37 @@
   border-bottom: 1px solid var(--alto);
   padding-bottom: var(--space1);
   margin-bottom: var(--space1);
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .line-separator {
     padding-bottom: var(--space2);
     margin-bottom: var(--space2);
   }
-  &:last-child {
-    @media (min-width: 768px) {
-      border-bottom: none;
-    }
+}
+
+@media (min-width: 768px) {
+  .line-separator:last-child {
+    border-bottom: none;
   }
 }
+
 .line-separator-desktop {
   display: block;
   margin-bottom: var(--space2);
   border-bottom: none;
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .line-separator-desktop {
     padding-bottom: var(--space2);
     margin-bottom: var(--space2);
     border-bottom: 1px solid var(--alto);
   }
-  &:last-child {
-    @media (min-width: 768px) {
-      border-bottom: none;
-    }
+}
+
+@media (min-width: 768px) {
+  .line-separator-desktop:last-child {
+    border-bottom: none;
   }
 }

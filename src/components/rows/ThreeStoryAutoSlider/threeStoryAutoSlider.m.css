@@ -2,9 +2,11 @@
   --title-color: var(--white);
   --background-color: var(--alto);
   --meta-color: var(--white);
+
   background: var(--background-color);
   overflow: auto;
 }
+
 .contributor {
   color: var(--meta-color);
 }
@@ -20,10 +22,14 @@
 .carousal-holder {
   background-color: var(--white);
   overflow: hidden;
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .carousal-holder {
     display: flex;
   }
 }
+
 .carousal-holder ul {
   align-items: stretch;
 }
@@ -35,8 +41,11 @@
 
 .carousal-holder ul li.card-active .story-card-small {
   border-color: var(--accent-color);
-  @media (min-width: 768px) {
-    border: 0px solid transparent;
+}
+
+@media (min-width: 768px) {
+  .carousal-holder ul li.card-active .story-card-small {
+    border: 0 solid transparent;
   }
 }
 
@@ -48,6 +57,7 @@
   from {
     transform: translateX(-100%);
   }
+
   to {
     transform: translateX(0%);
   }
@@ -57,8 +67,8 @@
   position: relative;
 }
 
-.card-active::after {
-  @media (min-width: 768px) {
+@media (min-width: 768px) {
+  .card-active::after {
     content: "";
     margin-top: var(--space2);
     height: 6px;
@@ -71,8 +81,8 @@
   }
 }
 
-.flex-element {
-  @media (min-width: 768px) {
+@media (min-width: 768px) {
+  .flex-element {
     flex: 1 1 100%;
   }
 }

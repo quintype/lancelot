@@ -1,20 +1,26 @@
 .base {
   --title-color: var(--white);
+
   position: relative;
+}
 
-  :global .headline {
-    --title-color: var(--white);
-    z-index: 1;
-    color: var(--title-color);
-    @media (min-width: 768px) {
-      line-height: 1.25;
-    }
-  }
+.base :global .headline {
+  --title-color: var(--white);
 
-  :global .contributor {
-    --content-color: var(--title-color);
-    position: relative;
+  z-index: 1;
+  color: var(--title-color);
+}
+
+@media (min-width: 768px) {
+  .base :global .headline {
+    line-height: 1.25;
   }
+}
+
+.base :global .contributor {
+  --content-color: var(--title-color);
+
+  position: relative;
 }
 
 .link {
@@ -36,21 +42,25 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-image: linear-gradient(to bottom, transparent, #000 70%);
-    opacity: 0.7;
-  }
+}
+
+.content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(to bottom, transparent, #000 70%);
+  opacity: 0.7;
 }
 
 .truncated {
   /* @include number-of-lines(mobile-h4, 3); */
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .truncated {
     /* @include number-of-lines(h4, 3, 12); */
   }
 }

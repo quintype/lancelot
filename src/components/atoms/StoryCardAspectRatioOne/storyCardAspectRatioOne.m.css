@@ -18,9 +18,10 @@
 .headline {
   /* @include font-styles(h5); */
   padding-top: var(--space-1);
-  margin: 0px;
+  margin: 0;
   color: var(--title-color);
-  &.truncated {
-    /* @include number-of-lines(h5, 2); */
-  }
+}
+
+.headline.truncated {
+  /* @include number-of-lines(h5, 2); */
 }

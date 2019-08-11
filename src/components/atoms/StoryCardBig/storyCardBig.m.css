@@ -1,8 +1,10 @@
 .base {
   display: block;
   width: 100%;
+
   --title-color: var(--greyish-brown);
   --background-color: var(--white);
+
   background-color: var(--background-color);
 }
 
@@ -15,13 +17,16 @@
 .text-wrapper {
   display: block;
   padding-top: var(--space2);
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .text-wrapper {
     padding: var(--space2);
     margin-top: 0;
   }
 }
 
 .headline {
-  margin: 0px;
+  margin: 0;
   color: var(--title-color);
 }

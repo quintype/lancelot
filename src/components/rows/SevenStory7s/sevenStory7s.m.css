@@ -1,24 +1,30 @@
 .seven-story-7s {
   padding: var(--space1_5) 0 var(--space3);
+
   --gutter-width: var(--space3);
 }
 
 @media (min-width: 768px) {
   .seven-story-7s {
     padding: var(--space3) 0;
+
     --gutter-width: var(--space2);
   }
 }
 
 .seven-story-7s :global .row {
   grid-gap: var(--space1);
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .seven-story-7s :global .row {
     grid-gap: var(--space2);
   }
 }
 
 .story-card-full-width {
   --background-color: var(--white);
+
   grid-column: span 12;
 }
 

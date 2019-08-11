@@ -76,15 +76,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
 
-  :global .text {
-    padding: 0 var(--space1);
-    @media (min-width: 768px) {
-      padding: 0 var(--space3);
-    }
+.crossline :global .text {
+  padding: 0 var(--space1);
+}
+
+@media (min-width: 768px) {
+  .crossline :global .text {
+    padding: 0 var(--space3);
   }
+}
 
-  @media (min-width: 768px) {
+@media (min-width: 768px) {
+  .crossline {
     margin: 0 0 var(--space4);
   }
 }
@@ -99,7 +104,6 @@
 }
 
 /* With Background Design */
-
 .withbackground span {
   background-color: var(--accent-color);
   box-shadow: 10px 0 0 var(--accent-color), -10px 0 0 var(--accent-color);

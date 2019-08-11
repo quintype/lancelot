@@ -1,32 +1,34 @@
 .base {
   --background-color: var(--white);
   --accent-color: var(--yellowish-orange);
+
   background-color: var(--background-color);
+}
 
-  :global .image-wrapper {
-    /* @include image-aspect-ratio(5, 3); */
-    position: relative;
-    padding-top: 60%;
-  }
+.base :global .image-wrapper {
+  /* @include image-aspect-ratio(5, 3); */
+  position: relative;
+  padding-top: 60%;
+}
 
-  :global .image-wrapper:before {
-    --background-color: var(--black);
-    z-index: 1;
-    display: block;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    content: "";
-    height: 70px;
-    opacity: 0.5;
-    background-image: linear-gradient(to bottom, transparent, var(--black));
-  }
+.base :global .image-wrapper::before {
+  --background-color: var(--black);
 
-  :global .headline {
-    color: var(--title-color);
-    margin: 0;
-  }
+  z-index: 1;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: "";
+  height: 70px;
+  opacity: 0.5;
+  background-image: linear-gradient(to bottom, transparent, var(--black));
+}
+
+.base :global .headline {
+  color: var(--title-color);
+  margin: 0;
 }
 
 .content {
@@ -35,6 +37,7 @@
 
 .engagement-total {
   --title-color: var(--white);
+
   /* @include font-styles(meta); */
   font-size: var(--base-smallest);
   position: absolute;
@@ -47,6 +50,7 @@
   display: flex;
   align-items: center;
 }
+
 .engagement-total .speaker-icon {
   margin-right: var(--space-4);
   font-size: 14px;
@@ -55,7 +59,10 @@
 
 .engagement {
   display: none;
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .engagement {
     display: block;
     font-size: var(--base-smallest);
     border: 3px solid red;
@@ -68,6 +75,7 @@
   margin-right: var(--space1);
   align-items: center;
 }
+
 .engagement-item .engagement-icon {
   margin-right: var(--space-2);
   font-size: 14px;

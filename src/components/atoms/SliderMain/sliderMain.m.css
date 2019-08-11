@@ -1,22 +1,26 @@
 .slider-main {
   --background-color: var(--white);
+
   background-color: var(--background-color);
-  :global .slider-control-bottomcenter {
-    display: none;
-  }
-  :global .slider-control-centerleft,
-  :global .slider-control-centerright {
+}
+
+.slider-main :global .slider-control-bottomcenter {
+  display: none;
+}
+
+.slider-main :global .slider-control-centerleft,
+.slider-main :global .slider-control-centerright {
+  top: 0 !important;
+  transform: none !important;
+  margin-top: 25%;
+}
+
+@media (min-width: 768px) {
+  .slider-main :global .slider-control-bottomcenter {
     top: 0 !important;
-    transform: none !important;
-    margin-top: 25%;
-  }
-  @media (min-width: 768px) {
-    :global .slider-control-bottomcenter {
-      top: 0 !important;
-      bottom: initial !important;
-      margin-top: 54%;
-      display: block;
-    }
+    bottom: initial !important;
+    margin-top: 54%;
+    display: block;
   }
 }
 
@@ -27,7 +31,7 @@
 .slider-nav-button {
   width: 25px;
   height: 25px;
-  border: 0px;
+  border: 0;
   color: var(--white);
   background-color: rgba(0, 0, 0, 0.35);
   display: flex;
@@ -38,21 +42,31 @@
 .nav-left {
   transform: rotate(-90deg);
   padding-top: 0.7rem;
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .nav-left {
     display: none;
   }
 }
+
 .nav-right {
   transform: rotate(90deg);
   padding-top: 0.7rem;
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .nav-right {
     display: none;
   }
 }
 
 .mobile-hide {
   display: none;
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .mobile-hide {
     display: flex;
   }
 }
@@ -63,9 +77,10 @@
   align-items: center;
   justify-content: center;
 }
+
 .dots button {
   background-color: transparent;
-  padding: 0px;
+  padding: 0;
   width: 8px;
   height: 8px;
   border-radius: 50%;
@@ -74,6 +89,7 @@
   margin: var(--space-4);
   cursor: pointer;
 }
+
 .dots .is-active {
   border: 1px solid var(--border-color);
   background-color: var(--background-color);

@@ -5,7 +5,7 @@
 .slider-nav-button {
   width: 25px;
   height: 25px;
-  border: 0px;
+  border: 0;
   color: var(--white);
   background-color: rgba(0, 0, 0, 0.35);
   display: flex;
@@ -15,22 +15,33 @@
 
 .mobile-hide {
   display: none;
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .mobile-hide {
     display: flex;
   }
 }
+
 .nav-left {
   transform: rotate(-90deg);
   padding-top: 0.7rem;
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .nav-left {
     padding-top: 0.3rem;
     font-size: var(--medium);
   }
 }
+
 .nav-right {
   transform: rotate(90deg);
   padding-top: 0.7rem;
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  .nav-right {
     padding-top: 0.3rem;
     font-size: var(--medium);
   }

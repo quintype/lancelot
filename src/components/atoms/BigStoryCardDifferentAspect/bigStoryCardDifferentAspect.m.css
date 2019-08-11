@@ -9,15 +9,19 @@
 .image-wrapper {
   position: relative;
   padding-top: 66.67%;
-  @media (min-width: 768px) {
+  align-self: flex-start;
+}
+
+@media (min-width: 768px) {
+  .image-wrapper {
     padding-top: 50%;
   }
-  align-self: flex-start;
 }
 
 .text-wrapper {
   display: block;
   padding: var(--space2) 0;
+
   /* @media (min-width: 768px){
     padding: var(--space2);
   } */
@@ -25,16 +29,23 @@
 
 .headline {
   /* @include font-styles(mobile-h3); */
-  @media (min-width: 768px) {
-    /* @include font-styles(h4); */
-  }
-  margin: 0px;
+  margin: 0;
   margin-top: var(--space-2);
   color: var(--title-color);
-  &.truncated {
-    /* @include number-of-lines(mobile-h3, 3); */
-    @media (min-width: 768px) {
-      /* @include number-of-lines(h4, 3); */
-    }
+}
+
+@media (min-width: 768px) {
+  .headline {
+    /* @include font-styles(h4); */
+  }
+}
+
+.headline.truncated {
+  /* @include number-of-lines(mobile-h3, 3); */
+}
+
+@media (min-width: 768px) {
+  .headline.truncated {
+    /* @include number-of-lines(h4, 3); */
   }
 }
