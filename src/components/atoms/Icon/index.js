@@ -4,10 +4,13 @@ import PropTypes from "prop-types";
 import get from "lodash/get";
 import "./icon.m.css";
 
-if (require.context) {
-  const req = require.context("../../../../assets/icons/", true, /\.svg$/);
-  req.keys().forEach(filename => req(filename));
-}
+// if (require.context) {
+//   const req = require.context("../../../../assets/icons/", true, /\.svg$/);
+//   req.keys().forEach(filename => {
+//     console.log(filename);
+//     return req(filename);
+//   });
+// }
 
 const IconBase = ({ type, className, iconSpritePath }) => {
   if (!type) return null;
