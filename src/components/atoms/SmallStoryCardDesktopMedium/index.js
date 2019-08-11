@@ -49,7 +49,7 @@ const SmallStoryCardDesktopMedium = ({ story, className = "", cardWithImageZoom 
               className="contributor"
             />
           )}
-          <Headline text={storyData.headline} headerLevel={3} headerType={5} className="headline" />
+          <Headline text={storyData.headline} headerLevel={3} headlineType={5} className="headline" />
         </div>
       </div>
     </Link>

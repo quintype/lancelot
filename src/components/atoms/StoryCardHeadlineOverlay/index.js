@@ -54,7 +54,7 @@ const StoryCardHeadlineOverlay = ({ story, className = "", cardWithImageZoom = t
         )}
         <Headline
           text={storyData.headline}
-          headerType={3}
+          headlineType={3}
           headerLevel={4}
           className={`headline ${hasTruncatedHeadline ? "truncated" : ""}`}
         />

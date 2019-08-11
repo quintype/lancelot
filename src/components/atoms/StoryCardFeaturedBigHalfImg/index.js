@@ -58,7 +58,7 @@ export default function StoryCardFeaturedBigHalfImg({ story, className = "", car
             className={"contributor"}
           />
         )}
-        <Headline text={storyData.headline} headerType={6} headerLevel={3} />
+        <Headline text={storyData.headline} headlineType={6} headerLevel={3} />
         {section && (
           <span styleName="badge" className="hidden-mobile" style={sectionColor && { "--accent-color": sectionColor }}>
             <span className="badge-text">{section["display-name"]}</span>

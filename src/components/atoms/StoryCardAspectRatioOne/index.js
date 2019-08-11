@@ -52,7 +52,7 @@ const StoryCardAspectRatioOne = ({ story, className = "", cardWithImageZoom = tr
           )}
           <Headline
             text={storyData.headline}
-            headerType={3}
+            headlineType={3}
             headerLevel={5}
             className={`headline ${hasTruncatedHeadline ? "truncated" : ""}`}
           />

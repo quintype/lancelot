@@ -46,7 +46,7 @@ export const StoryCardML4x3DP2x1 = ({ story, className = "", cardWithImageZoom =
       </div>
       <div className="text-wrapper">
         {contributorName && <Contributor name={contributorName} type={contributorRole} styleName="contributor" />}
-        <Headline text={story.headline} headerType={3} headerLevel={3} className={"headline"} />
+        <Headline text={story.headline} headlineType={3} headerLevel={3} className={"headline"} />
       </div>
     </Link>
   );
@@ -61,7 +61,7 @@ export const StoryCardML4x3DP2x1WithLabel = ({ story, className, defaultLabel = 
       {story.label && (
         <div styleName="headline-wrapper">
           <Icon type={"bullet-arrow"} styleName="bullet-icon" />
-          <Headline text={story.label} headerType={4} headerLevel={2} className={"headline-label"} />
+          <Headline text={story.label} headlineType={4} headerLevel={2} className={"headline-label"} />
         </div>
       )}
       <StoryCardML4x3DP2x1 story={story} styleName="card" />

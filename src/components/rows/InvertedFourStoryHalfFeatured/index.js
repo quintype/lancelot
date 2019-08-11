@@ -19,7 +19,7 @@ const InvertedFourStoryHalfFeatured = ({ collection, metadata, accentColor }) =>
         <CollectionLink collection={collection}>
           <Headline
             text={name}
-            headerType={1}
+            headlineType={1}
             headerLevel={2}
             headlineDesign={"crossline"}
             className={"collection-title"}

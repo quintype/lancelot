@@ -41,7 +41,7 @@ const stories = storiesOf("Atoms/Headline", module);
 stories.add("default", () => (
   <Headline
     text={text("Headline Text", story.story.headline)}
-    headerType={optionalSelect("Header Types", headerTypeOptions)}
+    headlineType={optionalSelect("Header Types", headerTypeOptions)}
     headerLevel={optionalSelect("Header Levels", headerLevelOptions)}
     headlineDesign={optionalSelect("Header Designs", headerDesigns)}
   />

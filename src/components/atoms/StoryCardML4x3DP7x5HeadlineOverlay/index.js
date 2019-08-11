@@ -50,7 +50,7 @@ export const StoryCardML4x3DP7x5HeadlineOverlay = ({ story, className = "", card
       </div>
       <div styleName="text-wrapper">
         {contributorName && <Contributor name={contributorName} type={contributorRole} className="contributor" />}
-        <Headline text={storyData.headline} headerType={6} headerLevel={3} styleName="headline" />
+        <Headline text={storyData.headline} headlineType={6} headerLevel={3} styleName="headline" />
       </div>
     </Link>
   );

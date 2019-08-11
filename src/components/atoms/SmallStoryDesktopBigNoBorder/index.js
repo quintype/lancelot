@@ -51,7 +51,7 @@ const SmallStoryCardDesktopBigNoBorder = ({
         <Headline
           text={storyData.headline}
           headerLevel={1}
-          headerType={1}
+          headlineType={1}
           className={`${"headline"} ${hasTruncatedHeadline ? "truncated" : ""}`}
         />
       </div>

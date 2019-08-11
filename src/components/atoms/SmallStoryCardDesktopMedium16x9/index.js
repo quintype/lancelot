@@ -29,7 +29,7 @@ const SmallStoryCardDesktopMedium16x9 = ({
   return (
     <Link
       aria-label={`${"Read full story: "} ${storyData.headline}`}
-      styleName={`read-more-link ${className} ${cardWithImageZoom ? "card-with-image-zoom" : ""}`}
+      styleName={`read-more-link ${cardWithImageZoom ? "card-with-image-zoom" : ""}`}
       className={`${className} ${cardWithImageZoom ? "card-with-image-zoom" : ""}`}
       href={externalLink || story.url}
       externalLink={externalLink}
@@ -61,7 +61,7 @@ const SmallStoryCardDesktopMedium16x9 = ({
           )}
           <Headline
             text={storyData.headline}
-            headerType={5}
+            headlineType={5}
             headerLevel={3}
             className={`${hasTruncatedHeadline ? "truncated" : ""}`}
           />

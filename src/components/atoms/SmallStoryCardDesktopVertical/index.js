@@ -56,7 +56,7 @@ const SmallStoryCardDesktopVertical = ({
           )}
           <Headline
             text={storyData.headline}
-            headerType={8}
+            headlineType={7}
             headerLevel={3}
             className={` ${"headline"} ${hasTruncatedHeadline ? "truncated" : ""}`}
           />

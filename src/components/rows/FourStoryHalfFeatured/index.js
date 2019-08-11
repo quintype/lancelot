@@ -14,7 +14,7 @@ const FourStoryHalfFeatured = ({ collection, accentColor }) => {
         <CollectionLink collection={collection}>
           <Headline
             text={name}
-            headerType={1}
+            headlineType={1}
             headerLevel={2}
             headlineDesign={"crossline"}
             className={"collection-title"}

@@ -51,7 +51,7 @@ export const StoryCardML4x3DP1x1 = ({ story, className = "", cardWithImageZoom =
         </div>
         <div styleName="text-wrapper">
           {contributorName && <Contributor name={contributorName} type={contributorRole} className="contributor" />}
-          <Headline text={storyData.headline} headerType={3} headerLevel={3} styleName="headline" />
+          <Headline text={storyData.headline} headlineType={3} headerLevel={3} styleName="headline" />
         </div>
       </div>
     </Link>

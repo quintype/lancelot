@@ -37,7 +37,7 @@ const CollectionBundleItem = ({ collection, cardWithImageZoom = true, className 
         )}
       />
       <div styleName="content-wrap">
-        <Headline text={headline} headerLevel={3} headerType={7} className="headline" />
+        <Headline text={headline} headerLevel={3} headlineType={7} className="headline" />
         {collection.summary && <p styleName="summary">{collection.summary}</p>}
       </div>
     </Link>

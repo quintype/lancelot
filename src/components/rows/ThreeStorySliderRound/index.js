@@ -52,7 +52,7 @@ const StoryCard = ({ story, className = "", type = "small", hasTruncatedHeadline
         <Headline
           text={storyData.headline}
           headerLevel={3}
-          headerType={11}
+          headlineType={11}
           className={`${"headline"} ${hasTruncatedHeadline ? "truncated" : ""}`}
         />
         {contributor && (

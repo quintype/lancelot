@@ -25,7 +25,7 @@ export const FiveStoriesOneAdBundle = ({ collection, accentColor, pagetype = "" 
           <CollectionLink collection={collection} className={styles["bundle-header"]}>
             <Headline
               text={collection.name}
-              headerType={10}
+              headlineType={10}
               headerLevel={2}
               headlineDesign={"crossline"}
               className={"collection-title"}
@@ -87,7 +87,7 @@ const CollectionMeta = ({ collection, className }) => {
         )}
       />
       <div styleName="meta-text-wrapper">
-        <Headline text={snapshot[0]} headerType={4} headerLevel={3} styleName="meta-headline" />
+        <Headline text={snapshot[0]} headlineType={4} headerLevel={3} styleName="meta-headline" />
         <ul>
           {snapshot.slice(1).map((text, index) => (
             <li key={index} styleName="meta-list-item">

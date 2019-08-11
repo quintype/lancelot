@@ -53,7 +53,7 @@ const StoryCardResponsiveSame = ({
         {contributor && <Contributor name={contributor["name"]} type={contributorRole} className={"contributor"} />}
         <Headline
           text={storyData.headline}
-          headerType={4}
+          headlineType={4}
           headerLevel={3}
           className={`${hasTruncatedHeadline ? "truncated" : ""}`}
         />

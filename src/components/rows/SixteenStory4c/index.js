@@ -38,7 +38,7 @@ const SixteenStory4C = ({ collection, metadata, accentColor }) => {
       return (
         <React.Fragment key={collection.id}>
           <CollectionLink collection={collection}>
-            <Headline text={collection.name} headerType={2} headerLevel={2} className={"sub-collection-headline"} />
+            <Headline text={collection.name} headlineType={2} headerLevel={2} className={"sub-collection-headline"} />
           </CollectionLink>
           <WrappedStoryStack bigStory={index % 2 === 0} mobileStoryCount={mobileStoryCount} collection={collection} />
           <div styleName="read-more-wrapper">
@@ -61,7 +61,7 @@ const SixteenStory4C = ({ collection, metadata, accentColor }) => {
           <CollectionLink collection={collection}>
             <Headline
               text={name}
-              headerType={1}
+              headlineType={1}
               headerLevel={2}
               headlineDesign={"crossline"}
               className={"collection-title"}
