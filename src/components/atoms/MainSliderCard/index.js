@@ -49,15 +49,16 @@ export default function MainsliderCard({ story, className = "", cardWithImageZoo
           </ResponsiveImageWithFallback>
         </div>
         <div styleName="content">
+          <Headline text={storyData.headline} headerLevel={3} headlineType={2} className="headline" />
           {contributor && (
             <Contributor
               name={contributor["name"]}
               type={contributorRole}
               iconColor="#4a4a4a"
               className="contributor"
+              contributorType={3}
             />
           )}
-          <Headline text={storyData.headline} headerLevel={3} headerType={4} className="headline" />
           {story.engagement && (
             <div styleName="engagement">
               {story.engagement.comments && (

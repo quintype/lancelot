@@ -14,7 +14,7 @@ withStore("Cards/BigStoryCardDifferentAspect", {
     }
   }
 })
-  .addDecorator(story => <div style={{ width: "360px" }}>{story()}</div>)
+  .addDecorator(story => <div style={{ maxWidth: "360px" }}>{story()}</div>)
   .add("default", () => <BigStoryCardDifferentAspect {...story} />)
   .add("missing-author", () => {
     const newProps = produce(story, draft => {

@@ -15,7 +15,7 @@ withStore("Cards/SmallStoryCardDesktopBigNoBorder", {
     }
   }
 })
-  .addDecorator(story => <div style={{ width: "360px" }}>{story()}</div>)
+  .addDecorator(story => <div style={{ maxWidth: "360px" }}>{story()}</div>)
   .add("default", () => <SmallStoryCardDesktopBigNoBorder {...story} />)
   .add("missing-author", () => {
     const newProps = produce(story, draft => {

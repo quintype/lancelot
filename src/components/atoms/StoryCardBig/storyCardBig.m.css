@@ -1,0 +1,27 @@
+.base {
+  display: block;
+  width: 100%;
+  --title-color: var(--greyish-brown);
+  --background-color: var(--white);
+  background-color: var(--background-color);
+}
+
+.image-wrapper {
+  /* @include image-aspect-ratio(16, 9); */
+  padding-top: 56.25%;
+  align-self: flex-start;
+}
+
+.text-wrapper {
+  display: block;
+  padding-top: var(--space2);
+  @media (min-width: 768px) {
+    padding: var(--space2);
+    margin-top: 0;
+  }
+}
+
+.headline {
+  margin: 0px;
+  color: var(--title-color);
+}

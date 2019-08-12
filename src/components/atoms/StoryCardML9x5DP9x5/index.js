@@ -29,7 +29,7 @@ const StoryCardML9x5DP9x5 = ({ story, className = "", cardWithImageZoom = true }
         href={externalLink || story.url}
         externalLink={externalLink}
       >
-        <div className="image-container">
+        <div className="image-container" styleName="image-container">
           <ResponsiveImageWithFallback
             styleName="image-wrapper"
             slug={storyData.imageS3Key}
@@ -43,15 +43,16 @@ const StoryCardML9x5DP9x5 = ({ story, className = "", cardWithImageZoom = true }
           />
         </div>
         <div className="text-wrapper">
+          <Headline text={storyData.headline} headlineType={4} headerLevel={3} className="headline" />
           {contributor && (
             <Contributor
               name={contributor["name"]}
               type={contributorRole}
               iconColor="#4a4a4a"
               className="contributor"
+              contributorType={3}
             />
           )}
-          <Headline text={storyData.headline} headerType={3} headerLevel={3} className="headline" />
         </div>
       </Link>
     </div>

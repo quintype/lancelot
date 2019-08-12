@@ -25,3 +25,7 @@
     margin: 0 0 var(--space2);
   }
 }
+
+.image-container {
+  padding-bottom: var(--space1);
+}

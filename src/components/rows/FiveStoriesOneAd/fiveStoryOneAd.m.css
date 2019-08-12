@@ -10,26 +10,23 @@
 .row {
   display: grid;
   grid-template-columns: 100%;
-  grid-row-gap: var(--space3);
+  grid-row-gap: var(--space2);
   @media (min-width: 768px) {
     grid-template-columns: 5fr 3fr 4fr;
-    grid-column-gap: 1%;
+    grid-column-gap: var(--space3);
   }
 }
 
 .third-column {
   @media (min-width: 768px) {
     position: relative;
-    padding-bottom: var(--space3);
   }
 }
 
 .bottom-aligned {
-  margin-top: var(--space3);
   position: static;
   @media (min-width: 768px) {
     position: absolute;
-    bottom: var(--space3);
     margin-top: 0;
   }
 }
@@ -37,8 +34,4 @@
 .second-column {
   display: grid;
   grid-row-gap: var(--space2);
-  @media (min-width: 768px) {
-    grid-row-gap: var(--space1);
-    padding-bottom: var(--space3);
-  }
 }

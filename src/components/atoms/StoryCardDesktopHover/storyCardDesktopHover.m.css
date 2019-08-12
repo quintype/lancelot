@@ -5,7 +5,6 @@
   --title-color: var(--white);
   position: relative;
   @media (min-width: 768px) {
-    border-bottom: 2px solid var(--accent-color);
     .text-wrapper {
       display: none;
     }
@@ -13,11 +12,13 @@
       display: flex;
     }
   }
-  .contributor {
-    --content-color: var(--white);
-    --icon-color: var(--white);
-    /* z-index: map-get($zindex, image-overlay); */
+  :global .contributor {
     z-index: 1;
+  }
+  :global .contributor-name {
+    @media (min-width: 768px) {
+      color: var(--title-color);
+    }
   }
 }
 
@@ -36,7 +37,7 @@
   margin-top: var(--space1);
   position: relative;
   @media (min-width: 768px) {
-    padding: var(--space5);
+    padding: var(--space2);
     position: absolute;
     margin: 0;
     top: 0;
@@ -44,7 +45,7 @@
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     flex-direction: column;
     &:before {
       background-color: var(--accent-color);
@@ -60,15 +61,10 @@
 }
 
 .headline {
-  /* @include font-styles(mobile-h4); */
-  font-size: var(-base--medium);
-  @media (min-width: 768px) {
-    /* @include font-styles(h4); */
-    font-size: var(-base--large);
-  }
-  /* z-index: map-get($zindex, image-overlay); */
   z-index: 1;
   margin: 0px;
-  margin-top: var(--space-2);
-  color: var(--title-color);
+  color: var(--greyish-brown);
+  @media (min-width: 768px) {
+    color: var(--title-color);
+  }
 }

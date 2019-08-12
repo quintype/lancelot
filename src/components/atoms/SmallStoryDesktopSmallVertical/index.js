@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { get } from "lodash";
 import { Link } from "@quintype/components";
+
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
 import Contributor from "../Contributor";
 import Headline from "../Headline";
@@ -46,20 +47,21 @@ const SmallStoryCardDesktopSmallVertical = ({
           )}
         />
         <div styleName="text-wrapper">
+          <Headline
+            text={storyData.headline}
+            headlineType={5}
+            headerLevel={3}
+            className={`headline ${hasTruncatedHeadline ? "truncated" : ""} `}
+          />
           {contributor && (
             <Contributor
               name={contributor["name"]}
               type={contributorRole}
+              contributorType={3}
               iconColor="#4a4a4a"
               className={"contributor"}
             />
           )}
-          <Headline
-            text={storyData.headline}
-            headerType={8}
-            headerLevel={3}
-            className={`headline ${hasTruncatedHeadline ? "truncated" : ""} `}
-          />
         </div>
       </div>
     </Link>

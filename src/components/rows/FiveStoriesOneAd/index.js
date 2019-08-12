@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import StoryCardML5x4DP1x1 from "../../atoms/StoryCardML5x4DP1x1";
 import StoryCardML3x2DP9x5 from "../../atoms/StoryCardML3x2DP9x5";
 import StoryCardML9x5DP9x5 from "../../atoms/StoryCardML9x5DP9x5";
-import StoryCardML5x4DP4x3 from "../../atoms/StoryCardML5x4DP4x3";
+import SmallStoryCard from "../../atoms/SmallStoryCard/index";
 // import { DfpAd } from "../../atoms/dfp-ad";
 
 import "./fiveStoryOneAd.m.css";
@@ -29,12 +29,12 @@ const FiveStoryOneAd = ({ collection, accentColor, pagetype = "" }) => {
           </div>
           <div styleName="second-column">
             {!!items[1] && <StoryCardML9x5DP9x5 story={items[1].story} />}
-            {!!items[2] && <StoryCardML5x4DP4x3 story={items[2].story} />}
-            {!!items[3] && <StoryCardML5x4DP4x3 story={items[3].story} />}
+            {!!items[2] && <SmallStoryCard story={items[2].story} />}
+            {!!items[3] && <SmallStoryCard story={items[3].story} />}
           </div>
           <div styleName="third-column">
-            {/* <DfpAd adtype="Rectangle" placement={pagetype} /> */}
             <div styleName="bottom-aligned">{!!items[4] && <StoryCardML5x4DP1x1 story={items[4].story} />}</div>
+            {/* <DfpAd adtype="Rectangle" placement={pagetype} /> */}
           </div>
         </div>
       </div>

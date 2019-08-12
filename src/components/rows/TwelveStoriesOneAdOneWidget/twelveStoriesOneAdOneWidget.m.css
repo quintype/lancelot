@@ -1,6 +1,6 @@
 .base {
   --border-color: var(--alto);
-  --background-color: var(--alto);
+  --background-color: var(--white);
 
   background-color: var(--background-color);
   padding: var(--space1_5) 0 var(--space3);
@@ -9,7 +9,6 @@
   }
 
   :global .sub-collection-headline {
-    color: var(--accent-color);
     margin: 0;
     margin-bottom: var(--space2);
     /* @include font-styles(mobile-h3); */
@@ -28,8 +27,8 @@
 
   :global .story-2 {
     grid-column: span 4;
-    padding-bottom: var(--space1);
-    border-bottom: 2px solid var(--border-color);
+    padding-bottom: var(--space2);
+    border-bottom: 1px solid var(--border-color);
     @media (min-width: 768px) {
       padding-bottom: 0;
       border-bottom: 0;
@@ -54,22 +53,22 @@
   :global .story-3,
   :global .story-4 {
     display: block;
-    padding-bottom: var(--space1);
-    border-bottom: 2px solid var(--border-color);
+    padding-bottom: var(--space2);
+    border-bottom: 1px solid var(--border-color);
     @media (min-width: 768px) {
       border-bottom: none;
+      padding-bottom: 0;
     }
   }
 }
 
 .row {
-  grid-gap: var(--space1);
+  grid-gap: var(--space2);
   @media (min-width: 768px) {
-    grid-gap: var(--space3);
     grid-template-areas:
       "sc1 sc1 sc1 sc1 sc2 sc2 sc2 sc2 sb sb sb sb"
-      "ss1 ss1 ss1 ss2 ss2 ss2 sc3 sc3 sb sb sb sb"
-      "ss1 ss1 ss1 ss2 ss2 ss2 sc4 sc4 sb sb sb sb";
+      "sc3 sc3 ss1 ss1 ss1 ss2 ss2 ss2  sb sb sb sb"
+      "sc4 sc4 ss1 ss1 ss1 ss2 ss2 ss2 sb sb sb sb";
   }
 }
 

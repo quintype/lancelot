@@ -1,14 +1,9 @@
 .base {
-  width: 100%;
-  height: 100%;
-
-  --border-color: var(--accent-color);
+  --border-color: var(--alto);
   --background-color: var(--white);
 
   background-color: var(--background-color);
-  @media (min-width: 768px) {
-    border-bottom: 2px solid var(--border-color);
-  }
+  border-bottom: 1px solid var(--border-color);
 }
 
 .image-wrapper {
@@ -22,8 +17,10 @@
 
 .text-wrapper {
   display: block;
-  padding: 0 var(--space1_5) var(--space1_5);
-  margin-top: var(--space1);
+  padding: var(--space2) 0;
+  /* @media (min-width: 768px){
+    padding: var(--space2);
+  } */
 }
 
 .headline {

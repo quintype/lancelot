@@ -1,6 +1,6 @@
 .base {
   display: grid;
-  grid-template-columns: 30% 70%;
+  grid-template-columns: 1fr 2fr;
   background-color: transparent;
   @media (min-width: 768px) {
     grid-template-columns: 80px auto;
@@ -18,11 +18,7 @@
 }
 
 .text-wrapper {
-  padding-left: var(--space2);
-  padding-top: var(--space-2);
-  @media (min-width: 768px) {
-    padding-top: var(--space1);
-  }
+  padding-left: var(--space1_5);
 }
 
 .headline {
