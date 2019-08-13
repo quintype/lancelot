@@ -9,10 +9,6 @@
   padding-top: 75%;
   align-self: flex-start;
 }
-.base :global .contributor {
-  display: inline-flex;
-  color: var(--meta-color);
-}
 
 .text-wrapper {
   display: inline-flex;
@@ -24,14 +20,6 @@
 }
 .card-content {
   line-height: 1.25;
-}
-.base :global .headline {
-  padding-top: var(--space-2);
-  margin: 0px;
-  color: var(--greyish-brown);
-  @media (min-width: 768px) {
-    padding-top: 0;
-  }
 }
 
 .number-frmt {
@@ -47,8 +35,4 @@
     font-size: var(--jumbo);
     line-height: 1;
   }
-}
-
-.premium-headline-wrap {
-  position: relative;
 }

@@ -4,17 +4,13 @@ import get from "lodash/get";
 import { Link } from "@quintype/components";
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
 import Contributor from "../Contributor/index";
-
-import { getStoryData, generateImageSources } from "../../utils/utils";
-import "./smallStoryDesktopBigNoBorder.m.css";
 import Headline from "../Headline";
 
-const SmallStoryCardDesktopBigNoBorder = ({
-  story,
-  className = "",
-  cardWithImageZoom = true,
-  hasTruncatedHeadline = true
-}) => {
+import { getStoryData, generateImageSources } from "../../utils/utils";
+
+import "./smallStoryDesktopBigNoBorder.m.css";
+
+const SmallStoryCardDesktopBigNoBorder = ({ story, className = "", cardWithImageZoom = true }) => {
   const storyData = getStoryData(story);
 
   if (!(storyData.headline && story.url)) {
@@ -35,6 +31,7 @@ const SmallStoryCardDesktopBigNoBorder = ({
     >
       <ResponsiveImageWithFallback
         styleName="image-wrapper"
+        className="image-wrapper"
         slug={storyData.imageS3Key}
         metadata={storyData.imageMetadata}
         alt={storyData.imageCaption}
@@ -44,16 +41,17 @@ const SmallStoryCardDesktopBigNoBorder = ({
           { aspectRatio: [2, 1], screenWidthCoverage: 0.34 }
         )}
       />
-      <div styleName="text-wrapper">
+      <div>
+        <Headline text={storyData.headline} headerLevel={1} headlineType={4} className="headline" />
         {contributor && (
-          <Contributor name={contributor["name"]} type={contributorRole} iconColor="#4a4a4a" className="contributor" />
+          <Contributor
+            name={contributor["name"]}
+            contributorType={3}
+            type={contributorRole}
+            iconColor="#4a4a4a"
+            className="contributor"
+          />
         )}
-        <Headline
-          text={storyData.headline}
-          headerLevel={1}
-          headerType={1}
-          className={`${"headline"} ${hasTruncatedHeadline ? "truncated" : ""}`}
-        />
       </div>
     </Link>
   );
@@ -61,7 +59,6 @@ const SmallStoryCardDesktopBigNoBorder = ({
 
 SmallStoryCardDesktopBigNoBorder.propTypes = {
   className: PropTypes.string,
-  hasTruncatedHeadline: PropTypes.bool,
   cardWithImageZoom: PropTypes.bool,
   story: PropTypes.shape({
     id: PropTypes.string,

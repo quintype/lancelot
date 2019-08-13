@@ -5,7 +5,7 @@
   --background-color: var(--white);
 
   grid-template-columns: 1fr 2fr;
-
+  grid-gap: var(--space2);
   @media (min-width: 768px) {
     display: block;
     border-bottom: 1px solid var(--border-color);
@@ -23,18 +23,18 @@
 .image-wrapper {
   position: relative;
   padding-top: 75%;
+  align-self: flex-start;
+  margin-bottom: 0;
   @media (min-width: 768px) {
     padding-top: 50%;
+    margin-bottom: var(--space2);
   }
-  align-self: flex-start;
 }
 
 .text-wrapper {
   display: block;
-  margin-left: var(--space1);
+  margin-bottom: 0;
   @media (min-width: 768px) {
-    padding: var(--space2) 0;
-    margin-left: 0;
-    /* margin-top: var(--space1); */
+    margin-bottom: var(--space2);
   }
 }

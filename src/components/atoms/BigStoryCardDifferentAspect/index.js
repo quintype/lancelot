@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { get } from "lodash";
+import get from "lodash/get";
 import { Link } from "@quintype/components";
 
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
@@ -11,12 +11,7 @@ import { getStoryData, generateImageSources } from "../../utils/utils";
 
 import "./bigStoryCardDifferentAspect.m.css";
 
-const BigStoryCardDifferentAspect = ({
-  story,
-  className = "",
-  cardWithImageZoom = true,
-  hasTruncatedHeadline = true
-}) => {
+const BigStoryCardDifferentAspect = ({ story, className = "", cardWithImageZoom = true }) => {
   const storyData = getStoryData(story);
 
   const contributor = get(story, ["authors", 0]);
@@ -37,6 +32,7 @@ const BigStoryCardDifferentAspect = ({
       <div styleName="base">
         <ResponsiveImageWithFallback
           styleName="image-wrapper"
+          className="image-wrapper"
           slug={storyData.imageS3Key}
           metadata={storyData.imageMetadata}
           alt={storyData.imageCaption}
@@ -46,13 +42,8 @@ const BigStoryCardDifferentAspect = ({
             { aspectRatio: [2, 1], screenWidthCoverage: 0.34 }
           )}
         />
-        <div styleName="text-wrapper">
-          <Headline
-            text={storyData.headline}
-            headlineType={3}
-            headerLevel={3}
-            className={`headline ${hasTruncatedHeadline ? "truncated" : ""} `}
-          />
+        <div styleName="text-wrapper" className="text-wrapper">
+          <Headline text={storyData.headline} headlineType={3} headerLevel={3} className="headline" />
           {contributor && (
             <Contributor
               name={contributor["name"]}
@@ -70,7 +61,6 @@ const BigStoryCardDifferentAspect = ({
 
 BigStoryCardDifferentAspect.propTypes = {
   cardWithImageZoom: PropTypes.bool,
-  hasTruncatedHeadline: PropTypes.bool,
   className: PropTypes.string,
   story: PropTypes.shape({
     id: PropTypes.string,

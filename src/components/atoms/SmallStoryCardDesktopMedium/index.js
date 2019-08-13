@@ -3,10 +3,13 @@ import PropTypes from "prop-types";
 import get from "lodash/get";
 import { Link } from "@quintype/components";
 import Contributor from "../Contributor";
-import "./smallStoryCardDesktopMedium.m.css";
+
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
-import { getStoryData, generateImageSources } from "../../utils/utils";
 import Headline from "../Headline";
+
+import { getStoryData, generateImageSources } from "../../utils/utils";
+
+import "./smallStoryCardDesktopMedium.m.css";
 
 const SmallStoryCardDesktopMedium = ({ story, className = "", cardWithImageZoom = true }) => {
   const storyData = getStoryData(story);
@@ -40,16 +43,17 @@ const SmallStoryCardDesktopMedium = ({ story, className = "", cardWithImageZoom 
             )}
           />
         </div>
-        <div styleName="text-wrapper">
+        <div className="text-wrapper">
+          <Headline text={storyData.headline} headerLevel={3} headlineType={3} className="headline" />
           {contributor && (
             <Contributor
               name={contributor["name"]}
               type={contributorRole}
+              contributorType={3}
               iconColor="#4a4a4a"
               className="contributor"
             />
           )}
-          <Headline text={storyData.headline} headerLevel={3} headerType={5} className="headline" />
         </div>
       </div>
     </Link>

@@ -2,13 +2,6 @@
   background: var(--background-color);
   overflow: auto;
   display: block;
-  @media (min-width: 768px) {
-    border-bottom: 4px solid var(--accent-color);
-  }
-
-  :global .contributor {
-    margin: 0 0 var(--space1);
-  }
 }
 
 .base .contributor {
@@ -23,22 +16,18 @@
 .image-wrapper {
   position: relative;
   padding-top: 62.5%;
-  margin: 0 0 var(--space1);
-
   @media (min-width: 768px) {
-    padding-top: 50%;
-    margin: 0 0 var(--space2);
+    padding-top: 75%;
   }
 }
 
 .text-wrapper {
-  margin: 0 0 var(--space2);
-  padding: 0 var(--space1_5);
-  @media (min-width: 768px) {
+  padding-top: var(--space2);
+  /* @media (min-width: 768px) {
     padding: 0 var(--space2);
     margin: 0 0 var(--space3);
     font-size: var(--base-smaller);
-  }
+  } */
 }
 
 .headline {

@@ -2,12 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 import get from "lodash/get";
 import { Link } from "@quintype/components";
+
 import Contributor from "../../atoms/Contributor";
-import "./mainSliderCard.m.css";
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
-import { getStoryData, generateImageSources } from "../../utils/utils";
-import Icon from "../../atoms/Icon";
 import Headline from "../Headline";
+
+import { getStoryData, generateImageSources } from "../../utils/utils";
+
+import "./mainSliderCard.m.css";
 
 export default function MainsliderCard({ story, className = "", cardWithImageZoom = true }) {
   const storyData = getStoryData(story);
@@ -39,16 +41,9 @@ export default function MainsliderCard({ story, className = "", cardWithImageZoo
               { aspectRatio: [5, 3], screenWidthCoverage: 1 },
               { aspectRatio: [5, 3], screenWidthCoverage: 0.42 }
             )}
-          >
-            {story.engagement && story.engagement.total && (
-              <span styleName="engagement-total">
-                <Icon type={"speaker"} styleName="speaker-icon" />
-                {story.engagement.total}
-              </span>
-            )}
-          </ResponsiveImageWithFallback>
+          />
         </div>
-        <div styleName="content">
+        <div className="text-wrapper">
           <Headline text={storyData.headline} headerLevel={3} headlineType={2} className="headline" />
           {contributor && (
             <Contributor
@@ -58,22 +53,6 @@ export default function MainsliderCard({ story, className = "", cardWithImageZoo
               className="contributor"
               contributorType={3}
             />
-          )}
-          {story.engagement && (
-            <div styleName="engagement">
-              {story.engagement.comments && (
-                <span styleName="engagement-item">
-                  <Icon type={"comment"} styleName="engagement-icon" />
-                  {story.engagement.comments}
-                </span>
-              )}
-              {story.engagement.shares && (
-                <span styleName="engagement-item">
-                  <Icon type={"share"} styleName="engagement-icon" />
-                  {story.engagement.shares}
-                </span>
-              )}
-            </div>
           )}
         </div>
       </Link>
@@ -105,11 +84,6 @@ MainsliderCard.propTypes = {
       "aspect-ratio": PropTypes.arrayOf(PropTypes.number)
     }),
     "hero-image-s3-key": PropTypes.string,
-    "hero-image-caption": PropTypes.string,
-    engagement: PropTypes.shape({
-      total: PropTypes.number,
-      comments: PropTypes.string,
-      shares: PropTypes.string
-    })
+    "hero-image-caption": PropTypes.string
   })
 };

@@ -7,15 +7,11 @@
   position: relative;
   border-radius: 4px;
   :global .headline {
-    /* @include font-styles(mobile-h3); */
     margin: 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     color: var(--title-color);
-    @media (min-width: 768px) {
-      /* @include font-styles(h4); */
-    }
   }
   :global .image-wrapper {
     /* @include image-aspect-ratio(27, 8); */
@@ -59,7 +55,6 @@
 }
 
 .summary {
-  /* @include font-styles(meta); */
   font-size: var(--base-smallest);
   margin: 0;
   color: var(--white);

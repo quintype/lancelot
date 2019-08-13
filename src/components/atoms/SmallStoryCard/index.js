@@ -5,13 +5,13 @@ import { Link } from "@quintype/components";
 
 import Contributor from "../Contributor/index";
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
-import { getStoryData, generateImageSources } from "../../utils/utils";
-// import { isPremium } from "../../../../isomorphic/data/story";
 import Headline from "../Headline";
+
+import { getStoryData, generateImageSources } from "../../utils/utils";
 
 import "./smallStoryCard.m.css";
 
-const SmallStoryCard = ({ story, className = "", cardWithImageZoom = true, hasTruncatedHeadline = true }) => {
+const SmallStoryCard = ({ story, className = "", cardWithImageZoom = true }) => {
   const storyData = getStoryData(story);
   const contributor = get(story, ["authors", 0]);
   const contributorRole = get(story, ["authors", 0, "contributor-role", "name"], "");
@@ -31,9 +31,9 @@ const SmallStoryCard = ({ story, className = "", cardWithImageZoom = true, hasTr
       <div styleName="base">
         <ResponsiveImageWithFallback
           styleName="image-wrapper"
+          className="image-wrapper"
           slug={storyData.imageS3Key}
           metadata={storyData.imageMetadata}
-          // isPremium={isPremium(story)}
           alt={storyData.imageCaption}
           imgParams={{ auto: ["format", "compress"] }}
           sources={generateImageSources(
@@ -41,13 +41,8 @@ const SmallStoryCard = ({ story, className = "", cardWithImageZoom = true, hasTr
             { aspectRatio: [4, 3], screenWidthCoverage: 0.12 }
           )}
         />
-        <div styleName="text-wrapper">
-          <Headline
-            text={storyData.headline}
-            headlineType={6}
-            headerLevel={3}
-            className={`${"headline"} ${hasTruncatedHeadline ? "truncated" : ""}`}
-          />
+        <div>
+          <Headline text={storyData.headline} headlineType={6} headerLevel={3} className="headline" />
           {contributor && (
             <Contributor
               contributorType={3}
@@ -64,7 +59,6 @@ const SmallStoryCard = ({ story, className = "", cardWithImageZoom = true, hasTr
 };
 
 SmallStoryCard.propTypes = {
-  hasTruncatedHeadline: PropTypes.bool,
   className: PropTypes.string,
   cardWithImageZoom: PropTypes.bool,
   story: PropTypes.shape({

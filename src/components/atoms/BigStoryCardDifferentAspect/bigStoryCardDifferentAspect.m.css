@@ -9,32 +9,13 @@
 .image-wrapper {
   position: relative;
   padding-top: 66.67%;
+  align-self: flex-start;
+  margin-bottom: var(--space2);
   @media (min-width: 768px) {
     padding-top: 50%;
   }
-  align-self: flex-start;
 }
 
 .text-wrapper {
-  display: block;
-  padding: var(--space2) 0;
-  /* @media (min-width: 768px){
-    padding: var(--space2);
-  } */
-}
-
-.headline {
-  /* @include font-styles(mobile-h3); */
-  @media (min-width: 768px) {
-    /* @include font-styles(h4); */
-  }
-  margin: 0px;
-  margin-top: var(--space-2);
-  color: var(--title-color);
-  &.truncated {
-    /* @include number-of-lines(mobile-h3, 3); */
-    @media (min-width: 768px) {
-      /* @include number-of-lines(h4, 3); */
-    }
-  }
+  margin-bottom: var(--space2);
 }

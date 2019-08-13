@@ -6,27 +6,15 @@
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 2fr;
+  grid-gap: var(--space2);
   @media (min-width: 768px) {
     display: block;
   }
-}
-.base :global .contributor {
-  margin-bottom: var(--space-2);
-}
-.base :global .image-wrapper {
-  /* @include image-aspect-ratio(4, 3); */
-  position: relative;
-  padding-top: 75%;
-}
 
-.text-wrapper {
-  padding-left: var(--space2);
-  @media (min-width: 768px) {
-    padding: var(--space2);
+  :global .image-wrapper {
+    /* @include image-aspect-ratio(4, 3); */
+    position: relative;
+    padding-top: 75%;
+    margin-bottom: var(--space2);
   }
-}
-
-.base :global .headline {
-  margin: 0px;
-  color: var(--title-color);
 }

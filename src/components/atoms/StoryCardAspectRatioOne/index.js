@@ -10,7 +10,7 @@ import { getStoryData, generateImageSources } from "../../utils/utils";
 
 import "./storyCardAspectRatioOne.m.css";
 
-const StoryCardAspectRatioOne = ({ story, className = "", cardWithImageZoom = true, hasTruncatedHeadline = true }) => {
+const StoryCardAspectRatioOne = ({ story, className = "", cardWithImageZoom = true }) => {
   const storyData = getStoryData(story);
 
   if (!storyData.headline || !story.url) {
@@ -31,6 +31,7 @@ const StoryCardAspectRatioOne = ({ story, className = "", cardWithImageZoom = tr
         <div className="image-container">
           <ResponsiveImageWithFallback
             styleName="image-wrapper"
+            className="image-wrapper"
             slug={storyData.imageS3Key}
             metadata={storyData.imageMetadata}
             alt={storyData.imageCaption}
@@ -41,21 +42,17 @@ const StoryCardAspectRatioOne = ({ story, className = "", cardWithImageZoom = tr
             )}
           />
         </div>
-        <div styleName="text-wrapper">
+        <div>
+          <Headline text={storyData.headline} headlineType={5} headerLevel={5} className="headline" />
           {contributor && (
             <Contributor
               name={contributor["name"]}
+              contributorType={3}
               type={contributorRole}
               iconColor="#4a4a4a"
               className={"contributor"}
             />
           )}
-          <Headline
-            text={storyData.headline}
-            headerType={3}
-            headerLevel={5}
-            className={`headline ${hasTruncatedHeadline ? "truncated" : ""}`}
-          />
         </div>
       </div>
     </Link>
@@ -65,7 +62,6 @@ const StoryCardAspectRatioOne = ({ story, className = "", cardWithImageZoom = tr
 StoryCardAspectRatioOne.propTypes = {
   className: PropTypes.string,
   cardWithImageZoom: PropTypes.bool,
-  hasTruncatedHeadline: PropTypes.bool,
   story: PropTypes.shape({
     id: PropTypes.string,
     authors: PropTypes.arrayOf(

@@ -68,7 +68,7 @@ const OneCarouselTwoStoriesOneAdOneWidget = ({ collection, accentColor }) => {
 
   return (
     <div styleName="base" style={accentColor && { "--accent-color": accentColor }}>
-      <div className="container row" styleName="row">
+      <div className="row" styleName="row">
         {carousel}
         {stories[0] && <SmallStoryCardDesktopBigNoBorder story={stories[0]} styleName="story-1" />}
         {stories[1] && <SmallStoryCardDesktopBigNoBorder story={stories[1]} styleName="story-2" />}

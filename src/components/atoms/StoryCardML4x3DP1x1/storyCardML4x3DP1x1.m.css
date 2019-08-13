@@ -2,7 +2,7 @@
   --background-color: var(--white);
   display: grid;
   grid-template-columns: 1fr 3fr;
-  grid-gap: var(--space1);
+  grid-gap: var(--space2);
   background-color: var(--background-color);
 
   @media (min-width: 768px) {
@@ -17,9 +17,6 @@
   @media (min-width: 768px) {
     padding-top: 100%;
   }
-}
-.text-wrapper {
-  padding: var(--space-2) var(--space1) var(--space-2) var(--space-2);
 }
 
 .headline {

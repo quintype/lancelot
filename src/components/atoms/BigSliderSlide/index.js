@@ -1,21 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "@quintype/components";
+import get from "lodash/get";
+import hexToRgba from "hex-to-rgba";
+
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
 import Contributor from "../Contributor";
-import get from "lodash/get";
-import "./bigSliderSlide.m.css";
-import { getStoryData, generateImageSources } from "../../utils/utils";
-import hexToRgba from "hex-to-rgba";
 import Headline from "../Headline";
 
-const BigSliderSlide = ({
-  story,
-  className = "",
-  cardWithImageZoom = true,
-  hasTruncatedHeadline = true,
-  accentColor
-}) => {
+import { getStoryData, generateImageSources } from "../../utils/utils";
+
+import "./bigSliderSlide.m.css";
+
+const BigSliderSlide = ({ story, className = "", cardWithImageZoom = true, accentColor }) => {
   const storyData = getStoryData(story);
   if (!storyData.headline || !story.url) {
     return null;
@@ -37,7 +34,7 @@ const BigSliderSlide = ({
   const externalLink = get(story, ["metadata", "reference-url"]);
   return (
     <div className={`${className} ${cardWithImageZoom ? "card-with-image-zoom" : ""}`} styleName="base">
-      <div styleName="story-wrapper">
+      <div styleName="story-wrapper" className="story-wrapper">
         <Link
           aria-label={`${"Read full story: "} ${storyData.headline}`}
           href={externalLink || story.url}
@@ -45,6 +42,7 @@ const BigSliderSlide = ({
         >
           <ResponsiveImageWithFallback
             styleName="slider-image-wrapper"
+            className="slider-image-wrapper"
             slug={storyData.imageS3Key}
             metadata={storyData.imageMetadata}
             alt={storyData.imageCaption}
@@ -55,12 +53,13 @@ const BigSliderSlide = ({
             )}
           />
         </Link>
-        <div styleName="text-wrapper">
+        <div styleName="text-wrapper" className="text-wrapper">
           <Link
             aria-label={`${"Read full story: "} ${storyData.headline}`}
             href={externalLink || story.url}
             externalLink={externalLink}
             styleName="flex-headline"
+            className="flex-headline"
           >
             <Headline
               text={storyData.headline}
@@ -69,8 +68,12 @@ const BigSliderSlide = ({
               headlineDesign={"withbackground"}
             />
           </Link>
-          {contributorName && <Contributor name={contributorName} type={contributorRole} className="contributor" />}
-          <p styleName="mobile-hide content">{story.subheadline}</p>
+          {contributorName && (
+            <Contributor name={contributorName} type={contributorRole} contributorType={3} className="contributor" />
+          )}
+          <p styleName="mobile-hide content" className="mobile-hide content">
+            {story.subheadline}
+          </p>
         </div>
       </div>
     </div>
@@ -79,7 +82,6 @@ const BigSliderSlide = ({
 
 BigSliderSlide.propTypes = {
   cardWithImageZoom: PropTypes.bool,
-  hasTruncatedHeadline: PropTypes.bool,
   className: PropTypes.string,
   accentColor: PropTypes.string,
   story: PropTypes.shape({

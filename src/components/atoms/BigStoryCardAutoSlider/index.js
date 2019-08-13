@@ -2,11 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 import get from "lodash/get";
 import { Link } from "@quintype/components";
+
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
-import Contributor from "../Contributor/index";
-import { getStoryData, generateImageSources } from "../../utils/utils";
-import "./bigStoryCardAutoSlider.m.css";
+import Contributor from "../Contributor";
 import Headline from "../Headline";
+
+import { getStoryData, generateImageSources } from "../../utils/utils";
+
+import "./bigStoryCardAutoSlider.m.css";
 
 const BigStoryCardAutoSlider = ({ story, cardWithImageZoom = true, className = "" }) => {
   const storyData = getStoryData(story);
@@ -28,6 +31,7 @@ const BigStoryCardAutoSlider = ({ story, cardWithImageZoom = true, className = "
     >
       <ResponsiveImageWithFallback
         styleName="slider-image-wrapper"
+        className="slider-image-wrapper"
         slug={storyData.imageS3Key}
         metadata={storyData.imageMetadata}
         alt={storyData.imageCaption}
@@ -37,13 +41,15 @@ const BigStoryCardAutoSlider = ({ story, cardWithImageZoom = true, className = "
           { aspectRatio: [2, 1], screenWidthCoverage: 1 }
         )}
       >
-        <div styleName="text-area">
-          <div styleName="text-wrapper">
+        <div styleName="text-area" className="text-area">
+          <div styleName="text-wrapper" className="text-wrapper">
             <Headline text={storyData.headline} headlineType={2} headerLevel={3} className="headline highlight" />
             {contributorName && (
               <Contributor name={contributorName} contributorType={3} type={contributorRole} className="contributor" />
             )}
-            <div styleName="content mobile-hide">{story.subheadline}</div>
+            <div styleName="content mobile-hide" className="content mobile-hide">
+              {story.subheadline}
+            </div>
           </div>
         </div>
       </ResponsiveImageWithFallback>

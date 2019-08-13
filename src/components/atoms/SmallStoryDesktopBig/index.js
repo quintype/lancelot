@@ -32,6 +32,7 @@ const SmallStoryCardDesktopBig = ({ story, className = "", cardWithImageZoom = t
       <div styleName="base">
         <ResponsiveImageWithFallback
           styleName="image-wrapper"
+          className="image-wrapper"
           slug={storyData.imageS3Key}
           metadata={storyData.imageMetadata}
           alt={storyData.imageCaption}
@@ -41,7 +42,7 @@ const SmallStoryCardDesktopBig = ({ story, className = "", cardWithImageZoom = t
             { aspectRatio: [2, 1], screenWidthCoverage: 0.34 }
           )}
         />
-        <div styleName="text-wrapper">
+        <div styleName="text-wrapper" className="text-wrapper">
           <Headline text={storyData.headline} headlineType={3} headerLevel={3} className="headline" />
           {contributor && (
             <Contributor
