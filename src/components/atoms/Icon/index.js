@@ -3,13 +3,14 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import get from "lodash/get";
 import "./icon.m.css";
+import "../../../../assets/icons";
 
 // if (require.context) {
-//   const req = require.context("../../../../assets/icons/", true, /\.svg$/);
-//   req.keys().forEach(filename => {
-//     console.log(filename);
+//   const req = require.context("../../../../assets/icons", true, /\.svg$/);
+//   const images = req.keys().forEach(filename => {
 //     return req(filename);
 //   });
+//   console.log(images);
 // }
 
 const IconBase = ({ type, className, iconSpritePath }) => {

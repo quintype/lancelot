@@ -10,8 +10,8 @@
     <g fill="none" fill-rule="evenodd" style="box-shadow: 0 0 1px 0 rgba(0,0,0,.2)">
         <path fill="#25D366" d="M12 21.382c5.316 0 9.625-4.258 9.625-9.511 0-5.254-4.31-9.512-9.625-9.512-5.316 0-9.625 4.258-9.625 9.512 0 1.62.373 3.648 1.07 5.35.401.983-1.542 3.583-.935 4.208.322.332 3.123-1.128 3.496-.914 1.654.95 3.766.867 5.994.867z"/>
         <g transform="translate(1 1)">
-            <use fill="#000" filter="url(#a)" xlink:href="#b"/>
-            <use fill="#FFF" xlink:href="#b"/>
+            <use fill="#000" filter="url(#a)" href="#b"/>
+            <use fill="#FFF" href="#b"/>
         </g>
     </g>
 </svg>
