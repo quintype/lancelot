@@ -9,12 +9,11 @@ import story from "./fixture";
 withStore("Cards/StoryCardBig", {
   qt: {
     config: {
-      "cdn-image": "thumbor-stg.assettype.com",
-      iconSpritePath: "/sprite.svg"
+      "cdn-image": "thumbor-stg.assettype.com"
     }
   }
 })
-  .addDecorator(story => <div style={{ maxWidth: "750px", minWidth: "360px", width: "100%" }}>{story()}</div>)
+  .addDecorator(story => <div style={{ maxWidth: "750px" }}>{story()}</div>)
   .add("default", () => <StoryCardBig {...story} />)
   .add("missing hero image", () => {
     const newProps = produce(story, draft => {

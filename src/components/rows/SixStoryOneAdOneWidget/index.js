@@ -1,13 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { get } from "lodash";
+import get from "lodash/get";
 
-import StoryCardBig from "../../atoms/StoryCardResponsiveSame";
+import StoryCardBig from "../../atoms/StoryCardBig";
 import SmallStoryCard from "../../atoms/SmallStoryCard";
-// import SmallStoryCardDesktopMedium16x9 from "../../atoms/SmallStoryCardDesktopMedium16x9";
 import SmallStoryCardDesktopVertical from "../../atoms/SmallStoryCardDesktopVertical";
-// import { DfpAd } from "../../atoms/dfp-ad";
-// import { getPagePath } from "../../../data/collection";
 import ReadMoreLink from "../../atoms/ReadMoreLink";
 
 import "./sixStoryOneAdOneWidget.m.css";

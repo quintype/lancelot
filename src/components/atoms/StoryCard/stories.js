@@ -12,7 +12,7 @@ withStore("Cards/StoryCard", {
     }
   }
 })
-  .addDecorator(story => <div style={{ maxWidth: 300 }}>{story()}</div>)
+  .addDecorator(story => <div style={{ maxWidth: "360px" }}>{story()}</div>)
   .add("Default", () => <StoryCard {...props} />)
   .add("when headline is not present", () => {
     const newProps = produce(props, draft => {
