@@ -4,11 +4,11 @@ import get from "lodash/get";
 import { Link } from "@quintype/components";
 import Contributor from "../Contributor";
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
+import Headline from "../Headline";
 
 import { getStoryData, generateImageSources } from "../../utils/utils";
 
 import "./storyCardML5x4DP4x3.m.css";
-import Headline from "../Headline";
 
 const StoryCardML5x4DP4x3 = ({ story, className = "", cardWithImageZoom = true }) => {
   const storyData = getStoryData(story);
@@ -33,6 +33,7 @@ const StoryCardML5x4DP4x3 = ({ story, className = "", cardWithImageZoom = true }
           <div className="image-container">
             <ResponsiveImageWithFallback
               styleName="image-wrapper"
+              className="image-wrapper"
               slug={storyData.imageS3Key}
               metadata={storyData.imageMetadata}
               alt={storyData.imageCaption}
@@ -43,8 +44,8 @@ const StoryCardML5x4DP4x3 = ({ story, className = "", cardWithImageZoom = true }
               )}
             />
           </div>
-          <div styleName="text-wrapper">
-            <Headline text={storyData.headline} headlineType={4} headerLevel={3} styleName="headline" />
+          <div className="text-wrapper">
+            <Headline text={storyData.headline} headlineType={4} headerLevel={3} className="headline" />
             {contributor && (
               <Contributor
                 name={contributor["name"]}

@@ -11,13 +11,7 @@ import { getStoryData, generateImageSources } from "../../utils/utils";
 
 import "./storyCardResponsiveSame.m.css";
 
-const StoryCardResponsiveSame = ({
-  story,
-  className = "",
-  cardWithImageZoom = true,
-  hasTruncatedHeadline = true,
-  eager
-}) => {
+const StoryCardResponsiveSame = ({ story, className = "", cardWithImageZoom = true, eager }) => {
   const storyData = getStoryData(story);
 
   if (!(storyData.headline && story.url)) {
@@ -37,7 +31,8 @@ const StoryCardResponsiveSame = ({
       externalLink={externalLink}
     >
       <ResponsiveImageWithFallback
-        styleName={"image-wrapper"}
+        styleName="image-wrapper"
+        className="image-wrapper"
         slug={storyData.imageS3Key}
         metadata={storyData.imageMetadata}
         alt={storyData.imageCaption}
@@ -49,14 +44,11 @@ const StoryCardResponsiveSame = ({
           { aspectRatio: [2, 1], screenWidthCoverage: 0.5 }
         )}
       />
-      <div styleName="text-wrapper">
-        {contributor && <Contributor name={contributor["name"]} type={contributorRole} className={"contributor"} />}
-        <Headline
-          text={storyData.headline}
-          headerType={4}
-          headerLevel={3}
-          className={`${hasTruncatedHeadline ? "truncated" : ""}`}
-        />
+      <div styleName="text-wrapper" className="text-wrapper">
+        <Headline text={storyData.headline} headlineType={4} headerLevel={3} />
+        {contributor && (
+          <Contributor name={contributor["name"]} type={contributorRole} contributorType={3} className="contributor" />
+        )}
       </div>
     </Link>
   );
@@ -65,7 +57,6 @@ const StoryCardResponsiveSame = ({
 StoryCardResponsiveSame.propTypes = {
   className: PropTypes.string,
   cardWithImageZoom: PropTypes.bool,
-  hasTruncatedHeadline: PropTypes.bool,
   story: PropTypes.shape({
     id: PropTypes.string,
     authors: PropTypes.arrayOf(

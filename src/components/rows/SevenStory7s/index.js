@@ -11,22 +11,20 @@ export const SevenStory7s = ({ collection, Icon, BgPattern = "bg-diamond-dark" }
   const MaxNumberOfThumbnailStories = 6;
   return (
     <div styleName={`seven-story-7s ${BgPattern}`}>
-      <div className="container">
-        <CollectionLink collection={collection}>
-          <Headline headerLevel={1} headlineType={2} headlineDesign={"crossline"} text={Icon ? <Icon /> : name} />
-        </CollectionLink>
-        <div className="row">
-          {items && items.length > 0 && (
-            <StoryCardFullWidth styleName="story-card-full-width" key={items[0].id} story={items[0].story} />
-          )}
-          <div styleName="gradient-container">
-            <div styleName="thumb-story-container">
-              {items &&
-                items.length > 1 &&
-                items
-                  .slice(1, MaxNumberOfThumbnailStories + 1)
-                  .map(item => <StoryCard styleName="story-card" key={item.id} story={item.story} />)}
-            </div>
+      <CollectionLink collection={collection}>
+        <Headline headerLevel={1} headlineType={2} headlineDesign={"crossline"} text={Icon ? <Icon /> : name} />
+      </CollectionLink>
+      <div className="row">
+        {items && items.length > 0 && (
+          <StoryCardFullWidth styleName="story-card-full-width" key={items[0].id} story={items[0].story} />
+        )}
+        <div styleName="gradient-container">
+          <div styleName="thumb-story-container">
+            {items &&
+              items.length > 1 &&
+              items
+                .slice(1, MaxNumberOfThumbnailStories + 1)
+                .map(item => <StoryCard styleName="story-card" key={item.id} story={item.story} />)}
           </div>
         </div>
       </div>

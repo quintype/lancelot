@@ -8,12 +8,11 @@ import { withStore } from "../../../../storybook";
 withStore("Cards/StoryCardFeaturedBigHalfImg", {
   qt: {
     config: {
-      "cdn-image": "thumbor-stg.assettype.com",
-      iconSpritePath: "/sprite.svg"
+      "cdn-image": "thumbor-stg.assettype.com"
     }
   }
 })
-  .addDecorator(story => <div style={{ maxWidth: 700 }}>{story()}</div>)
+  .addDecorator(story => <div style={{ maxWidth: "700px" }}>{story()}</div>)
   .add("Default", () => <StoryCardFeaturedBigHalfImg {...props} />)
   .add("when headline is not present", () => {
     const newProps = produce(props, draft => {

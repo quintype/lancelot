@@ -8,12 +8,11 @@ import props from "./fixture.js";
 withStore("Cards/StoryCardGradientBackground", {
   qt: {
     config: {
-      "cdn-image": "thumbor-stg.assettype.com",
-      iconSpritePath: "/sprite.svg"
+      "cdn-image": "thumbor-stg.assettype.com"
     }
   }
 })
-  .addDecorator(story => <div style={{ maxWidth: 300 }}>{story()}</div>)
+  .addDecorator(story => <div style={{ maxWidth: "300px" }}>{story()}</div>)
   .add("Default", () => <StoryCardGradientBackground {...props} />)
   .add("when headline is not present", () => {
     const newProps = produce(props, draft => {

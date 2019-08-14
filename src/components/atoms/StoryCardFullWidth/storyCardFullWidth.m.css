@@ -2,15 +2,6 @@
   --meta-color: var(--boulder);
 }
 
-.base .contributor {
-  margin-bottom: var(--space1);
-}
-
-.base :global(.premium-badge) {
-  right: 5%;
-  left: auto;
-}
-
 .link {
   display: block;
 }
@@ -22,34 +13,16 @@
   }
 }
 
-.image-container {
+.image-wrapper {
   padding-top: 56.25%;
-  order: unset;
-}
-
-.content {
-  position: relative;
-  padding: var(--space1) 0;
-  background-color: var(--background-color);
+  margin-bottom: var(--space2);
 }
 
 @media (min-width: 768px) {
-  .content {
-    padding: var(--space3);
+  .text-wrapper {
+    padding: var(--space2);
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
-}
-
-.story-template-icon {
-  z-index: 2;
-  position: absolute;
-  bottom: var(--space1);
-  left: var(--space1);
-  line-height: 0;
-}
-
-.template-icon {
-  font-size: 64px;
 }

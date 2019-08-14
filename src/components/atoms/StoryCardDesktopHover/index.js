@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { get } from "lodash";
+import get from "lodash/get";
 import { Link } from "@quintype/components";
+
 import Contributor from "../Contributor";
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
 import Headline from "../Headline";
@@ -32,6 +33,7 @@ const StoryCardDesktopHover = ({ story, className = "", cardWithImageZoom = true
       <div styleName="base">
         <ResponsiveImageWithFallback
           styleName="image-wrapper"
+          className="image-wrapper"
           slug={storyData.imageS3Key}
           metadata={storyData.imageMetadata}
           alt={storyData.imageCaption}
@@ -41,8 +43,8 @@ const StoryCardDesktopHover = ({ story, className = "", cardWithImageZoom = true
             { aspectRatio: [2, 1], screenWidthCoverage: 0.34 }
           )}
         />
-        <div styleName="text-wrapper">
-          <Headline styleName="headline" headerLevel={3} headlineType={4} text={storyData.headline} />
+        <div styleName="text-wrapper" className="text-wrapper">
+          <Headline className="headline" headerLevel={3} headlineType={4} text={storyData.headline} />
           {contributor && (
             <Contributor
               name={contributor["name"]}

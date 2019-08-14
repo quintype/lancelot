@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { get } from "lodash";
+import get from "lodash/get";
 import { Link } from "@quintype/components";
+
 import Contributor from "../../atoms/Contributor";
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
 import Headline from "../Headline";
@@ -33,7 +34,8 @@ export default function StoryCardFeaturedBigHalfImg({ story, className = "", car
     >
       <div styleName="image-container">
         <ResponsiveImageWithFallback
-          styleName="figure"
+          styleName="image-wrapper"
+          className="image-wrapper"
           slug={storyData.imageS3Key}
           metadata={storyData.imageMetadata}
           alt={storyData.imageCaption}
@@ -44,23 +46,32 @@ export default function StoryCardFeaturedBigHalfImg({ story, className = "", car
           )}
         />
         {section && (
-          <span className="hidden-desktop" styleName="badge" style={sectionColor && { "--accent-color": sectionColor }}>
+          <span
+            className="hidden-desktop badge"
+            styleName="badge"
+            style={sectionColor && { "--accent-color": sectionColor }}
+          >
             <span className="badge-text">{section["display-name"]}</span>
           </span>
         )}
       </div>
-      <div styleName="content">
+      <div styleName="text-wrapper" className="text-wrapper">
+        <Headline text={storyData.headline} headerLevel={3} className="headline" />
         {contributor && (
           <Contributor
             name={contributor["name"]}
             type={contributorRole}
             iconColor="#404040"
-            className={"contributor"}
+            contributorType={3}
+            className="contributor"
           />
         )}
-        <Headline text={storyData.headline} headerType={6} headerLevel={3} />
         {section && (
-          <span styleName="badge" className="hidden-mobile" style={sectionColor && { "--accent-color": sectionColor }}>
+          <span
+            styleName="badge"
+            className="hidden-mobile badge"
+            style={sectionColor && { "--accent-color": sectionColor }}
+          >
             <span className="badge-text">{section["display-name"]}</span>
           </span>
         )}

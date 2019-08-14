@@ -54,20 +54,18 @@ const TwentyStory4C = ({ collection, metadata, accentColor }) => {
 
   return (
     <div styleName="base" style={accentColor && { "--accent-color": accentColor }}>
-      <div className="container">
-        {name && (
-          <CollectionLink collection={collection}>
-            <Headline
-              text={name}
-              headerType={1}
-              headerLevel={2}
-              headlineDesign={"crossline"}
-              className={"collection-title"}
-            />
-          </CollectionLink>
-        )}
-        <div styleName="stack-grid">{stacks}</div>
-      </div>
+      {name && (
+        <CollectionLink collection={collection}>
+          <Headline
+            text={name}
+            headerType={1}
+            headerLevel={2}
+            headlineDesign={"crossline"}
+            className={"collection-title"}
+          />
+        </CollectionLink>
+      )}
+      <div styleName="stack-grid">{stacks}</div>
     </div>
   );
 };

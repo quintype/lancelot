@@ -13,9 +13,7 @@ withStore("Cards/StoryCardML4x3DP1x1", {
     }
   }
 })
-  .addDecorator(story => (
-    <div style={{ maxWidth: "360px", backgroundColor: "aliceblue", padding: "10px" }}>{story()}</div>
-  ))
+  .addDecorator(story => <div style={{ maxWidth: "360px" }}>{story()}</div>)
   .add("default", () => <StoryCardML4x3DP1x1 {...story} />)
   .add("missing-author", () => {
     const newProps = produce(story, draft => {

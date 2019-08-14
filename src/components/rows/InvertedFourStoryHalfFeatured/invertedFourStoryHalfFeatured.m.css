@@ -5,8 +5,6 @@
 }
 
 .four-story-half-featured {
-  --background-color: var(--alto);
-  background-color: var(--background-color);
   padding: var(--space1_5) 0 var(--space3);
   @media (min-width: 768px) {
     padding: var(--space3) 0;
@@ -20,6 +18,7 @@
     grid-column: span 4;
     @media (min-width: 768px) {
       grid-area: bs;
+      border: 1px solid var(--alto);
     }
   }
 

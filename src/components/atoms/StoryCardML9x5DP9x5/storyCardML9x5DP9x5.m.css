@@ -17,15 +17,6 @@
   }
 }
 
-.headline {
-  /* @include font-styles(h5); */
-  color: var(--title-color);
-  margin: 0;
-  @media (min-width: 768px) {
-    margin: 0 0 var(--space2);
-  }
-}
-
 .image-container {
-  padding-bottom: var(--space1);
+  margin-bottom: var(--space2);
 }

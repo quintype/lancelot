@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 2fr;
   background-color: transparent;
+  grid-gap: var(--space2);
   @media (min-width: 768px) {
     grid-template-columns: 80px auto;
   }
@@ -11,17 +12,9 @@
   /* @include image-aspect-ratio(5, 4); */
   position: relative;
   padding-top: 80%;
+
   @media (min-width: 768px) {
     padding-top: 100%;
     /* @include image-aspect-ratio(1, 1); */
   }
-}
-
-.text-wrapper {
-  padding-left: var(--space1_5);
-}
-
-.headline {
-  margin: 0;
-  color: var(--title-color);
 }

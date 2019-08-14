@@ -32,6 +32,7 @@ const StoryCardML5x4DP1x1 = ({ story, className = "", cardWithImageZoom = true }
       <div className="image-container">
         <ResponsiveImageWithFallback
           styleName="image-wrapper"
+          className="image-wrapper"
           slug={storyData.imageS3Key}
           metadata={storyData.imageMetadata}
           alt={storyData.imageCaption}
@@ -42,8 +43,8 @@ const StoryCardML5x4DP1x1 = ({ story, className = "", cardWithImageZoom = true }
           )}
         />
       </div>
-      <div styleName="text-wrapper">
-        <Headline text={storyData.headline} headlineType={6} headerLevel={3} styleName="headline" />
+      <div className="text-wrapper">
+        <Headline text={storyData.headline} headlineType={6} headerLevel={3} className="headline" />
         {contributor && (
           <Contributor
             name={contributor["name"]}
