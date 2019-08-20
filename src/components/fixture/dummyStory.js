@@ -33,18 +33,18 @@ export const dummyStory = {
       "tag-type": "Tag"
     }
   ],
-  headline: "Ready Player One review \u2013 Spielberg\u00A0",
+  headline: "টরন্টোয় সবজিবাগান পরিদর্শন",
   "storyline-id": null,
   votes: {},
   "story-content-id": "a3561065-11ce-4281-9d86-325934aa2146",
   slug: "news/2018/04/19/ready-player-one-review-spielberg-spins-a-dizzying-vr-yarn",
   "last-published-at": 1562568598116,
   subheadline:
-    "This spectacular gaming ride whizzes through a limitless futurescape \u2013 while also taking a puzzling detour to the shiny",
+    "আওয়ামী লীগকে নেতৃত্বশূন্য করতে শেখ হাসিনাকে চার দফা হত্যার চেষ্টা করে হুজি-বি। সর্বশেষ ২১ আগস্ট গ্রেনেড হামলা ছিল সবচেয়ে ভয়ংকর ও রক্তক্ষয়ী",
   alternative: {
     home: {
       default: {
-        headline: "Movie Review: Why Ready Player One is Amazing",
+        headline: "টরন্টোয় সবজিবাগান পরিদর্শন",
         "hero-image": {
           "hero-image-metadata": {
             width: 1080,
@@ -335,7 +335,7 @@ export const dummyStory = {
   authors: [
     {
       id: 94980,
-      name: "Kuruvilla Choolackal",
+      name: "প্রতিনিধি",
       slug: "kuruvilla-choolackal-2",
       "avatar-url": null,
       "avatar-s3-key": null,

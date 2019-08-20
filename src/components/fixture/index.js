@@ -22,7 +22,7 @@ export const generateCollection = ({ stories = 0, subCollections = [], type = nu
     });
   return {
     type: "collection",
-    name: "Politics",
+    name: "বিনোদন",
     id: parseInt(Math.random() * 10 ** 10),
     slug: "/collection-slug",
     pagePath: "/collection/collection-slug",
