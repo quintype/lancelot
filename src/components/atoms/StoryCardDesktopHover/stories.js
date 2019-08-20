@@ -6,13 +6,7 @@ import StoryCardDesktopHover from "./index";
 
 import story from "./fixture";
 
-withStore("Cards/StoryCardDesktopHover", {
-  qt: {
-    config: {
-      "cdn-image": "thumbor-stg.assettype.com"
-    }
-  }
-})
+withStore("Cards/StoryCardDesktopHover", {})
   .addDecorator(story => <div style={{ maxWidth: "360px" }}>{story()}</div>)
   .add("default", () => <StoryCardDesktopHover {...story} />)
   .add("missing hero image", () => {

@@ -22,7 +22,7 @@
   }
 }
 
-.badge {
+:global .badge {
   /* @include font-styles(button-sm); */
   position: absolute;
   left: var(--space1);

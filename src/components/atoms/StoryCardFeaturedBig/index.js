@@ -1,9 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { get } from "lodash";
+import get from "lodash/get";
 import { Link } from "@quintype/components";
 
 import Contributor from "../../atoms/Contributor";
+import Badge from "../Badge";
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
 import Headline from "../Headline";
 
@@ -46,13 +47,11 @@ export default function StoryCardFeaturedBig({ story, className = "", cardWithIm
           )}
         />
         {section && (
-          <span
-            styleName="badge"
-            className="hidden-desktop badge"
+          <Badge
+            text={section["display-name"]}
+            className="hidden-mobile badge"
             style={sectionColor && { "--accent-color": sectionColor }}
-          >
-            <span className="badge-text">{section["display-name"]}</span>
-          </span>
+          />
         )}
       </div>
       <div styleName="text-wrapper" className="text-wrapper">
@@ -67,13 +66,11 @@ export default function StoryCardFeaturedBig({ story, className = "", cardWithIm
           />
         )}
         {section && (
-          <span
-            styleName="badge"
+          <Badge
+            text={section["display-name"]}
             className="hidden-mobile badge"
             style={sectionColor && { "--accent-color": sectionColor }}
-          >
-            <span className="badge-text">{section["display-name"]}</span>
-          </span>
+          />
         )}
       </div>
     </Link>

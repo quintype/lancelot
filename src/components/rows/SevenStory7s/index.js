@@ -4,15 +4,14 @@ import CollectionLink from "../../utils/generate-collection-link";
 import StoryCardFullWidth from "../../atoms/StoryCardFullWidth";
 import StoryCard from "../../atoms/StoryCard";
 import Headline from "../../atoms/Headline";
-import Icon from "../../atoms/Icon";
 import "./sevenStory7s.m.css";
-export const SevenStory7s = ({ collection, Icon, BgPattern = "bg-diamond-dark" }) => {
+export const SevenStory7s = ({ collection, Icon }) => {
   const { name, items } = collection;
   const MaxNumberOfThumbnailStories = 6;
   return (
-    <div styleName={`seven-story-7s ${BgPattern}`}>
+    <div styleName="seven-story-7s">
       <CollectionLink collection={collection}>
-        <Headline headerLevel={1} headlineType={2} headlineDesign={"crossline"} text={Icon ? <Icon /> : name} />
+        <Headline headerLevel={1} headlineType={2} headlineDesign={"crossline"} text={name} />
       </CollectionLink>
       <div className="row">
         {items && items.length > 0 && (
@@ -30,29 +29,6 @@ export const SevenStory7s = ({ collection, Icon, BgPattern = "bg-diamond-dark" }
       </div>
     </div>
   );
-};
-
-export const VikatanTV = ({ collection, BgPattern = "", accentColor }) => {
-  const VikatanTVIcon = () => <Icon type="vikatan-tv" styleName="icon" />;
-  return (
-    <SevenStory7s
-      style={accentColor && { "--accent-color": accentColor }}
-      collection={collection}
-      BgPattern={BgPattern}
-      Icon={VikatanTVIcon}
-    />
-  );
-};
-
-VikatanTV.propTypes = {
-  accentColor: PropTypes.string,
-  collection: PropTypes.shape({
-    name: PropTypes.string,
-    id: PropTypes.number,
-    slug: PropTypes.string,
-    items: PropTypes.arrayOf(PropTypes.shape(StoryCardFullWidth.propTypes))
-  }),
-  BgPattern: PropTypes.string
 };
 
 SevenStory7s.propTypes = {
