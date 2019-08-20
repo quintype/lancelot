@@ -17,7 +17,8 @@
     "lint:css": "npx stylelint './app/**/*.{scss,css}'",
     "lint:css:ci": "npx stylelint $(git diff --pretty='' --diff-filter=d --name-only origin/master..HEAD -- '*.css' '*.scss') ./app/assets/stylesheets/app.scss",
     "lint:js": "npx eslint './app/**/*.{js,jsx}'",
-    "lint:js:ci": "npx eslint $(git diff --pretty='' --diff-filter=d --name-only origin/master..HEAD -- '*.js' '*.jsx') ./start.js"
+    "lint:js:ci": "npx eslint $(git diff --pretty='' --diff-filter=d --name-only origin/master..HEAD -- '*.js' '*.jsx') ./start.js",
+    "cpp": "node copypaste"
   },
   "repository": {
     "type": "git",
@@ -64,8 +65,10 @@
     "jest": "^24.8.0",
     "jest-image-snapshot": "^2.8.2",
     "lint-staged": "^8.2.0",
+    "ncp": "^2.0.0",
     "postcss-modules": "^1.4.1",
     "prettier": "1.18.2",
+    "prompts": "^2.2.1",
     "react-redux": "7.0.3",
     "react-test-renderer": "^16.8.6",
     "rimraf": "^2.6.3",
