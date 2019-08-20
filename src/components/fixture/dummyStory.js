@@ -33,18 +33,17 @@ export const dummyStory = {
       "tag-type": "Tag"
     }
   ],
-  headline: "টরন্টোয় সবজিবাগান পরিদর্শন",
+  headline: "‘কাভি কাভি’ ও ‘উমরাও জান’ ছবির সুরকার খৈয়াম আর নেই",
   "storyline-id": null,
   votes: {},
   "story-content-id": "a3561065-11ce-4281-9d86-325934aa2146",
   slug: "news/2018/04/19/ready-player-one-review-spielberg-spins-a-dizzying-vr-yarn",
   "last-published-at": 1562568598116,
-  subheadline:
-    "আওয়ামী লীগকে নেতৃত্বশূন্য করতে শেখ হাসিনাকে চার দফা হত্যার চেষ্টা করে হুজি-বি। সর্বশেষ ২১ আগস্ট গ্রেনেড হামলা ছিল সবচেয়ে ভয়ংকর ও রক্তক্ষয়ী",
+  subheadline: "টুইটারে ভারতের কিংবদন্তি সংগীতশিল্পী লতা মঙ্গেশকর লিখেছেন, ‘সংগীতের একটা যুগে অবসান হলো।’",
   alternative: {
     home: {
       default: {
-        headline: "টরন্টোয় সবজিবাগান পরিদর্শন",
+        headline: "‘কাভি কাভি’ ও ‘উমরাও জান’ ছবির সুরকার খৈয়াম আর নেই",
         "hero-image": {
           "hero-image-metadata": {
             width: 1080,
