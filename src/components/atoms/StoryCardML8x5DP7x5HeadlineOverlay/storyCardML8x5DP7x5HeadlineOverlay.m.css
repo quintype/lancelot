@@ -16,24 +16,12 @@
   position: relative;
   padding-top: 62.5%;
   @media (min-width: 768px) {
-    /* @include image-aspect-ratio(7, 5); */
-    padding-top: 71.43%;
+    padding-top: 56.25%;
   }
 }
 
 .image-container {
   position: relative;
-}
-
-.text-wrapper {
-  @media (min-width: 768px) {
-    background-color: var(--background-color);
-    width: 95%;
-    z-index: 1;
-    position: absolute;
-    bottom: 0;
-    transform: translateY(var(--space2));
-  }
 }
 
 .headline {
