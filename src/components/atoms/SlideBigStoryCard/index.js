@@ -2,10 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import get from "lodash/get";
 import { Link } from "@quintype/components";
+
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
 import Contributor from "../Contributor/index";
 import { getStoryData, generateImageSources } from "../../utils/utils";
 import Headline from "../Headline";
+
 import "./slideBigStoryCard.m.css";
 
 const SlideBigStoryCard = ({ story, className = "", cardWithImageZoom = true, hasTruncatedHeadline = true }) => {
@@ -39,21 +41,22 @@ const SlideBigStoryCard = ({ story, className = "", cardWithImageZoom = true, ha
             { aspectRatio: [3, 2], screenWidthCoverage: 0.67 }
           )}
         />
-        <div styleName="text-wrapper">
+        <div>
+          <Headline
+            text={storyData.headline}
+            headlineType={2}
+            headerLevel={3}
+            className={`${"headline"} ${hasTruncatedHeadline ? "truncated" : ""}`}
+          />
           {contributor && (
             <Contributor
               name={contributor["name"]}
               type={contributorRole}
               iconColor="#4a4a4a"
               className="contributor"
+              contributorType={3}
             />
           )}
-          <Headline
-            text={storyData.headline}
-            headerType={1}
-            headerLevel={3}
-            className={`${"headline"} ${hasTruncatedHeadline ? "truncated" : ""}`}
-          />
         </div>
       </div>
     </Link>

@@ -1,11 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 import get from "lodash/get";
+
 import Carousel from "../../atoms/Carousel";
 import SmallStoryCardDesktopBigNoBorder from "../../atoms/SmallStoryDesktopBigNoBorder";
-import "./oneCarouselTwoStoriesOneAdOneWidget.m.css";
 import SlideBigStoryCard from "../../atoms/SlideBigStoryCard";
 import { getStoryHeadline } from "../../utils/utils";
+
+import "./oneCarouselTwoStoriesOneAdOneWidget.m.css";
 
 const OneCarouselTwoStoriesOneAdOneWidget = ({ collection, accentColor }) => {
   const items = get(collection, ["items"], []);

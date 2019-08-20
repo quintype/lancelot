@@ -1,7 +1,6 @@
 import React from "react";
 import { withStore } from "../../../../storybook/index";
 import produce from "immer";
-import "../../../../assets/stylesheets/app.scss";
 
 import SlideBigStoryCard from "./index";
 
@@ -10,8 +9,7 @@ import story from "./fixture";
 withStore("Cards/SlideBigStoryCard", {
   qt: {
     config: {
-      "cdn-image": "thumbor-stg.assettype.com",
-      iconSpritePath: "/sprite.svg"
+      "cdn-image": "thumbor-stg.assettype.com"
     }
   }
 })

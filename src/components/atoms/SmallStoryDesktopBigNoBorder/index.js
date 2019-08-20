@@ -2,12 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import get from "lodash/get";
 import { Link } from "@quintype/components";
+
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
 import Contributor from "../Contributor/index";
-
 import { getStoryData, generateImageSources } from "../../utils/utils";
-import "./smallStoryDesktopBigNoBorder.m.css";
 import Headline from "../Headline";
+
+import "./smallStoryDesktopBigNoBorder.m.css";
 
 const SmallStoryCardDesktopBigNoBorder = ({
   story,
@@ -45,15 +46,21 @@ const SmallStoryCardDesktopBigNoBorder = ({
         )}
       />
       <div styleName="text-wrapper">
-        {contributor && (
-          <Contributor name={contributor["name"]} type={contributorRole} iconColor="#4a4a4a" className="contributor" />
-        )}
         <Headline
           text={storyData.headline}
           headerLevel={1}
-          headerType={1}
+          headlineType={3}
           className={`${"headline"} ${hasTruncatedHeadline ? "truncated" : ""}`}
         />
+        {contributor && (
+          <Contributor
+            name={contributor["name"]}
+            type={contributorRole}
+            iconColor="#4a4a4a"
+            className="contributor"
+            contributorType={3}
+          />
+        )}
       </div>
     </Link>
   );
