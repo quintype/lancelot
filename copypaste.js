@@ -6,7 +6,8 @@ const { ncp } = require("ncp");
 const DIR_TYPE = Object.freeze({
   ROWS: "rows",
   ATOMS: "atoms",
-  UTILS: "utils"
+  UTILS: "utils",
+  CARDS: "cards"
 });
 
 const isDirectory = source => fs.statSync(source).isDirectory();
@@ -43,13 +44,14 @@ fs.readdir(source(DIR_TYPE.ROWS), (err, files) => {
       const componentSource = path.resolve(source(DIR_TYPE.ROWS), response.componentFolder);
       const allDeps = data
         .map(line => path.resolve(componentSource, line.match(/".+"/)[0].slice(1, -1)))
-        .filter(path => path.includes("/src/components/"));
+        .filter(path => path.includes("/src/components/"))
+        .map(dep => dep.replace(new RegExp(/\/utils.*/), "/utils")) // remove utils filename imports
+        .map(dep => dep.replace(new RegExp(/\/index$/), "")); // remove imports with index in the end
       allDeps.unshift(componentSource);
-      const allPaths = allDeps.map(path => ({
+      const allPaths = [...new Set(allDeps)].map(path => ({
         currentPath: path,
         copyPath: generateCopyPath(projectComponentPath, path)
       }));
-
       allPaths.forEach(({ currentPath, copyPath }) => copyPasteFolder(currentPath, copyPath));
     });
   })();
