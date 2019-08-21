@@ -47,7 +47,7 @@ const BreakingNews = ({ className = "", breakingNews = [] }) => {
 
   return (
     <div styleName="base" className={`base ${className} container`}>
-      <Icon type={"breaking-news"} styleName="icon" />
+      <Icon type={"breaking-news"} className="icon" />
       {renderBreakingNewsMarquee(breakingNews)}
     </div>
   );

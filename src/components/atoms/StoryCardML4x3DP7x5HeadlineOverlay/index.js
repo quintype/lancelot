@@ -5,10 +5,11 @@ import { Link } from "@quintype/components";
 
 import Contributor from "../Contributor";
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
+import Headline from "../Headline";
+
 import { getStoryData, generateImageSources } from "../../utils/utils";
 
 import "./storyCardML4x3DP7x5HeadlineOverlay.m.css";
-import Headline from "../Headline";
 
 export const StoryCardML4x3DP7x5HeadlineOverlay = ({ story, className = "", cardWithImageZoom = true }) => {
   const storyData = getStoryData(story);
@@ -32,6 +33,7 @@ export const StoryCardML4x3DP7x5HeadlineOverlay = ({ story, className = "", card
       <div styleName="image-container">
         <ResponsiveImageWithFallback
           styleName="image-wrapper"
+          className="image-wrapper"
           slug={storyData.imageS3Key}
           metadata={storyData.imageMetadata}
           alt={storyData.imageCaption}
@@ -48,9 +50,9 @@ export const StoryCardML4x3DP7x5HeadlineOverlay = ({ story, className = "", card
           )}
         />
       </div>
-      <div styleName="text-wrapper">
+      <div styleName="text-wrapper" className="text-wrapper">
         {contributorName && <Contributor name={contributorName} type={contributorRole} className="contributor" />}
-        <Headline text={storyData.headline} headerType={6} headerLevel={3} styleName="headline" />
+        <Headline text={storyData.headline} headerType={6} headerLevel={3} className="headline" />
       </div>
     </Link>
   );

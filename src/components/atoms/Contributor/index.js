@@ -21,7 +21,7 @@ const Contributor = ({ path, type, name, imgUrl, className = "", contributorType
       {({ primaryHostUrl }) => (
         <Link aria-label="Author" href={`${primaryHostUrl}${path}`} className={className} styleName="base">
           {imgUrl && <img src={imgUrl} />}
-          {iconType && <Icon type={iconType} styleName="icon" />}
+          {iconType && <Icon type={iconType} className="icon" />}
           <span styleName="contributor-name">{name}</span>
         </Link>
       )}

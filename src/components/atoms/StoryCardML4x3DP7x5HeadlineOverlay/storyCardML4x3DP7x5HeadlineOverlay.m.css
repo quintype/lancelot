@@ -37,13 +37,3 @@
     transform: translateY(var(--space2));
   }
 }
-
-.headline {
-  /* @include font-styles(mobile-h4); */
-  margin: 0;
-  color: var(--title-color);
-  @media (min-width: 768px) {
-    /* @include font-styles(h4); */
-    padding-top: var(--space1);
-  }
-}

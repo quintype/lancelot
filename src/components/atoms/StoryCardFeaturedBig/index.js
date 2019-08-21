@@ -1,8 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { get } from "lodash";
+import get from "lodash/get";
 import { Link } from "@quintype/components";
+
 import Contributor from "../../atoms/Contributor";
+import Badge from "../Badge";
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
 import Headline from "../Headline";
 
@@ -10,12 +12,7 @@ import { getStoryData, generateImageSources } from "../../utils/utils";
 
 import "./storyCardFeaturedBig.m.css";
 
-export default function StoryCardFeaturedBig({
-  story,
-  className = "",
-  cardWithImageZoom = true,
-  hasTruncatedHeadline = true
-}) {
+export default function StoryCardFeaturedBig({ story, className = "", cardWithImageZoom = true }) {
   const storyData = getStoryData(story);
 
   if (!(storyData.headline && story.url)) {
@@ -38,7 +35,8 @@ export default function StoryCardFeaturedBig({
     >
       <div styleName="image-container">
         <ResponsiveImageWithFallback
-          styleName="figure"
+          styleName="image-wrapper"
+          className="image-wrapper"
           slug={storyData.imageS3Key}
           metadata={storyData.imageMetadata}
           alt={storyData.imageCaption}
@@ -48,19 +46,9 @@ export default function StoryCardFeaturedBig({
             { aspectRatio: [2, 1], screenWidthCoverage: 0.5 }
           )}
         />
-        {section && (
-          <span styleName="badge" className="hidden-desktop" style={sectionColor && { "--accent-color": sectionColor }}>
-            <span className="badge-text">{section["display-name"]}</span>
-          </span>
-        )}
       </div>
-      <div styleName="content">
-        <Headline
-          text={storyData.headline}
-          headlineType={3}
-          headerLevel={3}
-          className={`${hasTruncatedHeadline ? "truncated" : ""}`}
-        />
+      <div styleName="text-wrapper" className="text-wrapper">
+        <Headline text={storyData.headline} headlineType={3} headerLevel={3} className="headline" />
         {contributor && (
           <Contributor
             name={contributor["name"]}
@@ -71,9 +59,11 @@ export default function StoryCardFeaturedBig({
           />
         )}
         {section && (
-          <span styleName="badge" className="hidden-mobile" style={sectionColor && { "--accent-color": sectionColor }}>
-            <span className="badge-text">{section["display-name"]}</span>
-          </span>
+          <Badge
+            text={section["display-name"]}
+            className="hidden-mobile badge"
+            style={sectionColor && { "--accent-color": sectionColor }}
+          />
         )}
       </div>
     </Link>
@@ -83,7 +73,6 @@ export default function StoryCardFeaturedBig({
 StoryCardFeaturedBig.propTypes = {
   className: PropTypes.string,
   cardWithImageZoom: PropTypes.bool,
-  hasTruncatedHeadline: PropTypes.bool,
   story: PropTypes.shape({
     section: PropTypes.arrayOf(
       PropTypes.shape({

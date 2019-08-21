@@ -17,13 +17,12 @@ $icon-margin-right: var(--space1_5);
     padding-top: var(--space1_5);
     padding-bottom: var(--space1_5);
   }
-}
-
-.icon {
-  flex-shrink: 0;
-  margin: 0 $icon-margin-right 0 0;
-  font-size: 25px;
-  color: #2e308f;
+  :global .icon {
+    flex-shrink: 0;
+    margin: 0 $icon-margin-right 0 0;
+    font-size: 25px;
+    color: #2e308f;
+  }
 }
 
 .marquee-container {

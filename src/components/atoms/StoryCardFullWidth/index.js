@@ -3,10 +3,11 @@ import PropTypes from "prop-types";
 import get from "lodash/get";
 import Headline from "../Headline";
 import { Link } from "@quintype/components";
+
 import Contributor from "../../atoms/Contributor";
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
+
 import { getStoryData, generateImageSources } from "../../utils/utils";
-// import { getMonthDayString } from "../../utils/time-format";
 
 import "./storyCardFullWidth.m.css";
 
@@ -29,7 +30,8 @@ export default function StoryCardFullWidth({ story, className = "", cardWithImag
         externalLink={externalLink}
       >
         <ResponsiveImageWithFallback
-          styleName="image-container"
+          styleName="image-wrapper"
+          className="image-wrapper"
           slug={storyData.imageS3Key}
           metadata={storyData.imageMetadata}
           alt={storyData.imageCaption}
@@ -38,9 +40,8 @@ export default function StoryCardFullWidth({ story, className = "", cardWithImag
             { aspectRatio: [16, 9], screenWidthCoverage: 1 },
             { aspectRatio: [16, 9], screenWidthCoverage: 0.66 }
           )}
-        ></ResponsiveImageWithFallback>
-
-        <div styleName="content">
+        />
+        <div styleName="text-wrapper" className="text-wrapper">
           <Headline headerLevel={3} headlineType={2} text={storyData.headline} />
           {contributor && (
             <Contributor
@@ -48,26 +49,9 @@ export default function StoryCardFullWidth({ story, className = "", cardWithImag
               name={contributor["name"]}
               type={contributorRole}
               iconColor="#929292"
-              styleName="contributor"
+              className="contributor"
             />
           )}
-          {/* <div styleName="story-byline">
-            {story.engagement && story.engagement.total && (
-              <div styleName="engagement">
-                <span styleName="engagement-item">
-                  <Icon type={"comment"} styleName="engagement-icon" />
-                  {story.engagement.comments}
-                </span>
-                <span styleName="engagement-item">
-                  <Icon type={"share"} styleName="engagement-icon" />
-                  {story.engagement.shares}
-                </span>
-              </div>
-            )}
-            {story["published-at"] && (
-              <time styleName="published-date">{getMonthDayString(story["published-at"])}</time>
-            )}
-          </div> */}
         </div>
       </Link>
     </div>

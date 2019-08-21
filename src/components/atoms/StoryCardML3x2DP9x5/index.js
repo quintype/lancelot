@@ -2,13 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 import get from "lodash/get";
 import { Link } from "@quintype/components";
+
 import Contributor from "../Contributor";
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
+import Headline from "../Headline";
 
 import { getStoryData, generateImageSources } from "../../utils/utils";
 
 import "./storyCardML3x2DP9x5.m.css";
-import Headline from "../Headline";
 
 const StoryCardML3x2DP9x5 = ({ story, className = "", cardWithImageZoom = true }) => {
   const storyData = getStoryData(story);
@@ -33,6 +34,7 @@ const StoryCardML3x2DP9x5 = ({ story, className = "", cardWithImageZoom = true }
         <div styleName="image-container" className="image-container">
           <ResponsiveImageWithFallback
             styleName="image-wrapper"
+            className="image-wrapper"
             slug={storyData.imageS3Key}
             metadata={storyData.imageMetadata}
             alt={storyData.imageCaption}
@@ -43,8 +45,8 @@ const StoryCardML3x2DP9x5 = ({ story, className = "", cardWithImageZoom = true }
             )}
           />
         </div>
-        <div>
-          <Headline text={storyData.headline} headlineType={2} headerLevel={3} styleName="headline" />
+        <div className="text-wrapper">
+          <Headline text={storyData.headline} headlineType={2} headerLevel={3} className="headline" />
           {contributor && (
             <Contributor
               name={contributor["name"]}

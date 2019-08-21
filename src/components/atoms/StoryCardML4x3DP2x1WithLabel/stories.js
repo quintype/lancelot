@@ -15,9 +15,7 @@ withStore("Cards/StoryCardML4x3DP2x1WithLabel", {
     }
   }
 })
-  .addDecorator(story => (
-    <div style={{ maxWidth: "360px", backgroundColor: "aliceblue", padding: "10px" }}>{story()}</div>
-  ))
+  .addDecorator(story => <div style={{ maxWidth: "360px" }}>{story()}</div>)
   .add("default", () => <StoryCardML4x3DP2x1WithLabel {...story} />)
   .add("missing-label", () => {
     const newProps = produce(story, draft => {

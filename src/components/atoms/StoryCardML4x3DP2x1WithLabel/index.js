@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import get from "lodash/get";
 import { Link } from "@quintype/components";
-import { Icon } from "../Icon";
+
 import Contributor from "../Contributor";
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
 import Headline from "../Headline";
@@ -34,6 +34,7 @@ export const StoryCardML4x3DP2x1 = ({ story, className = "", cardWithImageZoom =
       <div className="image-container">
         <ResponsiveImageWithFallback
           styleName="image-wrapper"
+          className="image-wrapper"
           slug={storyData.imageS3Key}
           metadata={storyData.imageMetadata}
           alt={storyData.imageCaption}
@@ -45,8 +46,10 @@ export const StoryCardML4x3DP2x1 = ({ story, className = "", cardWithImageZoom =
         />
       </div>
       <div className="text-wrapper">
-        {contributorName && <Contributor name={contributorName} type={contributorRole} styleName="contributor" />}
-        <Headline text={story.headline} headerType={3} headerLevel={3} className={"headline"} />
+        <Headline text={story.headline} headlineType={4} headerLevel={3} className="headline" />
+        {contributorName && (
+          <Contributor name={contributorName} contributorType={3} type={contributorRole} className="contributor" />
+        )}
       </div>
     </Link>
   );
@@ -60,8 +63,8 @@ export const StoryCardML4x3DP2x1WithLabel = ({ story, className, defaultLabel = 
     <div className={`${className}`} styleName={`story-card-with-label-wrapper`}>
       {story.label && (
         <div styleName="headline-wrapper">
-          <Icon type={"bullet-arrow"} styleName="bullet-icon" />
-          <Headline text={story.label} headerType={4} headerLevel={2} className={"headline-label"} />
+          <span styleName="bullet-icon">»</span>
+          <Headline text={story.label} headlineType={3} headerLevel={2} className={"headline-label"} />
         </div>
       )}
       <StoryCardML4x3DP2x1 story={story} styleName="card" />

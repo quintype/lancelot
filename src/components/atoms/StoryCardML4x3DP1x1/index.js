@@ -5,11 +5,11 @@ import { Link } from "@quintype/components";
 
 import Contributor from "../Contributor";
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
+import Headline from "../Headline";
 
 import { getStoryData, generateImageSources } from "../../utils/utils";
 
 import "./storyCardML4x3DP1x1.m.css";
-import Headline from "../Headline";
 
 export const StoryCardML4x3DP1x1 = ({ story, className = "", cardWithImageZoom = true }) => {
   const storyData = getStoryData(story);
@@ -33,6 +33,7 @@ export const StoryCardML4x3DP1x1 = ({ story, className = "", cardWithImageZoom =
         <div className="image-container">
           <ResponsiveImageWithFallback
             styleName="image-wrapper"
+            className="image-wrapper"
             slug={storyData.imageS3Key}
             metadata={storyData.imageMetadata}
             alt={storyData.imageCaption}
@@ -49,9 +50,11 @@ export const StoryCardML4x3DP1x1 = ({ story, className = "", cardWithImageZoom =
             )}
           />
         </div>
-        <div styleName="text-wrapper">
-          {contributorName && <Contributor name={contributorName} type={contributorRole} className="contributor" />}
-          <Headline text={storyData.headline} headerType={3} headerLevel={3} styleName="headline" />
+        <div className="text-wrapper">
+          <Headline text={storyData.headline} headlineType={4} headerLevel={3} className="headline" />
+          {contributorName && (
+            <Contributor name={contributorName} type={contributorRole} contributorType={3} className="contributor" />
+          )}
         </div>
       </div>
     </Link>

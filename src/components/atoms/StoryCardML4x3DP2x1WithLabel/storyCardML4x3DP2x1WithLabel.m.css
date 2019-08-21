@@ -7,26 +7,13 @@
     display: block;
     margin-bottom: var(--space2);
   }
-  .contributor {
-    margin-bottom: var(--space-2);
-  }
 }
 .image-wrapper {
   position: relative;
   padding-top: 75%;
+  margin-bottom: var(--space2);
   @media (min-width: 768px) {
     padding-top: 50%;
-  }
-}
-
-.headline {
-  /* @include font-styles(mobile-h4); */
-  /* @include number-of-lines(mobile-h4, 2); */
-  margin: 0;
-  color: var(--title-color);
-  @media (min-width: 768px) {
-    /* @include number-of-lines(h5, 2); */
-    /* @include font-styles(h5); */
   }
 }
 
@@ -34,18 +21,12 @@
   display: flex;
   overflow: hidden;
   margin-bottom: var(--space1);
-
   :global .headline-label {
-    /* @include font-styles(mobile-h3); */
     margin: 0;
-    color: var(--title-color);
     grid-column: span 2;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    @media (min-width: 768px) {
-      /* @include font-styles(h3); */
-    }
   }
 }
 
@@ -65,6 +46,8 @@
 
 .bullet-icon {
   color: var(--greyish-brown);
-  font-size: 1rem;
-  padding: var(--space1) var(--space1) var(--space1) 0;
+  font-size: var(--medium);
+  position: relative;
+  bottom: var(--space-4);
+  margin-right: var(--space-2);
 }

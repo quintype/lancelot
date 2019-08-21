@@ -5,15 +5,8 @@ import props from "./fixture.js";
 import StoryCardFeaturedBig from "./";
 import { withStore } from "../../../../storybook";
 
-withStore("Cards/StoryCardFeaturedBig", {
-  qt: {
-    config: {
-      "cdn-image": "thumbor-stg.assettype.com",
-      iconSpritePath: "/sprite.svg"
-    }
-  }
-})
-  .addDecorator(story => <div style={{ maxWidth: 700 }}>{story()}</div>)
+withStore("Cards/StoryCardFeaturedBig", {})
+  .addDecorator(story => <div style={{ maxWidth: "700px" }}>{story()}</div>)
   .add("Default", () => <StoryCardFeaturedBig {...props} />)
   .add("when headline is not present", () => {
     const newProps = produce(props, draft => {

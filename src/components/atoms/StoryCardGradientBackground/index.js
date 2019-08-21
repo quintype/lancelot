@@ -11,12 +11,7 @@ import { getStoryData, generateImageSources } from "../../utils/utils";
 
 import "./storyCardGradientBackground.m.css";
 
-export default function StoryCardGradientBackground({
-  story,
-  className = "",
-  cardWithImageZoom = true,
-  hasTruncatedHeadline = true
-}) {
+export default function StoryCardGradientBackground({ story, className = "", cardWithImageZoom = true }) {
   const storyData = getStoryData(story);
 
   if (!(storyData.headline && story.url)) {
@@ -32,12 +27,13 @@ export default function StoryCardGradientBackground({
     <div styleName="base" className={`${className} ${cardWithImageZoom ? "card-with-image-zoom" : ""}`}>
       <Link
         aria-label={`${"Read full story: "} ${storyData.headline}`}
-        className={"link"}
+        className="link"
         href={externalLink || story.url}
         externalLink={externalLink}
       >
         <ResponsiveImageWithFallback
-          styleName="image-container"
+          styleName="image-wrapper"
+          className="image-wrapper"
           slug={storyData.imageS3Key}
           metadata={storyData.imageMetadata}
           alt={storyData.imageCaption}
@@ -47,18 +43,17 @@ export default function StoryCardGradientBackground({
             { aspectRatio: [9, 8], screenWidthCoverage: 0.25 }
           )}
         />
-        <div styleName="content" style={sectionColor && { "--accent-color": sectionColor }}>
-          <Headline
-            text={storyData.headline}
-            headlineType={5}
-            headerLevel={3}
-            className={`${hasTruncatedHeadline ? "truncated" : ""}`}
-          />
+        <div
+          styleName="text-wrapper"
+          className="text-wrapper"
+          style={sectionColor && { "--accent-color": sectionColor }}
+        >
+          <Headline text={storyData.headline} headlineType={5} headerLevel={3} className="headline" />
           {contributor && (
             <Contributor
               name={contributor["name"]}
               type={contributorRole}
-              className={"contributor"}
+              className="contributor"
               contributorType={3}
             />
           )}
@@ -71,7 +66,6 @@ export default function StoryCardGradientBackground({
 StoryCardGradientBackground.propTypes = {
   className: PropTypes.string,
   cardWithImageZoom: PropTypes.bool,
-  hasTruncatedHeadline: PropTypes.bool,
   story: PropTypes.shape({
     authors: PropTypes.arrayOf(
       PropTypes.shape({

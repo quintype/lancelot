@@ -22,12 +22,10 @@ const FourStory4s = ({ collection, accentColor }) => {
 
   return (
     <div styleName="four-story-4s" style={accentColor && { "--accent-color": accentColor }}>
-      <div className="container">
-        <CollectionLink collection={collection}>
-          <CollectionTitleWithCrossLine className="title" title={name} />
-        </CollectionLink>
-        <div styleName="story-container">{stories}</div>
-      </div>
+      <CollectionLink collection={collection}>
+        <CollectionTitleWithCrossLine className="title" title={name} />
+      </CollectionLink>
+      <div styleName="story-container">{stories}</div>
     </div>
   );
 };

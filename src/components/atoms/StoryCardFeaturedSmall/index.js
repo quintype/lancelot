@@ -1,8 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { get } from "lodash";
+import get from "lodash/get";
 import { Link } from "@quintype/components";
+
 import Contributor from "../../atoms/Contributor";
+import Badge from "../Badge";
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
 import Headline from "../Headline";
 
@@ -10,12 +12,7 @@ import { getStoryData, generateImageSources } from "../../utils/utils";
 
 import "./storyCardFeaturedSmall.m.css";
 
-export default function StoryCardFeaturedSmall({
-  story,
-  className = "",
-  cardWithImageZoom = true,
-  hasTruncatedHeadline = true
-}) {
+export default function StoryCardFeaturedSmall({ story, className = "", cardWithImageZoom = true }) {
   const storyData = getStoryData(story);
 
   if (!(storyData.headline && story.url)) {
@@ -38,7 +35,8 @@ export default function StoryCardFeaturedSmall({
     >
       <div styleName="image-container">
         <ResponsiveImageWithFallback
-          styleName="figure"
+          styleName="image-wrapper"
+          className="image-wrapper"
           slug={storyData.imageS3Key}
           metadata={storyData.imageMetadata}
           alt={storyData.imageCaption}
@@ -49,25 +47,17 @@ export default function StoryCardFeaturedSmall({
           )}
         />
         {section && (
-          <span styleName="badge" style={sectionColor && { "--accent-color": sectionColor }} className="hidden-mobile">
-            <span styleName={"badge-text"}>{section["display-name"]}</span>
-          </span>
+          <Badge
+            text={section["display-name"]}
+            className="hidden-mobile badge"
+            style={sectionColor && { "--accent-color": sectionColor }}
+          />
         )}
       </div>
-      <div styleName={"content"}>
-        <Headline
-          text={storyData.headline}
-          headlineType={5}
-          headerLevel={3}
-          className={`${hasTruncatedHeadline ? "truncated" : ""}`}
-        />
+      <div className="text-wrapper">
+        <Headline text={storyData.headline} headlineType={5} headerLevel={3} className="headline" />
         {contributor && (
-          <Contributor
-            name={contributor["name"]}
-            contributorType={3}
-            type={contributorRole}
-            className={"contributor"}
-          />
+          <Contributor name={contributor["name"]} contributorType={3} type={contributorRole} className="contributor" />
         )}
       </div>
     </Link>
@@ -77,7 +67,6 @@ export default function StoryCardFeaturedSmall({
 StoryCardFeaturedSmall.propTypes = {
   className: PropTypes.string,
   cardWithImageZoom: PropTypes.bool,
-  hasTruncatedHeadline: PropTypes.bool,
   story: PropTypes.shape({
     section: PropTypes.arrayOf(
       PropTypes.shape({

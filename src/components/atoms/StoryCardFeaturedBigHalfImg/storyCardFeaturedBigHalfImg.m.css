@@ -2,15 +2,35 @@
   --background-color: var(--white);
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-gap: var(--space2);
   grid-template-areas: "image content";
   @media (min-width: 768px) {
     grid-template-areas: "content image";
     background-color: var(--background-color);
   }
-  .contributor {
-    margin-bottom: var(--space-4);
+
+  :global .headline {
+    font-size: var(--base);
     @media (min-width: 768px) {
-      order: 2;
+      font-size: var(--base-larger);
+    }
+  }
+
+  :global .badge {
+    position: absolute;
+    left: var(--space1);
+    top: 100%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    padding: var(--space-2) var(--space1);
+    background-color: var(--accent-color);
+    border-radius: 3px;
+    color: var(--white);
+
+    @media (min-width: 768px) {
+      left: var(--space2);
+      padding: var(--space1);
     }
   }
 }
@@ -19,36 +39,12 @@
   position: relative;
   grid-area: image;
   align-self: flex-start;
-  margin-right: var(--space1);
   @media (min-width: 768px) {
     margin-right: 0;
   }
 }
 
-.badge {
-  position: absolute;
-  left: var(--space1);
-  top: 100%;
-  transform: translateY(-50%);
-  display: flex;
-  align-items: center;
-  padding: var(--space-2) var(--space1);
-  background-color: var(--accent-color);
-  border-radius: 3px;
-  color: var(--white);
-
-  @media (min-width: 768px) {
-    left: var(--space2);
-    padding: var(--space1);
-  }
-}
-
-.badge-icon {
-  font-size: 12px;
-  margin: 0 var(--space-2) 0 0;
-}
-
-.figure {
+.image-wrapper {
   position: relative;
   padding-top: 62.5%;
 
@@ -57,19 +53,12 @@
   }
 }
 
-.content {
+.text-wrapper {
   position: relative;
   grid-area: content;
+  align-self: center;
   @media (min-width: 768px) {
     background: var(--background-color);
-    padding: var(--space2) var(--space3);
-  }
-}
-
-.headline {
-  color: var(--title-color);
-  margin: var(--space-2) 0;
-  @media (min-width: 768px) {
-    margin: var(--space-2) 0;
+    padding: var(--space1) var(--space2) var(--space3);
   }
 }

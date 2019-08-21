@@ -32,6 +32,7 @@ const StoryCardML9x5DP9x5 = ({ story, className = "", cardWithImageZoom = true }
         <div className="image-container" styleName="image-container">
           <ResponsiveImageWithFallback
             styleName="image-wrapper"
+            className="image-wrapper"
             slug={storyData.imageS3Key}
             metadata={storyData.imageMetadata}
             alt={storyData.imageCaption}

@@ -22,7 +22,7 @@ const TwelveStoriesOneAd = ({ collection, accentColor, pagetype = "" }) => {
     .map(item => item.story);
   return (
     <div styleName="base" style={accentColor && { "--accent-color": accentColor }}>
-      <div styleName="row" className="container row">
+      <div styleName="row" className="row">
         <div styleName="desktop-col-3">
           {stories.splice(0, 1).map(story => (
             <CustomizableStoryCard
