@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./badge.m.css";
 
 const Badge = ({ className, text, style }) => {
   return (

@@ -15,6 +15,24 @@
       font-size: var(--base-larger);
     }
   }
+
+  :global .badge {
+    position: absolute;
+    left: var(--space1);
+    top: 100%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    padding: var(--space-2) var(--space1);
+    background-color: var(--accent-color);
+    border-radius: 3px;
+    color: var(--white);
+
+    @media (min-width: 768px) {
+      left: var(--space2);
+      padding: var(--space1);
+    }
+  }
 }
 
 .image-container {
@@ -24,29 +42,6 @@
   @media (min-width: 768px) {
     margin-right: 0;
   }
-}
-
-.badge {
-  position: absolute;
-  left: var(--space1);
-  top: 100%;
-  transform: translateY(-50%);
-  display: flex;
-  align-items: center;
-  padding: var(--space-2) var(--space1);
-  background-color: var(--accent-color);
-  border-radius: 3px;
-  color: var(--white);
-
-  @media (min-width: 768px) {
-    left: var(--space2);
-    padding: var(--space1);
-  }
-}
-
-.badge-icon {
-  font-size: 12px;
-  margin: 0 var(--space-2) 0 0;
 }
 
 .image-wrapper {

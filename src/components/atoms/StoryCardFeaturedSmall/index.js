@@ -4,6 +4,7 @@ import get from "lodash/get";
 import { Link } from "@quintype/components";
 
 import Contributor from "../../atoms/Contributor";
+import Badge from "../Badge";
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
 import Headline from "../Headline";
 
@@ -46,15 +47,11 @@ export default function StoryCardFeaturedSmall({ story, className = "", cardWith
           )}
         />
         {section && (
-          <span
-            styleName="badge"
-            style={sectionColor && { "--accent-color": sectionColor }}
+          <Badge
+            text={section["display-name"]}
             className="hidden-mobile badge"
-          >
-            <span styleName="badge-text" className="badge-text">
-              {section["display-name"]}
-            </span>
-          </span>
+            style={sectionColor && { "--accent-color": sectionColor }}
+          />
         )}
       </div>
       <div className="text-wrapper">

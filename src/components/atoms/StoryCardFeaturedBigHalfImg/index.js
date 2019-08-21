@@ -6,6 +6,7 @@ import { Link } from "@quintype/components";
 import Contributor from "../../atoms/Contributor";
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
 import Headline from "../Headline";
+import Badge from "../Badge";
 
 import { getStoryData, generateImageSources } from "../../utils/utils";
 
@@ -45,15 +46,6 @@ export default function StoryCardFeaturedBigHalfImg({ story, className = "", car
             { aspectRatio: [1, 1], screenWidthCoverage: 0.25 }
           )}
         />
-        {section && (
-          <span
-            className="hidden-desktop badge"
-            styleName="badge"
-            style={sectionColor && { "--accent-color": sectionColor }}
-          >
-            <span className="badge-text">{section["display-name"]}</span>
-          </span>
-        )}
       </div>
       <div styleName="text-wrapper" className="text-wrapper">
         <Headline text={storyData.headline} headerLevel={3} className="headline" />
@@ -67,13 +59,11 @@ export default function StoryCardFeaturedBigHalfImg({ story, className = "", car
           />
         )}
         {section && (
-          <span
-            styleName="badge"
+          <Badge
+            text={section["display-name"]}
             className="hidden-mobile badge"
             style={sectionColor && { "--accent-color": sectionColor }}
-          >
-            <span className="badge-text">{section["display-name"]}</span>
-          </span>
+          />
         )}
       </div>
     </Link>

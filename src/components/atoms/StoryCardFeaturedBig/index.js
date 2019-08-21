@@ -46,13 +46,6 @@ export default function StoryCardFeaturedBig({ story, className = "", cardWithIm
             { aspectRatio: [2, 1], screenWidthCoverage: 0.5 }
           )}
         />
-        {section && (
-          <Badge
-            text={section["display-name"]}
-            className="hidden-mobile badge"
-            style={sectionColor && { "--accent-color": sectionColor }}
-          />
-        )}
       </div>
       <div styleName="text-wrapper" className="text-wrapper">
         <Headline text={storyData.headline} headlineType={3} headerLevel={3} className="headline" />

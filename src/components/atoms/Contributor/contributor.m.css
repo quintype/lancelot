@@ -11,6 +11,10 @@
   svg {
     font-size: 2.2em;
   }
+
+  :global .icon {
+    color: var(--icon-color);
+  }
 }
 
 .contributor-name {
@@ -18,10 +22,6 @@
   white-space: nowrap;
   overflow: hidden;
   z-index: 1;
-}
-
-.icon {
-  color: var(--icon-color);
 }
 
 .contributor-type-1 {

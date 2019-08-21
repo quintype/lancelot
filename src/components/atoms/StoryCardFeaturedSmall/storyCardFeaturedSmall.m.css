@@ -7,6 +7,28 @@
     display: flex;
     align-self: flex-start;
   }
+
+  :global .badge {
+    position: absolute;
+    right: 0;
+    top: 90%;
+    transform: translate(-25%, -50%);
+    padding: var(--space-4) var(--space-2);
+    background-color: var(--accent-color);
+    border-radius: 3px;
+    color: var(--white);
+    min-height: var(--space2);
+    line-height: 1;
+
+    @media (min-width: 768px) {
+      transform: translateY(-50%);
+      right: var(--space1);
+      left: unset;
+      display: flex;
+      align-items: center;
+      padding: var(--space1);
+    }
+  }
 }
 
 .image-container {
@@ -15,43 +37,6 @@
   align-self: flex-start;
   @media (min-width: 768px) {
     align-self: unset;
-  }
-}
-
-.badge {
-  position: absolute;
-  right: 0;
-  top: 90%;
-  transform: translate(-25%, -50%);
-  padding: var(--space-4) var(--space-2);
-  background-color: var(--accent-color);
-  border-radius: 3px;
-  color: var(--white);
-  min-height: var(--space2);
-  line-height: 1;
-
-  @media (min-width: 768px) {
-    transform: translateY(-50%);
-    right: var(--space1);
-    left: unset;
-    display: flex;
-    align-items: center;
-    padding: var(--space1);
-  }
-}
-.badge-icon {
-  font-size: 12px;
-  line-height: 1;
-  @media (min-width: 768px) {
-    margin: 0 var(--space-2) 0 0;
-  }
-}
-
-.badge-text {
-  display: none;
-  @media (min-width: 768px) {
-    display: unset;
-    white-space: nowrap;
   }
 }
 
