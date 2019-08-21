@@ -23,11 +23,6 @@
 
 .text-wrapper {
   padding-top: var(--space2);
-  /* @media (min-width: 768px) {
-    padding: 0 var(--space2);
-    margin: 0 0 var(--space3);
-    font-size: var(--base-smaller);
-  } */
 }
 
 .headline {

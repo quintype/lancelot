@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 import { StoryCardML4x3DP1x1 } from "../../atoms/StoryCardML4x3DP1x1";
 import { StoryCardML8x5DP7x5HeadlineOverlay } from "../../atoms/StoryCardML8x5DP7x5HeadlineOverlay";
 
-import "./fiveStoriesOneAdBundle.m.css";
+import "./sevenStoriesOneAdBundle.m.css";
 
-export const FiveStoriesOneAdBundle = ({ collection, accentColor, pagetype = "" }) => {
+export const SevenStoriesOneAdBundle = ({ collection, accentColor, pagetype = "" }) => {
   // const numberOfStories = get(collection, ["total-count"], 0);
   const stories = collection.items.slice(0, 8).map(({ story }) => story);
   return (
@@ -32,7 +32,7 @@ export const FiveStoriesOneAdBundle = ({ collection, accentColor, pagetype = "" 
   );
 };
 
-FiveStoriesOneAdBundle.propTypes = {
+SevenStoriesOneAdBundle.propTypes = {
   collection: PropTypes.object,
   metadata: PropTypes.shape({
     read_more_text: PropTypes.string
@@ -41,4 +41,4 @@ FiveStoriesOneAdBundle.propTypes = {
   pagetype: PropTypes.string
 };
 
-export default FiveStoriesOneAdBundle;
+export default SevenStoriesOneAdBundle;
