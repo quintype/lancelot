@@ -11,28 +11,6 @@
       grid-area: scb;
     }
   }
-  /* 
-  :global .story-card-medium {
-    --background-color: transparent;
-    padding-bottom: var(--space1);
-    border-bottom: 1px solid var(--border-color);
-    @media (min-width: 768px) {
-      --background-color: var(--white);
-      border-bottom: 2px solid var(--accent-color);
-    }
-  }
-
-  :global .story-card-medium-scm {
-    @media (min-width: 768px) {
-      grid-area: scm;
-    }
-  }
-
-  :global .story-card-medium-scm2 {
-    @media (min-width: 768px) {
-      grid-area: scm2;
-    }
-  } */
 
   :global .story-card-small {
     background: transparent;
