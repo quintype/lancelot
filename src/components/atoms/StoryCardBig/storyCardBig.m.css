@@ -8,20 +8,7 @@
 
 .image-wrapper {
   /* @include image-aspect-ratio(16, 9); */
-  padding-top: 56.25%;
+  padding-top: 66.67%;
   align-self: flex-start;
-}
-
-.text-wrapper {
-  display: block;
-  padding-top: var(--space2);
-  @media (min-width: 768px) {
-    padding: var(--space2);
-    margin-top: 0;
-  }
-}
-
-.headline {
-  margin: 0px;
-  color: var(--title-color);
+  margin-bottom: var(--space2);
 }

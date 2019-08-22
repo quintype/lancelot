@@ -2,10 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 import get from "lodash/get";
 import { Link } from "@quintype/components";
+
 import Contributor from "../Contributor/index";
-import "./smallStoryCardNoImageNumber.m.css";
-import { getStoryHeadline } from "../../utils/utils";
 import Headline from "../Headline";
+
+import { getStoryHeadline } from "../../utils/utils";
+
+import "./smallStoryCardNoImageNumber.m.css";
+
 const SmallStoryCardNoImageNumber = ({ story, className = "", index }) => {
   const headline = getStoryHeadline(story);
 
@@ -25,9 +29,11 @@ const SmallStoryCardNoImageNumber = ({ story, className = "", index }) => {
       href={externalLink || story.url}
       externalLink={externalLink}
     >
-      <div styleName="text-wrapper">
-        <div styleName="number-frmt">{index}</div>
-        <div styleName="card-content">
+      <div styleName="text-wrapper" className="text-wrapper">
+        <div styleName="number-frmt" className="number-frmt">
+          {index}
+        </div>
+        <div styleName="card-content" className="card-content">
           <Headline text={headline} headlineType={4} headerLevel={3} className="headline" />
           {contributor && (
             <Contributor

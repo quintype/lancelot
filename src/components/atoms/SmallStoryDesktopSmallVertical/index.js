@@ -11,12 +11,7 @@ import { getStoryData, generateImageSources } from "../../utils/utils";
 
 import "./smallStoryCardDesktopSmallVertical.m.css";
 
-const SmallStoryCardDesktopSmallVertical = ({
-  story,
-  className = "",
-  cardWithImageZoom = true,
-  hasTruncatedHeadline = true
-}) => {
+const SmallStoryCardDesktopSmallVertical = ({ story, className = "", cardWithImageZoom = true }) => {
   const storyData = getStoryData(story);
 
   if (!(storyData.headline && story.url)) {
@@ -37,6 +32,7 @@ const SmallStoryCardDesktopSmallVertical = ({
       <div styleName="base">
         <ResponsiveImageWithFallback
           styleName="image-wrapper"
+          className="image-wrapper"
           slug={storyData.imageS3Key}
           metadata={storyData.imageMetadata}
           alt={storyData.imageCaption}
@@ -46,13 +42,8 @@ const SmallStoryCardDesktopSmallVertical = ({
             { aspectRatio: [3, 2], screenWidthCoverage: 0.17 }
           )}
         />
-        <div styleName="text-wrapper">
-          <Headline
-            text={storyData.headline}
-            headlineType={5}
-            headerLevel={3}
-            className={`headline ${hasTruncatedHeadline ? "truncated" : ""} `}
-          />
+        <div>
+          <Headline text={storyData.headline} headlineType={5} headerLevel={3} className="headline" />
           {contributor && (
             <Contributor
               name={contributor["name"]}
@@ -70,7 +61,6 @@ const SmallStoryCardDesktopSmallVertical = ({
 
 SmallStoryCardDesktopSmallVertical.propTypes = {
   className: PropTypes.string,
-  hasTruncatedHeadline: PropTypes.bool,
   cardWithImageZoom: PropTypes.bool,
   story: PropTypes.shape({
     id: PropTypes.string,

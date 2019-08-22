@@ -2,12 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 import get from "lodash/get";
 import { Link } from "@quintype/components";
+
 import Contributor from "../../atoms/Contributor";
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
-import Icon from "../Icon";
-import { getStoryData, generateImageSources } from "../../utils/utils";
-import "./storyCard.m.css";
 import Headline from "../Headline";
+
+import { getStoryData, generateImageSources } from "../../utils/utils";
+
+import "./storyCard.m.css";
 
 export default function StoryCard({ story, className = "", cardWithImageZoom = true }) {
   const storyData = getStoryData(story);
@@ -19,13 +21,7 @@ export default function StoryCard({ story, className = "", cardWithImageZoom = t
   const contributor = get(story, ["authors", 0]);
   const contributorRole = get(story, ["authors", 0, "contributor-role", "name"], "");
   const externalLink = get(story, ["metadata", "reference-url"]);
-  const icons = {
-    "photo-album": "gallery",
-    photo: "photostory",
-    video: "video"
-  };
 
-  const iconType = get(icons, [story["story-template"]], null);
   return (
     <Link
       aria-label={`${"Read full story: "} ${storyData.headline}`}
@@ -36,6 +32,7 @@ export default function StoryCard({ story, className = "", cardWithImageZoom = t
     >
       <ResponsiveImageWithFallback
         styleName="image-container"
+        className="image-container"
         slug={storyData.imageS3Key}
         metadata={storyData.imageMetadata}
         alt={storyData.imageCaption}
@@ -44,20 +41,8 @@ export default function StoryCard({ story, className = "", cardWithImageZoom = t
           { aspectRatio: [3, 2], screenWidthCoverage: 0.5 },
           { aspectRatio: [3, 2], screenWidthCoverage: 0.17 }
         )}
-      >
-        {iconType && (
-          <span styleName="story-template-icon">
-            <Icon type={iconType} styleName="template-icon" />
-          </span>
-        )}
-        {story.engagement && story.engagement.total && (
-          <span styleName="engagement">
-            <Icon type="speaker" styleName="speaker-icon" />
-            {story.engagement.total}
-          </span>
-        )}
-      </ResponsiveImageWithFallback>
-      <div styleName="content">
+      />
+      <div>
         <Headline className="headline" headerLevel={3} headlineType={6} text={storyData.headline} />
         {contributor && (
           <Contributor contributorType={3} name={contributor["name"]} type={contributorRole} className="contributor" />

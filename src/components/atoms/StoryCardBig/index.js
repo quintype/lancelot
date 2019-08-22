@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { get } from "lodash";
 import { Link } from "@quintype/components";
+
 import Contributor from "../Contributor";
 import Headline from "../Headline";
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
@@ -31,6 +32,7 @@ const StoryCardBig = ({ story, className = "", cardWithImageZoom = true }) => {
     >
       <ResponsiveImageWithFallback
         styleName="image-wrapper"
+        className="image-wrapper"
         slug={storyData.imageS3Key}
         metadata={storyData.imageMetadata}
         alt={storyData.imageCaption}
@@ -40,9 +42,11 @@ const StoryCardBig = ({ story, className = "", cardWithImageZoom = true }) => {
           { aspectRatio: [16, 9], screenWidthCoverage: 0.7 }
         )}
       />
-      <div styleName="text-wrapper">
-        <Headline styleName="headline" headerLevel={3} headlineType={2} text={storyData.headline} />
-        {contributor && <Contributor name={contributor["name"]} type={contributorRole} contributorType={3} />}
+      <div className="text-wrapper">
+        <Headline className="headline" headerLevel={3} headlineType={2} text={storyData.headline} />
+        {contributor && (
+          <Contributor name={contributor["name"]} type={contributorRole} contributorType={3} className="contributor" />
+        )}
       </div>
     </Link>
   );

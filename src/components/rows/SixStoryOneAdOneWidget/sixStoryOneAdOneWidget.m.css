@@ -1,0 +1,77 @@
+.base {
+  background: var(--background-color);
+  padding: var(--space1_5) 0 var(--space3);
+  @media (min-width: 768px) {
+    padding: var(--space3) 0;
+  }
+
+  :global .story-card-big {
+    --background-color: var(--white);
+    @media (min-width: 768px) {
+      grid-area: scb;
+    }
+  }
+
+  :global .story-card-small {
+    background: transparent;
+  }
+
+  :global .story-card-small-scs {
+    @media (min-width: 768px) {
+      grid-area: scs;
+    }
+  }
+
+  :global .story-card-small-scs2 {
+    @media (min-width: 768px) {
+      grid-area: scs2;
+    }
+  }
+
+  :global .story-card-item-1 {
+    @media (min-width: 768px) {
+      grid-area: sch1;
+    }
+  }
+  :global .story-card-item-2 {
+    @media (min-width: 768px) {
+      grid-area: sch2;
+    }
+  }
+  :global .story-card-item-3 {
+    @media (min-width: 768px) {
+      grid-area: sch3;
+    }
+  }
+}
+
+.main-content {
+  grid-column: span 4;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-gap: var(--space2);
+  @media (min-width: 768px) {
+    grid-column: span 9;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-areas:
+      "scb scb scb scb scb scb scs scs scs"
+      "scb scb scb scb scb scb scs2 scs2 scs2"
+      "sch1 sch1 sch1 sch2 sch2 sch2 sch3 sch3 sch3";
+  }
+}
+
+.sidebar {
+  grid-column: span 4;
+  @media (min-width: 768px) {
+    display: grid;
+    grid-auto-rows: min-content;
+    grid-row-gap: var(--space2);
+  }
+}
+
+.read-more-wrapper {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

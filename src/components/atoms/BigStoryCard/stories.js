@@ -9,8 +9,7 @@ import story from "./fixture";
 withStore("Cards/BigStoryCard", {
   qt: {
     config: {
-      "cdn-image": "thumbor-stg.assettype.com",
-      iconSpritePath: "/sprite.svg"
+      "cdn-image": "thumbor-stg.assettype.com"
     }
   }
 })
@@ -69,8 +68,7 @@ withStore("Cards/BigStoryCard", {
   .add("long headline", () => {
     const newProps = produce(story, draft => {
       draft.story.alternative = null;
-      draft.story.headline =
-        "கமலே கவலைப்படும் அளவுக்கு இருக்கிறதா கமலே கவலைப்படும் அளவுக்கு இருக்கிறதா கமலே கவலைப்படும் அளவுக்கு இருக்கிறதா";
+      draft.story.headline = "Lorem Ipsum is simply dummy text of the printing and typesetting industry";
     });
     return <BigStoryCard {...newProps} />;
   })

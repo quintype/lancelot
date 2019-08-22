@@ -4,17 +4,14 @@ import get from "lodash/get";
 import { Link } from "@quintype/components";
 
 import Contributor from "../Contributor";
-import "./smallStoryCardDesktopVertical.m.css";
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
-import { getStoryData, generateImageSources } from "../../utils/utils";
 import Headline from "../Headline";
 
-const SmallStoryCardDesktopVertical = ({
-  story,
-  className = "",
-  cardWithImageZoom = true,
-  hasTruncatedHeadline = true
-}) => {
+import { getStoryData, generateImageSources } from "../../utils/utils";
+
+import "./smallStoryCardDesktopVertical.m.css";
+
+const SmallStoryCardDesktopVertical = ({ story, className = "", cardWithImageZoom = true }) => {
   const storyData = getStoryData(story);
   const contributor = get(story, ["authors", 0]);
   const contributorRole = get(story, ["authors", 0, "contributor-role", "name"], "");
@@ -45,21 +42,17 @@ const SmallStoryCardDesktopVertical = ({
             )}
           />
         </div>
-        <div styleName="text-wrapper">
+        <div>
+          <Headline text={storyData.headline} headlineType={5} headerLevel={3} className="headline" />
           {contributor && (
             <Contributor
               name={contributor["name"]}
               type={contributorRole}
+              contributorType={3}
               iconColor="#4a4a4a"
               className="contributor"
             />
           )}
-          <Headline
-            text={storyData.headline}
-            headerType={8}
-            headerLevel={3}
-            className={` ${"headline"} ${hasTruncatedHeadline ? "truncated" : ""}`}
-          />
         </div>
       </div>
     </Link>
@@ -67,7 +60,6 @@ const SmallStoryCardDesktopVertical = ({
 };
 
 SmallStoryCardDesktopVertical.propTypes = {
-  hasTruncatedHeadline: PropTypes.bool,
   className: PropTypes.string,
   cardWithImageZoom: PropTypes.bool,
   story: PropTypes.shape({

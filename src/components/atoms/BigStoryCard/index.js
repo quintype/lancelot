@@ -1,15 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { get } from "lodash";
+import get from "lodash/get";
 import { Link } from "@quintype/components";
+
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
-import Contributor from "../Contributor/index";
+import Contributor from "../Contributor";
 import Headline from "../Headline";
 
-import "./bigStoryCard.m.css";
 import { getStoryData, generateImageSources } from "../../utils/utils";
 
-const BigStoryCard = ({ story, cardWithImageZoom = true, className = "", hasTruncatedHeadline = true }) => {
+import "./bigStoryCard.m.css";
+
+const BigStoryCard = ({ story, cardWithImageZoom = true, className = "" }) => {
   const storyData = getStoryData(story, false);
 
   const contributor = get(story, ["authors", 0]);
@@ -30,6 +32,7 @@ const BigStoryCard = ({ story, cardWithImageZoom = true, className = "", hasTrun
       <div styleName="base">
         <ResponsiveImageWithFallback
           styleName="image-wrapper"
+          className="image-wrapper"
           slug={storyData.imageS3Key}
           metadata={storyData.imageMetadata}
           alt={storyData.imageCaption}
@@ -39,21 +42,15 @@ const BigStoryCard = ({ story, cardWithImageZoom = true, className = "", hasTrun
             { aspectRatio: [9, 6], screenWidthCoverage: 0.25 }
           )}
         />
-        <div styleName="text-wrapper">
-          <Headline
-            text={storyData.headline}
-            headlineType={3}
-            headerLevel={3}
-            className={`${"headline"} ${hasTruncatedHeadline ? "truncated" : ""}`}
-          />
-
+        <div className="text-wrapper">
+          <Headline text={storyData.headline} headlineType={3} headerLevel={3} className="headline" />
           {contributor && (
             <Contributor
               name={contributor["name"]}
               contributorType={3}
               type={contributorRole}
               iconColor="#4a4a4a"
-              className={"contributor"}
+              className="contributor"
             />
           )}
         </div>
@@ -65,7 +62,6 @@ const BigStoryCard = ({ story, cardWithImageZoom = true, className = "", hasTrun
 BigStoryCard.propTypes = {
   cardWithImageZoom: PropTypes.bool,
   className: PropTypes.string,
-  hasTruncatedHeadline: PropTypes.bool,
   story: PropTypes.shape({
     id: PropTypes.string,
     authors: PropTypes.arrayOf(

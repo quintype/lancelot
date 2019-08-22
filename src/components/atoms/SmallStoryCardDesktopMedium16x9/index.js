@@ -1,22 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { get } from "lodash";
+import get from "lodash/get";
 import { Link } from "@quintype/components";
 
 import Contributor from "../Contributor/index";
-import "./smallStoryCardDesktopMedium16x9.m.css";
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
-import { getStoryData, generateImageSources } from "../../utils/utils";
-// import { isPremium } from "../../../../isomorphic/data/story";
 import Headline from "../Headline";
 
-const SmallStoryCardDesktopMedium16x9 = ({
-  story,
-  className = "",
-  cardWithImageZoom = true,
-  hasTruncatedHeadline = true,
-  eager
-}) => {
+import { getStoryData, generateImageSources } from "../../utils/utils";
+
+import "./smallStoryCardDesktopMedium16x9.m.css";
+
+const SmallStoryCardDesktopMedium16x9 = ({ story, className = "", cardWithImageZoom = true, eager }) => {
   const storyData = getStoryData(story);
   const contributor = get(story, ["authors", 0]);
   const contributorRole = get(story, ["authors", 0, "contributor-role", "name"], "");
@@ -29,7 +24,7 @@ const SmallStoryCardDesktopMedium16x9 = ({
   return (
     <Link
       aria-label={`${"Read full story: "} ${storyData.headline}`}
-      styleName={`read-more-link ${className} ${cardWithImageZoom ? "card-with-image-zoom" : ""}`}
+      styleName="read-more-link"
       className={`${className} ${cardWithImageZoom ? "card-with-image-zoom" : ""}`}
       href={externalLink || story.url}
       externalLink={externalLink}
@@ -38,10 +33,10 @@ const SmallStoryCardDesktopMedium16x9 = ({
         <div>
           <ResponsiveImageWithFallback
             styleName="image-wrapper"
+            className="image-wrapper"
             slug={storyData.imageS3Key}
             metadata={storyData.imageMetadata}
             alt={storyData.imageCaption}
-            // isPremium={isPremium(story)}
             imgParams={{ auto: ["format", "compress"] }}
             eager={eager}
             sources={generateImageSources(
@@ -50,21 +45,17 @@ const SmallStoryCardDesktopMedium16x9 = ({
             )}
           />
         </div>
-        <div styleName="text-wrapper">
+        <div>
+          <Headline text={storyData.headline} headerLevel={3} headlineType={3} />
           {contributor && (
             <Contributor
               name={contributor["name"]}
               type={contributorRole}
+              contributorType={3}
               iconColor="#4a4a4a"
               className="contributor"
             />
           )}
-          <Headline
-            text={storyData.headline}
-            headerType={5}
-            headerLevel={3}
-            className={`${hasTruncatedHeadline ? "truncated" : ""}`}
-          />
         </div>
       </div>
     </Link>
@@ -72,7 +63,6 @@ const SmallStoryCardDesktopMedium16x9 = ({
 };
 
 SmallStoryCardDesktopMedium16x9.propTypes = {
-  hasTruncatedHeadline: PropTypes.bool,
   className: PropTypes.string,
   cardWithImageZoom: PropTypes.bool,
   story: PropTypes.shape({

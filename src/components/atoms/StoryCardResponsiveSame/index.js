@@ -50,13 +50,20 @@ const StoryCardResponsiveSame = ({
         )}
       />
       <div styleName="text-wrapper">
-        {contributor && <Contributor name={contributor["name"]} type={contributorRole} className={"contributor"} />}
         <Headline
           text={storyData.headline}
-          headerType={4}
+          headlineType={3}
           headerLevel={3}
           className={`${hasTruncatedHeadline ? "truncated" : ""}`}
         />
+        {contributor && (
+          <Contributor
+            name={contributor["name"]}
+            contributorType={3}
+            type={contributorRole}
+            className={"contributor"}
+          />
+        )}
       </div>
     </Link>
   );
