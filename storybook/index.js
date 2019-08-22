@@ -6,6 +6,7 @@ import assetify from "@quintype/framework/assetify/client";
 import "../assets/stylesheets/app.scss";
 import { withInfo } from "@storybook/addon-info";
 import { withKnobs, select } from "@storybook/addon-knobs";
+import ThemeConfigContext, { themeConfig } from "../src/components/fixture/theme";
 
 assetify();
 global.userPromise = Promise.reject(new Error("no user in storybook"));
@@ -47,7 +48,14 @@ export default storiesOf;
 
 export function withStore(componentName, state) {
   const store = {
-    getState: () => state || { qt: { config: { iconSpritePath: "/sprite.svg" } } },
+    getState: () =>
+      state || {
+        qt: {
+          config: {
+            "cdn-image": "thumbor-stg.assettype.com"
+          }
+        }
+      },
     subscribe: () => 0,
     dispatch: action("some action")
   };

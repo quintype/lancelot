@@ -2,6 +2,7 @@ import React from "react";
 import { string, number } from "prop-types";
 
 import "./headline.m.css";
+import ThemeConfigContext from "../../fixture/theme";
 
 const Headline = ({ text, headlineType = 1, headerLevel = 1, headlineDesign = "", className = "" }) => {
   const HeaderTag = "h" + headerLevel;
@@ -30,14 +31,16 @@ const Headline = ({ text, headlineType = 1, headerLevel = 1, headlineDesign = ""
   };
 
   return (
-    <React.Fragment>
-      <HeaderTag
-        styleName={`headline headline-type-${headlineType} ${headlineDesign}`}
-        className={`headline headline-type-${headlineType} ${headlineDesign} ${className}`}
-      >
-        {headlineDom()}
-      </HeaderTag>
-    </React.Fragment>
+    <ThemeConfigContext.Consumer>
+      {themeConfig => (
+        <HeaderTag
+          styleName={`headline headline-type-${headlineType} ${headlineDesign}`}
+          className={`headline headline-type-${headlineType} ${headlineDesign} ${className}`}
+        >
+          {headlineDom()}
+        </HeaderTag>
+      )}
+    </ThemeConfigContext.Consumer>
   );
 };
 
