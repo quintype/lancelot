@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import get from "lodash/get";
 import { Link } from "@quintype/components";
-import Icon from "../../atoms/Icon";
 
 import "./breakingNews.m.css";
 
@@ -47,7 +46,6 @@ const BreakingNews = ({ className = "", breakingNews = [] }) => {
 
   return (
     <div styleName="base" className={`base ${className} container`}>
-      <Icon type={"breaking-news"} styleName="icon" />
       {renderBreakingNewsMarquee(breakingNews)}
     </div>
   );

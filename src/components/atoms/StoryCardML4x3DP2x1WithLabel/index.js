@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import get from "lodash/get";
 import { Link } from "@quintype/components";
-import { Icon } from "../Icon";
 import Contributor from "../Contributor";
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
 import Headline from "../Headline";
@@ -60,7 +59,6 @@ export const StoryCardML4x3DP2x1WithLabel = ({ story, className, defaultLabel = 
     <div className={`${className}`} styleName={`story-card-with-label-wrapper`}>
       {story.label && (
         <div styleName="headline-wrapper">
-          <Icon type={"bullet-arrow"} styleName="bullet-icon" />
           <Headline text={story.label} headerType={4} headerLevel={2} className={"headline-label"} />
         </div>
       )}
