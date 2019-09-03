@@ -6,7 +6,6 @@ import { Link } from "@quintype/components";
 import Contributor from "../../atoms/Contributor";
 import ResponsiveImageWithFallback from "../ResponsiveImageWithFallback";
 import { getStoryData, generateImageSources } from "../../utils/utils";
-// import { getMonthDayString } from "../../utils/time-format";
 
 import "./storyCardFullWidth.m.css";
 
@@ -51,23 +50,6 @@ export default function StoryCardFullWidth({ story, className = "", cardWithImag
               styleName="contributor"
             />
           )}
-          {/* <div styleName="story-byline">
-            {story.engagement && story.engagement.total && (
-              <div styleName="engagement">
-                <span styleName="engagement-item">
-                  <Icon type={"comment"} styleName="engagement-icon" />
-                  {story.engagement.comments}
-                </span>
-                <span styleName="engagement-item">
-                  <Icon type={"share"} styleName="engagement-icon" />
-                  {story.engagement.shares}
-                </span>
-              </div>
-            )}
-            {story["published-at"] && (
-              <time styleName="published-date">{getMonthDayString(story["published-at"])}</time>
-            )}
-          </div> */}
         </div>
       </Link>
     </div>

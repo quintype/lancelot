@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link, WithHostUrl } from "@quintype/components";
-import { Icon } from "../Icon";
 
 import "./contributor.m.css";
 
@@ -9,19 +8,12 @@ const Contributor = ({ path, type, name, imgUrl, className = "", contributorType
   if (!name) {
     return null;
   }
-  const ContributorRoles = {
-    // Mapping for the contributor roles and the icons is done here.
-    // Comma separated key value pairs
-    // "art-director": "art-director"
-  };
   type = type && type.replace(" ", "-").toLowerCase();
-  const iconType = type && ContributorRoles[type] ? ContributorRoles[type] : "author";
   return path && !config.cinemaMode ? (
     <WithHostUrl>
       {({ primaryHostUrl }) => (
         <Link aria-label="Author" href={`${primaryHostUrl}${path}`} className={className} styleName="base">
           {imgUrl && <img src={imgUrl} />}
-          {iconType && <Icon type={iconType} styleName="icon" />}
           <span styleName="contributor-name">{name}</span>
         </Link>
       )}

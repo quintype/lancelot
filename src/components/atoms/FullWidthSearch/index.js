@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { SearchBox } from "@quintype/components";
-// import Icon from "../../../atoms/icon";
 
 import "./fullWidthSearch.m.css";
 
