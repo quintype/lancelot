@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 19.2">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_894" data-name="Rectangle 894" className="cls-1" />
+    </clipPath>
+  </defs>
+  <g id="Videographer" className="cls-2">
+    <g id="noun_Video_920331" transform="translate(5.946 1.099)">
+      <g id="Group_2180" data-name="Group 2180">
+        <path
+          id="Path_960"
+          data-name="Path 960"
+          className="cls-3"
+          d="M13.2,1039.162a3.9,3.9,0,0,0-2.532,6.866H6.845a3.122,3.122,0,1,0-4.333.11,1.547,1.547,0,0,0-1.012,1.451v6.241a1.557,1.557,0,0,0,1.56,1.56H15.542a1.557,1.557,0,0,0,1.56-1.56v-1.249l4.681,2.81v-9.362l-4.681,2.81v-1.249a1.542,1.542,0,0,0-1.408-1.53,3.9,3.9,0,0,0-2.493-6.9Z"
+          transform="translate(-1.5 -1039.162)"
+        />
+      </g>
+    </g>
+  </g>
+</svg>

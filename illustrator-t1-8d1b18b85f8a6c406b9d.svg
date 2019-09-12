@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 19.2">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_896" data-name="Rectangle 896" className="cls-1" />
+    </clipPath>
+  </defs>
+  <g id="Illustrator" className="cls-2">
+    <rect
+      id="Rectangle_909"
+      data-name="Rectangle 909"
+      className="cls-3"
+      width="9"
+      height="16.686"
+      transform="translate(17 1.238)"
+    />
+    <path
+      id="Path_1023"
+      data-name="Path 1023"
+      className="cls-4"
+      d="M8.5,2.253,15.061,8.82,7.313,16.6,0,17.354l.735-7.334Z"
+      transform="rotate(135 8.728 11.488)"
+    />
+  </g>
+</svg>
